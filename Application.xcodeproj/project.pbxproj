@@ -2958,9 +2958,9 @@
 				AB25EC921AA27515002D1CAD /* Settings */,
 				AB25EC8B1AA27488002D1CAD /* Budget */,
 				ABA8EF211AA09E0A0006A123 /* Transaction View Controller */,
-				197C07361A1F786F003A6A69 /* StoryBoard */,
 				199D4E491A9F241C00D898C8 /* FirstViewController */,
 				199D4E4C1A9F241C00D898C8 /* HomeView */,
+				197C07361A1F786F003A6A69 /* StoryBoard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
