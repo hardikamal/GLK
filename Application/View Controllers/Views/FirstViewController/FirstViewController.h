@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PagedFlowView.h"
-@interface FirstViewController : UIViewController<PagedFlowViewDelegate,PagedFlowViewDataSource>
+
+@interface FirstViewController : UIViewController <PagedFlowViewDelegate, PagedFlowViewDataSource>
+
 @property (nonatomic, strong) IBOutlet PagedFlowView *hFlowView;
 @property (nonatomic, strong) IBOutlet UIPageControl *hPageControl;
 
