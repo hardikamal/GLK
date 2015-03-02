@@ -939,27 +939,27 @@
                         <viewControllerLayoutGuide type="bottom" id="oFC-S1-inU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yD0-Ok-0IU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gU2-sV-F8V">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="gU2-sV-F8V">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfN-81-aoM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.89060507020000002" green="0.89060507020000002" blue="0.89060507020000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AfN-81-aoM" firstAttribute="leading" secondItem="yD0-Ok-0IU" secondAttribute="leading" id="3Po-zM-JDR"/>
-                            <constraint firstAttribute="trailing" secondItem="gU2-sV-F8V" secondAttribute="trailing" id="AV4-82-bxh"/>
-                            <constraint firstItem="oFC-S1-inU" firstAttribute="top" secondItem="gU2-sV-F8V" secondAttribute="bottom" id="DCL-CB-7eC"/>
-                            <constraint firstItem="gU2-sV-F8V" firstAttribute="top" secondItem="hfM-hx-8tF" secondAttribute="bottom" id="QXB-Re-xTZ"/>
-                            <constraint firstItem="gU2-sV-F8V" firstAttribute="leading" secondItem="yD0-Ok-0IU" secondAttribute="leading" id="RkO-ff-2Aj"/>
-                            <constraint firstAttribute="trailing" secondItem="AfN-81-aoM" secondAttribute="trailing" id="gkE-ed-sTy"/>
-                            <constraint firstAttribute="bottom" secondItem="AfN-81-aoM" secondAttribute="bottom" constant="44" id="rRx-4G-shB"/>
-                            <constraint firstItem="AfN-81-aoM" firstAttribute="top" secondItem="yD0-Ok-0IU" secondAttribute="top" id="zhj-M6-Fda"/>
+                            <constraint firstAttribute="trailing" secondItem="AfN-81-aoM" secondAttribute="trailing" id="HDI-m5-VNA"/>
+                            <constraint firstItem="AfN-81-aoM" firstAttribute="leading" secondItem="yD0-Ok-0IU" secondAttribute="leading" id="MhV-N6-nnx"/>
+                            <constraint firstItem="AfN-81-aoM" firstAttribute="top" secondItem="yD0-Ok-0IU" secondAttribute="top" id="NpK-oj-WZL"/>
+                            <constraint firstAttribute="bottom" secondItem="gU2-sV-F8V" secondAttribute="bottom" id="UKM-kS-0Z8"/>
+                            <constraint firstAttribute="trailing" secondItem="gU2-sV-F8V" secondAttribute="trailing" id="UOk-OJ-KzI"/>
+                            <constraint firstItem="gU2-sV-F8V" firstAttribute="top" secondItem="yD0-Ok-0IU" secondAttribute="top" id="dLQ-2E-7Xc"/>
+                            <constraint firstAttribute="bottom" secondItem="AfN-81-aoM" secondAttribute="bottom" id="qtT-Jv-5bl"/>
+                            <constraint firstItem="gU2-sV-F8V" firstAttribute="leading" secondItem="yD0-Ok-0IU" secondAttribute="leading" id="srJ-Yh-nCS"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -982,14 +982,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="custumView" destination="AfN-81-aoM" id="76A-6b-ABp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9l-MS-cmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2214" y="-671"/>
+            <point key="canvasLocation" x="-2271" y="-639"/>
         </scene>
         <!--Add Catagery List View Controller-->
         <scene sceneID="TWo-QY-6g9">
