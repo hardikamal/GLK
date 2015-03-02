@@ -25,7 +25,6 @@
 #import "AksAnimations.h"
 #import "CommonFunctions.h"
 #import "ApplicationSpecificConstants.h"
-#import "GlobalData.h"
 #import "Reachability.h"
 #import "Toast+UIView.h"
 #import "CacheManager.h"

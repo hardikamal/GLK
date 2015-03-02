@@ -14,7 +14,7 @@
 		<string>https://github.com/aryansbtloe/CKT.git</string>
 		<key>A20D666FF4B08EFE53F147818C2D4D17E2242912</key>
 		<string>git://github.com/facebook/facebook-ios-sdk.git</string>
-		<key>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</key>
+		<key>E450296B5A65FE8D3EF91B066FF80B1FDD20984B</key>
 		<string>https://github.com/aryansbtloe/GLK</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
@@ -25,7 +25,7 @@
 		<string>../../../Application</string>
 		<key>A20D666FF4B08EFE53F147818C2D4D17E2242912</key>
 		<string>../../../Application/Application/Vendor/facebook-ios-sdk</string>
-		<key>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</key>
+		<key>E450296B5A65FE8D3EF91B066FF80B1FDD20984B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -33,7 +33,7 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</string>
+	<string>E450296B5A65FE8D3EF91B066FF80B1FDD20984B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -56,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</string>
+			<string>E450296B5A65FE8D3EF91B066FF80B1FDD20984B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GLK</string>
 		</dict>

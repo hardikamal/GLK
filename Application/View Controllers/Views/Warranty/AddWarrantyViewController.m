@@ -59,7 +59,7 @@
 {
     [super viewDidLoad];
     [self getAllContacts];
-
+    [self timeDateConfigCurrent];
     [self.btnExpense setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [self.btnExpense setSelected:YES];
     
@@ -302,7 +302,25 @@
         _imgProfile.image=[UIImage imageNamed:@"custom_profile.png"];
 }
 
+-(void)timeDateConfigCurrent
+{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    NSDateComponents *compsm = [gregorian components:NSCalendarUnitMonth fromDate:[NSDate date]];
+    NSDateComponents *compsy = [gregorian components:NSCalendarUnitYear fromDate:[NSDate date]];
+    NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:[NSDate date]];
 
+    
+    self.lblDay.text=[NSString stringWithFormat:@"%@,%d", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],[compsday day]];
+    self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:[compsm month]-1],(long)[compsy year]];
+    NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
+    [formatter setDateFormat:@"hh:mma"];
+    self.lblTime.text=[[formatter stringFromDate:[NSDate date]]substringToIndex:5];
+    self.lblPmorAm.text=[NSDate stringFromDate:[NSDate date] withFormat:@"a"];
+    
+}
 -(void)addNewTransaction
 {
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
@@ -316,22 +334,23 @@
         
     }
     
-    NSDate *currentDate = [NSDate date];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSCalederUnit fromDate:currentDate];
-    [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
-    NSString *combined;
-    if ([components month]<10)
-    {
-        combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
-    }else
-        combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
-
-    [self.lblMonthYear setText:combined];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"hh:mm a"];
-    [self.lblTime setText:[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:0]];
-    [self.lblPmorAm setText:[[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
+//    NSDate *currentDate = [NSDate date];
+//    
+//    NSCalendar* calendar = [NSCalendar currentCalendar];
+//    NSDateComponents* components = [calendar components:NSCalederUnit fromDate:currentDate];
+//    [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
+//    NSString *combined;
+//    if ([components month]<10)
+//    {
+//        combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
+//    }else
+//        combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
+//
+//    [self.lblMonthYear setText:combined];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"hh:mm a"];
+//    [self.lblTime setText:[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:0]];
+//    [self.lblPmorAm setText:[[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
     NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
     NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
     [self.lblCarrency setText:[[currency componentsSeparatedByString:@"-"] objectAtIndex:1]];
@@ -818,42 +837,43 @@
 
 
 
+
+
+
+
 - (IBAction)timePickerbtnClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
-    [self.txtEnterLocation resignFirstResponder];
-    [self.txtTagaPerson resignFirstResponder];
-    [self.txtwarranty resignFirstResponder];
-    
-    self.dobPicker.datePickerMode = UIDatePickerModeTime;
-        NSArray *arrry =[_lblMonthYear.text componentsSeparatedByString:@" "];
-        NSString *combined = [NSString stringWithFormat:@"%@ %@",[NSString stringWithFormat:@"%@/%@/%@",_lblDay.text,[arrry objectAtIndex:0],[arrry objectAtIndex:1]],[NSString stringWithFormat:@"%@:%@ %@",_lblTime.text,@"00",[_lblPmorAm.text lowercaseString]]];
-        NSDateFormatter *fmt = [[NSDateFormatter alloc] init] ;
-        [fmt setDateFormat:@"dd/MM/yyyy hh:mm:ss a"];
-        NSDate *originalDate=[fmt dateFromString:combined];
-        [self.dobPicker setDate:originalDate animated:YES];
-    float height=self.dobView.frame.size.height;
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:-height];
-    isSelected=YES;
+    RESIGN_KEYBOARD
+    [ActionSheetDatePicker showPickerWithTitle : @"Select time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
+     {
+         NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
+         [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+         [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
+         [formatter setDateFormat:@"hh:mma"];
+         self.lblTime.text=[[formatter stringFromDate:selectedDate]substringToIndex:5];
+         self.lblPmorAm.text=[NSDate stringFromDate:selectedDate withFormat:@"a"];
+         
+     } cancelBlock:^(ActionSheetDatePicker *picker) {
+         
+     } origin:[self view]];
+
+   // isSelected=YES;
 }
 
 - (IBAction)datePickerbtnClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
-    [self.txtEnterLocation resignFirstResponder];
-    [self.txtTagaPerson resignFirstResponder];
-    [self.txtwarranty resignFirstResponder];
-    NSString *combined = [NSString stringWithFormat:@"%@-%@-%@",self.lblDay.text ,[[self.lblMonthYear.text componentsSeparatedByString:@" "] objectAtIndex:0],[[self.lblMonthYear.text componentsSeparatedByString:@" "] objectAtIndex:1]];
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init] ;
-       [fmt setDateFormat:@"dd-MM-yyyy"];
-    NSDate *originalDate=[fmt dateFromString:combined];
-    [self.dobPicker setDate:originalDate animated:YES];
-    
-       self.dobPicker.datePickerMode = UIDatePickerModeDate;
-       float height=self.dobView.frame.size.height;
-        [self animateView:self.dobView xCoordinate:0 yCoordinate:-height];
+    RESIGN_KEYBOARD
+    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
+        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
+       // self.lblDay.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
+        self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
+        self.lblDay.text=[NSString stringWithFormat:@"%@,%d", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],[compsday day]];
+
+    } cancelBlock:^(ActionSheetDatePicker *picker) {
+    } origin:[self view]];
+
 }
 
 
@@ -867,41 +887,41 @@
 
 
 
-- (IBAction)doneDobPickerClick:(id)sender
-{
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-	NSDate *myDate = self.dobPicker.date;
-    NSString *string=nil;
-	if (isSelected)
-    {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"hh:mm a"];
-        string=[formatter stringFromDate:myDate];
-        isSelected=NO;
-        [self.lblTime setText:[[[formatter stringFromDate:myDate] componentsSeparatedByString:@" "]  objectAtIndex:0]];
-        [self.lblPmorAm setText:[[[[formatter stringFromDate:myDate] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
-    }else
-    {
-        NSDate *currentDate = myDate;
-        NSCalendar* calendar = [NSCalendar currentCalendar];
-        NSDateComponents* components = [calendar components:NSCalederUnit fromDate:currentDate];
-        [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
-        NSString *combined;
-        if ([components month]<10)
-        {
-            combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year] ];
-        }else
-            combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year] ];
-
-        [self.lblMonthYear setText:combined];
-    }
-
-    if ( [_txtwarranty.text length]!=0)
-    {
-          [self UpdateExpireDate];
-    }
-
-}
+//- (IBAction)doneDobPickerClick:(id)sender
+//{
+//    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
+//	NSDate *myDate = self.dobPicker.date;
+//   
+//	if (isSelected)
+//    {
+//
+//        isSelected=NO;
+//                      NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
+//        [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+//        [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
+//        [formatter setDateFormat:@"hh:mma"];
+//        self.lblTime.text=[[formatter stringFromDate:[NSDate date]]substringToIndex:5];
+//        self.lblPmorAm.text=[NSDate stringFromDate:[NSDate date] withFormat:@"a"];
+//    }else
+//    {
+//    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+//        NSDateComponents *compsm = [gregorian components:NSCalendarUnitMonth fromDate:[NSDate date]];
+//        NSDateComponents *compsy = [gregorian components:NSCalendarUnitYear fromDate:[NSDate date]];
+//        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:[NSDate date]];
+//        
+//        
+//        self.lblDay.text=[NSString stringWithFormat:@"%@,%d", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],[compsday day]];
+//        self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:[compsm month]-1],(long)[compsy year]];
+//    
+//    }
+//
+//    if ( [_txtwarranty.text length]!=0)
+//    {
+//          [self UpdateExpireDate];
+//    }
+//
+//}
 
 -(void)UpdateExpireDate
 {

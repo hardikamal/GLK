@@ -263,7 +263,6 @@
             style.barColor = [UIColor colorWithRed:0.797 green:0.148 blue:0.227 alpha:1.000];
             style.textColor = [UIColor whiteColor];
             style.animationType = JDStatusBarAnimationTypeMove;
-            style.font = fontRegular12;
             return style;
         }];
         [JDStatusBarNotification showWithStatus:MESSAGE_TEXT___FOR_NETWORK_NOT_REACHABILITY dismissAfter:MIN_DUR];

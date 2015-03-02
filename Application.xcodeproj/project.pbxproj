@@ -501,7 +501,6 @@
 		AB25EB1A1AA1049E002D1CAD /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EAFA1AA1049E002D1CAD /* CacheManager.m */; };
 		AB25EB1B1AA1049E002D1CAD /* LocationRepresentingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EAFE1AA1049E002D1CAD /* LocationRepresentingCell.m */; };
 		AB25EB1C1AA1049E002D1CAD /* LocationRepresentingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB25EAFF1AA1049E002D1CAD /* LocationRepresentingCell.xib */; };
-		AB25EB1D1AA1049E002D1CAD /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EB021AA1049E002D1CAD /* GlobalData.m */; };
 		AB25EB1F1AA1049E002D1CAD /* FeedItemServices.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EB081AA1049E002D1CAD /* FeedItemServices.m */; };
 		AB25EB221AA10663002D1CAD /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EB211AA10663002D1CAD /* Utility.m */; };
 		AB25EB411AA1EB2E002D1CAD /* addmore_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EB241AA1EB2E002D1CAD /* addmore_button.png */; };
@@ -811,38 +810,6 @@
 		AB25EDC41AA32F6F002D1CAD /* warranty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25ED371AA32F6F002D1CAD /* warranty@3x.png */; };
 		AB25EDC51AA32F6F002D1CAD /* weekly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25ED381AA32F6F002D1CAD /* weekly@3x.png */; };
 		AB25EDC61AA32F6F002D1CAD /* yearly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25ED391AA32F6F002D1CAD /* yearly@3x.png */; };
-		AB25EDE81AA3332D002D1CAD /* allcategories_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDC81AA3332D002D1CAD /* allcategories_icon@3x.png */; };
-		AB25EDE91AA3332D002D1CAD /* Annuity-or-pension_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDC91AA3332D002D1CAD /* Annuity-or-pension_icon@3x.png */; };
-		AB25EDEA1AA3332D002D1CAD /* Auto_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCA1AA3332D002D1CAD /* Auto_icon@3x.png */; };
-		AB25EDEB1AA3332D002D1CAD /* Bill-Payments_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCB1AA3332D002D1CAD /* Bill-Payments_icon@3x.png */; };
-		AB25EDEC1AA3332D002D1CAD /* Books-Stationary_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCC1AA3332D002D1CAD /* Books-Stationary_icon@3x.png */; };
-		AB25EDED1AA3332D002D1CAD /* Capital-Gains_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCD1AA3332D002D1CAD /* Capital-Gains_icon@3x.png */; };
-		AB25EDEE1AA3332D002D1CAD /* Clothing_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCE1AA3332D002D1CAD /* Clothing_icon@3x.png */; };
-		AB25EDEF1AA3332D002D1CAD /* delete_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDCF1AA3332D002D1CAD /* delete_icon@3x.png */; };
-		AB25EDF01AA3332D002D1CAD /* edit_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD01AA3332D002D1CAD /* edit_icon@3x.png */; };
-		AB25EDF11AA3332D002D1CAD /* Educational-Cost_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD11AA3332D002D1CAD /* Educational-Cost_icon@3x.png */; };
-		AB25EDF21AA3332D002D1CAD /* Electronics_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD21AA3332D002D1CAD /* Electronics_icon@3x.png */; };
-		AB25EDF31AA3332D002D1CAD /* entertainment_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD31AA3332D002D1CAD /* entertainment_icon@3x.png */; };
-		AB25EDF41AA3332D002D1CAD /* Food_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD41AA3332D002D1CAD /* Food_icon@3x.png */; };
-		AB25EDF51AA3332D002D1CAD /* Gifts_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD51AA3332D002D1CAD /* Gifts_icon@3x.png */; };
-		AB25EDF61AA3332D002D1CAD /* Groceries_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD61AA3332D002D1CAD /* Groceries_icon@3x.png */; };
-		AB25EDF71AA3332D002D1CAD /* hor_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD71AA3332D002D1CAD /* hor_line@3x.png */; };
-		AB25EDF81AA3332D002D1CAD /* House-property-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD81AA3332D002D1CAD /* House-property-icon@3x.png */; };
-		AB25EDF91AA3332D002D1CAD /* House_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDD91AA3332D002D1CAD /* House_icon@3x.png */; };
-		AB25EDFA1AA3332D002D1CAD /* Interest-recieved_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDA1AA3332D002D1CAD /* Interest-recieved_icon@3x.png */; };
-		AB25EDFB1AA3332D002D1CAD /* Medical_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDB1AA3332D002D1CAD /* Medical_icon@3x.png */; };
-		AB25EDFC1AA3332D002D1CAD /* Mediclaim_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDC1AA3332D002D1CAD /* Mediclaim_icon@3x.png */; };
-		AB25EDFD1AA3332D002D1CAD /* merge_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDD1AA3332D002D1CAD /* merge_icon@3x.png */; };
-		AB25EDFE1AA3332D002D1CAD /* Miscellaneous_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDE1AA3332D002D1CAD /* Miscellaneous_icon@3x.png */; };
-		AB25EDFF1AA3332D002D1CAD /* option_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDDF1AA3332D002D1CAD /* option_icon@3x.png */; };
-		AB25EE001AA3332D002D1CAD /* Personal-Care_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE01AA3332D002D1CAD /* Personal-Care_icon@3x.png */; };
-		AB25EE011AA3332D002D1CAD /* popup_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE11AA3332D002D1CAD /* popup_bg@3x.png */; };
-		AB25EE021AA3332D002D1CAD /* Rent_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE21AA3332D002D1CAD /* Rent_icon@3x.png */; };
-		AB25EE031AA3332D002D1CAD /* Salary_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE31AA3332D002D1CAD /* Salary_icon@3x.png */; };
-		AB25EE041AA3332D002D1CAD /* Tax-Paymens_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE41AA3332D002D1CAD /* Tax-Paymens_icon@3x.png */; };
-		AB25EE051AA3332D002D1CAD /* travel_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE51AA3332D002D1CAD /* travel_icon@3x.png */; };
-		AB25EE061AA3332D002D1CAD /* ver_line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE61AA3332D002D1CAD /* ver_line@3x.png */; };
-		AB25EE071AA3332D002D1CAD /* Wages_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25EDE71AA3332D002D1CAD /* Wages_icon@3x.png */; };
 		AB25EE0D1AA34238002D1CAD /* CreatePaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */; };
 		AB25EE0E1AA34238002D1CAD /* PaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */; };
 		ABA8EF121AA09D240006A123 /* food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF0F1AA09D240006A123 /* food_icon.png */; };
@@ -855,69 +822,6 @@
 		ABA8EF1F1AA09D360006A123 /* server_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF1C1AA09D360006A123 /* server_error@3x.png */; };
 		ABA8EF201AA09D360006A123 /* server_sync@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF1D1AA09D360006A123 /* server_sync@3x.png */; };
 		ABA8EF241AA09E0A0006A123 /* AddTransactionViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = ABA8EF221AA09E0A0006A123 /* AddTransactionViewController..m */; };
-		ABDC0A681AA3566F00CD1820 /* allcategories_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A181AA3566E00CD1820 /* allcategories_icon@2x.png */; };
-		ABDC0A691AA3566F00CD1820 /* Annuity or pension_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A191AA3566E00CD1820 /* Annuity or pension_icon@2x.png */; };
-		ABDC0A6A1AA3566F00CD1820 /* Auto_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1A1AA3566E00CD1820 /* Auto_icon@2x.png */; };
-		ABDC0A6B1AA3566F00CD1820 /* Bill Payments_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1B1AA3566E00CD1820 /* Bill Payments_icon@2x.png */; };
-		ABDC0A6C1AA3566F00CD1820 /* Books Stationary_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1C1AA3566E00CD1820 /* Books Stationary_icon@2x.png */; };
-		ABDC0A6D1AA3566F00CD1820 /* Capital Gains_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1D1AA3566E00CD1820 /* Capital Gains_icon@2x.png */; };
-		ABDC0A6E1AA3566F00CD1820 /* Clothing_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1E1AA3566E00CD1820 /* Clothing_icon@2x.png */; };
-		ABDC0A6F1AA3566F00CD1820 /* delete_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A1F1AA3566E00CD1820 /* delete_icon@2x.png */; };
-		ABDC0A701AA3566F00CD1820 /* edit_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A201AA3566E00CD1820 /* edit_icon@2x.png */; };
-		ABDC0A711AA3566F00CD1820 /* Educational Cost_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A211AA3566E00CD1820 /* Educational Cost_icon@2x.png */; };
-		ABDC0A721AA3566F00CD1820 /* Electronics_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A221AA3566E00CD1820 /* Electronics_icon@2x.png */; };
-		ABDC0A731AA3566F00CD1820 /* entertainment_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A231AA3566E00CD1820 /* entertainment_icon@2x.png */; };
-		ABDC0A741AA3566F00CD1820 /* Food_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A241AA3566E00CD1820 /* Food_icon@2x.png */; };
-		ABDC0A751AA3566F00CD1820 /* Gifts_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A251AA3566E00CD1820 /* Gifts_icon@2x.png */; };
-		ABDC0A761AA3566F00CD1820 /* Groceries_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A261AA3566E00CD1820 /* Groceries_icon@2x.png */; };
-		ABDC0A771AA3566F00CD1820 /* hor_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A271AA3566E00CD1820 /* hor_line@2x.png */; };
-		ABDC0A781AA3566F00CD1820 /* House property icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A281AA3566E00CD1820 /* House property icon@2x.png */; };
-		ABDC0A791AA3566F00CD1820 /* House_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A291AA3566E00CD1820 /* House_icon@2x.png */; };
-		ABDC0A7A1AA3566F00CD1820 /* Interest recieved_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2A1AA3566E00CD1820 /* Interest recieved_icon@2x.png */; };
-		ABDC0A7B1AA3566F00CD1820 /* Medical_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2B1AA3566E00CD1820 /* Medical_icon@2x.png */; };
-		ABDC0A7C1AA3566F00CD1820 /* Mediclaim_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2C1AA3566E00CD1820 /* Mediclaim_icon@2x.png */; };
-		ABDC0A7D1AA3566F00CD1820 /* merge_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2D1AA3566E00CD1820 /* merge_icon@2x.png */; };
-		ABDC0A7E1AA3566F00CD1820 /* option_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2E1AA3566E00CD1820 /* option_icon@2x.png */; };
-		ABDC0A7F1AA3566F00CD1820 /* Personal Care_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A2F1AA3566E00CD1820 /* Personal Care_icon@2x.png */; };
-		ABDC0A801AA3566F00CD1820 /* popup_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A301AA3566E00CD1820 /* popup_bg@2x.png */; };
-		ABDC0A811AA3566F00CD1820 /* Rent_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A311AA3566E00CD1820 /* Rent_icon@2x.png */; };
-		ABDC0A821AA3566F00CD1820 /* Salary_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A321AA3566E00CD1820 /* Salary_icon@2x.png */; };
-		ABDC0A831AA3566F00CD1820 /* Tax Paymens_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A331AA3566E00CD1820 /* Tax Paymens_icon@2x.png */; };
-		ABDC0A841AA3566F00CD1820 /* travel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A341AA3566E00CD1820 /* travel_icon@2x.png */; };
-		ABDC0A851AA3566F00CD1820 /* ver_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A351AA3566E00CD1820 /* ver_line@2x.png */; };
-		ABDC0A861AA3566F00CD1820 /* Wages_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A361AA3566E00CD1820 /* Wages_icon@2x.png */; };
-		ABDC0A871AA3566F00CD1820 /* All_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A381AA3566E00CD1820 /* All_icon.png */; };
-		ABDC0A881AA3566F00CD1820 /* allcategories_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A391AA3566E00CD1820 /* allcategories_icon.png */; };
-		ABDC0A891AA3566F00CD1820 /* Annuity or pension_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3A1AA3566E00CD1820 /* Annuity or pension_icon.png */; };
-		ABDC0A8A1AA3566F00CD1820 /* Auto_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3B1AA3566E00CD1820 /* Auto_icon.png */; };
-		ABDC0A8B1AA3566F00CD1820 /* Bill Payments_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3C1AA3566E00CD1820 /* Bill Payments_icon.png */; };
-		ABDC0A8C1AA3566F00CD1820 /* Books Stationary_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3D1AA3566E00CD1820 /* Books Stationary_icon.png */; };
-		ABDC0A8D1AA3566F00CD1820 /* Capital Gains_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3E1AA3566E00CD1820 /* Capital Gains_icon.png */; };
-		ABDC0A8E1AA3566F00CD1820 /* Clothing_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A3F1AA3566E00CD1820 /* Clothing_icon.png */; };
-		ABDC0A8F1AA3566F00CD1820 /* delete_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A401AA3566E00CD1820 /* delete_icon.png */; };
-		ABDC0A901AA3566F00CD1820 /* edit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A411AA3566E00CD1820 /* edit_icon.png */; };
-		ABDC0A911AA3566F00CD1820 /* Educational Cost_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A421AA3566E00CD1820 /* Educational Cost_icon.png */; };
-		ABDC0A921AA3566F00CD1820 /* Electronics_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A431AA3566E00CD1820 /* Electronics_icon.png */; };
-		ABDC0A931AA3566F00CD1820 /* Food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A441AA3566E00CD1820 /* Food_icon.png */; };
-		ABDC0A941AA3566F00CD1820 /* Gifts_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A451AA3566E00CD1820 /* Gifts_icon.png */; };
-		ABDC0A951AA3566F00CD1820 /* Groceries_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A461AA3566E00CD1820 /* Groceries_icon.png */; };
-		ABDC0A961AA3566F00CD1820 /* hor_line.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A471AA3566E00CD1820 /* hor_line.png */; };
-		ABDC0A971AA3566F00CD1820 /* House property_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A481AA3566E00CD1820 /* House property_icon.png */; };
-		ABDC0A981AA3566F00CD1820 /* House_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A491AA3566E00CD1820 /* House_icon.png */; };
-		ABDC0A991AA3566F00CD1820 /* Interest recieved_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4A1AA3566E00CD1820 /* Interest recieved_icon.png */; };
-		ABDC0A9A1AA3566F00CD1820 /* Medical_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4B1AA3566E00CD1820 /* Medical_icon.png */; };
-		ABDC0A9B1AA3566F00CD1820 /* Mediclaim_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4C1AA3566E00CD1820 /* Mediclaim_icon.png */; };
-		ABDC0A9C1AA3566F00CD1820 /* merge_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4D1AA3566F00CD1820 /* merge_icon.png */; };
-		ABDC0A9D1AA3566F00CD1820 /* Miscellaneous_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4E1AA3566F00CD1820 /* Miscellaneous_icon@2x.png */; };
-		ABDC0A9E1AA3566F00CD1820 /* option_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A4F1AA3566F00CD1820 /* option_icon.png */; };
-		ABDC0A9F1AA3566F00CD1820 /* Personal Care_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A501AA3566F00CD1820 /* Personal Care_icon.png */; };
-		ABDC0AA01AA3566F00CD1820 /* popup_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A511AA3566F00CD1820 /* popup_bg.png */; };
-		ABDC0AA11AA3566F00CD1820 /* Provident Fund_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A521AA3566F00CD1820 /* Provident Fund_icon.png */; };
-		ABDC0AA21AA3566F00CD1820 /* Rent_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A531AA3566F00CD1820 /* Rent_icon.png */; };
-		ABDC0AA31AA3566F00CD1820 /* Salary_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A541AA3566F00CD1820 /* Salary_icon.png */; };
-		ABDC0AA41AA3566F00CD1820 /* Tax Payments_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A551AA3566F00CD1820 /* Tax Payments_icon.png */; };
-		ABDC0AA51AA3566F00CD1820 /* ver_line.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A561AA3566F00CD1820 /* ver_line.png */; };
-		ABDC0AA61AA3566F00CD1820 /* Wages_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A571AA3566F00CD1820 /* Wages_icon.png */; };
 		ABDC0AA71AA3566F00CD1820 /* subcategory_line.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A581AA3566F00CD1820 /* subcategory_line.png */; };
 		ABDC0AA81AA3566F00CD1820 /* Cash icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A5B1AA3566F00CD1820 /* Cash icon.png */; };
 		ABDC0AA91AA3566F00CD1820 /* cash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A5C1AA3566F00CD1820 /* cash@2x.png */; };
@@ -950,7 +854,6 @@
 		ABDC0B061AA4713500CD1820 /* big_transfer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0AD41AA4713500CD1820 /* big_transfer_icon@2x.png */; };
 		ABDC0B071AA4713500CD1820 /* big_warranty_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0AD51AA4713500CD1820 /* big_warranty_icon.png */; };
 		ABDC0B081AA4713500CD1820 /* big_warranty_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0AD61AA4713500CD1820 /* big_warranty_icon@2x.png */; };
-		ABDC0B091AA4713500CD1820 /* Miscellaneous_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0AD71AA4713500CD1820 /* Miscellaneous_icon.png */; };
 		ABDC0B0A1AA4713500CD1820 /* ReSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0AD91AA4713500CD1820 /* ReSetPasswordViewController.m */; };
 		ABDC0B0B1AA4713500CD1820 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ADC1AA4713500CD1820 /* EmailViewController.m */; };
 		ABDC0B0C1AA4713500CD1820 /* ExportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ADE1AA4713500CD1820 /* ExportViewController.m */; };
@@ -1055,6 +958,78 @@
 		ABDC0C221AA4944E00CD1820 /* TrasferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0C1B1AA4944E00CD1820 /* TrasferCell.m */; };
 		ABDC0C241AA49EED00CD1820 /* errow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C231AA49EED00CD1820 /* errow_down.png */; };
 		ABDC0C261AA4A0E000CD1820 /* dropdown_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C251AA4A0E000CD1820 /* dropdown_icon.png */; };
+		ABDC0C771AA515F500CD1820 /* Auto_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C291AA515F500CD1820 /* Auto_icon.png */; };
+		ABDC0C781AA515F500CD1820 /* Bill-Payments_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2A1AA515F500CD1820 /* Bill-Payments_icon.png */; };
+		ABDC0C791AA515F500CD1820 /* Books-Stationary_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2B1AA515F500CD1820 /* Books-Stationary_icon.png */; };
+		ABDC0C7A1AA515F500CD1820 /* Clothing_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2C1AA515F500CD1820 /* Clothing_icon.png */; };
+		ABDC0C7B1AA515F500CD1820 /* Educational-Cost_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2D1AA515F500CD1820 /* Educational-Cost_icon.png */; };
+		ABDC0C7C1AA515F500CD1820 /* Electronics_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2E1AA515F500CD1820 /* Electronics_icon.png */; };
+		ABDC0C7D1AA515F500CD1820 /* entertainment_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C2F1AA515F500CD1820 /* entertainment_icon.png */; };
+		ABDC0C7E1AA515F500CD1820 /* Food_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C301AA515F500CD1820 /* Food_icon.png */; };
+		ABDC0C7F1AA515F500CD1820 /* Gifts_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C311AA515F500CD1820 /* Gifts_icon.png */; };
+		ABDC0C801AA515F500CD1820 /* Groceries_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C321AA515F500CD1820 /* Groceries_icon.png */; };
+		ABDC0C811AA515F500CD1820 /* Medical_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C331AA515F500CD1820 /* Medical_icon.png */; };
+		ABDC0C821AA515F500CD1820 /* Miscellaneous_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C341AA515F500CD1820 /* Miscellaneous_icon.png */; };
+		ABDC0C831AA515F500CD1820 /* Personal-Care-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C351AA515F500CD1820 /* Personal-Care-icon.png */; };
+		ABDC0C841AA515F500CD1820 /* Rent_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C361AA515F500CD1820 /* Rent_icon.png */; };
+		ABDC0C851AA515F500CD1820 /* tax_payments.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C371AA515F500CD1820 /* tax_payments.png */; };
+		ABDC0C861AA515F500CD1820 /* travel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C381AA515F500CD1820 /* travel_icon.png */; };
+		ABDC0C871AA515F500CD1820 /* Auto_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3A1AA515F500CD1820 /* Auto_icon@2x.png */; };
+		ABDC0C881AA515F500CD1820 /* Bill-Payments_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3B1AA515F500CD1820 /* Bill-Payments_icon@2x.png */; };
+		ABDC0C891AA515F500CD1820 /* Books-Stationary_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3C1AA515F500CD1820 /* Books-Stationary_icon@2x.png */; };
+		ABDC0C8A1AA515F500CD1820 /* Clothing_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3D1AA515F500CD1820 /* Clothing_icon@2x.png */; };
+		ABDC0C8B1AA515F500CD1820 /* Educational-Cost_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3E1AA515F500CD1820 /* Educational-Cost_icon@2x.png */; };
+		ABDC0C8C1AA515F500CD1820 /* Electronics_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C3F1AA515F500CD1820 /* Electronics_icon@2x.png */; };
+		ABDC0C8D1AA515F500CD1820 /* entertainment_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C401AA515F500CD1820 /* entertainment_icon@2x.png */; };
+		ABDC0C8E1AA515F500CD1820 /* Food_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C411AA515F500CD1820 /* Food_icon@2x.png */; };
+		ABDC0C8F1AA515F500CD1820 /* Gifts_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C421AA515F500CD1820 /* Gifts_icon@2x.png */; };
+		ABDC0C901AA515F500CD1820 /* Groceries_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C431AA515F500CD1820 /* Groceries_icon@2x.png */; };
+		ABDC0C911AA515F500CD1820 /* Medical_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C441AA515F500CD1820 /* Medical_icon@2x.png */; };
+		ABDC0C921AA515F500CD1820 /* Miscellaneous_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C451AA515F500CD1820 /* Miscellaneous_icon@2x.png */; };
+		ABDC0C931AA515F500CD1820 /* Personal-Care-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C461AA515F500CD1820 /* Personal-Care-icon@2x.png */; };
+		ABDC0C941AA515F500CD1820 /* Rent_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C471AA515F500CD1820 /* Rent_icon@2x.png */; };
+		ABDC0C951AA515F500CD1820 /* tax_payments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C481AA515F500CD1820 /* tax_payments@2x.png */; };
+		ABDC0C961AA515F500CD1820 /* travel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C491AA515F500CD1820 /* travel_icon@2x.png */; };
+		ABDC0C971AA515F500CD1820 /* Auto_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C4B1AA515F500CD1820 /* Auto_icon@3x.png */; };
+		ABDC0C981AA515F500CD1820 /* Bill-Payments_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C4C1AA515F500CD1820 /* Bill-Payments_icon@3x.png */; };
+		ABDC0C991AA515F500CD1820 /* Books-Stationary_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C4D1AA515F500CD1820 /* Books-Stationary_icon@3x.png */; };
+		ABDC0C9A1AA515F500CD1820 /* Clothing_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C4E1AA515F500CD1820 /* Clothing_icon@3x.png */; };
+		ABDC0C9B1AA515F500CD1820 /* Educational-Cost_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C4F1AA515F500CD1820 /* Educational-Cost_icon@3x.png */; };
+		ABDC0C9C1AA515F500CD1820 /* Electronics_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C501AA515F500CD1820 /* Electronics_icon@3x.png */; };
+		ABDC0C9D1AA515F500CD1820 /* entertainment_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C511AA515F500CD1820 /* entertainment_icon@3x.png */; };
+		ABDC0C9E1AA515F500CD1820 /* Food_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C521AA515F500CD1820 /* Food_icon@3x.png */; };
+		ABDC0C9F1AA515F500CD1820 /* Gifts_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C531AA515F500CD1820 /* Gifts_icon@3x.png */; };
+		ABDC0CA01AA515F500CD1820 /* Groceries_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C541AA515F500CD1820 /* Groceries_icon@3x.png */; };
+		ABDC0CA11AA515F500CD1820 /* Medical_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C551AA515F500CD1820 /* Medical_icon@3x.png */; };
+		ABDC0CA21AA515F500CD1820 /* Miscellaneous_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C561AA515F500CD1820 /* Miscellaneous_icon@3x.png */; };
+		ABDC0CA31AA515F500CD1820 /* Personal-Care-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C571AA515F500CD1820 /* Personal-Care-icon@3x.png */; };
+		ABDC0CA41AA515F500CD1820 /* Rent_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C581AA515F500CD1820 /* Rent_icon@3x.png */; };
+		ABDC0CA51AA515F500CD1820 /* tax_payments@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C591AA515F500CD1820 /* tax_payments@3x.png */; };
+		ABDC0CA61AA515F500CD1820 /* travel_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C5A1AA515F500CD1820 /* travel_icon@3x.png */; };
+		ABDC0CA71AA515F500CD1820 /* Annuity-or-pension_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C5D1AA515F500CD1820 /* Annuity-or-pension_icon.png */; };
+		ABDC0CA81AA515F500CD1820 /* Capital-Gains_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C5E1AA515F500CD1820 /* Capital-Gains_icon.png */; };
+		ABDC0CA91AA515F500CD1820 /* House-property-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C5F1AA515F500CD1820 /* House-property-icon.png */; };
+		ABDC0CAA1AA515F500CD1820 /* Interest-recieved_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C601AA515F500CD1820 /* Interest-recieved_icon.png */; };
+		ABDC0CAB1AA515F500CD1820 /* Mediclaim_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C611AA515F500CD1820 /* Mediclaim_icon.png */; };
+		ABDC0CAC1AA515F500CD1820 /* provident_fund.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C621AA515F500CD1820 /* provident_fund.png */; };
+		ABDC0CAD1AA515F500CD1820 /* Salary_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C631AA515F500CD1820 /* Salary_icon.png */; };
+		ABDC0CAE1AA515F500CD1820 /* Wages_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C641AA515F500CD1820 /* Wages_icon.png */; };
+		ABDC0CAF1AA515F500CD1820 /* Annuity-or-pension_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C661AA515F500CD1820 /* Annuity-or-pension_icon@2x.png */; };
+		ABDC0CB01AA515F500CD1820 /* Capital-Gains_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C671AA515F500CD1820 /* Capital-Gains_icon@2x.png */; };
+		ABDC0CB11AA515F500CD1820 /* House-property-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C681AA515F500CD1820 /* House-property-icon@2x.png */; };
+		ABDC0CB21AA515F500CD1820 /* Interest-recieved_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C691AA515F500CD1820 /* Interest-recieved_icon@2x.png */; };
+		ABDC0CB31AA515F500CD1820 /* Mediclaim_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C6A1AA515F500CD1820 /* Mediclaim_icon@2x.png */; };
+		ABDC0CB41AA515F500CD1820 /* provident_fund@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C6B1AA515F500CD1820 /* provident_fund@2x.png */; };
+		ABDC0CB51AA515F500CD1820 /* Salary_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C6C1AA515F500CD1820 /* Salary_icon@2x.png */; };
+		ABDC0CB61AA515F500CD1820 /* Wages_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C6D1AA515F500CD1820 /* Wages_icon@2x.png */; };
+		ABDC0CB71AA515F500CD1820 /* Annuity-or-pension_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C6F1AA515F500CD1820 /* Annuity-or-pension_icon@3x.png */; };
+		ABDC0CB81AA515F500CD1820 /* Capital-Gains_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C701AA515F500CD1820 /* Capital-Gains_icon@3x.png */; };
+		ABDC0CB91AA515F500CD1820 /* House-property-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C711AA515F500CD1820 /* House-property-icon@3x.png */; };
+		ABDC0CBA1AA515F500CD1820 /* Interest-recieved_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C721AA515F500CD1820 /* Interest-recieved_icon@3x.png */; };
+		ABDC0CBB1AA515F500CD1820 /* Mediclaim_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C731AA515F500CD1820 /* Mediclaim_icon@3x.png */; };
+		ABDC0CBC1AA515F500CD1820 /* provident_fund@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C741AA515F500CD1820 /* provident_fund@3x.png */; };
+		ABDC0CBD1AA515F500CD1820 /* Salary_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C751AA515F500CD1820 /* Salary_icon@3x.png */; };
+		ABDC0CBE1AA515F500CD1820 /* Wages_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0C761AA515F500CD1820 /* Wages_icon@3x.png */; };
 		ABF9933D1A9F35A5005DC589 /* email_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF993101A9F35A5005DC589 /* email_icon.png */; };
 		ABF9933E1A9F35A5005DC589 /* g+_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF993111A9F35A5005DC589 /* g+_icon.png */; };
 		ABF9933F1A9F35A5005DC589 /* g+signin_button.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF993121A9F35A5005DC589 /* g+signin_button.png */; };
@@ -1920,8 +1895,6 @@
 		AB25EAFD1AA1049E002D1CAD /* LocationRepresentingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationRepresentingCell.h; sourceTree = "<group>"; };
 		AB25EAFE1AA1049E002D1CAD /* LocationRepresentingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationRepresentingCell.m; sourceTree = "<group>"; };
 		AB25EAFF1AA1049E002D1CAD /* LocationRepresentingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationRepresentingCell.xib; sourceTree = "<group>"; };
-		AB25EB011AA1049E002D1CAD /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
-		AB25EB021AA1049E002D1CAD /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		AB25EB071AA1049E002D1CAD /* FeedItemServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItemServices.h; sourceTree = "<group>"; };
 		AB25EB081AA1049E002D1CAD /* FeedItemServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItemServices.m; sourceTree = "<group>"; };
 		AB25EB201AA10663002D1CAD /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
@@ -2247,38 +2220,6 @@
 		AB25ED371AA32F6F002D1CAD /* warranty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warranty@3x.png"; sourceTree = "<group>"; };
 		AB25ED381AA32F6F002D1CAD /* weekly@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weekly@3x.png"; sourceTree = "<group>"; };
 		AB25ED391AA32F6F002D1CAD /* yearly@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yearly@3x.png"; sourceTree = "<group>"; };
-		AB25EDC81AA3332D002D1CAD /* allcategories_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "allcategories_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDC91AA3332D002D1CAD /* Annuity-or-pension_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity-or-pension_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCA1AA3332D002D1CAD /* Auto_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Auto_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCB1AA3332D002D1CAD /* Bill-Payments_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill-Payments_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCC1AA3332D002D1CAD /* Books-Stationary_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books-Stationary_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCD1AA3332D002D1CAD /* Capital-Gains_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital-Gains_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCE1AA3332D002D1CAD /* Clothing_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clothing_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDCF1AA3332D002D1CAD /* delete_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD01AA3332D002D1CAD /* edit_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD11AA3332D002D1CAD /* Educational-Cost_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational-Cost_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD21AA3332D002D1CAD /* Electronics_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Electronics_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD31AA3332D002D1CAD /* entertainment_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entertainment_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD41AA3332D002D1CAD /* Food_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD51AA3332D002D1CAD /* Gifts_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gifts_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD61AA3332D002D1CAD /* Groceries_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Groceries_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD71AA3332D002D1CAD /* hor_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hor_line@3x.png"; sourceTree = "<group>"; };
-		AB25EDD81AA3332D002D1CAD /* House-property-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House-property-icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDD91AA3332D002D1CAD /* House_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDA1AA3332D002D1CAD /* Interest-recieved_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest-recieved_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDB1AA3332D002D1CAD /* Medical_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medical_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDC1AA3332D002D1CAD /* Mediclaim_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mediclaim_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDD1AA3332D002D1CAD /* merge_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "merge_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDE1AA3332D002D1CAD /* Miscellaneous_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miscellaneous_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDDF1AA3332D002D1CAD /* option_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "option_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE01AA3332D002D1CAD /* Personal-Care_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal-Care_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE11AA3332D002D1CAD /* popup_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@3x.png"; sourceTree = "<group>"; };
-		AB25EDE21AA3332D002D1CAD /* Rent_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rent_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE31AA3332D002D1CAD /* Salary_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Salary_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE41AA3332D002D1CAD /* Tax-Paymens_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tax-Paymens_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE51AA3332D002D1CAD /* travel_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel_icon@3x.png"; sourceTree = "<group>"; };
-		AB25EDE61AA3332D002D1CAD /* ver_line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver_line@3x.png"; sourceTree = "<group>"; };
-		AB25EDE71AA3332D002D1CAD /* Wages_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wages_icon@3x.png"; sourceTree = "<group>"; };
 		AB25EE091AA34238002D1CAD /* CreatePaymentModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePaymentModeViewController.h; sourceTree = "<group>"; };
 		AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePaymentModeViewController.m; sourceTree = "<group>"; };
 		AB25EE0B1AA34238002D1CAD /* PaymentModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModeViewController.h; sourceTree = "<group>"; };
@@ -2295,69 +2236,6 @@
 		ABA8EF221AA09E0A0006A123 /* AddTransactionViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController..m; sourceTree = "<group>"; };
 		ABA8EF231AA09E0A0006A123 /* AddTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
 		ABA8EF591AA0A4550006A123 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
-		ABDC0A181AA3566E00CD1820 /* allcategories_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "allcategories_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A191AA3566E00CD1820 /* Annuity or pension_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity or pension_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1A1AA3566E00CD1820 /* Auto_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Auto_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1B1AA3566E00CD1820 /* Bill Payments_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill Payments_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1C1AA3566E00CD1820 /* Books Stationary_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books Stationary_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1D1AA3566E00CD1820 /* Capital Gains_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital Gains_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1E1AA3566E00CD1820 /* Clothing_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clothing_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A1F1AA3566E00CD1820 /* delete_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A201AA3566E00CD1820 /* edit_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A211AA3566E00CD1820 /* Educational Cost_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational Cost_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A221AA3566E00CD1820 /* Electronics_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Electronics_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A231AA3566E00CD1820 /* entertainment_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entertainment_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A241AA3566E00CD1820 /* Food_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A251AA3566E00CD1820 /* Gifts_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gifts_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A261AA3566E00CD1820 /* Groceries_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Groceries_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A271AA3566E00CD1820 /* hor_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hor_line@2x.png"; sourceTree = "<group>"; };
-		ABDC0A281AA3566E00CD1820 /* House property icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House property icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A291AA3566E00CD1820 /* House_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2A1AA3566E00CD1820 /* Interest recieved_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest recieved_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2B1AA3566E00CD1820 /* Medical_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medical_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2C1AA3566E00CD1820 /* Mediclaim_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mediclaim_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2D1AA3566E00CD1820 /* merge_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "merge_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2E1AA3566E00CD1820 /* option_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "option_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A2F1AA3566E00CD1820 /* Personal Care_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal Care_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A301AA3566E00CD1820 /* popup_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_bg@2x.png"; sourceTree = "<group>"; };
-		ABDC0A311AA3566E00CD1820 /* Rent_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rent_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A321AA3566E00CD1820 /* Salary_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Salary_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A331AA3566E00CD1820 /* Tax Paymens_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tax Paymens_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A341AA3566E00CD1820 /* travel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A351AA3566E00CD1820 /* ver_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ver_line@2x.png"; sourceTree = "<group>"; };
-		ABDC0A361AA3566E00CD1820 /* Wages_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wages_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A381AA3566E00CD1820 /* All_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All_icon.png; sourceTree = "<group>"; };
-		ABDC0A391AA3566E00CD1820 /* allcategories_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allcategories_icon.png; sourceTree = "<group>"; };
-		ABDC0A3A1AA3566E00CD1820 /* Annuity or pension_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity or pension_icon.png"; sourceTree = "<group>"; };
-		ABDC0A3B1AA3566E00CD1820 /* Auto_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Auto_icon.png; sourceTree = "<group>"; };
-		ABDC0A3C1AA3566E00CD1820 /* Bill Payments_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill Payments_icon.png"; sourceTree = "<group>"; };
-		ABDC0A3D1AA3566E00CD1820 /* Books Stationary_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books Stationary_icon.png"; sourceTree = "<group>"; };
-		ABDC0A3E1AA3566E00CD1820 /* Capital Gains_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital Gains_icon.png"; sourceTree = "<group>"; };
-		ABDC0A3F1AA3566E00CD1820 /* Clothing_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clothing_icon.png; sourceTree = "<group>"; };
-		ABDC0A401AA3566E00CD1820 /* delete_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_icon.png; sourceTree = "<group>"; };
-		ABDC0A411AA3566E00CD1820 /* edit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_icon.png; sourceTree = "<group>"; };
-		ABDC0A421AA3566E00CD1820 /* Educational Cost_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational Cost_icon.png"; sourceTree = "<group>"; };
-		ABDC0A431AA3566E00CD1820 /* Electronics_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Electronics_icon.png; sourceTree = "<group>"; };
-		ABDC0A441AA3566E00CD1820 /* Food_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Food_icon.png; sourceTree = "<group>"; };
-		ABDC0A451AA3566E00CD1820 /* Gifts_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gifts_icon.png; sourceTree = "<group>"; };
-		ABDC0A461AA3566E00CD1820 /* Groceries_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groceries_icon.png; sourceTree = "<group>"; };
-		ABDC0A471AA3566E00CD1820 /* hor_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hor_line.png; sourceTree = "<group>"; };
-		ABDC0A481AA3566E00CD1820 /* House property_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House property_icon.png"; sourceTree = "<group>"; };
-		ABDC0A491AA3566E00CD1820 /* House_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = House_icon.png; sourceTree = "<group>"; };
-		ABDC0A4A1AA3566E00CD1820 /* Interest recieved_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest recieved_icon.png"; sourceTree = "<group>"; };
-		ABDC0A4B1AA3566E00CD1820 /* Medical_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Medical_icon.png; sourceTree = "<group>"; };
-		ABDC0A4C1AA3566E00CD1820 /* Mediclaim_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mediclaim_icon.png; sourceTree = "<group>"; };
-		ABDC0A4D1AA3566F00CD1820 /* merge_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = merge_icon.png; sourceTree = "<group>"; };
-		ABDC0A4E1AA3566F00CD1820 /* Miscellaneous_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miscellaneous_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0A4F1AA3566F00CD1820 /* option_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = option_icon.png; sourceTree = "<group>"; };
-		ABDC0A501AA3566F00CD1820 /* Personal Care_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal Care_icon.png"; sourceTree = "<group>"; };
-		ABDC0A511AA3566F00CD1820 /* popup_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_bg.png; sourceTree = "<group>"; };
-		ABDC0A521AA3566F00CD1820 /* Provident Fund_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Provident Fund_icon.png"; sourceTree = "<group>"; };
-		ABDC0A531AA3566F00CD1820 /* Rent_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rent_icon.png; sourceTree = "<group>"; };
-		ABDC0A541AA3566F00CD1820 /* Salary_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Salary_icon.png; sourceTree = "<group>"; };
-		ABDC0A551AA3566F00CD1820 /* Tax Payments_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tax Payments_icon.png"; sourceTree = "<group>"; };
-		ABDC0A561AA3566F00CD1820 /* ver_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ver_line.png; sourceTree = "<group>"; };
-		ABDC0A571AA3566F00CD1820 /* Wages_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wages_icon.png; sourceTree = "<group>"; };
 		ABDC0A581AA3566F00CD1820 /* subcategory_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subcategory_line.png; sourceTree = "<group>"; };
 		ABDC0A5B1AA3566F00CD1820 /* Cash icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cash icon.png"; sourceTree = "<group>"; };
 		ABDC0A5C1AA3566F00CD1820 /* cash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cash@2x.png"; sourceTree = "<group>"; };
@@ -2397,7 +2275,6 @@
 		ABDC0AD41AA4713500CD1820 /* big_transfer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_transfer_icon@2x.png"; sourceTree = "<group>"; };
 		ABDC0AD51AA4713500CD1820 /* big_warranty_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = big_warranty_icon.png; sourceTree = "<group>"; };
 		ABDC0AD61AA4713500CD1820 /* big_warranty_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "big_warranty_icon@2x.png"; sourceTree = "<group>"; };
-		ABDC0AD71AA4713500CD1820 /* Miscellaneous_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Miscellaneous_icon.png; sourceTree = "<group>"; };
 		ABDC0AD81AA4713500CD1820 /* ReSetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetPasswordViewController.h; sourceTree = "<group>"; };
 		ABDC0AD91AA4713500CD1820 /* ReSetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReSetPasswordViewController.m; sourceTree = "<group>"; };
 		ABDC0ADB1AA4713500CD1820 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailViewController.h; sourceTree = "<group>"; };
@@ -2586,6 +2463,78 @@
 		ABDC0C1B1AA4944E00CD1820 /* TrasferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrasferCell.m; sourceTree = "<group>"; };
 		ABDC0C231AA49EED00CD1820 /* errow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errow_down.png; sourceTree = "<group>"; };
 		ABDC0C251AA4A0E000CD1820 /* dropdown_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdown_icon.png; sourceTree = "<group>"; };
+		ABDC0C291AA515F500CD1820 /* Auto_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Auto_icon.png; sourceTree = "<group>"; };
+		ABDC0C2A1AA515F500CD1820 /* Bill-Payments_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill-Payments_icon.png"; sourceTree = "<group>"; };
+		ABDC0C2B1AA515F500CD1820 /* Books-Stationary_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books-Stationary_icon.png"; sourceTree = "<group>"; };
+		ABDC0C2C1AA515F500CD1820 /* Clothing_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clothing_icon.png; sourceTree = "<group>"; };
+		ABDC0C2D1AA515F500CD1820 /* Educational-Cost_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational-Cost_icon.png"; sourceTree = "<group>"; };
+		ABDC0C2E1AA515F500CD1820 /* Electronics_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Electronics_icon.png; sourceTree = "<group>"; };
+		ABDC0C2F1AA515F500CD1820 /* entertainment_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = entertainment_icon.png; sourceTree = "<group>"; };
+		ABDC0C301AA515F500CD1820 /* Food_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Food_icon.png; sourceTree = "<group>"; };
+		ABDC0C311AA515F500CD1820 /* Gifts_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gifts_icon.png; sourceTree = "<group>"; };
+		ABDC0C321AA515F500CD1820 /* Groceries_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Groceries_icon.png; sourceTree = "<group>"; };
+		ABDC0C331AA515F500CD1820 /* Medical_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Medical_icon.png; sourceTree = "<group>"; };
+		ABDC0C341AA515F500CD1820 /* Miscellaneous_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Miscellaneous_icon.png; sourceTree = "<group>"; };
+		ABDC0C351AA515F500CD1820 /* Personal-Care-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal-Care-icon.png"; sourceTree = "<group>"; };
+		ABDC0C361AA515F500CD1820 /* Rent_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rent_icon.png; sourceTree = "<group>"; };
+		ABDC0C371AA515F500CD1820 /* tax_payments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tax_payments.png; sourceTree = "<group>"; };
+		ABDC0C381AA515F500CD1820 /* travel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel_icon.png; sourceTree = "<group>"; };
+		ABDC0C3A1AA515F500CD1820 /* Auto_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Auto_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C3B1AA515F500CD1820 /* Bill-Payments_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill-Payments_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C3C1AA515F500CD1820 /* Books-Stationary_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books-Stationary_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C3D1AA515F500CD1820 /* Clothing_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clothing_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C3E1AA515F500CD1820 /* Educational-Cost_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational-Cost_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C3F1AA515F500CD1820 /* Electronics_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Electronics_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C401AA515F500CD1820 /* entertainment_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entertainment_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C411AA515F500CD1820 /* Food_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C421AA515F500CD1820 /* Gifts_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gifts_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C431AA515F500CD1820 /* Groceries_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Groceries_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C441AA515F500CD1820 /* Medical_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medical_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C451AA515F500CD1820 /* Miscellaneous_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miscellaneous_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C461AA515F500CD1820 /* Personal-Care-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal-Care-icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C471AA515F500CD1820 /* Rent_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rent_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C481AA515F500CD1820 /* tax_payments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tax_payments@2x.png"; sourceTree = "<group>"; };
+		ABDC0C491AA515F500CD1820 /* travel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C4B1AA515F500CD1820 /* Auto_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Auto_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C4C1AA515F500CD1820 /* Bill-Payments_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bill-Payments_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C4D1AA515F500CD1820 /* Books-Stationary_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Books-Stationary_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C4E1AA515F500CD1820 /* Clothing_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Clothing_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C4F1AA515F500CD1820 /* Educational-Cost_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Educational-Cost_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C501AA515F500CD1820 /* Electronics_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Electronics_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C511AA515F500CD1820 /* entertainment_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "entertainment_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C521AA515F500CD1820 /* Food_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Food_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C531AA515F500CD1820 /* Gifts_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gifts_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C541AA515F500CD1820 /* Groceries_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Groceries_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C551AA515F500CD1820 /* Medical_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medical_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C561AA515F500CD1820 /* Miscellaneous_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Miscellaneous_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C571AA515F500CD1820 /* Personal-Care-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Personal-Care-icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C581AA515F500CD1820 /* Rent_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rent_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C591AA515F500CD1820 /* tax_payments@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tax_payments@3x.png"; sourceTree = "<group>"; };
+		ABDC0C5A1AA515F500CD1820 /* travel_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "travel_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C5D1AA515F500CD1820 /* Annuity-or-pension_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity-or-pension_icon.png"; sourceTree = "<group>"; };
+		ABDC0C5E1AA515F500CD1820 /* Capital-Gains_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital-Gains_icon.png"; sourceTree = "<group>"; };
+		ABDC0C5F1AA515F500CD1820 /* House-property-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House-property-icon.png"; sourceTree = "<group>"; };
+		ABDC0C601AA515F500CD1820 /* Interest-recieved_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest-recieved_icon.png"; sourceTree = "<group>"; };
+		ABDC0C611AA515F500CD1820 /* Mediclaim_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mediclaim_icon.png; sourceTree = "<group>"; };
+		ABDC0C621AA515F500CD1820 /* provident_fund.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = provident_fund.png; sourceTree = "<group>"; };
+		ABDC0C631AA515F500CD1820 /* Salary_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Salary_icon.png; sourceTree = "<group>"; };
+		ABDC0C641AA515F500CD1820 /* Wages_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wages_icon.png; sourceTree = "<group>"; };
+		ABDC0C661AA515F500CD1820 /* Annuity-or-pension_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity-or-pension_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C671AA515F500CD1820 /* Capital-Gains_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital-Gains_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C681AA515F500CD1820 /* House-property-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House-property-icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C691AA515F500CD1820 /* Interest-recieved_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest-recieved_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C6A1AA515F500CD1820 /* Mediclaim_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mediclaim_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C6B1AA515F500CD1820 /* provident_fund@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "provident_fund@2x.png"; sourceTree = "<group>"; };
+		ABDC0C6C1AA515F500CD1820 /* Salary_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Salary_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C6D1AA515F500CD1820 /* Wages_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wages_icon@2x.png"; sourceTree = "<group>"; };
+		ABDC0C6F1AA515F500CD1820 /* Annuity-or-pension_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Annuity-or-pension_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C701AA515F500CD1820 /* Capital-Gains_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capital-Gains_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C711AA515F500CD1820 /* House-property-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House-property-icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C721AA515F500CD1820 /* Interest-recieved_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Interest-recieved_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C731AA515F500CD1820 /* Mediclaim_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mediclaim_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C741AA515F500CD1820 /* provident_fund@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "provident_fund@3x.png"; sourceTree = "<group>"; };
+		ABDC0C751AA515F500CD1820 /* Salary_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Salary_icon@3x.png"; sourceTree = "<group>"; };
+		ABDC0C761AA515F500CD1820 /* Wages_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wages_icon@3x.png"; sourceTree = "<group>"; };
 		ABF993101A9F35A5005DC589 /* email_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email_icon.png; sourceTree = "<group>"; };
 		ABF993111A9F35A5005DC589 /* g+_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g+_icon.png"; sourceTree = "<group>"; };
 		ABF993121A9F35A5005DC589 /* g+signin_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "g+signin_button.png"; sourceTree = "<group>"; };
@@ -4733,8 +4682,6 @@
 		AB25EB001AA1049E002D1CAD /* Global Data */ = {
 			isa = PBXGroup;
 			children = (
-				AB25EB011AA1049E002D1CAD /* GlobalData.h */,
-				AB25EB021AA1049E002D1CAD /* GlobalData.m */,
 			);
 			path = "Global Data";
 			sourceTree = "<group>";
@@ -4799,9 +4746,10 @@
 		AB25EB691AA25FD2002D1CAD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				ABDC0C271AA515F500CD1820 /* Expense Icons */,
+				ABDC0C5B1AA515F500CD1820 /* Income Icons */,
 				AB25EB8B1AA27412002D1CAD /* AddCatageryListViewController.h */,
 				AB25EB8C1AA27412002D1CAD /* AddCatageryListViewController.m */,
-				AB25EDC71AA3332D002D1CAD /* 640X1136 */,
 				AB25ECAA1AA32F6F002D1CAD /* 30@1x */,
 				AB25ECDA1AA32F6F002D1CAD /* 60@2x */,
 				AB25ED0A1AA32F6F002D1CAD /* 90@3x */,
@@ -5154,45 +5102,6 @@
 			path = "90@3x";
 			sourceTree = "<group>";
 		};
-		AB25EDC71AA3332D002D1CAD /* 640X1136 */ = {
-			isa = PBXGroup;
-			children = (
-				AB25EDC81AA3332D002D1CAD /* allcategories_icon@3x.png */,
-				AB25EDC91AA3332D002D1CAD /* Annuity-or-pension_icon@3x.png */,
-				AB25EDCA1AA3332D002D1CAD /* Auto_icon@3x.png */,
-				AB25EDCB1AA3332D002D1CAD /* Bill-Payments_icon@3x.png */,
-				AB25EDCC1AA3332D002D1CAD /* Books-Stationary_icon@3x.png */,
-				AB25EDCD1AA3332D002D1CAD /* Capital-Gains_icon@3x.png */,
-				AB25EDCE1AA3332D002D1CAD /* Clothing_icon@3x.png */,
-				AB25EDCF1AA3332D002D1CAD /* delete_icon@3x.png */,
-				AB25EDD01AA3332D002D1CAD /* edit_icon@3x.png */,
-				AB25EDD11AA3332D002D1CAD /* Educational-Cost_icon@3x.png */,
-				AB25EDD21AA3332D002D1CAD /* Electronics_icon@3x.png */,
-				AB25EDD31AA3332D002D1CAD /* entertainment_icon@3x.png */,
-				AB25EDD41AA3332D002D1CAD /* Food_icon@3x.png */,
-				AB25EDD51AA3332D002D1CAD /* Gifts_icon@3x.png */,
-				AB25EDD61AA3332D002D1CAD /* Groceries_icon@3x.png */,
-				AB25EDD71AA3332D002D1CAD /* hor_line@3x.png */,
-				AB25EDD81AA3332D002D1CAD /* House-property-icon@3x.png */,
-				AB25EDD91AA3332D002D1CAD /* House_icon@3x.png */,
-				AB25EDDA1AA3332D002D1CAD /* Interest-recieved_icon@3x.png */,
-				AB25EDDB1AA3332D002D1CAD /* Medical_icon@3x.png */,
-				AB25EDDC1AA3332D002D1CAD /* Mediclaim_icon@3x.png */,
-				AB25EDDD1AA3332D002D1CAD /* merge_icon@3x.png */,
-				AB25EDDE1AA3332D002D1CAD /* Miscellaneous_icon@3x.png */,
-				AB25EDDF1AA3332D002D1CAD /* option_icon@3x.png */,
-				AB25EDE01AA3332D002D1CAD /* Personal-Care_icon@3x.png */,
-				AB25EDE11AA3332D002D1CAD /* popup_bg@3x.png */,
-				AB25EDE21AA3332D002D1CAD /* Rent_icon@3x.png */,
-				AB25EDE31AA3332D002D1CAD /* Salary_icon@3x.png */,
-				AB25EDE41AA3332D002D1CAD /* Tax-Paymens_icon@3x.png */,
-				AB25EDE51AA3332D002D1CAD /* travel_icon@3x.png */,
-				AB25EDE61AA3332D002D1CAD /* ver_line@3x.png */,
-				AB25EDE71AA3332D002D1CAD /* Wages_icon@3x.png */,
-			);
-			path = 640X1136;
-			sourceTree = "<group>";
-		};
 		AB25EE081AA34238002D1CAD /* PaymentMode */ = {
 			isa = PBXGroup;
 			children = (
@@ -5224,88 +5133,9 @@
 		ABDC0A161AA3566E00CD1820 /* categories icons */ = {
 			isa = PBXGroup;
 			children = (
-				ABDC0A171AA3566E00CD1820 /* 640X1136 */,
-				ABDC0A371AA3566E00CD1820 /* 640X960 */,
 				ABDC0A581AA3566F00CD1820 /* subcategory_line.png */,
 			);
 			path = "categories icons";
-			sourceTree = "<group>";
-		};
-		ABDC0A171AA3566E00CD1820 /* 640X1136 */ = {
-			isa = PBXGroup;
-			children = (
-				ABDC0A181AA3566E00CD1820 /* allcategories_icon@2x.png */,
-				ABDC0A191AA3566E00CD1820 /* Annuity or pension_icon@2x.png */,
-				ABDC0A1A1AA3566E00CD1820 /* Auto_icon@2x.png */,
-				ABDC0A1B1AA3566E00CD1820 /* Bill Payments_icon@2x.png */,
-				ABDC0A1C1AA3566E00CD1820 /* Books Stationary_icon@2x.png */,
-				ABDC0A1D1AA3566E00CD1820 /* Capital Gains_icon@2x.png */,
-				ABDC0A1E1AA3566E00CD1820 /* Clothing_icon@2x.png */,
-				ABDC0A1F1AA3566E00CD1820 /* delete_icon@2x.png */,
-				ABDC0A201AA3566E00CD1820 /* edit_icon@2x.png */,
-				ABDC0A211AA3566E00CD1820 /* Educational Cost_icon@2x.png */,
-				ABDC0A221AA3566E00CD1820 /* Electronics_icon@2x.png */,
-				ABDC0A231AA3566E00CD1820 /* entertainment_icon@2x.png */,
-				ABDC0A241AA3566E00CD1820 /* Food_icon@2x.png */,
-				ABDC0A251AA3566E00CD1820 /* Gifts_icon@2x.png */,
-				ABDC0A261AA3566E00CD1820 /* Groceries_icon@2x.png */,
-				ABDC0A271AA3566E00CD1820 /* hor_line@2x.png */,
-				ABDC0A281AA3566E00CD1820 /* House property icon@2x.png */,
-				ABDC0A291AA3566E00CD1820 /* House_icon@2x.png */,
-				ABDC0A2A1AA3566E00CD1820 /* Interest recieved_icon@2x.png */,
-				ABDC0A2B1AA3566E00CD1820 /* Medical_icon@2x.png */,
-				ABDC0A2C1AA3566E00CD1820 /* Mediclaim_icon@2x.png */,
-				ABDC0A2D1AA3566E00CD1820 /* merge_icon@2x.png */,
-				ABDC0A2E1AA3566E00CD1820 /* option_icon@2x.png */,
-				ABDC0A2F1AA3566E00CD1820 /* Personal Care_icon@2x.png */,
-				ABDC0A301AA3566E00CD1820 /* popup_bg@2x.png */,
-				ABDC0A311AA3566E00CD1820 /* Rent_icon@2x.png */,
-				ABDC0A321AA3566E00CD1820 /* Salary_icon@2x.png */,
-				ABDC0A331AA3566E00CD1820 /* Tax Paymens_icon@2x.png */,
-				ABDC0A341AA3566E00CD1820 /* travel_icon@2x.png */,
-				ABDC0A351AA3566E00CD1820 /* ver_line@2x.png */,
-				ABDC0A361AA3566E00CD1820 /* Wages_icon@2x.png */,
-			);
-			path = 640X1136;
-			sourceTree = "<group>";
-		};
-		ABDC0A371AA3566E00CD1820 /* 640X960 */ = {
-			isa = PBXGroup;
-			children = (
-				ABDC0A381AA3566E00CD1820 /* All_icon.png */,
-				ABDC0A391AA3566E00CD1820 /* allcategories_icon.png */,
-				ABDC0A3A1AA3566E00CD1820 /* Annuity or pension_icon.png */,
-				ABDC0A3B1AA3566E00CD1820 /* Auto_icon.png */,
-				ABDC0A3C1AA3566E00CD1820 /* Bill Payments_icon.png */,
-				ABDC0A3D1AA3566E00CD1820 /* Books Stationary_icon.png */,
-				ABDC0A3E1AA3566E00CD1820 /* Capital Gains_icon.png */,
-				ABDC0A3F1AA3566E00CD1820 /* Clothing_icon.png */,
-				ABDC0A401AA3566E00CD1820 /* delete_icon.png */,
-				ABDC0A411AA3566E00CD1820 /* edit_icon.png */,
-				ABDC0A421AA3566E00CD1820 /* Educational Cost_icon.png */,
-				ABDC0A431AA3566E00CD1820 /* Electronics_icon.png */,
-				ABDC0A441AA3566E00CD1820 /* Food_icon.png */,
-				ABDC0A451AA3566E00CD1820 /* Gifts_icon.png */,
-				ABDC0A461AA3566E00CD1820 /* Groceries_icon.png */,
-				ABDC0A471AA3566E00CD1820 /* hor_line.png */,
-				ABDC0A481AA3566E00CD1820 /* House property_icon.png */,
-				ABDC0A491AA3566E00CD1820 /* House_icon.png */,
-				ABDC0A4A1AA3566E00CD1820 /* Interest recieved_icon.png */,
-				ABDC0A4B1AA3566E00CD1820 /* Medical_icon.png */,
-				ABDC0A4C1AA3566E00CD1820 /* Mediclaim_icon.png */,
-				ABDC0A4D1AA3566F00CD1820 /* merge_icon.png */,
-				ABDC0A4E1AA3566F00CD1820 /* Miscellaneous_icon@2x.png */,
-				ABDC0A4F1AA3566F00CD1820 /* option_icon.png */,
-				ABDC0A501AA3566F00CD1820 /* Personal Care_icon.png */,
-				ABDC0A511AA3566F00CD1820 /* popup_bg.png */,
-				ABDC0A521AA3566F00CD1820 /* Provident Fund_icon.png */,
-				ABDC0A531AA3566F00CD1820 /* Rent_icon.png */,
-				ABDC0A541AA3566F00CD1820 /* Salary_icon.png */,
-				ABDC0A551AA3566F00CD1820 /* Tax Payments_icon.png */,
-				ABDC0A561AA3566F00CD1820 /* ver_line.png */,
-				ABDC0A571AA3566F00CD1820 /* Wages_icon.png */,
-			);
-			path = 640X960;
 			sourceTree = "<group>";
 		};
 		ABDC0A591AA3566F00CD1820 /* payemntmode */ = {
@@ -5392,7 +5222,6 @@
 				ABDC0AD41AA4713500CD1820 /* big_transfer_icon@2x.png */,
 				ABDC0AD51AA4713500CD1820 /* big_warranty_icon.png */,
 				ABDC0AD61AA4713500CD1820 /* big_warranty_icon@2x.png */,
-				ABDC0AD71AA4713500CD1820 /* Miscellaneous_icon.png */,
 			);
 			path = "blank screen";
 			sourceTree = "<group>";
@@ -5777,6 +5606,140 @@
 			path = 3x;
 			sourceTree = "<group>";
 		};
+		ABDC0C271AA515F500CD1820 /* Expense Icons */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C281AA515F500CD1820 /* 1x */,
+				ABDC0C391AA515F500CD1820 /* 2x */,
+				ABDC0C4A1AA515F500CD1820 /* 3x */,
+			);
+			path = "Expense Icons";
+			sourceTree = "<group>";
+		};
+		ABDC0C281AA515F500CD1820 /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C291AA515F500CD1820 /* Auto_icon.png */,
+				ABDC0C2A1AA515F500CD1820 /* Bill-Payments_icon.png */,
+				ABDC0C2B1AA515F500CD1820 /* Books-Stationary_icon.png */,
+				ABDC0C2C1AA515F500CD1820 /* Clothing_icon.png */,
+				ABDC0C2D1AA515F500CD1820 /* Educational-Cost_icon.png */,
+				ABDC0C2E1AA515F500CD1820 /* Electronics_icon.png */,
+				ABDC0C2F1AA515F500CD1820 /* entertainment_icon.png */,
+				ABDC0C301AA515F500CD1820 /* Food_icon.png */,
+				ABDC0C311AA515F500CD1820 /* Gifts_icon.png */,
+				ABDC0C321AA515F500CD1820 /* Groceries_icon.png */,
+				ABDC0C331AA515F500CD1820 /* Medical_icon.png */,
+				ABDC0C341AA515F500CD1820 /* Miscellaneous_icon.png */,
+				ABDC0C351AA515F500CD1820 /* Personal-Care-icon.png */,
+				ABDC0C361AA515F500CD1820 /* Rent_icon.png */,
+				ABDC0C371AA515F500CD1820 /* tax_payments.png */,
+				ABDC0C381AA515F500CD1820 /* travel_icon.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		ABDC0C391AA515F500CD1820 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C3A1AA515F500CD1820 /* Auto_icon@2x.png */,
+				ABDC0C3B1AA515F500CD1820 /* Bill-Payments_icon@2x.png */,
+				ABDC0C3C1AA515F500CD1820 /* Books-Stationary_icon@2x.png */,
+				ABDC0C3D1AA515F500CD1820 /* Clothing_icon@2x.png */,
+				ABDC0C3E1AA515F500CD1820 /* Educational-Cost_icon@2x.png */,
+				ABDC0C3F1AA515F500CD1820 /* Electronics_icon@2x.png */,
+				ABDC0C401AA515F500CD1820 /* entertainment_icon@2x.png */,
+				ABDC0C411AA515F500CD1820 /* Food_icon@2x.png */,
+				ABDC0C421AA515F500CD1820 /* Gifts_icon@2x.png */,
+				ABDC0C431AA515F500CD1820 /* Groceries_icon@2x.png */,
+				ABDC0C441AA515F500CD1820 /* Medical_icon@2x.png */,
+				ABDC0C451AA515F500CD1820 /* Miscellaneous_icon@2x.png */,
+				ABDC0C461AA515F500CD1820 /* Personal-Care-icon@2x.png */,
+				ABDC0C471AA515F500CD1820 /* Rent_icon@2x.png */,
+				ABDC0C481AA515F500CD1820 /* tax_payments@2x.png */,
+				ABDC0C491AA515F500CD1820 /* travel_icon@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		ABDC0C4A1AA515F500CD1820 /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C4B1AA515F500CD1820 /* Auto_icon@3x.png */,
+				ABDC0C4C1AA515F500CD1820 /* Bill-Payments_icon@3x.png */,
+				ABDC0C4D1AA515F500CD1820 /* Books-Stationary_icon@3x.png */,
+				ABDC0C4E1AA515F500CD1820 /* Clothing_icon@3x.png */,
+				ABDC0C4F1AA515F500CD1820 /* Educational-Cost_icon@3x.png */,
+				ABDC0C501AA515F500CD1820 /* Electronics_icon@3x.png */,
+				ABDC0C511AA515F500CD1820 /* entertainment_icon@3x.png */,
+				ABDC0C521AA515F500CD1820 /* Food_icon@3x.png */,
+				ABDC0C531AA515F500CD1820 /* Gifts_icon@3x.png */,
+				ABDC0C541AA515F500CD1820 /* Groceries_icon@3x.png */,
+				ABDC0C551AA515F500CD1820 /* Medical_icon@3x.png */,
+				ABDC0C561AA515F500CD1820 /* Miscellaneous_icon@3x.png */,
+				ABDC0C571AA515F500CD1820 /* Personal-Care-icon@3x.png */,
+				ABDC0C581AA515F500CD1820 /* Rent_icon@3x.png */,
+				ABDC0C591AA515F500CD1820 /* tax_payments@3x.png */,
+				ABDC0C5A1AA515F500CD1820 /* travel_icon@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		ABDC0C5B1AA515F500CD1820 /* Income Icons */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C5C1AA515F500CD1820 /* 50@1x */,
+				ABDC0C651AA515F500CD1820 /* 60@2x */,
+				ABDC0C6E1AA515F500CD1820 /* 90@3x */,
+			);
+			path = "Income Icons";
+			sourceTree = "<group>";
+		};
+		ABDC0C5C1AA515F500CD1820 /* 50@1x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C5D1AA515F500CD1820 /* Annuity-or-pension_icon.png */,
+				ABDC0C5E1AA515F500CD1820 /* Capital-Gains_icon.png */,
+				ABDC0C5F1AA515F500CD1820 /* House-property-icon.png */,
+				ABDC0C601AA515F500CD1820 /* Interest-recieved_icon.png */,
+				ABDC0C611AA515F500CD1820 /* Mediclaim_icon.png */,
+				ABDC0C621AA515F500CD1820 /* provident_fund.png */,
+				ABDC0C631AA515F500CD1820 /* Salary_icon.png */,
+				ABDC0C641AA515F500CD1820 /* Wages_icon.png */,
+			);
+			path = "50@1x";
+			sourceTree = "<group>";
+		};
+		ABDC0C651AA515F500CD1820 /* 60@2x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C661AA515F500CD1820 /* Annuity-or-pension_icon@2x.png */,
+				ABDC0C671AA515F500CD1820 /* Capital-Gains_icon@2x.png */,
+				ABDC0C681AA515F500CD1820 /* House-property-icon@2x.png */,
+				ABDC0C691AA515F500CD1820 /* Interest-recieved_icon@2x.png */,
+				ABDC0C6A1AA515F500CD1820 /* Mediclaim_icon@2x.png */,
+				ABDC0C6B1AA515F500CD1820 /* provident_fund@2x.png */,
+				ABDC0C6C1AA515F500CD1820 /* Salary_icon@2x.png */,
+				ABDC0C6D1AA515F500CD1820 /* Wages_icon@2x.png */,
+			);
+			path = "60@2x";
+			sourceTree = "<group>";
+		};
+		ABDC0C6E1AA515F500CD1820 /* 90@3x */ = {
+			isa = PBXGroup;
+			children = (
+				ABDC0C6F1AA515F500CD1820 /* Annuity-or-pension_icon@3x.png */,
+				ABDC0C701AA515F500CD1820 /* Capital-Gains_icon@3x.png */,
+				ABDC0C711AA515F500CD1820 /* House-property-icon@3x.png */,
+				ABDC0C721AA515F500CD1820 /* Interest-recieved_icon@3x.png */,
+				ABDC0C731AA515F500CD1820 /* Mediclaim_icon@3x.png */,
+				ABDC0C741AA515F500CD1820 /* provident_fund@3x.png */,
+				ABDC0C751AA515F500CD1820 /* Salary_icon@3x.png */,
+				ABDC0C761AA515F500CD1820 /* Wages_icon@3x.png */,
+			);
+			path = "90@3x";
+			sourceTree = "<group>";
+		};
 		ABF9930C1A9F35A5005DC589 /* First Screen Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -5990,27 +5953,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A8B7361A9E6A8500C29520 /* appicon.png in Resources */,
-				AB25EDF11AA3332D002D1CAD /* Educational-Cost_icon@3x.png in Resources */,
 				AB25EA751AA1047F002D1CAD /* arrow_left@2x.png in Resources */,
+				ABDC0C891AA515F500CD1820 /* Books-Stationary_icon@2x.png in Resources */,
 				AB25EC551AA27412002D1CAD /* Mozambique.png in Resources */,
+				ABDC0C7B1AA515F500CD1820 /* Educational-Cost_icon.png in Resources */,
 				AB25EC0D1AA27412002D1CAD /* Albania.png in Resources */,
 				ABDC0AB21AA3566F00CD1820 /* Credit Card icon.png in Resources */,
-				ABDC0A851AA3566F00CD1820 /* ver_line@2x.png in Resources */,
 				AB25EB561AA1EB2E002D1CAD /* clothing_icon@3x.png in Resources */,
 				AB25ED801AA32F6F002D1CAD /* import@2x.png in Resources */,
-				ABDC0A781AA3566F00CD1820 /* House property icon@2x.png in Resources */,
-				ABDC0A6F1AA3566F00CD1820 /* delete_icon@2x.png in Resources */,
 				AB25EA341AA1047F002D1CAD /* signin_normal@2x.png in Resources */,
 				AB25EDAF1AA32F6F002D1CAD /* import@3x.png in Resources */,
 				ABF994671AA06A56005DC589 /* bg@3x.jpg in Resources */,
+				ABDC0CB31AA515F500CD1820 /* Mediclaim_icon@2x.png in Resources */,
 				AB25ED651AA32F6F002D1CAD /* view_report.png in Resources */,
 				AB25EA9E1AA1047F002D1CAD /* NotificationButtonBackground.png in Resources */,
 				19A8B73E1A9E6A8500C29520 /* Default-Portrait.png in Resources */,
 				AB25EAB61AA1047F002D1CAD /* UzysAssetPickerController.bundle in Resources */,
 				AB25ED661AA32F6F002D1CAD /* warranty.png in Resources */,
+				ABDC0CA91AA515F500CD1820 /* House-property-icon.png in Resources */,
 				AB25E93A1AA1047F002D1CAD /* holder.png in Resources */,
+				ABDC0CB61AA515F500CD1820 /* Wages_icon@2x.png in Resources */,
+				ABDC0C911AA515F500CD1820 /* Medical_icon@2x.png in Resources */,
 				AB25EC371AA27412002D1CAD /* Guatemala.png in Resources */,
-				ABDC0A8C1AA3566F00CD1820 /* Books Stationary_icon.png in Resources */,
 				AB25EC141AA27412002D1CAD /* Bangladesh.png in Resources */,
 				AB25EC531AA27412002D1CAD /* Mexico.png in Resources */,
 				AB25ED981AA32F6F002D1CAD /* account@3x.png in Resources */,
@@ -6024,13 +5988,13 @@
 				AB25ED951AA32F6F002D1CAD /* warranty@2x.png in Resources */,
 				AB25EA921AA1047F002D1CAD /* NotificationBackgroundErrorIcon.png in Resources */,
 				AB25E94F1AA1047F002D1CAD /* Activity_Whatsapp@2x.png in Resources */,
-				ABDC0A951AA3566F00CD1820 /* Groceries_icon.png in Resources */,
 				AB25EA431AA1047F002D1CAD /* help_active@3x.png in Resources */,
-				ABDC0A7B1AA3566F00CD1820 /* Medical_icon@2x.png in Resources */,
 				AB25EB511AA1EB2E002D1CAD /* rupee_icon@2x.png in Resources */,
 				AB25ED491AA32F6F002D1CAD /* export_data.png in Resources */,
+				ABDC0CBC1AA515F500CD1820 /* provident_fund@3x.png in Resources */,
+				ABDC0C801AA515F500CD1820 /* Groceries_icon.png in Resources */,
 				AB25EC1B1AA27412002D1CAD /* Botswana.png in Resources */,
-				ABDC0A691AA3566F00CD1820 /* Annuity or pension_icon@2x.png in Resources */,
+				ABDC0CA71AA515F500CD1820 /* Annuity-or-pension_icon.png in Resources */,
 				ABF993551A9F35A5005DC589 /* tick@2x.png in Resources */,
 				ABF993631A9F35A5005DC589 /* tick@3x.png in Resources */,
 				AB25E95B1AA1047F002D1CAD /* icon-checkbox-selected-green-25x25.png in Resources */,
@@ -6048,14 +6012,17 @@
 				ABF9942A1A9F4DC9005DC589 /* remember_box_check.png in Resources */,
 				AB25EA9F1AA1047F002D1CAD /* NotificationButtonBackground@2x.png in Resources */,
 				AB25ED5C1AA32F6F002D1CAD /* provident_fund.png in Resources */,
+				ABDC0C7E1AA515F500CD1820 /* Food_icon.png in Resources */,
 				ABF9943F1A9FAB5B005DC589 /* add_button@2x.png in Resources */,
 				AB25ED411AA32F6F002D1CAD /* credit_card.png in Resources */,
+				ABDC0C8B1AA515F500CD1820 /* Educational-Cost_icon@2x.png in Resources */,
 				AB25EC841AA27412002D1CAD /* Vietnam.png in Resources */,
 				AB25EDAE1AA32F6F002D1CAD /* house_property@3x.png in Resources */,
 				AB25EB461AA1EB2E002D1CAD /* description_icon.png in Resources */,
 				AB25EDB71AA32F6F002D1CAD /* password_lock@3x.png in Resources */,
 				AB25EC5B1AA27412002D1CAD /* Nigeria.png in Resources */,
 				AB25ED731AA32F6F002D1CAD /* customer_support@2x.png in Resources */,
+				ABDC0CB21AA515F500CD1820 /* Interest-recieved_icon@2x.png in Resources */,
 				AB25EA7D1AA1047F002D1CAD /* calendar_littledot@2x.png in Resources */,
 				AB25EA511AA1047F002D1CAD /* setting_normal@3x.png in Resources */,
 				AB25EC7A1AA27412002D1CAD /* Tunisia.png in Resources */,
@@ -6063,36 +6030,39 @@
 				ABF9943E1A9FAB5B005DC589 /* add@2x.png in Resources */,
 				AB25ED781AA32F6F002D1CAD /* export_data@2x.png in Resources */,
 				AB25EA991AA1047F002D1CAD /* NotificationBackgroundSuccessIcon@2x.png in Resources */,
+				ABDC0CB11AA515F500CD1820 /* House-property-icon@2x.png in Resources */,
 				19A8B72C1A9E6A8500C29520 /* appicon-72@2x.png in Resources */,
 				AB25EA761AA1047F002D1CAD /* arrow_right.png in Resources */,
 				AB25EDB41AA32F6F002D1CAD /* monthly@3x.png in Resources */,
+				ABDC0CB51AA515F500CD1820 /* Salary_icon@2x.png in Resources */,
 				AB25EC4B1AA27412002D1CAD /* Latvia.png in Resources */,
-				ABDC0A7F1AA3566F00CD1820 /* Personal Care_icon@2x.png in Resources */,
 				AB25ED451AA32F6F002D1CAD /* debitcard.png in Resources */,
 				ABF993611A9F35A5005DC589 /* slider@3x.png in Resources */,
 				AB25ED7E1AA32F6F002D1CAD /* home@2x.png in Resources */,
 				AB25EC691AA27412002D1CAD /* Saudi Arabia.png in Resources */,
+				ABDC0CBA1AA515F500CD1820 /* Interest-recieved_icon@3x.png in Resources */,
 				AB25EA131AA1047F002D1CAD /* setting_normal.png in Resources */,
 				AB25EA031AA1047F002D1CAD /* dashboard_normal.png in Resources */,
 				19A8B7401A9E6A8500C29520 /* Default.png in Resources */,
-				ABDC0A9F1AA3566F00CD1820 /* Personal Care_icon.png in Resources */,
+				ABDC0C771AA515F500CD1820 /* Auto_icon.png in Resources */,
+				ABDC0CAC1AA515F500CD1820 /* provident_fund.png in Resources */,
 				AB25EA501AA1047F002D1CAD /* setting_active@3x.png in Resources */,
 				AB25ED4C1AA32F6F002D1CAD /* grocery.png in Resources */,
 				AB25ED9E1AA32F6F002D1CAD /* clothing@3x.png in Resources */,
-				AB25EDEE1AA3332D002D1CAD /* Clothing_icon@3x.png in Resources */,
 				AB25EA841AA1047F002D1CAD /* dialog_clear.png in Resources */,
+				ABDC0CA61AA515F500CD1820 /* travel_icon@3x.png in Resources */,
 				AB25EC111AA27412002D1CAD /* Australia.png in Resources */,
-				AB25EE061AA3332D002D1CAD /* ver_line@3x.png in Resources */,
 				AB25EC4E1AA27412002D1CAD /* Lithuania.png in Resources */,
 				ABF994511A9FBB07005DC589 /* warranty.png in Resources */,
+				ABDC0C9F1AA515F500CD1820 /* Gifts_icon@3x.png in Resources */,
+				ABDC0C8F1AA515F500CD1820 /* Gifts_icon@2x.png in Resources */,
+				ABDC0CBB1AA515F500CD1820 /* Mediclaim_icon@3x.png in Resources */,
 				AB25EA981AA1047F002D1CAD /* NotificationBackgroundSuccessIcon.png in Resources */,
 				AB25EA051AA1047F002D1CAD /* help_active.png in Resources */,
 				AB25EA3C1AA1047F002D1CAD /* category_active@3x.png in Resources */,
-				ABDC0A811AA3566F00CD1820 /* Rent_icon@2x.png in Resources */,
 				19A8B72D1A9E6A8500C29520 /* appicon-76.png in Resources */,
 				AB25ED541AA32F6F002D1CAD /* mail.png in Resources */,
 				AB25ED5F1AA32F6F002D1CAD /* rupee.png in Resources */,
-				ABDC0AA41AA3566F00CD1820 /* Tax Payments_icon.png in Resources */,
 				ABF993601A9F35A5005DC589 /* rememberme_box@3x.png in Resources */,
 				AB25EA391AA1047F002D1CAD /* arrow@3x.png in Resources */,
 				AB25ED9F1AA32F6F002D1CAD /* credit_card@3x.png in Resources */,
@@ -6102,64 +6072,54 @@
 				ABF9942E1A9F4DDA005DC589 /* remember_box_check@3x.png in Resources */,
 				AB25EC3E1AA27412002D1CAD /* India.png in Resources */,
 				AB25EA831AA1047F002D1CAD /* dialog_clear-disabled@2x.png in Resources */,
-				ABDC0A6A1AA3566F00CD1820 /* Auto_icon@2x.png in Resources */,
 				AB25EB591AA1EB2E002D1CAD /* forward_button@3x.png in Resources */,
 				AB25EB481AA1EB2E002D1CAD /* rupee_icon.png in Resources */,
 				AB25EC0F1AA27412002D1CAD /* Angola.png in Resources */,
 				ABDC0C021AA4909B00CD1820 /* reminder&recurring@2x.png in Resources */,
 				1940B2AD1A3391160065D84F /* OpenSans-BoldItalic_2.ttf in Resources */,
-				ABDC0A8A1AA3566F00CD1820 /* Auto_icon.png in Resources */,
 				AB25EC4F1AA27412002D1CAD /* Macedonia.png in Resources */,
 				AB25E9DC1AA1047F002D1CAD /* KVNProgressView.xib in Resources */,
 				AB25EC1C1AA27412002D1CAD /* Brazil.png in Resources */,
 				AB25EC231AA27412002D1CAD /* Colombia.png in Resources */,
-				AB25EDE91AA3332D002D1CAD /* Annuity-or-pension_icon@3x.png in Resources */,
+				ABDC0C841AA515F500CD1820 /* Rent_icon.png in Resources */,
+				ABDC0C821AA515F500CD1820 /* Miscellaneous_icon.png in Resources */,
 				AB25ED551AA32F6F002D1CAD /* medical.png in Resources */,
 				AB25ED971AA32F6F002D1CAD /* yearly@2x.png in Resources */,
 				AB25EA9D1AA1047F002D1CAD /* NotificationBackgroundWarningIcon@2x.png in Resources */,
 				AB25EA741AA1047F002D1CAD /* arrow_left.png in Resources */,
-				ABDC0A881AA3566F00CD1820 /* allcategories_icon.png in Resources */,
 				AB25EA171AA1047F002D1CAD /* transfer_normal.png in Resources */,
 				ABF993451A9F35A5005DC589 /* slider.png in Resources */,
 				ABF9935E1A9F35A5005DC589 /* or_icon@3x.png in Resources */,
-				ABDC0A861AA3566F00CD1820 /* Wages_icon@2x.png in Resources */,
 				AB25EC541AA27412002D1CAD /* Mongolia.png in Resources */,
 				AB25EDB91AA32F6F002D1CAD /* pic@3x.png in Resources */,
 				ABF9934C1A9F35A5005DC589 /* g+_icon@2x.png in Resources */,
 				ABDC0B001AA4713500CD1820 /* big_budget_icon@2x.png in Resources */,
-				AB25EDEB1AA3332D002D1CAD /* Bill-Payments_icon@3x.png in Resources */,
 				AB25EC2B1AA27412002D1CAD /* Egypt.png in Resources */,
 				AB25EC671AA27412002D1CAD /* Russia.png in Resources */,
-				ABDC0B091AA4713500CD1820 /* Miscellaneous_icon.png in Resources */,
 				AB25EC661AA27412002D1CAD /* Romania.png in Resources */,
 				AB25EA6B1AA1047F002D1CAD /* SIAlertView.bundle in Resources */,
+				ABDC0C8A1AA515F500CD1820 /* Clothing_icon@2x.png in Resources */,
 				19A8B72F1A9E6A8500C29520 /* appicon-Small-40.png in Resources */,
 				AB25EA001AA1047F002D1CAD /* circle.png in Resources */,
 				AB25EA411AA1047F002D1CAD /* dashboard_normal@3x.png in Resources */,
 				ABF994501A9FBB07005DC589 /* viewhistory.png in Resources */,
 				AB25EA291AA1047F002D1CAD /* likeus_normal@2x.png in Resources */,
-				ABDC0A941AA3566F00CD1820 /* Gifts_icon.png in Resources */,
 				1940B2AE1A3391160065D84F /* OpenSans-ExtraBold_1.ttf in Resources */,
 				ABDC0B041AA4713500CD1820 /* big_reminder_icon@2x.png in Resources */,
-				ABDC0A6E1AA3566F00CD1820 /* Clothing_icon@2x.png in Resources */,
 				19A8B7351A9E6A8500C29520 /* appicon-Small@3x.png in Resources */,
 				AB25EC3F1AA27412002D1CAD /* Indonesia.png in Resources */,
 				AB25EAAD1AA1047F002D1CAD /* buttonbg@2x.png in Resources */,
 				AB25ED701AA32F6F002D1CAD /* credit_card@2x.png in Resources */,
 				AB25EA321AA1047F002D1CAD /* setting_normal@2x.png in Resources */,
-				ABDC0A961AA3566F00CD1820 /* hor_line.png in Resources */,
 				19A8B7421A9E6A8500C29520 /* iTunesArtwork in Resources */,
-				ABDC0A981AA3566F00CD1820 /* House_icon.png in Resources */,
 				ABDC0BF51AA4875100CD1820 /* add@2x.png in Resources */,
 				AB25ED601AA32F6F002D1CAD /* search.png in Resources */,
 				AB25EC711AA27412002D1CAD /* Sri Lanka.png in Resources */,
-				AB25EDF71AA3332D002D1CAD /* hor_line@3x.png in Resources */,
 				ABA8EF191AA09D2E0006A123 /* server_error@2x.png in Resources */,
 				19A8B73D1A9E6A8500C29520 /* Default-Portrait-736h@3x.png in Resources */,
+				ABDC0CB91AA515F500CD1820 /* House-property-icon@3x.png in Resources */,
 				AB25EA121AA1047F002D1CAD /* setting_active.png in Resources */,
-				AB25EDFD1AA3332D002D1CAD /* merge_icon@3x.png in Resources */,
 				AB25EA151AA1047F002D1CAD /* signin_normal.png in Resources */,
-				AB25EDF01AA3332D002D1CAD /* edit_icon@3x.png in Resources */,
 				AB25EA9C1AA1047F002D1CAD /* NotificationBackgroundWarningIcon.png in Resources */,
 				AB25EC161AA27412002D1CAD /* Belize.png in Resources */,
 				AB25EA021AA1047F002D1CAD /* dashboard_active.png in Resources */,
@@ -6167,42 +6127,42 @@
 				AB25ED581AA32F6F002D1CAD /* password.png in Resources */,
 				AB25EB471AA1EB2E002D1CAD /* forward_button.png in Resources */,
 				1940B2B21A3391160065D84F /* OpenSans-LightItalic_1.ttf in Resources */,
-				AB25EDED1AA3332D002D1CAD /* Capital-Gains_icon@3x.png in Resources */,
 				AB25EC401AA27412002D1CAD /* Iran.png in Resources */,
 				AB25ED6E1AA32F6F002D1CAD /* clock@2x.png in Resources */,
 				AB25ED561AA32F6F002D1CAD /* monthly.png in Resources */,
-				AB25EDEF1AA3332D002D1CAD /* delete_icon@3x.png in Resources */,
 				AB25ED4F1AA32F6F002D1CAD /* home.png in Resources */,
 				AB25EA0A1AA1047F002D1CAD /* likeus_normal.png in Resources */,
 				ABF993461A9F35A5005DC589 /* slider_1.png in Resources */,
 				AB25ED8E1AA32F6F002D1CAD /* rupee@2x.png in Resources */,
 				ABF993411A9F35A5005DC589 /* login_button.png in Resources */,
-				ABDC0A8B1AA3566F00CD1820 /* Bill Payments_icon.png in Resources */,
 				ABF993531A9F35A5005DC589 /* slider@2x.png in Resources */,
 				AB25E95D1AA1047F002D1CAD /* icon-checkbox-unselected-25x25.png in Resources */,
 				AB25EA4F1AA1047F002D1CAD /* reminder_normal@3x.png in Resources */,
 				AB25EDA01AA32F6F002D1CAD /* currency@3x.png in Resources */,
 				ABDC0B021AA4713500CD1820 /* big_history_icon@2x.png in Resources */,
+				ABDC0C9D1AA515F500CD1820 /* entertainment_icon@3x.png in Resources */,
 				AB25EA191AA1047F002D1CAD /* warranty_normal.png in Resources */,
 				AB25EA061AA1047F002D1CAD /* help_normal.png in Resources */,
 				AB25E9FC1AA1047F002D1CAD /* budgets_active.png in Resources */,
 				AB25EA401AA1047F002D1CAD /* dashboard_active@3x.png in Resources */,
 				AB25EA491AA1047F002D1CAD /* logout_active@3x.png in Resources */,
+				ABDC0CA11AA515F500CD1820 /* Medical_icon@3x.png in Resources */,
 				19A8B7281A9E6A8500C29520 /* appicon-60.png in Resources */,
 				AB25EC521AA27412002D1CAD /* Mauritius.png in Resources */,
 				19A8B7331A9E6A8500C29520 /* appicon-Small.png in Resources */,
 				AB25ED611AA32F6F002D1CAD /* setting.png in Resources */,
 				AB25EA361AA1047F002D1CAD /* transfer_normal@2x.png in Resources */,
 				AB25ED8F1AA32F6F002D1CAD /* search@2x.png in Resources */,
-				ABDC0A9C1AA3566F00CD1820 /* merge_icon.png in Resources */,
 				ABF994631AA06A44005DC589 /* bg@2x.jpg in Resources */,
 				AB25EC201AA27412002D1CAD /* Cayman Islands.png in Resources */,
+				ABDC0C9A1AA515F500CD1820 /* Clothing_icon@3x.png in Resources */,
 				1940B2B51A3391160065D84F /* OpenSans-SemiboldItalic_1.ttf in Resources */,
 				AB25EC751AA27412002D1CAD /* Switzerland.png in Resources */,
 				AB25E9441AA1047F002D1CAD /* bannerNotify.png in Resources */,
 				AB25EA111AA1047F002D1CAD /* reminder_normal.png in Resources */,
+				ABDC0C901AA515F500CD1820 /* Groceries_icon@2x.png in Resources */,
 				AB25ED631AA32F6F002D1CAD /* tax_payments.png in Resources */,
-				ABDC0A6B1AA3566F00CD1820 /* Bill Payments_icon@2x.png in Resources */,
+				ABDC0C9C1AA515F500CD1820 /* Electronics_icon@3x.png in Resources */,
 				ABDC0B071AA4713500CD1820 /* big_warranty_icon.png in Resources */,
 				ABF9935F1A9F35A5005DC589 /* password_icon@3x.png in Resources */,
 				AB25EA911AA1047F002D1CAD /* NotificationBackgroundError@2x.png in Resources */,
@@ -6213,6 +6173,7 @@
 				AB25EB5B1AA1EB2E002D1CAD /* time_icon@3x.png in Resources */,
 				ABDC0B051AA4713500CD1820 /* big_transfer_icon.png in Resources */,
 				AB25EC4D1AA27412002D1CAD /* Liberia.png in Resources */,
+				ABDC0C811AA515F500CD1820 /* Medical_icon.png in Resources */,
 				AB25EA4D1AA1047F002D1CAD /* rateus_normal@3x.png in Resources */,
 				AB25E93B1AA1047F002D1CAD /* holder@2x.png in Resources */,
 				AB25EC601AA27412002D1CAD /* Panama.png in Resources */,
@@ -6227,6 +6188,7 @@
 				AB25EC171AA27412002D1CAD /* Bermuda.png in Resources */,
 				AB25ED941AA32F6F002D1CAD /* view_report@2x.png in Resources */,
 				AB25EA931AA1047F002D1CAD /* NotificationBackgroundErrorIcon@2x.png in Resources */,
+				ABDC0C8E1AA515F500CD1820 /* Food_icon@2x.png in Resources */,
 				AB25EDA11AA32F6F002D1CAD /* customer_care@3x.png in Resources */,
 				AB25EC3D1AA27412002D1CAD /* Iceland.png in Resources */,
 				19A8B7391A9E6A8500C29520 /* Default-667h@2x.png in Resources */,
@@ -6235,54 +6197,56 @@
 				AB25E9461AA1047F002D1CAD /* bannerSuccess.png in Resources */,
 				AB25ED441AA32F6F002D1CAD /* customer_support.png in Resources */,
 				AB25EB4C1AA1EB2E002D1CAD /* cash_icon@2x.png in Resources */,
+				ABDC0C921AA515F500CD1820 /* Miscellaneous_icon@2x.png in Resources */,
 				AB25EC6B1AA27412002D1CAD /* Seychelles.png in Resources */,
-				ABDC0A9D1AA3566F00CD1820 /* Miscellaneous_icon@2x.png in Resources */,
+				ABDC0CAE1AA515F500CD1820 /* Wages_icon.png in Resources */,
 				AB25EA8F1AA1047F002D1CAD /* .gitkeep in Resources */,
 				AB25EC631AA27412002D1CAD /* Philippines.png in Resources */,
-				ABDC0A911AA3566F00CD1820 /* Educational Cost_icon.png in Resources */,
 				AB25EDA41AA32F6F002D1CAD /* description@3x.png in Resources */,
 				AB25EA081AA1047F002D1CAD /* history_normal.png in Resources */,
+				ABDC0CB81AA515F500CD1820 /* Capital-Gains_icon@3x.png in Resources */,
 				AB25EC771AA27412002D1CAD /* Taiwan.png in Resources */,
 				AB25EC461AA27412002D1CAD /* Jersey.png in Resources */,
 				ABDC0AAF1AA3566F00CD1820 /* add-paymentmode.png in Resources */,
 				AB25EA2A1AA1047F002D1CAD /* logout_active@2x.png in Resources */,
 				AB25EC221AA27412002D1CAD /* China.png in Resources */,
 				AB25EA791AA1047F002D1CAD /* calendar_clear-disabled@2x.png in Resources */,
+				ABDC0CA01AA515F500CD1820 /* Groceries_icon@3x.png in Resources */,
+				ABDC0C931AA515F500CD1820 /* Personal-Care-icon@2x.png in Resources */,
 				AB25ED591AA32F6F002D1CAD /* password_lock.png in Resources */,
 				ABF9934A1A9F35A5005DC589 /* dem_icon@2x.png in Resources */,
 				AB25EC621AA27412002D1CAD /* Peru.png in Resources */,
 				AB25EA041AA1047F002D1CAD /* defaultprofile_pic.png in Resources */,
 				AB25EB4B1AA1EB2E002D1CAD /* back_button@2x.png in Resources */,
 				AB25EC0E1AA27412002D1CAD /* Algeria.png in Resources */,
+				ABDC0C871AA515F500CD1820 /* Auto_icon@2x.png in Resources */,
 				AB25EA7B1AA1047F002D1CAD /* calendar_littledot-disabled@2x.png in Resources */,
 				AB25EA471AA1047F002D1CAD /* likeus_active@3x.png in Resources */,
 				AB25EA2B1AA1047F002D1CAD /* logout_normal@2x.png in Resources */,
-				ABDC0AA01AA3566F00CD1820 /* popup_bg.png in Resources */,
-				ABDC0A6C1AA3566F00CD1820 /* Books Stationary_icon@2x.png in Resources */,
 				ABA8EF1F1AA09D360006A123 /* server_error@3x.png in Resources */,
 				AB25EC1D1AA27412002D1CAD /* Bulgaria.png in Resources */,
 				19A8B7311A9E6A8500C29520 /* appicon-Small-50.png in Resources */,
 				AB25EA561AA1047F002D1CAD /* warranty_active@3x.png in Resources */,
-				ABDC0A6D1AA3566F00CD1820 /* Capital Gains_icon@2x.png in Resources */,
 				AB25EDBF1AA32F6F002D1CAD /* setting@3x.png in Resources */,
 				AB25EA0E1AA1047F002D1CAD /* rateus_active.png in Resources */,
 				1940B2B41A3391160065D84F /* OpenSans-Semibold_1.ttf in Resources */,
 				ABF993651A9F35A5005DC589 /* Login_Screen_Screenshot.png in Resources */,
 				AB25ED9A1AA32F6F002D1CAD /* camera@3x.png in Resources */,
 				AB25EB571AA1EB2E002D1CAD /* date_icon@3x.png in Resources */,
+				ABDC0CAD1AA515F500CD1820 /* Salary_icon.png in Resources */,
 				ABA8EF181AA09D2E0006A123 /* food_icon@2x.png in Resources */,
 				AB25EC7F1AA27412002D1CAD /* United Kingdom.png in Resources */,
 				ABDC0AB01AA3566F00CD1820 /* All icon.png in Resources */,
 				AB25EC151AA27412002D1CAD /* Barbados.png in Resources */,
+				ABDC0CA51AA515F500CD1820 /* tax_payments@3x.png in Resources */,
 				ABDC0AAC1AA3566F00CD1820 /* debit card@2x.png in Resources */,
 				AB25EA4C1AA1047F002D1CAD /* rateus_active@3x.png in Resources */,
 				AB25EC861AA27412002D1CAD /* Zimbabwe.png in Resources */,
-				ABDC0A8F1AA3566F00CD1820 /* delete_icon.png in Resources */,
 				ABF993501A9F35A5005DC589 /* or_icon@2x.png in Resources */,
 				AB25EA251AA1047F002D1CAD /* help_normal@2x.png in Resources */,
+				ABDC0C7C1AA515F500CD1820 /* Electronics_icon.png in Resources */,
 				ABDC0AB31AA3566F00CD1820 /* Debit Card icon.png in Resources */,
 				AB25E95A1AA1047F002D1CAD /* icon-avatar-60x60@2x.png in Resources */,
-				ABDC0AA61AA3566F00CD1820 /* Wages_icon.png in Resources */,
 				AB25EDC51AA32F6F002D1CAD /* weekly@3x.png in Resources */,
 				AB25EA571AA1047F002D1CAD /* warranty_normal@3x.png in Resources */,
 				19A8B73B1A9E6A8500C29520 /* Default-Landscape.png in Resources */,
@@ -6304,20 +6268,19 @@
 				AB25ED761AA32F6F002D1CAD /* entertainment@2x.png in Resources */,
 				AB25EC2C1AA27412002D1CAD /* El Salvador.png in Resources */,
 				ABF9933F1A9F35A5005DC589 /* g+signin_button.png in Resources */,
-				ABDC0A771AA3566F00CD1820 /* hor_line@2x.png in Resources */,
 				AB25E93C1AA1047F002D1CAD /* notificationBackground@2x.png in Resources */,
+				ABDC0C9E1AA515F500CD1820 /* Food_icon@3x.png in Resources */,
 				AB25EA011AA1047F002D1CAD /* circle_1.png in Resources */,
-				ABDC0A9E1AA3566F00CD1820 /* option_icon.png in Resources */,
 				AB25EAB81AA1047F002D1CAD /* UzysAssetsPickerController.xib in Resources */,
 				ABF9934F1A9F35A5005DC589 /* login_button@2x.png in Resources */,
-				ABDC0A7C1AA3566F00CD1820 /* Mediclaim_icon@2x.png in Resources */,
 				AB25EC781AA27412002D1CAD /* Thailand.png in Resources */,
 				AB25EA461AA1047F002D1CAD /* history_normal@3x.png in Resources */,
 				AB25EC1F1AA27412002D1CAD /* Canada.png in Resources */,
 				AB25EDC61AA32F6F002D1CAD /* yearly@3x.png in Resources */,
 				AB25ED571AA32F6F002D1CAD /* notification.png in Resources */,
 				AB25EDAC1AA32F6F002D1CAD /* history@3x.png in Resources */,
-				ABDC0A9A1AA3566F00CD1820 /* Medical_icon.png in Resources */,
+				ABDC0C9B1AA515F500CD1820 /* Educational-Cost_icon@3x.png in Resources */,
+				ABDC0CA31AA515F500CD1820 /* Personal-Care-icon@3x.png in Resources */,
 				ABF993481A9F35A5005DC589 /* username_box.png in Resources */,
 				AB25ED9C1AA32F6F002D1CAD /* changelog@3x.png in Resources */,
 				AB25EC331AA27412002D1CAD /* Georgia.png in Resources */,
@@ -6328,21 +6291,23 @@
 				AB25EC6C1AA27412002D1CAD /* Singapore.png in Resources */,
 				AB25EA091AA1047F002D1CAD /* likeus_active.png in Resources */,
 				ABF9934D1A9F35A5005DC589 /* g+signin_button@2x.png in Resources */,
+				ABDC0C941AA515F500CD1820 /* Rent_icon@2x.png in Resources */,
 				AB25EC2A1AA27412002D1CAD /* Eastern Caribbean States.png in Resources */,
 				AB25EA281AA1047F002D1CAD /* likeus_active@2x.png in Resources */,
 				AB25E9391AA1047F002D1CAD /* close@2x.png in Resources */,
 				ABDC0C1C1AA4944E00CD1820 /* transfer_big.png in Resources */,
 				ABF993521A9F35A5005DC589 /* rememberme_box@2x.png in Resources */,
 				AB25EB531AA1EB2E002D1CAD /* addmore_button@3x.png in Resources */,
+				ABDC0C7A1AA515F500CD1820 /* Clothing_icon.png in Resources */,
 				AB25EDB11AA32F6F002D1CAD /* location@3x.png in Resources */,
 				AB25EC491AA27412002D1CAD /* Kyrgyzstan.png in Resources */,
-				AB25EE011AA3332D002D1CAD /* popup_bg@3x.png in Resources */,
-				ABDC0A901AA3566F00CD1820 /* edit_icon.png in Resources */,
 				AB25ED7B1AA32F6F002D1CAD /* grocery@2x.png in Resources */,
+				ABDC0C7D1AA515F500CD1820 /* entertainment_icon.png in Resources */,
 				AB25EB411AA1EB2E002D1CAD /* addmore_button.png in Resources */,
 				1940B2AC1A3391160065D84F /* OpenSans-Bold_2.ttf in Resources */,
 				AB25ED741AA32F6F002D1CAD /* debitcard@2x.png in Resources */,
 				AB25EAAE1AA1047F002D1CAD /* textbg@2x.png in Resources */,
+				ABDC0CAA1AA515F500CD1820 /* Interest-recieved_icon.png in Resources */,
 				AB25EA3B1AA1047F002D1CAD /* budgets_normal@3x.png in Resources */,
 				AB25EB551AA1EB2E002D1CAD /* cash_icon@3x.png in Resources */,
 				AB25ED3D1AA32F6F002D1CAD /* cash.png in Resources */,
@@ -6352,7 +6317,6 @@
 				AB25EC641AA27412002D1CAD /* Poland.png in Resources */,
 				ABF994411A9FAB5B005DC589 /* add@3x.png in Resources */,
 				AB25EA161AA1047F002D1CAD /* transfer_active.png in Resources */,
-				ABDC0A741AA3566F00CD1820 /* Food_icon@2x.png in Resources */,
 				ABDC0AAB1AA3566F00CD1820 /* credit card@2x.png in Resources */,
 				AB25EDB51AA32F6F002D1CAD /* notification@3x.png in Resources */,
 				AB25EA071AA1047F002D1CAD /* history_active.png in Resources */,
@@ -6361,25 +6325,21 @@
 				AB25EA271AA1047F002D1CAD /* history_normal@2x.png in Resources */,
 				AB25ED901AA32F6F002D1CAD /* setting@2x.png in Resources */,
 				AB25ED7D1AA32F6F002D1CAD /* history@2x.png in Resources */,
-				ABDC0A791AA3566F00CD1820 /* House_icon@2x.png in Resources */,
 				AB25EA1C1AA1047F002D1CAD /* budgets_normal@2x.png in Resources */,
 				19A8B72A1A9E6A8500C29520 /* appicon-60@3x.png in Resources */,
+				ABDC0CB71AA515F500CD1820 /* Annuity-or-pension_icon@3x.png in Resources */,
 				ABDC0B031AA4713500CD1820 /* big_reminder_icon.png in Resources */,
 				ABDC0BBB1AA4749400CD1820 /* GTMOAuth2ViewTouch.xib in Resources */,
-				ABDC0A721AA3566F00CD1820 /* Electronics_icon@2x.png in Resources */,
-				AB25EDF81AA3332D002D1CAD /* House-property-icon@3x.png in Resources */,
-				ABDC0A711AA3566F00CD1820 /* Educational Cost_icon@2x.png in Resources */,
 				AB25ED831AA32F6F002D1CAD /* mail@3x.png in Resources */,
 				ABF993541A9F35A5005DC589 /* slider_1@2x.png in Resources */,
 				AB25ED7A1AA32F6F002D1CAD /* gifts@2x.png in Resources */,
 				ABDC0AAD1AA3566F00CD1820 /* overall_icon@2x.png in Resources */,
 				AB25EA311AA1047F002D1CAD /* setting_active@2x.png in Resources */,
 				AB25E9501AA1047F002D1CAD /* BGSS_Localizable.strings in Resources */,
+				ABDC0C791AA515F500CD1820 /* Books-Stationary_icon.png in Resources */,
 				AB25EC211AA27412002D1CAD /* Chile.png in Resources */,
 				AB25ED771AA32F6F002D1CAD /* export@2x.png in Resources */,
 				AB25ED5B1AA32F6F002D1CAD /* pic.png in Resources */,
-				AB25EE071AA3332D002D1CAD /* Wages_icon@3x.png in Resources */,
-				ABDC0A891AA3566F00CD1820 /* Annuity or pension_icon.png in Resources */,
 				AB25EDBA1AA32F6F002D1CAD /* provident_fund@3x.png in Resources */,
 				AB25EC6D1AA27412002D1CAD /* Solomon Islands.png in Resources */,
 				AB25E9431AA1047F002D1CAD /* bannerFailure@2x.png in Resources */,
@@ -6388,10 +6348,8 @@
 				AB25EDA21AA32F6F002D1CAD /* customer_support@3x.png in Resources */,
 				AB25EC611AA27412002D1CAD /* Paraguay.png in Resources */,
 				AB25EAAF1AA1047F002D1CAD /* toolbarbg@2x.png in Resources */,
-				ABDC0A821AA3566F00CD1820 /* Salary_icon@2x.png in Resources */,
 				ABF9943C1A9FAB5B005DC589 /* add_button.png in Resources */,
 				AB25EA861AA1047F002D1CAD /* dialog_ok-disabled.png in Resources */,
-				ABDC0AA31AA3566F00CD1820 /* Salary_icon.png in Resources */,
 				AB25EB451AA1EB2E002D1CAD /* date_icon.png in Resources */,
 				ABDC0AB11AA3566F00CD1820 /* Cheque icon.png in Resources */,
 				ABF993561A9F35A5005DC589 /* username_box@2x.png in Resources */,
@@ -6404,19 +6362,13 @@
 				ABDC0C031AA4909B00CD1820 /* reminder-&-Recurring@3x.png in Resources */,
 				AB25EC5E1AA27412002D1CAD /* Oman.png in Resources */,
 				AB25EA0C1AA1047F002D1CAD /* logout_normal.png in Resources */,
-				ABDC0AA11AA3566F00CD1820 /* Provident Fund_icon.png in Resources */,
-				ABDC0A991AA3566F00CD1820 /* Interest recieved_icon.png in Resources */,
 				ABDC0AA91AA3566F00CD1820 /* cash@2x.png in Resources */,
 				AB25EA7C1AA1047F002D1CAD /* calendar_littledot.png in Resources */,
-				AB25EE031AA3332D002D1CAD /* Salary_icon@3x.png in Resources */,
 				ABF994421A9FAB5B005DC589 /* add_button@3x.png in Resources */,
 				ABDC0AB41AA3566F00CD1820 /* Select-payment-mode.png in Resources */,
 				AB25EB5A1AA1EB2E002D1CAD /* rupee_icon@3x.png in Resources */,
 				ABF9944C1A9FBB07005DC589 /* multipleaccount.png in Resources */,
-				ABDC0A8E1AA3566F00CD1820 /* Clothing_icon.png in Resources */,
-				AB25EE051AA3332D002D1CAD /* travel_icon@3x.png in Resources */,
 				AB25EA2C1AA1047F002D1CAD /* profile_pic@2x.png in Resources */,
-				ABDC0A681AA3566F00CD1820 /* allcategories_icon@2x.png in Resources */,
 				ABF9944B1A9FBB07005DC589 /* budget.png in Resources */,
 				AB25ED721AA32F6F002D1CAD /* customer_care@2x.png in Resources */,
 				ABDC0B121AA4713600CD1820 /* BudgetCell.xib in Resources */,
@@ -6425,11 +6377,9 @@
 				AB25EC681AA27412002D1CAD /* Saint Helena.png in Resources */,
 				AB25EB1C1AA1049E002D1CAD /* LocationRepresentingCell.xib in Resources */,
 				AB25ED461AA32F6F002D1CAD /* description.png in Resources */,
-				ABDC0AA51AA3566F00CD1820 /* ver_line.png in Resources */,
 				ABDC0B061AA4713500CD1820 /* big_transfer_icon@2x.png in Resources */,
 				AB25ED5E1AA32F6F002D1CAD /* reminder.png in Resources */,
 				AB25EA441AA1047F002D1CAD /* help_normal@3x.png in Resources */,
-				AB25EDFA1AA3332D002D1CAD /* Interest-recieved_icon@3x.png in Resources */,
 				AB25E9411AA1047F002D1CAD /* bannerAlert@2x.png in Resources */,
 				ABF9934B1A9F35A5005DC589 /* email_icon@2x.png in Resources */,
 				AB25EA1F1AA1047F002D1CAD /* circle@2x.png in Resources */,
@@ -6439,32 +6389,29 @@
 				AB25ED881AA32F6F002D1CAD /* password_lock@2x.png in Resources */,
 				AB25EC311AA27412002D1CAD /* Fiji.png in Resources */,
 				ABF993581A9F35A5005DC589 /* email_icon@3x.png in Resources */,
-				ABDC0A871AA3566F00CD1820 /* All_icon.png in Resources */,
-				AB25EE021AA3332D002D1CAD /* Rent_icon@3x.png in Resources */,
 				AB25EC321AA27412002D1CAD /* flags.zip in Resources */,
 				AB25EA3A1AA1047F002D1CAD /* budgets_active@3x.png in Resources */,
 				AB25EC411AA27412002D1CAD /* Iraq.png in Resources */,
 				AB25EC591AA27412002D1CAD /* New Zealand.png in Resources */,
 				AB25EC761AA27412002D1CAD /* Syria.png in Resources */,
 				AB25EC7E1AA27412002D1CAD /* United Arab Emirates.png in Resources */,
-				ABDC0A7D1AA3566F00CD1820 /* merge_icon@2x.png in Resources */,
 				AB25EDB21AA32F6F002D1CAD /* mail@3x.png in Resources */,
 				AB25EA901AA1047F002D1CAD /* NotificationBackgroundError.png in Resources */,
 				AB25EC2D1AA27412002D1CAD /* Eritrea.png in Resources */,
+				ABDC0C951AA515F500CD1820 /* tax_payments@2x.png in Resources */,
 				AB25EC241AA27412002D1CAD /* Costa Rica.png in Resources */,
 				AB25EB581AA1EB2E002D1CAD /* description_icon@3x.png in Resources */,
 				AB25ED4E1AA32F6F002D1CAD /* history.png in Resources */,
 				AB25ED6D1AA32F6F002D1CAD /* changelog@2x.png in Resources */,
 				ABF993471A9F35A5005DC589 /* tick.png in Resources */,
+				ABDC0C961AA515F500CD1820 /* travel_icon@2x.png in Resources */,
 				AB25EA1B1AA1047F002D1CAD /* budgets_active@2x.png in Resources */,
-				ABDC0A971AA3566F00CD1820 /* House property_icon.png in Resources */,
 				AB25EA2F1AA1047F002D1CAD /* reminder_active@2x.png in Resources */,
 				AB25EA0F1AA1047F002D1CAD /* rateus_normal.png in Resources */,
 				AB25EC6A1AA27412002D1CAD /* Serbia.png in Resources */,
 				ABDC0BF61AA4875100CD1820 /* add_button@2x.png in Resources */,
 				AB25EA351AA1047F002D1CAD /* transfer_active@2x.png in Resources */,
 				19A8B7371A9E6A8500C29520 /* appicon@2x.png in Resources */,
-				AB25EDEA1AA3332D002D1CAD /* Auto_icon@3x.png in Resources */,
 				ABDC0BF81AA4875100CD1820 /* add@3x.png in Resources */,
 				AB25ED8C1AA32F6F002D1CAD /* rateus@2x.png in Resources */,
 				AB25EC5A1AA27412002D1CAD /* Nicaragua.png in Resources */,
@@ -6475,18 +6422,18 @@
 				AB25EA421AA1047F002D1CAD /* default_profile_pic@3x.png in Resources */,
 				AB25ED8A1AA32F6F002D1CAD /* pic@2x.png in Resources */,
 				AB25EB7C1AA2696D002D1CAD /* Localizable.strings in Resources */,
+				ABDC0CAB1AA515F500CD1820 /* Mediclaim_icon.png in Resources */,
 				AB25EA2E1AA1047F002D1CAD /* rateus_normal@2x.png in Resources */,
 				ABDC0B011AA4713500CD1820 /* big_history_icon.png in Resources */,
 				AB25EC0C1AA27412002D1CAD /* Afghanistan.png in Resources */,
 				AB25ED891AA32F6F002D1CAD /* payment_mode@2x.png in Resources */,
 				AB25EC791AA27412002D1CAD /* Trinidad and Tobago.png in Resources */,
 				AB25EA371AA1047F002D1CAD /* warranty_active@2x.png in Resources */,
-				AB25EE001AA3332D002D1CAD /* Personal-Care_icon@3x.png in Resources */,
 				AB25ED861AA32F6F002D1CAD /* notification@2x.png in Resources */,
 				ABDC0B141AA4713600CD1820 /* HomeViewCell.xib in Resources */,
 				AB25EDC21AA32F6F002D1CAD /* travel@3x.png in Resources */,
 				AB25EB521AA1EB2E002D1CAD /* time_icon@2x.png in Resources */,
-				ABDC0A9B1AA3566F00CD1820 /* Mediclaim_icon.png in Resources */,
+				ABDC0C971AA515F500CD1820 /* Auto_icon@3x.png in Resources */,
 				ABF993401A9F35A5005DC589 /* guestlogin_button.png in Resources */,
 				AB25EA7A1AA1047F002D1CAD /* calendar_littledot-disabled.png in Resources */,
 				AB25EC701AA27412002D1CAD /* South Korea.png in Resources */,
@@ -6503,17 +6450,12 @@
 				19A8B7431A9E6A8500C29520 /* iTunesArtwork@2x in Resources */,
 				AB25EA3F1AA1047F002D1CAD /* circle_1@3x.png in Resources */,
 				AB25EA4A1AA1047F002D1CAD /* logout_normal@3x.png in Resources */,
-				AB25EDF21AA3332D002D1CAD /* Electronics_icon@3x.png in Resources */,
-				AB25EDFB1AA3332D002D1CAD /* Medical_icon@3x.png in Resources */,
 				AB25ED421AA32F6F002D1CAD /* currency.png in Resources */,
-				ABDC0A7A1AA3566F00CD1820 /* Interest recieved_icon@2x.png in Resources */,
 				AB25EC1A1AA27412002D1CAD /* Bosnia and Herzegovina.png in Resources */,
 				AB25ED471AA32F6F002D1CAD /* entertainment.png in Resources */,
-				ABDC0A831AA3566F00CD1820 /* Tax Paymens_icon@2x.png in Resources */,
 				AB25ED811AA32F6F002D1CAD /* likeus@2x.png in Resources */,
 				ABF994431A9FAB5B005DC589 /* menu_button@3x.png in Resources */,
 				AB25EA531AA1047F002D1CAD /* signin_normal@3x.png in Resources */,
-				ABDC0A7E1AA3566F00CD1820 /* option_icon@2x.png in Resources */,
 				ABA8EF121AA09D240006A123 /* food_icon.png in Resources */,
 				AB25EA1E1AA1047F002D1CAD /* category_normal@2x.png in Resources */,
 				AB25E98B1AA1047F002D1CAD /* CountriesFlags36px.xcassets in Resources */,
@@ -6521,15 +6463,16 @@
 				AB25EC441AA27412002D1CAD /* Jamaica.png in Resources */,
 				AB25EA181AA1047F002D1CAD /* warranty_active.png in Resources */,
 				AB25ED621AA32F6F002D1CAD /* sign_in.png in Resources */,
+				ABDC0CB41AA515F500CD1820 /* provident_fund@2x.png in Resources */,
 				AB25EC281AA27412002D1CAD /* Denmark.png in Resources */,
 				ABDC0C0B1AA4939A00CD1820 /* warranty_big@2x.png in Resources */,
-				ABDC0A8D1AA3566F00CD1820 /* Capital Gains_icon.png in Resources */,
 				AB25EA801AA1047F002D1CAD /* dialog_cancel.png in Resources */,
-				AB25EDF51AA3332D002D1CAD /* Gifts_icon@3x.png in Resources */,
+				ABDC0C851AA515F500CD1820 /* tax_payments.png in Resources */,
 				AB25EC511AA27412002D1CAD /* Malaysia.png in Resources */,
 				1940B2AF1A3391160065D84F /* OpenSans-ExtraBoldItalic_1.ttf in Resources */,
 				AB25EA4B1AA1047F002D1CAD /* profile_pic@3x.png in Resources */,
 				AB25ED821AA32F6F002D1CAD /* location@2x.png in Resources */,
+				ABDC0CA21AA515F500CD1820 /* Miscellaneous_icon@3x.png in Resources */,
 				AB25EB4E1AA1EB2E002D1CAD /* date_icon@2x.png in Resources */,
 				ABF9935A1A9F35A5005DC589 /* g+signin_button@3x.png in Resources */,
 				AB25ED401AA32F6F002D1CAD /* clothing.png in Resources */,
@@ -6541,9 +6484,9 @@
 				AB25EC271AA27412002D1CAD /* Czech Republic.png in Resources */,
 				ABF993641A9F35A5005DC589 /* username_box@3x.png in Resources */,
 				AB25EB501AA1EB2E002D1CAD /* forward_button@2x.png in Resources */,
+				ABDC0C8D1AA515F500CD1820 /* entertainment_icon@2x.png in Resources */,
 				ABA8EF201AA09D360006A123 /* server_sync@3x.png in Resources */,
 				AB25EA811AA1047F002D1CAD /* dialog_cancel@2x.png in Resources */,
-				ABDC0A731AA3566F00CD1820 /* entertainment_icon@2x.png in Resources */,
 				AB25EC421AA27412002D1CAD /* Isle of Man.png in Resources */,
 				AB25EDBD1AA32F6F002D1CAD /* rupee@3x.png in Resources */,
 				AB25EDA71AA32F6F002D1CAD /* export_data@3x.png in Resources */,
@@ -6555,17 +6498,13 @@
 				AB25EC651AA27412002D1CAD /* Qatar.png in Resources */,
 				ABDC0BF91AA4875100CD1820 /* add_button@3x.png in Resources */,
 				ABF993441A9F35A5005DC589 /* rememberme_box.png in Resources */,
-				AB25EDFE1AA3332D002D1CAD /* Miscellaneous_icon@3x.png in Resources */,
 				ABF993421A9F35A5005DC589 /* or_icon.png in Resources */,
 				AB25EA891AA1047F002D1CAD /* dialog_ok@2x.png in Resources */,
 				AB25EA331AA1047F002D1CAD /* signin_active@2x.png in Resources */,
 				AB25EDBB1AA32F6F002D1CAD /* rateus@3x.png in Resources */,
 				AB25EA0D1AA1047F002D1CAD /* profile_pic.png in Resources */,
 				AB25EA3D1AA1047F002D1CAD /* category_normal@3x.png in Resources */,
-				ABDC0A701AA3566F00CD1820 /* edit_icon@2x.png in Resources */,
-				AB25EE041AA3332D002D1CAD /* Tax-Paymens_icon@3x.png in Resources */,
 				AB25EA951AA1047F002D1CAD /* NotificationBackgroundMessage@2x.png in Resources */,
-				ABDC0A931AA3566F00CD1820 /* Food_icon.png in Resources */,
 				AB25EDC31AA32F6F002D1CAD /* view_report@3x.png in Resources */,
 				ABDC0AFF1AA4713500CD1820 /* big_budget_icon.png in Resources */,
 				AB25EC561AA27412002D1CAD /* Namibia.png in Resources */,
@@ -6581,14 +6520,15 @@
 				AB25ED5A1AA32F6F002D1CAD /* payment_mode.png in Resources */,
 				ABF993621A9F35A5005DC589 /* slider_1@3x.png in Resources */,
 				AB25EDC01AA32F6F002D1CAD /* sign_in@3x.png in Resources */,
+				ABDC0C861AA515F500CD1820 /* travel_icon.png in Resources */,
 				197CFFB91A1F7485003A6A69 /* Images.xcassets in Resources */,
 				AB25EDB31AA32F6F002D1CAD /* medical@3x.png in Resources */,
 				AB25ED6F1AA32F6F002D1CAD /* clothing@2x.png in Resources */,
 				AB25E9451AA1047F002D1CAD /* bannerNotify@2x.png in Resources */,
+				ABDC0CB01AA515F500CD1820 /* Capital-Gains_icon@2x.png in Resources */,
 				AB25EDB01AA32F6F002D1CAD /* likeus@3x.png in Resources */,
 				9C6FDA7C1A4430AF0010D280 /* Main.storyboard in Resources */,
 				AB25EB4A1AA1EB2E002D1CAD /* addmore_button@2x.png in Resources */,
-				AB25EDF31AA3332D002D1CAD /* entertainment_icon@3x.png in Resources */,
 				AB25EA2D1AA1047F002D1CAD /* rateus_active@2x.png in Resources */,
 				AB25EC7D1AA27412002D1CAD /* Ukraine.png in Resources */,
 				19A8B7291A9E6A8500C29520 /* appicon-60@2x.png in Resources */,
@@ -6596,11 +6536,11 @@
 				AB25EA8B1AA1047F002D1CAD /* THDateDay.xib in Resources */,
 				19A8B7341A9E6A8500C29520 /* appicon-Small@2x.png in Resources */,
 				AB25EC4A1AA27412002D1CAD /* Laos.png in Resources */,
-				AB25EDF91AA3332D002D1CAD /* House_icon@3x.png in Resources */,
 				AB25EC7B1AA27412002D1CAD /* Turkey.png in Resources */,
+				ABDC0C7F1AA515F500CD1820 /* Gifts_icon.png in Resources */,
 				ABDC0BF31AA4875100CD1820 /* add_button.png in Resources */,
 				AB25EC341AA27412002D1CAD /* Ghana.png in Resources */,
-				AB25EDF41AA3332D002D1CAD /* Food_icon@3x.png in Resources */,
+				ABDC0C8C1AA515F500CD1820 /* Electronics_icon@2x.png in Resources */,
 				AB25EDA61AA32F6F002D1CAD /* export@3x.png in Resources */,
 				AB25EAAC1AA1047F002D1CAD /* buttonbg.png in Resources */,
 				AB25E95C1AA1047F002D1CAD /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
@@ -6612,22 +6552,21 @@
 				AB25ED871AA32F6F002D1CAD /* password@2x.png in Resources */,
 				AB25EA301AA1047F002D1CAD /* reminder_normal@2x.png in Resources */,
 				AB25EC101AA27412002D1CAD /* Argentina.png in Resources */,
-				AB25EDFC1AA3332D002D1CAD /* Mediclaim_icon@3x.png in Resources */,
 				AB25EC851AA27412002D1CAD /* Yemen.png in Resources */,
-				AB25EDF61AA3332D002D1CAD /* Groceries_icon@3x.png in Resources */,
 				AB25EA541AA1047F002D1CAD /* transfer_active@3x.png in Resources */,
 				ABDC0BF21AA4875100CD1820 /* add.png in Resources */,
 				AB25ED641AA32F6F002D1CAD /* travel.png in Resources */,
 				AB25EC6F1AA27412002D1CAD /* South Africa.png in Resources */,
 				ABF993591A9F35A5005DC589 /* g+_icon@3x.png in Resources */,
-				ABDC0A921AA3566F00CD1820 /* Electronics_icon.png in Resources */,
 				AB25EA8D1AA1047F002D1CAD /* THDatePickerViewController.xib in Resources */,
 				AB25EA7E1AA1047F002D1CAD /* calendar_ok-disabled.png in Resources */,
 				AB25ED6B1AA32F6F002D1CAD /* camera@2x.png in Resources */,
+				ABDC0CBD1AA515F500CD1820 /* Salary_icon@3x.png in Resources */,
 				AB25EC6E1AA27412002D1CAD /* Somalia.png in Resources */,
-				ABDC0A761AA3566F00CD1820 /* Groceries_icon@2x.png in Resources */,
+				ABDC0C991AA515F500CD1820 /* Books-Stationary_icon@3x.png in Resources */,
 				AB25ED521AA32F6F002D1CAD /* likeus.png in Resources */,
 				ABA8EF131AA09D240006A123 /* server_error.png in Resources */,
+				ABDC0C981AA515F500CD1820 /* Bill-Payments_icon@3x.png in Resources */,
 				AB25ED911AA32F6F002D1CAD /* sign_in@2x.png in Resources */,
 				AB25EA451AA1047F002D1CAD /* history_active@3x.png in Resources */,
 				AB25EC5F1AA27412002D1CAD /* Pakistan.png in Resources */,
@@ -6658,6 +6597,7 @@
 				AB25EDAB1AA32F6F002D1CAD /* help@3x.png in Resources */,
 				AB25EC121AA27412002D1CAD /* Azerbaijan.png in Resources */,
 				ABDC0B161AA4713600CD1820 /* WarrantyCell.xib in Resources */,
+				ABDC0C831AA515F500CD1820 /* Personal-Care-icon.png in Resources */,
 				AB25EDAD1AA32F6F002D1CAD /* home@3x.png in Resources */,
 				AB25ED9D1AA32F6F002D1CAD /* clock@3x.png in Resources */,
 				AB25EA201AA1047F002D1CAD /* circle_1@2x.png in Resources */,
@@ -6674,37 +6614,36 @@
 				AB25E9421AA1047F002D1CAD /* bannerFailure.png in Resources */,
 				AB25EA771AA1047F002D1CAD /* arrow_right@2x.png in Resources */,
 				AB25E9FF1AA1047F002D1CAD /* category_normal.png in Resources */,
-				ABDC0A801AA3566F00CD1820 /* popup_bg@2x.png in Resources */,
 				AB25EA881AA1047F002D1CAD /* dialog_ok.png in Resources */,
 				AB25EC721AA27412002D1CAD /* Sultanate of Brunei.png in Resources */,
+				ABDC0C881AA515F500CD1820 /* Bill-Payments_icon@2x.png in Resources */,
 				AB25EA241AA1047F002D1CAD /* help_active@2x.png in Resources */,
 				AB25EA0B1AA1047F002D1CAD /* logout_active.png in Resources */,
-				ABDC0AA21AA3566F00CD1820 /* Rent_icon.png in Resources */,
 				ABDC0C1D1AA4944E00CD1820 /* transfer_big@2x.png in Resources */,
 				AB25ED531AA32F6F002D1CAD /* location.png in Resources */,
 				ABF993431A9F35A5005DC589 /* password_icon.png in Resources */,
+				ABDC0CAF1AA515F500CD1820 /* Annuity-or-pension_icon@2x.png in Resources */,
 				AB25E94E1AA1047F002D1CAD /* Activity_Whatsapp.png in Resources */,
-				ABDC0A751AA3566F00CD1820 /* Gifts_icon@2x.png in Resources */,
 				ABF9935B1A9F35A5005DC589 /* guestlogin_button@3x.png in Resources */,
-				ABDC0A841AA3566F00CD1820 /* travel_icon@2x.png in Resources */,
+				ABDC0CA81AA515F500CD1820 /* Capital-Gains_icon.png in Resources */,
 				AB25EA971AA1047F002D1CAD /* NotificationBackgroundSuccess@2x.png in Resources */,
-				AB25EDEC1AA3332D002D1CAD /* Books-Stationary_icon@3x.png in Resources */,
 				19A8B72B1A9E6A8500C29520 /* appicon-72.png in Resources */,
+				ABDC0CBE1AA515F500CD1820 /* Wages_icon@3x.png in Resources */,
 				AB25EC181AA27412002D1CAD /* Bhutan.png in Resources */,
 				AB25E9591AA1047F002D1CAD /* icon-avatar-60x60.png in Resources */,
 				ABF9935D1A9F35A5005DC589 /* login_button@3x.png in Resources */,
 				ABF9943B1A9FAB5B005DC589 /* add.png in Resources */,
 				AB25EC7C1AA27412002D1CAD /* Tuvalu.png in Resources */,
 				ABF993511A9F35A5005DC589 /* password_icon@2x.png in Resources */,
+				ABDC0C781AA515F500CD1820 /* Bill-Payments_icon.png in Resources */,
 				AB25EC131AA27412002D1CAD /* Bahamas.png in Resources */,
 				AB25EC4C1AA27412002D1CAD /* Lebanon.png in Resources */,
 				ABDC0C0A1AA4939A00CD1820 /* warranty_big.png in Resources */,
-				AB25EDE81AA3332D002D1CAD /* allcategories_icon@3x.png in Resources */,
-				AB25EDFF1AA3332D002D1CAD /* option_icon@3x.png in Resources */,
 				AB25EC3A1AA27412002D1CAD /* Honduras.png in Resources */,
 				AB25EC811AA27412002D1CAD /* Uruguay.png in Resources */,
 				ABDC0C1E1AA4944E00CD1820 /* transfer_big@3x.png in Resources */,
 				ABF994401A9FAB5B005DC589 /* menu_button@2x.png in Resources */,
+				ABDC0CA41AA515F500CD1820 /* Rent_icon@3x.png in Resources */,
 				AB25ED431AA32F6F002D1CAD /* customer_care.png in Resources */,
 				AB25EC481AA27412002D1CAD /* Kenya.png in Resources */,
 				AB25ED6C1AA32F6F002D1CAD /* cash@2x.png in Resources */,
@@ -6853,7 +6792,6 @@
 				AB25EA701AA1047F002D1CAD /* SWLongPressGestureRecognizer.m in Sources */,
 				ABDC0BA91AA4749400CD1820 /* GTLFramework.m in Sources */,
 				ABDC0C211AA4944E00CD1820 /* TransferViewController.m in Sources */,
-				AB25EB1D1AA1049E002D1CAD /* GlobalData.m in Sources */,
 				AB25E9B21AA1047F002D1CAD /* KSSysCtl.c in Sources */,
 				ABDC0BA61AA4749400CD1820 /* GTLBatchResult.m in Sources */,
 				AB25E9B41AA1047F002D1CAD /* NSDictionary+Merge.m in Sources */,

@@ -432,7 +432,6 @@
             style.barColor = [UIColor colorWithRed:0.797 green:0.148 blue:0.227 alpha:1.000];
             style.textColor = [UIColor whiteColor];
             style.animationType = JDStatusBarAnimationTypeMove;
-            style.font = fontRegular12;
             return style;
         }];
         [JDStatusBarNotification showWithStatus:message dismissAfter:duration];
@@ -569,7 +568,6 @@
             style.barColor = [UIColor colorWithRed:0.797 green:0.148 blue:0.227 alpha:1.000];
             style.textColor = [UIColor whiteColor];
             style.animationType = JDStatusBarAnimationTypeMove;
-            style.font = fontRegular12;
             return style;
         }];
         [JDStatusBarNotification showWithStatus:MESSAGE_TEXT___FOR_NETWORK_NOT_REACHABILITY dismissAfter:MIN_DUR];
@@ -849,7 +847,6 @@
     [leftBarButton setTitle:title forState:UIControlStateNormal];
     [leftBarButton setTitleColor:[UIColor colorWithRed:32.0f / 255.0f green:121.0f / 255.0f blue:255.0f / 255.0f alpha:1.0f] forState:UIControlStateNormal];
     [leftBarButton setTitleColor:[UIColor colorWithRed:32.0f / 255.0f green:121.0f / 255.0f blue:255.0f / 255.0f alpha:1.0f] forState:UIControlStateHighlighted];
-    [[leftBarButton titleLabel]setFont:fontSemiBold17];
     [leftBarButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [self processSingleNavigationButtons:leftBarButton];
     
@@ -876,7 +873,6 @@
     [leftBarButton setTitle:title forState:UIControlStateNormal];
     [leftBarButton setTitleColor:[UIColor colorWithRed:32.0f / 255.0f green:121.0f / 255.0f blue:255.0f / 255.0f alpha:1.0f] forState:UIControlStateNormal];
     [leftBarButton setTitleColor:[UIColor colorWithRed:32.0f / 255.0f green:121.0f / 255.0f blue:255.0f / 255.0f alpha:1.0f] forState:UIControlStateHighlighted];
-    [[leftBarButton titleLabel]setFont:fontSemiBold17];
     [leftBarButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
     [self processSingleNavigationButtons:leftBarButton];
     
@@ -983,7 +979,6 @@
     [rightBarButton setTitleColor:[UIColor colorWithRed:32.0f / 255.0f green:121.0f / 255.0f blue:255.0f / 255.0f alpha:1.0f] forState:UIControlStateHighlighted];
     [rightBarButton setFrame:CGRectMake(0.0f, (NAVIGATION_BAR_HEIGHT - rightBarButton.currentImage.size.height) / 2, rightBarButton.currentImage.size.width + [title sizeWithFont:rightBarButton.font].width, rightBarButton.currentImage.size.height)];
     
-    [[rightBarButton titleLabel]setFont:fontSemiBold17];
     [rightBarButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     [self processSingleNavigationButtons:rightBarButton];
     

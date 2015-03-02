@@ -22,7 +22,6 @@
 - (void)others {
 	if (isConfigured == NO) {
 		isConfigured = YES;
-		[name setFont:fontRegular13];
 		[self setBackgroundColor:[UIColor clearColor]];
 		[name setBackgroundColor:[UIColor clearColor]];
 	}

@@ -17,7 +17,6 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self initializeGlobalData];
     [self copyDatabaseIfNeeded];
     [self initializeContents];
     [self prepareForApplePushNotificationsService];
@@ -47,50 +46,6 @@
         if (!success)
             NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
-}
-- (void)initializeGlobalData {    
-    fontRegular9  = [UIFont fontWithName:FONT_REGULAR size:9];
-    fontRegular10 = [UIFont fontWithName:FONT_REGULAR size:10];
-    fontRegular11 = [UIFont fontWithName:FONT_REGULAR size:11];
-    fontRegular12 = [UIFont fontWithName:FONT_REGULAR size:12];
-    fontRegular13 = [UIFont fontWithName:FONT_REGULAR size:13];
-    fontRegular14 = [UIFont fontWithName:FONT_REGULAR size:14];
-    fontRegular15 = [UIFont fontWithName:FONT_REGULAR size:15];
-    fontRegular16 = [UIFont fontWithName:FONT_REGULAR size:16];
-    fontRegular17 = [UIFont fontWithName:FONT_REGULAR size:17];
-    fontRegular18 = [UIFont fontWithName:FONT_REGULAR size:18];
-    fontRegular19 = [UIFont fontWithName:FONT_REGULAR size:19];
-    fontRegular20 = [UIFont fontWithName:FONT_REGULAR size:20];
-    fontRegular26 = [UIFont fontWithName:FONT_REGULAR size:26];
-    
-    fontSemiBold9  = [UIFont fontWithName:FONT_SEMI_BOLD size:9];
-    fontSemiBold10 = [UIFont fontWithName:FONT_SEMI_BOLD size:10];
-    fontSemiBold11 = [UIFont fontWithName:FONT_SEMI_BOLD size:11];
-    fontSemiBold12 = [UIFont fontWithName:FONT_SEMI_BOLD size:12];
-    fontSemiBold13 = [UIFont fontWithName:FONT_SEMI_BOLD size:13];
-    fontSemiBold14 = [UIFont fontWithName:FONT_SEMI_BOLD size:14];
-    fontSemiBold15 = [UIFont fontWithName:FONT_SEMI_BOLD size:15];
-    fontSemiBold16 = [UIFont fontWithName:FONT_SEMI_BOLD size:16];
-    fontSemiBold17 = [UIFont fontWithName:FONT_SEMI_BOLD size:17];
-    fontSemiBold18 = [UIFont fontWithName:FONT_SEMI_BOLD size:18];
-    fontSemiBold19 = [UIFont fontWithName:FONT_SEMI_BOLD size:19];
-    fontSemiBold20 = [UIFont fontWithName:FONT_SEMI_BOLD size:20];
-    fontSemiBold26 = [UIFont fontWithName:FONT_SEMI_BOLD size:26];
-    
-    fontBold9  = [UIFont fontWithName:FONT_BOLD size:9];
-    fontBold10 = [UIFont fontWithName:FONT_BOLD size:10];
-    fontBold11 = [UIFont fontWithName:FONT_BOLD size:11];
-    fontBold12 = [UIFont fontWithName:FONT_BOLD size:12];
-    fontBold13 = [UIFont fontWithName:FONT_BOLD size:13];
-    fontBold14 = [UIFont fontWithName:FONT_BOLD size:14];
-    fontBold15 = [UIFont fontWithName:FONT_BOLD size:15];
-    fontBold16 = [UIFont fontWithName:FONT_BOLD size:16];
-    fontBold17 = [UIFont fontWithName:FONT_BOLD size:17];
-    fontBold18 = [UIFont fontWithName:FONT_BOLD size:18];
-    fontBold19 = [UIFont fontWithName:FONT_BOLD size:19];
-    fontBold20 = [UIFont fontWithName:FONT_BOLD size:20];
-    fontBold26 = [UIFont fontWithName:FONT_BOLD size:26];
-
 }
 
 - (void)initializeContents {
