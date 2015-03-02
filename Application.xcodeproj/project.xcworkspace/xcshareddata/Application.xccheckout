@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5A9FDD67-2F16-4A6B-9FBF-AC78AC4E048B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Application</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>96E36BBCF07CA3E88FB89F691837839834ADF6E9</key>
+		<string>https://github.com/aryansbtloe/CKT.git</string>
+		<key>A20D666FF4B08EFE53F147818C2D4D17E2242912</key>
+		<string>git://github.com/facebook/facebook-ios-sdk.git</string>
+		<key>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</key>
+		<string>https://github.com/aryansbtloe/GLK</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Application.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>96E36BBCF07CA3E88FB89F691837839834ADF6E9</key>
+		<string>../../../Application</string>
+		<key>A20D666FF4B08EFE53F147818C2D4D17E2242912</key>
+		<string>../../../Application/Application/Vendor/facebook-ios-sdk</string>
+		<key>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/aryansbtloe/GLK</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>96E36BBCF07CA3E88FB89F691837839834ADF6E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Application</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A20D666FF4B08EFE53F147818C2D4D17E2242912</string>
+			<key>IDESourceControlWCCName</key>
+			<string>facebook-ios-sdk</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BCC1623D0A52B218453FEC5300DEE1CEBEDAB39B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GLK</string>
+		</dict>
+	</array>
+</dict>
+</plist>

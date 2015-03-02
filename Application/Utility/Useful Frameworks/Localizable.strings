@@ -1,0 +1,771 @@
+/*
+ Localizable.strings
+ Daily Expense Manager
+ 
+ Created by Appbulous on 20/09/14.
+ Copyright (c) 2014 Jyoti Kumar. All rights reserved.
+ */
+/*
+  <font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Web Services::<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'>Now you can also access DEM through the web browser on your computer system at</font>
+ */
+"addTransaction"="Add Transaction";
+"selectacategory"="Select Category ";
+"selectaapyment"="Select Payment Mode ";
+
+"addCategory"="Add Category";
+"editCategory"="Edit Category";
+
+"addPayment"="Add Payment Mode";
+
+
+"editPayment"="Edit Payment Mode";
+
+"demdatasecure"="Please register with us to sync Goollak data to the server.";
+"addtoreminder"="Add from Reminder";
+"toTransfer"="Transfer To";
+"fromTransfer"="Transfer From";
+"loggingout"="Log Out will stop syncing to the Goollak server.\nStill you want to log out? ";
+"noTag"="No Person Tagged ";
+"noLocation"="Location Not Saved ";
+"notransactionfound"="No Transaction recorded yet";
+"BooksStationary"="Books/Stationary";
+"income"="Income";
+"expense"="Expense";
+"none"="None";
+"amountExceeded"="Over";
+"paymentMode"="Payment Mode";
+"category"="Category";
+"loginwithgoogle"="* You are logged in with google so you can\'t update the  user profile.";
+"viewReports"="View Report";
+"importdata"="Import";
+"Left"="Left";
+"no_files_found"="Files Not Found";
+"areyousuretodelete"="Are you sure you want to delete this";
+"areyousuretodeletereminder"="Are you sure you want to delete this Reminder? ";
+"deletingaccountwilldeletedata"="Deleting this account will also delete it\'s related data. ";
+"areyousuretodeletebudget"="Are you sure you want to delete this budget? ";
+
+"areyousuretodeletetransfer"="Deleting this transfer will also delete the associated transactions from Income and Expense! ";
+"deletingthiscategorywilldeleteitstransactions"="Deleting this category will also delete data associated to it! ";
+
+
+"importfile" ="Import .csv file to Goollak database. Analyzing your Data...";
+
+"data_not_imported_because_ofaccountmismatch"="Data was not imported because of account mismatch, data already exists or some error.";
+"nextReminderDueDate"="Next Reminder due date :";
+"transationDueDate"="Next Transaction due date :";
+
+"help"="HELP";
+"feedback_EMail_ID"="support@goollak.com";
+"Device_Name"="Device Name : ";
+"IMEIno"="IMEI no :-";
+"phonenumber"="For any further queries if you want us to contact you personally, please provide us your phone number here ";
+
+
+"transactiondetails"="Transaction Details ";
+"reminderdetails"="Reminder Details ";
+"warrantydetails"="Warranty Details ";
+
+"noCategory"="Category Not Added ";
+"noPaymentMode"="Payment Mode Not Added ";
+"entersomeamount"="Enter Amount ";
+"entersomeawarranty"="Enter Warranty Time ";
+"enterwarranty"="Enter Warranty time greater than 0";
+"nameNull"="Name cannot be left blank. ";
+
+"mainCategorycannotbeempty"="Main Category cannot be left blank. ";
+"subCategorycannotbeempty"="Sub Category cannot be left blank. ";
+
+"categoryUnavailable"="Contact Unavailable ";
+
+"warrantyaddedSuccessfully"="Warranty Added Successfully";
+"warrantydeletedSuccessfully"="Warranty Deleted Successfully";
+"warrantyupdatedSuccessfully"="Warranty Updated Successfully";
+"addReminder"="Add Reminder ";
+
+"addWarranty"="Add Warranty ";
+"transfers"="Transfers - DONE";
+"paymentmodes"="Payment Modes - DONE";
+"categories"="Categories - DONE";
+"budgets"="Budgets - DONE ";
+"reminders"="Reminder/Recurring -DONE";
+"incomes"="Income/Expense -DONE";
+"exporting_database"="Exporting Database ";
+"importing_database"="Importing Database ";
+"cancel"="Cancel ";
+"forcefulllogin"="Forceful Login ";
+"updatePass"="Update Password ";
+"newPassword"="New Password ";
+"nothing_available_to_export_in_"="No data available for export in ";
+"export_data_to_csv_successfully"="Data Exported Successfully";
+"forcefulllReset"="Reset Password Forcefully";
+"budgetDate"="Please check budget duration. ";
+"samedate"="Start and end date for budget duration cannot be same. ";
+"latergreater"="End date for budget cannot occur before start date. ";
+"enterEmail"="Enter Email Address";
+"enterValidEmail"="Please enter a valid Email address. ";
+"morethan50notallowed"="This name contains too many characters. ";
+"guestusernamenotaloowed"="Guest Username Not Allowed. ";
+"accountNameNull"="Account Name cannot be left blank. ";
+"data_imported_successfully"="Data imported Successfully.";
+"send_mail"="Do you want to Email this backup? (*Recommended)";
+"Daily_Expense_Manager_Backup"="Goollak - Expense Manager  Backup";
+"numberofdays"="Number of days cannot be more than ";
+"numberofmonths"="Number of months cannot be more than ";
+"sameAccount"="Transfer within same account not allowed";
+"successfully_exported_popup_text"="Successfully Exported";
+"daily"="Daily";
+
+"select_atleast_one_category_and_one_payment_mode"="Select atleast one category and one payment mode.";
+"editTransaction"="Edit Transaction ";
+"editwarranty"="Edit Warranty ";
+
+"enter_file_name"="Enter File Name";
+
+"yourBal"="your balance in Goollak - Expense Manager  for reminder.";
+"thisReminder"="This is a Reminder. ";
+"addedTo"="added to ";
+"youHave"="You have ";
+"reminderOf"="reminder of ";
+"Thiswouldbe"="This would be ";
+"yourbalanceon"="your balance on ";
+"forf"="for ";
+"an"="an ";
+"a"="a ";
+
+"items" ="Indian Rupee - ₹,Malagasy Ariary - Ar,Greek Drachma - ₯,Eritrean Nakfa - Nfk,Bhutanese Ngultrum - Nu.,Macedonian Denars - ден,Albanian Lek - L,Afghan - ؋,Argentine Peso - $,Australian Dollar - A$,Azerbaijani Manat - ман,Bahamian Dollar - B$,Barbadian Dollar - Bds$,Belizean Dollar - BZ$,Bermudian Dollar - BD$,Bolivian Boliviano - $b,Botswana Pula - P,Bulgarian Lev - лв,Brazilian Real - R$,Brunei Dollar - B$,Cambodian Riel - ៛,Canadian Dollar - CA$,Cayman Islands Dollar - CI$,Chilean Peso - CLP$,Chinese Yuan Renminbi - ¥,Colombian Peso - COL$,Costa Rican Colon - ₡,Croatian Kuna - kn,Cuban Peso - $MN,Czech Koruna - Kč,Danish Krone - Dkr,Dominican Peso - RD$,East Caribbean Dollar - EC$,Egypt Pound - ج.م.,Salvadoran Colón - ₡,Estonian Kroon - kr,Euro - €,Falkland Islands Pound - FK£,Fijian Dollar - FJ$,Ghana Cedi - GH₵,Gibraltar Pound - £,Guatemalan Quetzal - Q,Guernsey Pound - £,Guyanese Dollar - G$,Honduran Lempira - L,Hong Kong Dollar - HK$,Hungarian Forint - Ft,Iceland Krona - Íkr,Indonesian Rupiah - Rp,Iranian Rial - ريال,Manx - M£,Israeli New Shekel - ₪,Jamaican Dollar - J$,Japanese Yen - ¥,Jersey Pound - £,Kazakhstan Tenge - ₸,North Korean Won - ₩,South Korean Won - ₩,Kyrgyzstani Som - лв,Angolan Kwanza - Kz,Lao Kip - ₭,Latvian Lat - Ls,Lebanese Pound - ل.ل,Liberian Dollar - L$,Lithuanian Litas - Lt,Malaysian Ringgit - RM,Mauritian Rupe - ₨,Mexican Peso - Mex$,Mongolian Tögrög - ₮,Mozambican Metical - MT,Namibian Dollar - N$,Nepalese Rupee - रू,Netherlands Antilles Guilder - ƒ,New Zealand Dollar - NZ$,Nicaragua Córdoba - C$,Nigerian Naira - ₦,Norwegian Krone - kr,Omani Rial - ر.ع.,Pakistani Rupee - ₨,Panamanian Balboa - B/.,Paraguayan Guarani - ₲,Peruvian Nuevo Sol - S/.,Philippine Peso - ₱,Polish Zloty - zł,Qatari Riyal -  ر.ق,Romanian New Leu - lei,Russian Ruble - Рубль,Saint Helena Pound - £,Saudi Riyal - ر.س,Serbian Dinar - Дин,Seychellois Rupee - SRe,Singaporean Dollar - S$,Solomon Islands Dollar - SI$,Somalia Shilling - S,South African Rand - R,Sri Lankan Rupee - ₨,Swedish Krona - kr,Swiss Franc - SFr,Surinamese Dollar - $,Syrian Pound - £S,New Taiwan Dollar - NT$,Thai Baht - ฿,Trinidad and Tobago Dollar - TT$,Turkish Lira - ₺,Tuvaluan Dollar - $T,Ukrainian Hryvnia - ₴,Pound Sterling - £,United States Dollar - US$,Uruguayan Peso - $U,Uzbekistani Som - лв,Venezuelan Bolívar - Bs.,Vietnamese Dong - ₫,Yemeni Rial - ﷼,Zimbabwean Dollar - Z$,Bangladeshi taka - ৳,Emirati Dirham - د.إ,Kenyan shilling - Ksh,Bosnia and Herzegovina Convertible Mark- KM,Georgian lari - ლ,Tunisian dinar - د.ت,Algerian Dinar - د.ج,Iraqi Dinar - دينار عراقي,Kuwaiti dinar - د.ك,Ugandan shilling - UGX";
+
+"countries"= "India,Madagascar,Greece,Eritrea,Bhutan,Macedonia,Albania,Afghanistan,Argentina,Australia,Azerbaijan,Bahamas,Barbados,Belize,Bermuda,Bolivia,Botswana,Bulgaria,Brazil,Sultanate of Brunei,Cambodia,Canada,Cayman Islands,Chile,China,Colombia,Costa Rica,Croatia,Cuba,Czech Republic,Denmark,Dominican Republic,Eastern Caribbean States,Egypt,El Salvador,Estonia,European Union Member States,Falkland Islands,Fiji,Ghana,Gibraltar,Guatemala,Guernsey,Guyana,Honduras,Hong Kong,Hungary,Iceland,Indonesia,Iran,Isle of Man,Israel,Jamaica,Japan,Jersey,Kazakhstan,North Korea,South Korea,Kyrgyzstan,Angola,Laos,Latvia,Lebanon,Liberia,Lithuania,Malaysia,Mauritius,Mexico,Mongolia,Mozambique,Namibia,Nepal,Netherlands,New Zealand,Nicaragua,Nigeria,Norway,Oman,Pakistan,Panama,Paraguay,Peru,Philippines,Poland,Qatar,Romania,Russia,Saint Helena,Saudi Arabia,Serbia,Seychelles,Singapore,Solomon Islands,Somalia,South Africa,Sri Lanka,Sweden,Switzerland,Suriname,Syria,Taiwan,Thailand,Trinidad and Tobago,Turkey,Tuvalu,Ukraine,United Kingdom,United States of America,Uruguay,Uzbekistan,Venezuela,Vietnam,Yemen,Zimbabwe,Bangladesh,United Arab Emirates,Kenya,Bosnia and Herzegovina,Georgia,Tunisia,Algeria,Iraq,Kuwait,Uganda";
+
+"income_items" ="Salary.Wages -Daily,Weekly.Annuity or pension.Provident Fund.Medical.Capital Gains.House property.Interest recieved -Securities,Bank Deposits.Mediclaim";
+
+"expenses_items"="Entertainment -Movies,Television.Medical -Surgery,Medicines.Food -Vegetables,Fruits.Travel -Bus fare,Train fare,  Flight fare,Taxi fare,Hotel Rent,Food Cost.Groceries.Books/Stationary -Pen,Paper.Gifts.Personal Care -Manicure,Pedicure,Hair Dressing.Clothing -Shirts,Pants,T-Shirts,Shoes,Sandals,Sweater,Jacket,Skirts.Electronics -Cellphone,Tv,Washing Machine.Bill Payments -Phone Bill,Electricity Bill,Water Bill.Auto.Miscellaneous.Educational Cost -School Fees,Tuition Fees,Admission Fees.Tax Payments -Income Tax,Sales Tax,Property Tax.Rent";
+
+"medium_of_transaction"="Cash,Cheque,Debit Card,Credit Card";
+
+"app_manager"="cab,travel,recharge,shopping,food,entertainment";
+
+
+"newNotification"="A new notification ";
+"deductedFrom"="Deducted from ";
+"viaDEM"="via. Goollak - Expense Manager  ";
+"taptoadd"="Tap p to Add Transaction";
+"taptowarranty"="Tap p to Add Warranty";
+"taptoreminder"="Tap p to Add Reminder";
+
+
+
+"taptotransfer"="Tap p to Add Transfer";
+"taptobudget"="Tap p to Add Budget";
+"hidingCategory"="Hiding Category will hide all it\'s related data ";
+"hidingPayment"="Hiding PaymentMode will hide all it\'s related data ";
+"hidingAccount"="Hiding Account will hide all it\'s related data ";
+
+"help_heading"="<p style='padding:20px'><font color='#808080' face='Ebrima-Bold' size='12'><b>Goollak - Expense Manager  is the perfect app to keep track of one\'s financial efficiency. It is very easy to understand and the best way to record your data.<br /><br />View Transaction History:<br /><br /></font></b><font color='#808080' face='Ebrima' size='12'>1. View transaction history for each account<br />2. Customized view of transactions between a set time duration<br />3. Filters to view income, expense, categories and payment modes<br />4 Sort transaction in order of newly added transactions, old transactions, highest amount transactions and lowest amount transactions<br />5. Feature to view transaction report as graph.</font><br /><br /><font color='#808080' face='Ebrima-Bold' size='12'> Reminder:</font><br /><br /> <font color='#808080' face='Ebrima' size='12'>1. Set reminders for payments to be made or received<br />2. Remember exact date on which a transaction has to be made<br />3. Get notified for a reminder in advance to be prepared for it (days or hours before)<br />4. View all the set reminders<br />5. Option to add, update and delete reminders. </font><font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Data Back Up:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'> 1. Never lose your important data by making a backup for it<br />2. Export your detailed data for later use and recovery in .csv file<br />3. View your summarized data in Excel filesand  PDF<br />4. Allows customized view of data in Excel files<br />5. Manage your files in separate folder<br />6. Import your data whenever required </font> <font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Transfer:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'> 1. Manage transfers between your main account and sub accounts<br />2. Keep check of monetary transfers among your accounts</font>  <font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Budget:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'>1. Set budget for different categories<br />2. Alert when spending exceeds the set budget for a category<br />3. Budget can be set for specific duration of time</font><font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Goollak Directory:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'>1.  Set your location and get the state directory<br />2. Make direct calls and get app for various services<br />3. Information about cab, entertainment, recharge, travel, etc. </font> <font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Warranty:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'>1. On purchasing an item add the date when its warranty is getting expired<br />2. Get notification 10 days before the warranty is getting over for an item<br />3. View all the set warranties<br />4. Option to add, update and delete warranties </font>  <font color='#808080' face='Ebrima-Bold' size='12'> <br /><br />Web Services:<br /><br /> </font> <font color='#808080' face='Ebrima' size='12'>Now you can also access Goollak through the web browser on your computer system at</br></font><a href='http://goollak.com/' target='_blank' ><center><font color='#1abc9c' face='Ebrima-Bold' size='12'>www.goollak.com</center></a></br></font><font color='#808080' face='Ebrima' size='12'>This allows multiple platform access for Goollak.</font> <br/><br/>  <font color='#808080' face='Ebrima-Bold' size='12'> <br /><center>Goollak Software Private Limited <br /> Version - 1.0</center></p>";
+
+"thedemteam9"=" <font color='#808080' face='Ebrima-Bold' size='12'> Version - 1.0<br /></font><br/><hr><br/> </font> <font color='#808080' face='Ebrima' size='12'>Initial release with new GUI<br/><hr>New Goollak server syncing for data security<br/><hr/>Better user experience<br/><hr><br> </font> ";
+
+"contactdemsupport"="Contact Goollak Support";
+"deletedemdata"="Delete Goollak data";
+"versionText"="Version";
+"versionCode"="52";
+
+"not_found"="Not Found";
+
+
+"sending_mail"="Sending mail...";
+"applyfilter"="Apply filter ";
+
+"subheading_h"="Web Services:";
+"parah_h"="Now you can also access Goollak through the web browser on your computer system at";
+"parah_h_continue"="This allows multiple platform access for Goollak.";
+"dem_link"="<u>www.goollak.com</u>";
+"thedemteam"="THE Goollak TEAM";
+"thedemteam1"="Aarshi Gupta (Module Lead)";
+"thedemteam2"="Lalit (Dev)";
+"thedemteam3"="Yash Yogi (Dev)";
+"thedemteam4"="Kriti Bahl (QA)";
+"thedemteam5"="Lakshman Singh (Web and Backend)";
+"thedemteam8"="Appbulous Software Private Limited";
+"app_name"="Goollak - Expense Manager ";
+"app_nameshort"="Goollak";
+"version"="6.0.1";
+"versionCode"="52";
+"waranty"="Warranty";
+"howdoyouwanttouseit"="How do you want to use it? ";
+"changeMind"="You can change your mind any time later. ";
+"recommended"="<i> (Recommended)</i>";
+"changeProfile"="Change Profile ";
+"forthisdeviceOnly"="<i> For this device only </i>";
+"login"="<i>Login </i>";
+"loading"="Loading ";
+"subheading"="Goollak Directory";
+"action_settings"="Settings ";
+"hello_world"="Hello world! ";
+"securityCode"="Enter the security code sent to your registered Email Id";
+"securitMain"="To reset password, enter the Email Id that you registered with Goollak - Expense Manager ";
+"mainscreentext1"="I am new to Goollak - Expense Manager . Sign Me Up ";
+"sign"="New User? Sign Up";
+"crittercism"="543ba57e466eda54a8000002";
+"profile"="Create your Profile";
+"privacy"="Privacy Policies";
+"terms"="Terms and Conditions";
+"shopping"="Shopping ";
+"location"="Location ";
+"nofood"="No Food Joint Found. ";
+
+"cab"="Cab ";
+"list"="List ";
+"specialCharactersNotAllowed"="Special characters not allowed. ";
+"morethan50notallowed"="This name contains too many characters. ";
+"cabservices"="Cab Services ";
+"entertainmentservices"="Entertainment Services ";
+"recharge"="Recharge ";
+"mainscreentext2"="I already have a Goollak account. ";
+"mainscreentext3"="I would like to continue as Guest. ";
+"welcome1"="Welcome to ";
+"welcome2"="Goollak Expense ";
+"welcome3"="Manager ";
+"skiploginheading"="Skip Login Process ";
+"selectMainCateory"="Select Main Categories ";
+"addMore"="Add More Details ";
+"categorise"="Categorise your budget ";
+"skiplogintext"="If you skip login process, your \n transaction data stored into the \n application will never sync with \n your account. \n\n Kindly login. ";
+
+"cancel_button_title" = "Cancel";
+"delete_button_title" = "Delete";
+"areyousure"="Are you sure? ";
+"save"="Save ";
+"ok"="OK ";
+"delete"="Delete ";
+"cont"="Continue ";
+"drawer_open"="Slider Menu Opened";
+"drawer_close"="Slider Menu Closed";
+"transactionTitle"="Transaction Summary ";
+"summary"="Summary ";
+"leftPanelHeading1"="GENERAL ";
+"leftPanelHeading2"="TOOLS ";
+"checknetwork"="Please check your internet connection.";
+"entervalidcode"="* Enter a valid code.";
+"leftPanelHeading3"="SETTINGS ";
+"leftPanelHeading4"="OTHERS ";
+"loginHeader"="Create an Account";
+"accountSettings"="Account Settings ";
+"enterName"="Enter Name";
+"selectLocation"="Select Location";
+
+"enterregisteredEmail"="* Enter your registered Email address. ";
+"passwordfeildempty"="* Password cannot be left blank. ";
+"pleaseenteryourpassword"="Enter Password ";
+"pleasereenteryourpassword"="Re-enter Password ";
+"enterSecurityCode"="Enter Security Code";
+"enterPass"="Enter Password";
+"enterPassLimited"="Enter Password (4-6 digits) ";
+"reenter"="Re-enter Password";
+"reset"="Reset Password";
+"dob"="Enter Date of Birth";
+"uploadPic"="Upload Picture";
+"left_and_right"="Left and Right";
+"policy"="I agree to Goollak\'s <u> Privacy Policies </u> and <u> Terms and Conditions </u>";
+
+"addAccount"="Add Account (+) ";
+"addPendingTransaction"="Add Pending Transactions ";
+"viewTrnsaction"="History ";
+"SignIn_newUser"="Sign In / New User ";
+"updatedem"="Update Goollak";
+"pendingTrnsaction"="Pending Transactions ";
+"transferDone"="Transfer ";
+"reminderTrnsaction"="Reminder Transactions ";
+"reminder"="Reminders/Recurring ";
+
+"budgetAmount"="Budget Amount ";
+"userLoginHeader"="Login ";
+
+"signIn"="Login ";
+"signInGmail"="Sign In";
+"signIn1"="<i>(Sync with mulitple devices)</i>";
+"signIn2"="Login as Guest ";
+"exportData"="Export Data...";
+"changePass"="Reset Password ";
+
+"forgotPassword"="Forgot Password?";
+"forgotPasswordunderlined"="<u>Forgot Password ?</u>";
+
+"newtoDem"="New to Goollak? ";
+"registerNow"="Register <b>NOW</b>? ";
+"submit"="Submit ";
+"tapuploadPic"="Tap to upload picture ";
+"privayPolicyHeading"="Privacy Policies ";
+"selectPicture"="Select Picture ";
+"selectAnumber"="Select Number ";
+
+"privayPolicytext"="PRIVACY POLICY MODEL FOR GOOLLAK - Expense Manager  \n This privacy policy governs your use of the software application Goollak - Expense Manager  for mobile devices that was created by Goollak. The Application is a finance app for managing monetary transactions for incomes and expenses. \n\n\nUser Provided Information \n\nThe Application obtains the information you provide when you download and register the Application. Registration with us is optional. However, please keep in mind that you may not be able to use some of the features offered by the Application unless you register with us.\nWhen you register with us and use the Application, you generally provide (a) your name, email address, age, user name, password and other registration information; (b) transaction-related information, such as when you make purchases, respond to any offers, or download or use applications from us; (c) information you provide us when you contact us for help; (d) credit card information for purchase and use of the Application, and; (e) information you enter into our system when using the Application, such as contact information and project management information. \n\nWe may also use the information you provided us to contact you from time to time to provide you with important information, required notices and marketing promotions.Should any further information be required, you will be informed as to why you are being asked for this additional information and how it may be used on this site. Rest assured, you will always have the power to control the amount of personal information you provide.\n\nAutomatically Collected Information \nIn addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile devices unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application. \n\n Does the Application collect precise real time location information of the device?When you visit the mobile application, we may use GPS technology (or other similar technology) to determine your current location in order to determine the city you are located within and display a location map with relevant advertisements. We will not share your current location with other users or partners. If you do not want us to use your location for the purposes set forth above, you should turn off the location services for the mobile application located in your account settings or in your mobile phone settings and/or within the mobile application. \n\nDo third parties see and/or have access to information obtained by the Application? \nOnly aggregated, anonymized data is periodically transmitted to external services to help us improve the Application and our service. We will share your information with third parties only in the ways that are described in this privacy statement.\nWe may disclose User provided and Automatically Collected Information:\n1. as required by law, such as to comply with a subpoena, or similar legal process;\n2. when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;\n3. With our trusted services providers who work on our behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.\n4. If Goollak is involved in a merger, acquisition, or sale of all or a portion of its assets, you will be notified via email and/or a prominent notice on our Web site of any change in ownership or uses of this information, as well as any choices you may have regarding this information.\n\n\nWhat are my opt-out rights?\n\nYou can stop all collection of information by the Application easily by uninstalling the Application. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network. \n\n\nData Retention Policy, Managing Your Information\n\nWe will retain User provided data for as long as you use the Application and for a reasonable time thereafter. We will retain Automatically Collected information for up to 24 months and thereafter may store it in aggregate. If you’d like us to delete User Provided Data that you have provided via the Application, please contact us at support@goollak.com and we will respond in a reasonable time. Please note that some or all of the User Provided Data may be required in order for the Application to function properly.\n\nWe do not use the Application to knowingly solicit data from or market to children under the age of 13. If a parent or guardian becomes aware that his or her child has provided us with information without their consent, he or she should contact us at support@goollak.com. We will delete such information from our files within a reasonable time.\n\nSecurity \n\nGoollak - Expense Manager  is designed to protect the confidentiality, integrity and security of your personal information during storage and transmission of your data. Your account User ID and password and all your account details are stored in highly secure servers.\nWe are concerned about safeguarding the confidentiality of your information. We provide physical, electronic, and procedural safeguards to protect information we process and maintain. For example, we limit access to this information to authorized employees and contractors who need to know that information in order to operate, develop or improve our Application. Please be aware that, although we endeavor provide reasonable security for information we process and maintain, no security system can prevent all potential security breaches.\nNo money can be moved through Goollak - Expense Manager . This means that even though you can view your accounts, analyze your expenses and transact, you cannot transfer money between accounts through the app.\n\n\nChanges\n\nThis Privacy Policy may be updated from time to time for any reason. We will notify you of any changes to our Privacy Policy by posting the new Privacy Policy and informing you via email.You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.\n\n\nYour Consent \n\nBy using the Application, you are consenting to our processing of your information as set forth in this Privacy Policy now and as amended by us.Processing, means using cookies on a computer/hand held device or using or touching information in any way, including, but not limited to, collecting, storing, deleting, using, combining and disclosing information, all of which activities will take place in India. If you reside outside the India your information will be transferred, processed and stored there under India privacy standards. \n\n\nContact us\n\nIf you have any questions regarding privacy while using the Application, or have questions about our practices, please contact us via email at support@goollak.com\n\nGoollak. Terms of Use   (Effective as of 11th September 2014) \n\nWelcome to the Goollak service.  The following Terms of Use apply when you view or use the Service [via our website located at \nhttp://www.goollak.com/] [or by accessing the Service through clicking on the application (the “Goollak - Expense Manager ”) on your mobile device.]  Please review the following terms carefully.  By accessing or using the Service, you signify your agreement to these Terms of Use.  If you do not agree to these Terms of Use, you may not access or use the Service.\n\n\nPRIVACY POLICY\n\nThe Company respects the privacy of its Service users.  Please refer to the Company’s Privacy Policy which explains how we collect, use, and disclose information that pertains to your privacy.  When you access or use the Service, you signify your agreement to this Privacy Policy.\n";
+
+"camera"="Camera ";
+"upgrademessage"="Thank you for upgrading to new Goollak - Expense Manager .\nNow Onwards the OLD Goollak data will not sync with server.\nIf you want to sync your data to Goollak server, please register with NEW Goollak. \n\n  To Register : Select \'New User? Sign Up\' ";
+"attention"="Warning ";
+"gallery"="Gallery ";
+"giveACall"="Give a call ";
+"wrongValues"="Please check the entered credentials. ";
+
+
+
+
+
+
+
+
+"paymentModeExists"="Payment Mode already exist. ";
+
+"categoryExits"="Main Category already exist. ";
+"subcategoryExits"="Sub Category already exist. ";
+"defaultFormat"="mm-dd-yyyy ";
+"otherdefaultFormat"="dd-mm-yyyy";
+"areyousuretodeletetransaction"="Are you sure you want to delete this transaction? ";
+"areyousuretodeletetwarranty"="Are you sure you want to delete this Warranty?";
+
+
+
+
+
+
+"loggout"="Logging Out ";
+"confirmpending"="Is this transaction no longer pending? ";
+"logout"="Logout ";
+"addIncome"="Add Income ";
+"addExpense"="Add Expense ";
+"selectCategory"="Select Category";
+"selectPaymentMode"="Select Payment Mode";
+
+"addingCategory"="Adding Category";
+"deleting"="Deleting ";
+"selectAccount"="Select Account ";
+"selectMode"="Select Mode ";
+"recurring"="Recurring ";
+
+"customizepaymentMode"="Customize Payment Mode";
+"transactionType"="Transaction Type ";
+"selectDate"="Select Date ";
+"budgetFrom"="From ";
+"budgetTo"="To ";
+"date"="Date ";
+"time"="Time ";
+"selectTime"="Select Time ";
+"selectCurrency"="Change Currency ";
+"enterAmount"="Enter Amount ";
+"setInitialAmount"="Set Initial Amount ";
+"addDescription"="Add Description ";
+"heading"="Heading ";
+"home"="Goollak Dashboard";
+
+"appDirectory"="Goollak Directory ";
+"notification"="Notification ";
+"likeus"="Like Us on Facebook ";
+"rateUs"="Rate Us ";
+"share"="Share ";
+"facebookLike"="Facebook Like ";
+"description"="Description ";
+"amount"="Amount ";
+"enterLocation"="Enter Location ";
+"withPerson"="With Person ";
+"warranty"="Purchase Warranty ";
+"warrantyexpirationclose"="Warranty to expire for:  ";
+"budgetExceeded"="Budget Exceeded ";
+"warrantypanel"="Warranty ";
+
+
+"reminderTransaction2"="This will also delete all the transaction related to the individual reminder ";
+"incomeTransaction"="Income Transactions";
+"expenseTransaction"="Expense Transactions";
+"budgetTransaction"="Budgets";
+"budgetTransaction2"="This will also delete all the transaction related to the individual budget ";
+"warrantiesTransaction"="Warranties";
+"transferTransaction2"="This will also delete all the transaction related to the individual transfer ";
+"reminderTransaction"="Reminders/Recurring";
+"transferTransaction"="Transfer";
+"atremindertime"="At Reminder Time ";
+"at"="at ";
+"daysBefore"="Days Before ";
+"hoursBefore"="Hours Before ";
+"profilephot"="Change profile picture";
+"balance"="Balance";
+"categoryName"="Enter New Category ";
+"paymentModeName"="Enter New Payment Mode ";
+
+"customizecategories"="Customize Categories";
+"selectCategoryIcon"="Select Category Icon ";
+"selectMainCategory"="Select Category ";
+"mainCategory"="Main Category ";
+"chooseyourview"="View As ";
+"chooseyouraccount"="Select Account ";
+"choosetransactiontype"="Select Transaction Type ";
+"choosemaincategory"="Select Main Category ";
+"chooseyourduration"="Select Duration ";
+"singleaccountnotelete"="Main account cannot be deleted. ";
+"accountNameExits"="Account name already exist. ";
+
+"alreadyloggedin"="You are already logged in with some other device. Please login again to syncsync. ";
+"accountNameExitsHidden"="Name already exist for a hidden account. ";
+
+"itenDelete"="Item Deleted ";
+"taptoUndo"="Tap to Undo ";
+
+"allAccount"="All Accounts";
+"accountSuccessfullyAdded"="Account Successfully Added ";
+"accountSuccessfullyUpdated"="Account Successfully Updated ";
+
+"categoryCannotbemerged"="Sub Category cannot be merged with it\'s own Main Category ";
+"samecategoryselected"="You cannot merge the category with itself. ";
+"networkException"="Network Error Occurred. ";
+"tap"="Tap here to confirm this transaction. ";
+"alert"="Alert ";
+"savemylocation"="Save my location ";
+"hidestatus"="Hide Status ";
+"setalertBefore"="Set Alert Before ";
+"noreminders"="No Reminder/Recurring Found ";
+"noreminders_initial"="Loading Reminder/Recurring. \nPlease wait...";
+"noaccounts"="Account Not Found ";
+"nodescription"="No Description Added";
+"noHeading"="No Heading ";
+
+"notransactions"="You have not started using Goollak, start by adding a transaction ";
+"notransactions_initial"="Loading Transaction. \nPlease wait...";
+"nobudgets"="No Budget Found ";
+"nobudgets_initial"="Loading Budgets.\nPlease wait...";
+"notransfers"="No Transfer Found ";
+"notransfers_initial"="Loading Transfer. \nPlease wait...";
+"nopending"="No Pending Transaction Found. \n Add pending transactions using our widget.  ";
+"tagPerson"="Tag a person ";
+"expDate"="Expiry Date ";
+"buyMore"="Buy More Icons ";
+"transactionaddedSuccessfully"="Transaction Added Successfully ";
+"budgetaddedSuccessfully"="Budget Added Successfully ";
+"budgetdeletedSuccessfully"="Budget Deleted Successfully ";
+"budgetupdatedSuccessfully"="Budget Updated Successfully ";
+"transferaddedSuccessfully"="Amount Transferred Successfully ";
+"transferupdatedSuccessfully"="Transfer Updated Successfully";
+"transferdeletedSuccessfully"="Transfer Deleted Successfully";
+"pendingDeleted"="Pending Transaction Deleted Successfully";
+"pendingaddedSuccessfully"="Pending Transaction Added Successfully";
+"categoryUpdatedSuccessfully"="Category Updated Successfully";
+"paymentModeUpdatedSuccessfully"="Payment Mode Updated Successfully";
+"categorymergedSuccessfully"="Category Merged Successfully";
+"transactionsUpdatedSuccessfully"="Transaction Updated Successfully";
+"transactionsdeletedSuccessfully"="Transaction Deleted Successfully";
+"reminderdeletedSuccessfully"="Reminder Deleted Successfully";
+
+"categoryaddeSuccessfully"="Category Added Successfully";
+"paymentModeaddeSuccessfully"="Payment Mode Added Successfully";
+"paymentmodedeletedSuccessfully"="Payment Mode Deleted Successfully";
+"categorydeletedSuccessfully"="Category Deleted Successfully";
+"accountdeletedSuccessfully"="Account Deleted Successfully";
+"along_with_the_related_data"="along with data associated to it. ";
+"reminderaddedSuccessfully"="Reminder Added Successfully";
+"reminderupdatedSuccessfully"="Reminder Updated Successfully";
+"error"="Error Occurred ";
+"notransactiondeleted"="No Transaction Deleted ";
+"notransactionupdated"="No Transaction Updated ";
+"subCategory"="Sub Category ";
+"accountName"="Account Name ";
+"passWordCondition"="* Password must be atleast 6 characters long. It should contain atleast one letter and a number. ";
+"account"="Account ";
+"details"="Details ";
+"from"="From ";
+"to"="To ";
+"guest"="Guest";
+"years"="Years";
+"yes"="Yes";
+"no"="No";
+"yearly"="Yearly";
+"months"="Months";
+"monthly"="Monthly";
+"days"="Days";
+
+"weekly"="Weekly";
+"rupeeCorrect"="Indian Rupee - â‚¹";
+"rupeeInCorrect"="Indian Rupee - `";
+"addingTransaction"="Adding Transaction ";
+"addingReminder"="Adding Reminder ";
+
+"addBudget"="Add Budget ";
+"updatingReminder"="Updating Reminder ";
+"addingBudget"="Adding Budget ";
+"edit"="Edit ";
+"editReminder"="Edit Reminder ";
+"editTransfer"="Edit Transfer ";
+"editAccount"="Edit Account ";
+"editBudget"="Edit Budget ";
+"addTransfer"="Add Transfer ";
+"delete"="Delete ";
+"merge"="Merge ";
+"deleteCategory"="Deleting this category will also delete all transactions under it. ";
+"deletesubCategory"="Deleting this category will delete all transactions under it. ";
+"deletePaymentMode"="Deleting this payment mode will delete all transactions under it. ";
+"inputType"="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+"app_crash"="App Crash";
+"downloadApp"="Get App";
+"call"="Call ";
+"last10"="Last 10 Transactions ";
+"notransactionsrecorded"="No transactions recorded yet. ";
+"last3month"="Last 3 Months ";
+"lastmonth"="Last Month ";
+"lastweek"="Last Week ";
+"custom"="Custom ";
+"piechart"="Pie Chart ";
+"graph"="Graph ";
+"report"="Report ";
+"tools"="Tools ";
+"feedback"="Feedback ";
+"getpremium"="Get Premium ";
+"tax"="Tax Calculator ";
+"loan"="Loan Calculator ";
+"converter"="Currency Converter ";
+"creditcardcal"="Credit Card Loan Calculator ";
+"nowarranties"="No Warranties Found ";
+"nowarranties_initial"="Loading Warranties. \nPlease wait..";
+"reminderDateCannotbeless"="Please set a reminder time greater than current time. ";
+"pendingDateCannotbeless"="Pending Date cannot be less than Current Date. ";
+"spent"="Spent";
+
+"timeLeft"="Time Left";
+"newlyaddedtransactions"="Recent Transactions";
+"oldtransactions"="Old Transactions";
+"highestamount"="Highest Amount";
+"lowestamount"="Lowest Amount";
+"all"="All";
+"both"="Both ";
+"wrongTimeDuration"="Wrong Time Duration";
+"settings"="Settings ";
+"transactionOnServer"="Transaction on Server ";
+"january"="January";
+"february"="February";
+"march"="March";
+"april"="April";
+"may"="May";
+"june"="June";
+"july"="July";
+"august"="August";
+"september"="September";
+"october"="October";
+"november"="November";
+"december"="December";
+"sunday"="Sunday";
+"monday"="Monday";
+"tuesday"="Tuesday";
+"wednesday"="Wednesday";
+"thursday"="Thursday";
+"friday"="Friday";
+"saturday"="Saturday";
+"Detailed"="Detailed (.csv)";
+"Summarized"="Summarized (.xls)";
+"CustomizeExport"="Custom (.xls)";
+"Custom"="Custom (.xls)";
+"Retreiving_Transactions"="Retrieving Transactions";
+"Export_For_DEM_PRO"="Export for Goollak PRO";
+
+
+"export_failed"="Export Failed";
+"import_failed"="Import Failed";
+"export_msg_pass"="Backup of your data is saved in ";
+"export_msg_fail"="Export not completed. Try again.";
+
+"No_Application_Available_to_View_Excel_Sheet"="No application found on device to view Excel Sheet. ";
+"No_Application_Available_to_View_pdf"="No application found on device to view Pdf File. ";
+"Refreshing"="Refreshing";
+"singleCategoryCannotBeDeleted"="Category cannot be deleted. There should be atleast one category listed. ";
+"singleCategoryCannotBeHidden"="Category cannot be hidden. There should be atleast one category visible. ";
+"singlePaymentCannotBeDeleted"="Payment Mode cannot be deleted. There should be atleast one payment mode listed. ";
+"singlePaymentCannotBeHidden"="Payment Mode cannot be hidden. There should be atleast one Payment Mode visible. ";
+"search"="Search";
+"one"="1";
+"two"="2";
+"three"="3";
+"four"="4";
+"five"="5";
+"six"="6";
+"seven"="7";
+"eight"="8";
+"nine"="9";
+"zero"="0";
+"vaidaccountname"="* Please enter a valid account name. ";
+"acceptprivacypolicy"="* Please accept our Privacy Policy and Terms &amp; Conditions. ";
+"dateofbirth"="* Please enter Date of Birth.";
+"entered_wrong_password"="Incorrect Password";
+"empty_field"="* Required fields cannot be empty.";
+"password_protection"="Password Protection";
+"extras"="EXTRAS";
+"changelog"="Change Log";
+"password_updated"="Password Updated Successfully";
+"All_field_warning"="* Fields cannot be empty";
+"minimum_password_warning"="Password should have 4 - 6 digits. ";
+"matching_password_warning"="* Passwords do not match. ";
+"valid_mail_warning"="* Enter a valid Email Id. ";
+"customize_your_export"="Customize your exports ";
+"atleast_select_one_type_of_transaction"="Please select Type of Transaction. ";
+"nothing_available_to_export"="No data available for export. ";
+
+"selectview"="Select View by";
+"selectorder"="Select Order by ";
+"selectfilter"="Select Filter";
+"import_data"="Import Data";
+"select_currency"="Select Currency";
+
+"importing_csv"="Importing .csv file to Goollak database. \n Analyzing your data...";
+"exporting_data"="Exporting Data";
+"export_data"="Export Data";
+"export"="Export";
+"detailed_csv"="Detailed (.csv file) ";
+"summarized_xls_"="Summarized (.xls file) ";
+"custom_xls_"="Custom (.xls file) ";
+"selectedCurrencySavedSuccessfully"="Currency Saved Successfully ";
+"summarized_pdf_"="Summarized (.Pdf) ";
+"type"="Transaction Type";
+"AppUpgradation"="App Upgradation in progress.\n Please Wait. ";
+"check"="Check";
+
+"select_all"="Select All";
+
+"error_in_export"="Export cannot be completed. Try Again. ";
+"can_t_able_to_create_the_directory"="Cannot create new directory. ";
+"select_items"="Select Items";
+"overview"="View";
+"filter"="Filter";
+"order"="Order";
+"Display"="DISPLAY";
+"Database"="DATABASE";
+"Security"="SECURITY";
+"Profile"="PROFILE";
+"tranfer_related_transactions"="This transaction occurred due to a Transfer. Please edit the respective Transfer to edit it. ";
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////DEFAULT CATEGORIES /////////////////////// -->
+"Salary"="Salary";
+"Wages"="Wages";
+"Annuityorpension"="Annuity or pension";
+"ProvidentFund"="Provident Fund";
+"Mediclaim"="Mediclaim";
+"Houseproperty"="House property";
+"capitalgains"="Capital Gains";
+"Interestrecieved"="Interest recieved";
+"securities"="Securities";
+"bankdeposits"="Bank Deposits";
+<!- /////////////////////EXPENSE TYPE -->
+"Entertainment"="Entertainment";
+"movies"="Movies";
+"television"="Television";
+"Medical"="Medical";
+"surgery"="Surgery";
+"medicines"="Medicines";
+"Food"="Food";
+"vegetables"="Vegetables";
+"fruits"="Fruits";
+"Travel"="Travel";
+"Busfare"="Bus fare";
+"Trainfare"="Train fare";
+"Flightfare"="Flight fare";
+"Taxifare"="Taxi fare";
+"hotelrent"="Hotel Rent";
+"foodcost"="Food Cost";
+"PersonalCare"="Personal Care";
+"manicure"="Manicure";
+"pedicure"="Pedicure";
+"hairdressing"="Hair Dressing";
+
+"Pen"="Pen";
+"paper"="Paper";
+"Clothing"="Clothing";
+"shirts"="Shirts";
+"pants"="Pants";
+"tshirts"="T-Shirts";
+"shoes"="Shoes";
+"sandals"="Sandals";
+"sweater"="Sweater";
+"jacket"="Jacket";
+"skirts"="Skirts";
+"Electronics"="Electronics";
+"cellphone"="Cellphone";
+"tv"="Tv";
+"washingmachine"="Washing Machine";
+"BillPayments"="Bill Payments";
+"phonebill"="Phone Bill";
+"electricitybill"="Electricity Bill";
+"waterbill"="Water Bill";
+"educationalcost"="Educational Cost";
+"schoolfees"="School Fees";
+"tuitionfees"="Tuition Fees";
+"admisionfees"="Admision Fees";
+"Tax"="Tax Payments";
+"Incometax"="Income Tax";
+"SalesTax"="Sales Tax";
+"propertytax"="Property Tax";
+"Groceries"="Groceries";
+"Gifts"="Gifts";
+"Auto"="Auto";
+"Rent"="Rent";
+"Miscellaneous"="Miscellaneous";
+"Cash"="Cash";
+"Cheque"="Cheque";
+"DebitCard"="Debit Card";
+"CreditCard"="Credit Card";
+"changeLog"="Change Log";
+"Demversion"="DEM Version 6.0.1 ";
+"oneSyncing"="Initial release with new GUI";
+"twoTransfer"="All old features are available except Pending";
+"threeBudget"="New Goollak server syncing for data security";
+"fourAccounts"="Better user experience";
+
+
+"reminderNotFound"="No Reminder Set ";
+"googleplus"="Google +";
+"googleplusone"="Google +1";
+"rateus"="Rate Us";
+"rateus_heading"="Review Us";
+"rateus_popup_text"="Like Goollak - Expense Manager ? Leave us a 5 star rating! ";
+"rateus_now"="Review Now";
+"rateus_later"="Later";
+"googleplus_popup_text"="Give us a ‘+1’ on Google Plus also. ";
+"fan"="Become a fan of Goollak - Expense Manager ";
+"facebook_popup_text"="Receive all updates and instant support regarding Goollak via Facebook. You can also know about current offers by Appbulous Software. ";
+"update_popup_text"="New version of Goollak - Expense Manager  is available. Update Now! ";
+"PasswordProtectionEnabled"="Password Protection Enabled";
+"browser_not_found"="Browser Not Found";
+
+"accountSuccessfullydeleted"="Account Deleted Successfully";
+"nullString"="null";
+"update"="Goollak Update";
+"now"="Update Now";
+"later"="Later";
+"like"="Like";
+"UserProfile"="User Profile";
+
+"facebook_popup_heading"="Like Us on Facebook";
+
+"exception_in_import"="Exception in Import.";
+"csv_file_is_corrupted"="CSV file is corrupted.";
+"export_data_to_pdf_successfully"="Export Data to .pdf Successfully.";
+"export_data_to_xls_successfully"="Export Data to .xls Successfully.";
+"syncingData"="Please Wait!\n Fetching data from Goollak server";
+
+"taphere"="TAP HERE TO UPDATE";
+"rename_file"="Rename File";
+"enter_a_valid_file_name_"="Enter a valid File Name.";
+
+"Send_mail"="Send mail...";
+"No_email_clent_installed"="There are no email clients installed.";
+"email_now"="Now";
+
+"AlertOn"="Alert ON";
+"AlertOff"="Alert OFF";
+"logoutheader"="Logout";
+"yearWrong"="Wrong year selected ";
+"mainAccount"="Main Account ";
+"Sub Account"="Sub Account ";
+"lastreminderdue"="Last Reminder due date : ";
+"lasttransactiondue"="Last Transaction due date : ";
+"deletefolloeingselecteddata"="Do you really want to delete the data of ";
+"week"="Week";
+"month"="Month";
+"selectTable"="Select Table to be cleared";
+"googleplayservices"="Google Play Services don\'t exits. ";
+
+
+

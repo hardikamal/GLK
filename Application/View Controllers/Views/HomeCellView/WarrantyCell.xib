@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Warranty" rowHeight="130" id="xxf-S2-Dlm" customClass="WarrantyCell">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xxf-S2-Dlm" id="47W-vC-cnQ">
+                <rect key="frame" x="0.0" y="0.0" width="310" height="131"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GUEST" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4y-oG-Mtv">
+                        <rect key="frame" x="198" y="66" width="102" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progressViewStyle="bar" progress="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="FPe-xm-Yo5">
+                        <rect key="frame" x="12" y="92" width="288" height="13"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="X3q-Sp-S1F"/>
+                        </constraints>
+                        <color key="progressTintColor" red="0.050980392159999999" green="0.77647058820000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="trackTintColor" red="0.72941176470000002" green="0.93725490199999995" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </progressView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9-9-2014 TO 10-9-2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w2-mQ-rNp">
+                        <rect key="frame" x="15" y="105" width="280" height="21"/>
+                        <gestureRecognizers/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.051653448550000002" green="0.7783203125" blue="0.66785945430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5800000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-vO-JgM">
+                        <rect key="frame" x="158" y="14" width="142" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="salary_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GFP-2F-8Km">
+                        <rect key="frame" x="9" y="8" width="30" height="30"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No description Added" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaf-tG-W3K">
+                        <rect key="frame" x="54" y="41" width="157" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9-9-2014 TO 10-9-2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4G-DP-jxx">
+                        <rect key="frame" x="12" y="66" width="192" height="21"/>
+                        <gestureRecognizers/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.051653448550000002" green="0.7783203125" blue="0.66785945430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrM-r0-8bG">
+                        <rect key="frame" x="54" y="11" width="96" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="imgCatagery" destination="GFP-2F-8Km" id="GLO-dz-OiK"/>
+                <outlet property="lblAmount" destination="D6a-vO-JgM" id="g5I-o8-J3H"/>
+                <outlet property="lblCategery" destination="mrM-r0-8bG" id="rPE-3d-G7a"/>
+                <outlet property="lblDiscription" destination="eaf-tG-W3K" id="IIK-R1-8JQ"/>
+                <outlet property="lblUserName" destination="A4y-oG-Mtv" id="Ioz-oR-eWE"/>
+                <outlet property="lblWarranntyDate" destination="K4G-DP-jxx" id="CR3-37-3iW"/>
+                <outlet property="lbltDate" destination="8w2-mQ-rNp" id="HgE-OQ-0Sr"/>
+                <outlet property="progrssView" destination="FPe-xm-Yo5" id="dgG-0I-OFU"/>
+            </connections>
+            <point key="canvasLocation" x="256" y="150"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="salary_icon.png" width="145" height="145"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
