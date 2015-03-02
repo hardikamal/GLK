@@ -642,13 +642,25 @@
                         <viewControllerLayoutGuide type="bottom" id="pV9-xS-LYD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VQl-Ap-lrv">
-                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ypo-LF-shu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ypo-LF-shu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-In-ooP">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bmi-r4-xbt">
+                                <rect key="frame" x="45" y="8" width="230" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="JO0-eq-Db1"/>
+                                    <constraint firstAttribute="width" constant="230" id="xRu-rk-DEh"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Income"/>
+                                    <segment title="Expense"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-In-ooP">
                                 <rect key="frame" x="0.0" y="50" width="320" height="475"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc0-Hj-yLN">
@@ -847,23 +859,27 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bmi-r4-xbt">
-                                <rect key="frame" x="45" y="8" width="230" height="29"/>
-                                <segments>
-                                    <segment title="Income"/>
-                                    <segment title="Expense"/>
-                                </segments>
-                                <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Bmi-r4-xbt" secondAttribute="centerX" id="37C-7X-QQn"/>
+                            <constraint firstItem="Afx-In-ooP" firstAttribute="leading" secondItem="VQl-Ap-lrv" secondAttribute="leading" id="4nD-BU-F7U"/>
+                            <constraint firstItem="Bmi-r4-xbt" firstAttribute="top" secondItem="VQl-Ap-lrv" secondAttribute="top" constant="8" id="9TI-wR-Nso"/>
+                            <constraint firstItem="ypo-LF-shu" firstAttribute="top" secondItem="hIo-nh-Yg2" secondAttribute="bottom" id="Cgj-oc-wnZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Afx-In-ooP" secondAttribute="trailing" id="DWp-B7-2lB"/>
+                            <constraint firstAttribute="trailing" secondItem="ypo-LF-shu" secondAttribute="trailing" id="IGd-YD-LAH"/>
+                            <constraint firstItem="Afx-In-ooP" firstAttribute="top" secondItem="VQl-Ap-lrv" secondAttribute="top" constant="50" id="Wa8-o7-Jf1"/>
+                            <constraint firstItem="ypo-LF-shu" firstAttribute="leading" secondItem="VQl-Ap-lrv" secondAttribute="leading" id="XSb-pM-p5y"/>
+                            <constraint firstAttribute="bottom" secondItem="Afx-In-ooP" secondAttribute="bottom" constant="-89" id="cEi-sL-hEl"/>
+                            <constraint firstAttribute="bottom" secondItem="ypo-LF-shu" secondAttribute="bottom" id="mzh-M4-914"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Add Transaction" id="yBe-gh-WFB">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="a3E-JG-vJY"/>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="dayLabel" destination="B45-f1-Vbl" id="gei-qU-jnN"/>
                         <outlet property="dobPicker" destination="87f-8Y-5Yu" id="Ugh-cF-s59"/>
@@ -912,7 +928,7 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-2593" y="-671"/>
+            <point key="canvasLocation" x="-2729" y="-639"/>
         </scene>
         <!--Select Categery-->
         <scene sceneID="gnc-kl-Lq0">
