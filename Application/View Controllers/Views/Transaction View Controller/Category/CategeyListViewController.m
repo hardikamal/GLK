@@ -195,17 +195,17 @@
     UILabel *slogan= [[UILabel alloc] initWithFrame:CGRectMake(60,0,cell.frame.size.width,cell.frame.size.height)];
     slogan.text= [((RADataObject *)item).name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     slogan.font= [UIFont boldSystemFontOfSize:20];
-    slogan.backgroundColor=[UIColor clearColor];
+   // slogan.backgroundColor=[UIColor clearColor];
     [cell.contentView addSubview:slogan];
     slogan.textColor = [UIColor whiteColor];
-    slogan.font=[UIFont fontWithName:Embrima size:16];
+   // slogan.font=[UIFont fontWithName:Embrima size:16];
     if (([self.treeView indexPathForItem:item].row==0 && [self budjetViewController]))
     {
-        UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        //UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
-        imageView.image = [UIImage imageNamed:@"All_icon.png"];
-        [view addSubview:imageView];
-        [cell.contentView addSubview:view];
+        imageView.image = [UIImage imageNamed:@"overall_icon.png"];
+       // [view addSubview:imageView];
+        [cell.contentView addSubview:imageView];
         
     }else
     {

@@ -858,7 +858,7 @@ if ([infoPayment count] != 0)
     RESIGN_KEYBOARD
     [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
         self.dayLabel.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
-        self.monthDateLabel.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],selectedDate.year];
+        self.monthDateLabel.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
     } cancelBlock:^(ActionSheetDatePicker *picker) {
     } origin:[self view]];
 }
