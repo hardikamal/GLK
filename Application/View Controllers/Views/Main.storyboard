@@ -1323,10 +1323,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wGr-rz-sJK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wGr-rz-sJK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LO8-JW-Fon">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LO8-JW-Fon">
                                 <rect key="frame" x="5" y="5" width="310" height="495"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1342,17 +1342,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HgK-1v-yL5">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HgK-1v-yL5">
                                                     <rect key="frame" x="21" y="8" width="38" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="38" id="E8F-6b-lMj"/>
+                                                        <constraint firstAttribute="height" constant="30" id="HxU-5f-hZk"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-p1-SC8">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-p1-SC8">
                                                     <rect key="frame" x="84" y="11" width="164" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="tKD-xC-7A2"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="UdK-p1-SC8" firstAttribute="top" secondItem="gNp-u7-RJ0" secondAttribute="top" constant="11" id="Lrx-xh-w62"/>
+                                                <constraint firstItem="UdK-p1-SC8" firstAttribute="leading" secondItem="gNp-u7-RJ0" secondAttribute="leading" constant="84" id="YqQ-mL-be3"/>
+                                                <constraint firstAttribute="trailing" secondItem="UdK-p1-SC8" secondAttribute="trailing" constant="62" id="jar-Z9-cEu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1364,6 +1376,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.89060507020000002" green="0.89060507020000002" blue="0.89060507020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LO8-JW-Fon" secondAttribute="bottom" constant="4" id="621-3z-0oS"/>
+                            <constraint firstAttribute="bottom" secondItem="wGr-rz-sJK" secondAttribute="bottom" id="Cvv-se-N7L"/>
+                            <constraint firstAttribute="trailing" secondItem="wGr-rz-sJK" secondAttribute="trailing" id="GBx-UC-6HN"/>
+                            <constraint firstItem="LO8-JW-Fon" firstAttribute="top" secondItem="wK8-XI-wGx" secondAttribute="top" constant="4" id="QAY-Sf-ITe"/>
+                            <constraint firstItem="wGr-rz-sJK" firstAttribute="top" secondItem="LRw-1q-94G" secondAttribute="bottom" id="WKz-8e-PH7"/>
+                            <constraint firstAttribute="trailing" secondItem="LO8-JW-Fon" secondAttribute="trailing" constant="4" id="Ywe-bg-77b"/>
+                            <constraint firstItem="wGr-rz-sJK" firstAttribute="leading" secondItem="wK8-XI-wGx" secondAttribute="leading" id="bdr-DS-1AZ"/>
+                            <constraint firstItem="LO8-JW-Fon" firstAttribute="leading" secondItem="wK8-XI-wGx" secondAttribute="leading" constant="6" id="dWD-iZ-amz"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Payment Mode" id="oyW-0S-Obj">
@@ -1389,7 +1411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spP-MZ-kYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2450" y="16"/>
+            <point key="canvasLocation" x="-2692" y="80"/>
         </scene>
         <!--Add Payment Mode-->
         <scene sceneID="7o2-PL-njw">
@@ -1403,8 +1425,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-9D-MGz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="571"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-9D-MGz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HEI-Ws-hMi" customClass="BoderView">
                                 <rect key="frame" x="10" y="81" width="300" height="117"/>
@@ -1451,6 +1473,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94565130740000003" green="0.94565130740000003" blue="0.94565130740000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WX3-9D-MGz" secondAttribute="trailing" id="5Fs-ho-6cN"/>
+                            <constraint firstItem="WX3-9D-MGz" firstAttribute="top" secondItem="BCx-MP-SFM" secondAttribute="top" id="9XH-Si-zhx"/>
+                            <constraint firstItem="WX3-9D-MGz" firstAttribute="leading" secondItem="BCx-MP-SFM" secondAttribute="leading" id="TGA-9p-tEK"/>
+                            <constraint firstAttribute="bottom" secondItem="WX3-9D-MGz" secondAttribute="bottom" id="tSU-rO-hLr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Payment Mode" id="weP-JU-Eii">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="AjZ-Bu-pPt">
