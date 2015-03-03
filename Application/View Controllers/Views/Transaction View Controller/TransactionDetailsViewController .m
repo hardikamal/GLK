@@ -218,7 +218,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
     [vc setImage:[UIImage imageWithData:transaction.pic]];
     if ([self WarrantyViewController])
@@ -296,7 +296,7 @@
 
 - (IBAction)btnEditClick:(id)sender
 {
-     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     if ([self WarrantyViewController])
     {
          AddWarrantyViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"AddWarrantyViewController"];

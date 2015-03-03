@@ -113,7 +113,7 @@
 
 -(void)showLeft
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 	UIViewController *vc  = [mainStoryboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -225,7 +225,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     ReminderDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ReminderDetailsViewController"];
     [vc setTransaction:[self.reminderItems objectAtIndex:[indexPath row]]];
     [self.navigationController pushViewController:vc animated:YES];

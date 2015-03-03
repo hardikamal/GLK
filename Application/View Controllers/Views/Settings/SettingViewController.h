@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "DeleteDemDataViewController.h"
-//#import "ExportViewController.h"
-//#import "ImportViewController.h"
+#import "DeleteDemDataViewController.h"
+#import "ExportViewController.h"
+#import "ImportViewController.h"
 @interface SettingViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 
@@ -17,18 +17,18 @@
 - (IBAction)btnExportClick:(id)sender;
 - (IBAction)btnImportClick:(id)sender;
 - (IBAction)btnChangeCurrency:(id)sender;
-//@property (strong, nonatomic) IBOutlet NavigationLeftButton *btnViewReports;
+@property (strong, nonatomic) IBOutlet NavigationLeftButton *btnViewReports;
 - (IBAction)btnViewReportClick:(id)sender;
 
-//@property (strong, nonatomic) IBOutlet NavigationLeftButton *btnChangeCurrency;
+@property (strong, nonatomic) IBOutlet NavigationLeftButton *btnChangeCurrency;
 
 - (IBAction)btnUnChekClick:(id)sender;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)btnBackClick:(id)sender;
 - (IBAction)btnDeleteClick:(id)sender;
-//@property (strong, nonatomic)  DeleteDemDataViewController *objCustomPopUpViewController;
-//@property (strong, nonatomic)  ExportViewController *exportViewController;
-//@property (strong, nonatomic)  ImportViewController *importPopUpViewController;
+@property (strong, nonatomic)  DeleteDemDataViewController *objCustomPopUpViewController;
+@property (strong, nonatomic)  ExportViewController *exportViewController;
+@property (strong, nonatomic)  ImportViewController *importPopUpViewController;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblDispaly;
 @property (strong, nonatomic) IBOutlet UILabel *lblDatabase;

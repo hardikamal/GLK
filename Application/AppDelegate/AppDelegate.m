@@ -23,7 +23,7 @@
     [self initializeWindowAndStartUpViewController];
     [self afterInitialisationSetup];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[AppCommonFunctions sharedInstance]handlePushWith:[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]];
+       // [[AppCommonFunctions sharedInstance]handlePushWith:[launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]];
     });
     
     [[AppCommonFunctions sharedInstance]getContactsFromAddressBook];
@@ -84,7 +84,7 @@
 #pragma mark - Local Notifications Delegate Methods
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    [[AppCommonFunctions sharedInstance]handleLocalRemoteNotification:notification];
+    //[[AppCommonFunctions sharedInstance]handleLocalRemoteNotification:notification];
 }
 
 #pragma mark - Apple Push Notifications Service Methods

@@ -193,7 +193,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 - (IBAction)btnPaymentModeClick:(id)sender
 {
     self.paymentModeList=[[NSMutableArray alloc] init];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:Nil];
     self.objCustomPopUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"SelectedViewController"];
     NSArray *paymentModeArray=[[PaymentmodeHandler sharedCoreDataController] getPaymentModeList];
     for ( Paymentmode *mode in paymentModeArray)
@@ -215,7 +215,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 
 - (IBAction)btnCategeryClick:(id)sender
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:Nil];
     self.objCustomPopUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"SelectedViewController"];
     NSMutableArray *array=[[NSMutableArray alloc] init];
     self.categryList=[[CategoryListHandler sharedCoreDataController] getAllCategoryList];

@@ -218,7 +218,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 	TransferDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransferDetailsViewController"];
     [vc setTransaction:[self.transferItems objectAtIndex:[indexPath row]]];
     [self.navigationController pushViewController:vc animated:YES];

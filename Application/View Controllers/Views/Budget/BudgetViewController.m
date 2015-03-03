@@ -223,7 +223,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
 	BudgetNewDetailsViewController  *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"BudgetNewDetailsViewController"];
     Budget *transaction =(Budget*)[self.budgetItems objectAtIndex:[indexPath row]];
     [vc setTran:transaction];

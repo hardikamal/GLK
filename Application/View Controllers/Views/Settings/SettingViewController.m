@@ -8,12 +8,12 @@
 
 #import "SettingViewController.h"
 
-//#import "DeleteDemDataViewController.h"
-//#import "ReSetPasswordViewController.h"
-//#import "ExportViewController.h"
-//#import "GoogleDriveViewController.h"
+#import "DeleteDemDataViewController.h"
+#import "ReSetPasswordViewController.h"
+#import "ExportViewController.h"
+#import "GoogleDriveViewController.h"
 #import "HomeHelper.h"
-//#import "EmailViewController.h"
+#import "EmailViewController.h"
 #import "HelpViewController.h"
 @interface SettingViewController ()
 
@@ -67,7 +67,7 @@
 {
     NSString *mainToken=[[[Utility userDefaultsForKey:CURRENT_TOKEN_ID] componentsSeparatedByString:@"_"] objectAtIndex:0];
     NSString *currency= [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
-   // [self.btnChangeCurrency setTitle:[NSString stringWithFormat:@"%@ (%@)",NSLocalizedString(@"selectCurrency", nil), [[currency componentsSeparatedByString:@"-"] objectAtIndex:1]] forState:UIControlStateNormal];
+   [self.btnChangeCurrency setTitle:[NSString stringWithFormat:@"%@ (%@)",NSLocalizedString(@"selectCurrency", nil), [[currency componentsSeparatedByString:@"-"] objectAtIndex:1]] forState:UIControlStateNormal];
   
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:LOCK_SCREEN_PASSWORD] length]!=0)
     {
@@ -91,7 +91,7 @@
 
 -(void)receiveNotification:(NSNotification*) notification
 {
-    HelpViewController *driverController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"HelpViewController"];
+    HelpViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"HelpViewController"];
     NSDictionary * info =notification.userInfo;
     [driverController setXlsPath:[info objectForKey:@"urlpath"]];
     [self.navigationController pushViewController:driverController animated:YES];
@@ -100,7 +100,7 @@
 
 -(void)receivedSelectViewListNotification:(NSNotification*) notification
 {
-   // [self.exportViewController.view removeFromSuperview];
+    [self.exportViewController.view removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,8 +110,8 @@
 
 - (IBAction)btnExportClick:(id)sender
 {
-//    self.exportViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil] instantiateViewControllerWithIdentifier:@"ExportViewController"];
-//    [self.exportViewController show];
+    self.exportViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil] instantiateViewControllerWithIdentifier:@"ExportViewController"];
+    [self.exportViewController show];
 }
 
 - (IBAction)btnImportClick:(id)sender
@@ -129,37 +129,37 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-//    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-//    if([title isEqualToString:@"Download via Google Drive"])
-//    {
-//        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
-//        [self.navigationController pushViewController:driverController animated:YES];
-//    }
-//    else if([title isEqualToString:@"Import via Existing File"])
-//    {
-//        self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
-//        [self.importPopUpViewController setMainTitle:NSLocalizedString(@"importdata", nil
-//                                                                      )];
-//        [self.view addSubview:self.importPopUpViewController.view];
-//        
-//    } if([title isEqualToString:@"View via Google Drive"])
-//    {
-//        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
-//        [driverController setMainTitle:NSLocalizedString(@"viewReports", nil )];
-//        [self.navigationController pushViewController:driverController animated:YES];
-//    }
-//    else if([title isEqualToString:@"View via Existing File"])
-//    {
-//         self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
-//          [self.importPopUpViewController setMainTitle:NSLocalizedString(@"viewReports", nil )];
-//        [self.view addSubview:self.importPopUpViewController.view];
-//        
-//    }
-//    else if([title isEqualToString: @"Import via Mail"])
-//    {
-//        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Alert"      message:@"Open Mail and long press the selected .csv file to import and you should see Goollak app listed as one of the 'Open in' apps"     delegate:self     cancelButtonTitle: @"OK"  otherButtonTitles:nil, nil];
-//        [message show];
-//    }
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"Download via Google Drive"])
+    {
+        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
+        [self.navigationController pushViewController:driverController animated:YES];
+    }
+    else if([title isEqualToString:@"Import via Existing File"])
+    {
+        self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
+        [self.importPopUpViewController setMainTitle:NSLocalizedString(@"importdata", nil
+                                                                      )];
+        [self.view addSubview:self.importPopUpViewController.view];
+        
+    } if([title isEqualToString:@"View via Google Drive"])
+    {
+        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
+        [driverController setMainTitle:NSLocalizedString(@"viewReports", nil )];
+        [self.navigationController pushViewController:driverController animated:YES];
+    }
+    else if([title isEqualToString:@"View via Existing File"])
+    {
+         self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
+          [self.importPopUpViewController setMainTitle:NSLocalizedString(@"viewReports", nil )];
+        [self.view addSubview:self.importPopUpViewController.view];
+        
+    }
+    else if([title isEqualToString: @"Import via Mail"])
+    {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Alert"      message:@"Open Mail and long press the selected .csv file to import and you should see Goollak app listed as one of the 'Open in' apps"     delegate:self     cancelButtonTitle: @"OK"  otherButtonTitles:nil, nil];
+        [message show];
+    }
 }
 
 
@@ -178,8 +178,8 @@
     }
     else
     {
-//        ReSetPasswordViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPasswordViewController"];
-//        [self.navigationController pushViewController:catageryController animated:YES];
+        ReSetPasswordViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPasswordViewController"];
+        [self.navigationController pushViewController:catageryController animated:YES];
     }
 }
 
@@ -194,36 +194,36 @@
 
 - (IBAction)btnDeleteClick:(id)sender
 {
-//    self.objCustomPopUpViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil]instantiateViewControllerWithIdentifier:@"DeleteDemDataViewController"];
-//    [self.view addSubview: self.objCustomPopUpViewController.view];
+    self.objCustomPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"DeleteDemDataViewController"];
+    [self.view addSubview: self.objCustomPopUpViewController.view];
 }
 
 
 - (IBAction)btnContactDemSupportClick:(id)sender
 {
-//    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
-//    if (mailClass != nil)
-//    {
-//        // We must always check whether the current device is configured for sending emails
-//        if ([mailClass canSendMail])
-//        {
-//            EmailViewController* picker = [[EmailViewController alloc] init];
-//            // Email Subject
-//            NSString *emailTitle = @"Goollak - Expense Manager version 1.0";
-//            NSString *bodyText = [[NSString alloc] initWithFormat:@"<html><p><br>Device Name  : %@<br><br>IMEI no :%@ <br><br>Ios Release : %@<br><br>%@<br></p></html",[Utility machineName] ,[Utility uniqueIDForDevice] ,@"1.0.0" ,NSLocalizedString(@"phonenumber", nil)];
-//            NSArray *toRecipents = [NSArray arrayWithObject:NSLocalizedString(@"feedback_EMail_ID", nil)];
-//            [picker setSubject:emailTitle];
-//            [picker setMessageBody:bodyText isHTML:YES];
-//            [picker setToRecipients:toRecipents];
-//            [[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:picker  animated:YES  completion:nil];
-//        }
-//        else
-//        {
-//            UIAlertView *newAlertView=[[UIAlertView alloc]initWithTitle:@"" message:@"Email is not configured. Go to iPad settings> mail contacts, calendars > add account." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-//            [newAlertView show];
-//        }
-//    }
-//
+    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+    if (mailClass != nil)
+    {
+        // We must always check whether the current device is configured for sending emails
+        if ([mailClass canSendMail])
+        {
+            EmailViewController* picker = [[EmailViewController alloc] init];
+            // Email Subject
+            NSString *emailTitle = @"Goollak - Expense Manager version 1.0";
+            NSString *bodyText = [[NSString alloc] initWithFormat:@"<html><p><br>Device Name  : %@<br><br>IMEI no :%@ <br><br>Ios Release : %@<br><br>%@<br></p></html",[Utility machineName] ,[Utility uniqueIDForDevice] ,@"1.0.0" ,NSLocalizedString(@"phonenumber", nil)];
+            NSArray *toRecipents = [NSArray arrayWithObject:NSLocalizedString(@"feedback_EMail_ID", nil)];
+            [picker setSubject:emailTitle];
+            [picker setMessageBody:bodyText isHTML:YES];
+            [picker setToRecipients:toRecipents];
+            [[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:picker  animated:YES  completion:nil];
+        }
+        else
+        {
+            UIAlertView *newAlertView=[[UIAlertView alloc]initWithTitle:@"" message:@"Email is not configured. Go to iPad settings> mail contacts, calendars > add account." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [newAlertView show];
+        }
+    }
+
     
 }
 

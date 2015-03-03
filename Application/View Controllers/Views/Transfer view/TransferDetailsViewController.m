@@ -136,7 +136,7 @@
 - (IBAction)btnEditClick:(id)sender
 {
     NSLog(@"%@",transaction);
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     AddTransferViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"AddTransferViewController"];
     [vc setTransaction:transaction];
     [self.navigationController pushViewController:vc animated:YES];

@@ -140,7 +140,7 @@
 - (IBAction)btnCategory:(UIButton*)sender
 {
     [self.popUpView removeFromSuperview];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:Nil];
     self.objCustomPopUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"SelectedViewController"];
     [self.objCustomPopUpViewController setTitleString:sender.titleLabel.text];
     NSMutableArray *array=[[NSMutableArray alloc] init];
@@ -168,7 +168,7 @@
 - (IBAction)btnPaymentModeClick:(UIButton*)sender
 {
     [self.popUpView removeFromSuperview];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:Nil];
     self.objCustomPopUpViewController = [storyboard instantiateViewControllerWithIdentifier:@"SelectedViewController"];
     [self.objCustomPopUpViewController setTitleString:sender.titleLabel.text];
     NSMutableArray *array=[[NSMutableArray alloc] init];

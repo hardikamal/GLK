@@ -298,7 +298,7 @@
 - (IBAction)btnFilterClick:(id)sender
 {
     [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-    self.objCustomPopUpViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:Nil] instantiateViewControllerWithIdentifier:@"CustomPopUpViewController"];
+    self.objCustomPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil] instantiateViewControllerWithIdentifier:@"CustomPopUpViewController"];
     [self.objCustomPopUpViewController setCategryList:self.categryList];
     [self.objCustomPopUpViewController setPaymentModeList:self.paymentModeList];
     [self.objCustomPopUpViewController show];

@@ -154,7 +154,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
     [vc setImage:[UIImage imageWithData:transaction.pic]];
     [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"reminderdetails", nil)] ];
@@ -206,7 +206,7 @@
 
 - (IBAction)btnEditClick:(id)sender
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard"	 bundle: nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"	 bundle: nil];
     CreateReminderViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CreateReminderViewController"];
     [vc setTransaction:transaction];
     [self.navigationController pushViewController:vc animated:YES];

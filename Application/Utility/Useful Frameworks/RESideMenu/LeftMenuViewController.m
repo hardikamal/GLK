@@ -210,6 +210,13 @@
             [self.sideMenuViewController hideMenuViewController];
             
         }
+        else if ([NSLocalizedString(@"Settings", nil) isEqualToString:string])
+        {
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"SettingViewController"]]
+                                                         animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            
+        }
     }
     else
     {
