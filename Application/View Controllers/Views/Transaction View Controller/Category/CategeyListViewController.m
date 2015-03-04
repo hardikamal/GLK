@@ -160,15 +160,17 @@
     UILabel *slogan = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, cell.frame.size.width, cell.frame.size.height)];
     slogan.text = [((RADataObject *)item).name stringByTrimmingCharactersInSet :[NSCharacterSet whitespaceCharacterSet]];
     slogan.font = [UIFont boldSystemFontOfSize:20];
-    // slogan.backgroundColor=[UIColor clearColor];
+     slogan.backgroundColor=[UIColor clearColor];
     [cell.contentView addSubview:slogan];
     slogan.textColor = [UIColor whiteColor];
     // slogan.font=[UIFont fontWithName:Embrima size:16];
     if (([self.treeView indexPathForItem:item].row == 0 && [self budjetViewController])) {
-        //UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+//        UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+//        [view setBackgroundColor:[UIColor clearColor]];
+
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
         imageView.image = [UIImage imageNamed:@"overall_icon.png"];
-        // [view addSubview:imageView];
+       //  [view addSubview:imageView];
         [cell.contentView addSubview:imageView];
     }
     else {
@@ -190,19 +192,20 @@
             else {
                 image = [UIImage imageNamed:@"Miscellaneous_icon.png"];
             }
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+            //UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+            //[view setBackgroundColor:[UIColor clearColor]];
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 30, 30)];
             imageView.image = image;
-            [view addSubview:imageView];
-            [cell.contentView addSubview:view];
+            //[view addSubview:imageView];
+            [cell.contentView addSubview:imageView];
             if ([[[categeryIcon objectAtIndex:0] objectForKey:@"hide_status"] intValue]) {
                 slogan.textColor = [UIColor lightGrayColor];
             }
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(infoImageTapped:)];
             [tap setNumberOfTapsRequired:1];
-            [view setGestureRecognizers:[NSArray arrayWithObject:tap]];
-            [view setTag:[self.treeView indexPathForItem:item].row];
-            [view setUserInteractionEnabled:YES];
+            [imageView setGestureRecognizers:[NSArray arrayWithObject:tap]];
+            [imageView setTag:[self.treeView indexPathForItem:item].row];
+            [imageView setUserInteractionEnabled:YES];
         }
         else {
             cell.imageView.image = [Utility imageWithImage:[UIImage imageNamed:@"subcategory_line.png"] scaledToSize:CGSizeMake(20, 20)];

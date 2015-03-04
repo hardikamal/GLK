@@ -89,12 +89,11 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 {
     [super viewDidLoad];
     currentFilePath=[[NSString alloc] init];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
+    self.title=@"Export";
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapRecognizer.numberOfTapsRequired = 1;
     self.tapView.userInteractionEnabled=YES;
     [self.tapView addGestureRecognizer:tapRecognizer];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     [self.tableView setScrollEnabled:NO];
     item=[[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"Detailed", nil),NSLocalizedString(@"Summarized", nil),NSLocalizedString(@"CustomizeExport", nil),NSLocalizedString(@"cancel", nil), nil];
     CGRect frame;
@@ -110,8 +109,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
     CGFloat yHeight = self.topView.frame.size.height;
     CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
     [self.topView setFrame:CGRectMake(5, yOffset, xWidth, yHeight)];
-    self.topView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.topView.layer.borderWidth = 1.0f;
+    
     self.topView.clipsToBounds = TRUE;
     [self.topView didMoveToSuperview];
     fieldNames=[[NSMutableArray alloc] initWithObjects:@"type",@"token_id",@"transaction_type",@"transaction_id",@"pic", @"user_token_id",@"category",@"sub_category", @"amount",@"updation_date",@"server_updation_date", @"date",@"location", @"description", @"paymentMode",@"with_person",@"shown_on_homescreen",@"warranty",@"transaction_reference_id",@"reminder_heading",@"reminder_when_to_alert",@"reminder_time_period",@"reminder_sub_alarm",@"reminder_recurring_type",@"reminder_alarm",@"reminder_alert",@"fromaccount",@"toaccount",@"income_transaction_id",@"expense_transaction_id",@"email_id",@"address",@"password",@"hide_status",@"user_dob",@"user_name",@"fromdate",@"todate",@"transaction_inserted_from",@"class", nil];
@@ -121,7 +119,8 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 
 - (IBAction)handleSingleTap:(UITapGestureRecognizer *)sender
 {
-    [self.view removeFromSuperview];
+   // [self.view removeFromSuperview];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // Do any additional setup after loading the view.
@@ -148,18 +147,16 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
     if ([[item objectAtIndex:[indexPath row]] isEqualToString:NSLocalizedString(@"cancel", nil)])
     {
          UILabel *textLabel=[[UILabel alloc] init];
-         textLabel.font=[UIFont fontWithName:Embrima size:16];
-         textLabel.textColor=[UIColor darkGrayColor];
+         textLabel.textColor=[UIColor whiteColor];
          textLabel.text = [item objectAtIndex:[indexPath row]];
         [textLabel setFrame:CGRectMake(130, 0, 150, 44)];
         [cell addSubview:textLabel];
         
     }else
     {
-        cell.textLabel.font=[UIFont fontWithName:Embrima size:16];
-        cell.textLabel.textColor=[UIColor darkGrayColor];
+        cell.textLabel.textColor=[UIColor whiteColor];
         cell.textLabel.text = [item objectAtIndex:[indexPath row]];
-        UIImage *image=[UIImage imageNamed:@"black_export_icon.png"];
+        UIImage *image=[UIImage imageNamed:@"import.png"];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTag:100];
         CGRect frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
@@ -167,6 +164,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
         [button setImage:image forState:UIControlStateNormal];
         cell.accessoryView = button;
     }
+    cell.backgroundColor=[UIColor clearColor];
     return cell;
 }
 
@@ -187,7 +185,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
             [self customeize];
             break;
         case 3:
-            [self.view removeFromSuperview];
+            [self.navigationController popViewControllerAnimated:YES];
             break;
     }
 }
@@ -195,33 +193,25 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 
 - (void)animatedIn
 {
-    self.transform = CGAffineTransformMakeScale(1.3, 1.3);
-    self.alpha = 0;
-    [UIView animateWithDuration:.35 animations:^{
-        self.alpha = 1;
-        self.transform = CGAffineTransformMakeScale(1, 1);
-    }];
+//    self.transform = CGAffineTransformMakeScale(1.3, 1.3);
+//    self.alpha = 0;
+//    [UIView animateWithDuration:.35 animations:^{
+//        self.alpha = 1;
+//        self.transform = CGAffineTransformMakeScale(1, 1);
+//    }];
 }
 
 
 - (void)animatedOut
 {
-    [UIView animateWithDuration:.35 animations:^{
-        self.transform = CGAffineTransformMakeScale(1.3, 1.3);
-        self.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        if (finished)
-        {
-            [self.view removeFromSuperview];
-        }
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
 - (void)touchForDismissSelf:(id)sender
 {
-    [self animatedOut];
+   // [self animatedOut];
 }
 
 
@@ -229,27 +219,28 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
 #pragma mark - show or hide self
 - (void)show
 {
-    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
-    [keywindow addSubview:self.view];
-    self.view.center = CGPointMake(keywindow.bounds.size.width/2.0f, keywindow.bounds.size.height/2.0f);
-    [self animatedIn];
+//    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
+//    [keywindow addSubview:self.view];
+//    self.view.center = CGPointMake(keywindow.bounds.size.width/2.0f, keywindow.bounds.size.height/2.0f);
+//    [self animatedIn];
 }
 
 - (void)dismiss
 {
-    [self animatedOut];
+    
 }
 
 -(void)customeize
 {
     self.objCustomPopUpViewController =[self.storyboard instantiateViewControllerWithIdentifier:@"CustomizeExportViewController"];
-    [self.view addSubview: self.objCustomPopUpViewController.view];
+   // [self.view addSubview: self.objCustomPopUpViewController.view];
+    [self.navigationController pushViewController:self.objCustomPopUpViewController animated:YES];
 }
 
 
 -(void)showAlertViewforRightCsv:(int)tag
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"enter_file_name", nil)  message:@"-"  delegate:self cancelButtonTitle:@"Export" otherButtonTitles:NSLocalizedString(@"cancel", nil), nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"enter_file_name", nil)  message:@"-"  delegate:self cancelButtonTitle:NSLocalizedString(@"cancel", nil) otherButtonTitles:@"Export", nil];
     [alertView setTag:tag];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     long long milliseconds = (long long)([[NSDate date] timeIntervalSince1970] * 1000.0);
@@ -477,7 +468,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
     }
     if([title isEqualToString:@"Cancel"] || [title isEqualToString:@"Later"])
     {
-        [self.view removeFromSuperview];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else if([title isEqualToString:@"Export via Google Drive"])
     {
@@ -559,13 +550,13 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
          {
               NSLog(@"File ID: %@", insertedFile.identifier);
              [self showAlert:@"Google Drive" message:@"File saved!"];
-             [self.view removeFromSuperview];
+             [self.navigationController popViewControllerAnimated:YES];
          }
          else
          {
               NSLog(@"An error occurred: %@", error);
              [self showAlert:@"Google Drive" message:@"Sorry, an error occurred!"];
-             [self.view removeFromSuperview];
+             [self.navigationController popViewControllerAnimated:YES];
          }
      }];
 }

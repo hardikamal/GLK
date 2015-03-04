@@ -13,7 +13,6 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
     
     CGFloat dx = point2.x - point1.x;
     CGFloat dy = point2.y - point1.y;
-    
     return sqrt(dx*dx + dy*dy );
 }
 
@@ -29,6 +28,8 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
 
 @interface VBPieChart () {
     CGPoint moveP;
+    BOOL isRandom;
+    NSString *pieInAction;
 }
 @property (nonatomic, retain) NSMutableArray *chartsData;
 @property (nonatomic) float radius;
@@ -229,7 +230,7 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
         if (data.accent) {
             [piece setAccentPrecent:0.1];
         }
-        
+        piece.name=[NSString stringWithFormat:@"pie%d",[_chartsData indexOfObject:data]];
         [piece setShowLabel:_showLabels];
         [piece setValue:pieceValuePrecents];
 
@@ -282,6 +283,10 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
         
         _presentWithAnimation = NO;
     }
+    [self performSelector:@selector(autoAnimate) withObject:nil afterDelay:4];
+    [self performSelector:@selector(autoAnimate) withObject:nil afterDelay:8];
+
+
 }
 
 - (void) setChartValues:(NSArray *)chartValues animation:(BOOL)animation {
@@ -357,7 +362,47 @@ static __inline__ CGFloat CGPointDistanceBetweenTwoPoints(CGPoint point1, CGPoin
     }
 }
 
+-(void)autoAnimate
+{
+    moveP = CGPointMake(1, 1);
+    for (VBPiePiece*obj in [self.layer sublayers] )
+    {
+        if (isRandom)
+        {
+            
+            if ([obj isKindOfClass:[VBPiePiece class]]&&[obj.name isEqualToString:@"pie0"])
+            {
+              
+                [obj animateToAccent:_maxAccentPrecent];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [obj setAccentPrecent:0];
 
+                });
+
+                isRandom=0;
+                break;
+  
+            }
+        }
+        else
+        {
+            if ([obj isKindOfClass:[VBPiePiece class]]&&[obj.name isEqualToString:@"pie1"])
+            {
+                
+                    [obj animateToAccent:_maxAccentPrecent];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [obj setAccentPrecent:0];
+                });
+                isRandom=1;
+
+                break;
+            }
+            
+        }
+       
+    }
+    
+}
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];

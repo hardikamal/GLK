@@ -70,6 +70,8 @@
 - (void)afterInitialisationSetup {
     [[UITextField appearance] setTintColor:[UIColor whiteColor]];
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
+    [UIView appearanceWhenContainedIn: [UIDatePicker class], nil].tintColor = GREEN_COLOR;
+
     [[UIView appearanceWhenContainedIn:[UIAlertController class], nil] setTintColor:GREEN_COLOR];
 
 }

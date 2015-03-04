@@ -53,7 +53,6 @@
      [super viewDidLoad];
      [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
      [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-     [self.navigationController  setNavigationBarHidden:YES];
      [self.txtEmail setDelegate:self];
      [self.txtReNewPassword setDelegate:self];
      [self.txtReNewPassword setDelegate:self];
@@ -164,9 +163,10 @@
             [dic setObject:[_txtEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:EMAIL_ADDRESS];
             [dic setObject:@"ApplockRegister" forKey:@"cn"];
             [dic setObject:[Utility uniqueIDForDevice] forKey:@"imei_id"];
-            [self login:dic];
+         //   [self login:dic];
         }
     }
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -240,7 +240,7 @@
     {
         [[NSUserDefaults standardUserDefaults] setObject:_txtNewPassword.text forKey:LOCK_SCREEN_PASSWORD];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }else if (alertView.tag==10)
     {
         NSString * noticationName =@"LeftMenuViewController";
@@ -261,7 +261,7 @@
                 break;
             }
         }
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

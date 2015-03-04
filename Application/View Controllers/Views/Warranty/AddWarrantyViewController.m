@@ -522,7 +522,6 @@
 
 - (IBAction)addingTransactionToDBbtnClick:(id)sender
 {
-    
     if ([self CheckTransactionValidity])
     {
         NSMutableDictionary *dictionary=[[NSMutableDictionary alloc]init];
@@ -530,7 +529,7 @@
         NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
         [dictionary setObject:currency forKey:@"currency"];
         
-        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserName.titleLabel.text];
+        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getAllUserDetails];
         if ([UserInfoarrray count]!=0)
         {
             UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
@@ -863,13 +862,14 @@
 - (IBAction)datePickerbtnClick:(id)sender
 {
     RESIGN_KEYBOARD
+   
     [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
         NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
         NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
        // self.lblDay.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
         self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
-        self.lblDay.text=[NSString stringWithFormat:@"%@,%d", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],[compsday day]];
+        self.lblDay.text=[NSString stringWithFormat:@"%@,%ld", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],(long)[compsday day]];
 
     } cancelBlock:^(ActionSheetDatePicker *picker) {
     } origin:[self view]];
@@ -887,41 +887,6 @@
 
 
 
-//- (IBAction)doneDobPickerClick:(id)sender
-//{
-//    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-//	NSDate *myDate = self.dobPicker.date;
-//   
-//	if (isSelected)
-//    {
-//
-//        isSelected=NO;
-//                      NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
-//        [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-//        [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
-//        [formatter setDateFormat:@"hh:mma"];
-//        self.lblTime.text=[[formatter stringFromDate:[NSDate date]]substringToIndex:5];
-//        self.lblPmorAm.text=[NSDate stringFromDate:[NSDate date] withFormat:@"a"];
-//    }else
-//    {
-//    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-//        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
-//        NSDateComponents *compsm = [gregorian components:NSCalendarUnitMonth fromDate:[NSDate date]];
-//        NSDateComponents *compsy = [gregorian components:NSCalendarUnitYear fromDate:[NSDate date]];
-//        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:[NSDate date]];
-//        
-//        
-//        self.lblDay.text=[NSString stringWithFormat:@"%@,%d", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],[compsday day]];
-//        self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:[compsm month]-1],(long)[compsy year]];
-//    
-//    }
-//
-//    if ( [_txtwarranty.text length]!=0)
-//    {
-//          [self UpdateExpireDate];
-//    }
-//
-//}
 
 -(void)UpdateExpireDate
 {
@@ -1008,44 +973,21 @@
 
 - (IBAction)warrantybtnClick:(id)sender
 {
-//    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-//    CGFloat yHeight = 120.0f;
-//    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-//    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-//    NSMutableArray *arrray=[[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"years", nil),NSLocalizedString(@"months", nil),NSLocalizedString(@"days", nil),nil];
-//    [poplistview setListArray:arrray];
-//    [poplistview setNotificationName:@"AddWarrantyViewController"];
-//    [poplistview setTag:2];
-//    poplistview.listView.scrollEnabled = FALSE;
-//    [poplistview setTitle:@"Choose Duration"];
-//    [poplistview show];
-    
-    UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"Choose Duration" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:NSLocalizedString(@"years", nil),NSLocalizedString(@"months", nil),NSLocalizedString(@"days", nil), nil];
-    sheet.backgroundColor=GREEN_COLOR;
-  // [UIActionSheet]
-    [sheet showInView:self.view];
-    
+    NSArray *arrayList=[NSArray arrayWithObjects:NSLocalizedString(@"years", nil),NSLocalizedString(@"months", nil),NSLocalizedString(@"days", nil), nil];
+    [UIActionSheet showInView:self.view withTitle:@"Choose Duration" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:arrayList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+        if (buttonIndex<=[arrayList count]-1)
+            {
+            [self.btnWarranty setTitle:[arrayList objectAtIndex:buttonIndex] forState:UIControlStateNormal];
+            if (![self.txtwarranty.text isEqualToString:@""])
+                [self textFieldDidChange:self.txtwarranty];
+            }
+    }];
+ 
     
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 0:
-            
-            break;
-        case 1:
-            
-            break;
-            
-        case 2:
-            
-            break;
-        default:
-            break;
-    }
-    
-}
+
 - (IBAction)expensebtnClick:(id)sender
 {
     [sender setSelected:YES];

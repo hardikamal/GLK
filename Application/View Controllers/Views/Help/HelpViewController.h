@@ -10,12 +10,9 @@
 #import "NavigationLeftButton.h"
 
 @interface HelpViewController : UIViewController
-@property (strong, nonatomic) IBOutlet NavigationLeftButton *btnBack;
-    
+
 - (IBAction)btnBackClick:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *titleLable;
-@property (strong, nonatomic) IBOutlet UIImageView *selectImage;
-@property (strong, nonatomic) IBOutlet UIImageView *iconImage;
 @property (strong, nonatomic) NSString *xlsPath;
 @end
 

@@ -40,8 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.emptyWarrantyView andSubViews:YES];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
+   
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"WarrantyViewController" object:nil];
     self.tablview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     if ([[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable] count]==1)
@@ -204,10 +203,10 @@
         cell = [nib objectAtIndex:0];
     }
     Transactions *transaction =(Transactions*)[self.warrantyItems objectAtIndex:[indexPath row]];
-    NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_icon" andSearchText:transaction.category];
+    NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_normal" andSearchText:transaction.category];
     if ([categeryArray count]!=0)
     {
-        cell.imgCatagery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
+        cell.imgCatagery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_normal"]];
     }
     [cell.lblCategery setText:transaction.category];
     NSString *nDate=[transaction.date stringValue];
@@ -236,10 +235,10 @@
     NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
     [cell.lblAmount setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:[transaction.amount doubleValue]]]]];
     
-    if (![transaction.transaction_type intValue]==TYPE_INCOME)
-        [cell.lblAmount setTextColor:[UIColor colorWithRed:232/255.0f green:76/255.0f blue:61/255.0f alpha:100.0f]];
-    else
-        [cell.lblAmount setTextColor:[UIColor colorWithRed:53/255.0 green:152/255.0 blue:219/255.0 alpha:100.0]];
+//    if (![transaction.transaction_type intValue]==TYPE_INCOME)
+//        [cell.lblAmount setTextColor:[UIColor whiteColor]];
+//    else
+//        [cell.lblAmount setTextColor:[UIColor colorWithRed:53/255.0 green:152/255.0 blue:219/255.0 alpha:100.0]];
     
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserTokenid:transaction.user_token_id ];
     if ([UserInfoarrray count]!=0)
@@ -247,11 +246,6 @@
         UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
         [cell.lblUserName setText:userInfo.user_name];
     }
-  
-    CGFloat borderWidth = .3f;
-    cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
-    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    cell.layer.borderWidth = borderWidth;
     return cell;
 }
 

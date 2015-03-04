@@ -57,6 +57,10 @@
                                                                        doneBlock:doneBlock
                                                                      cancelBlock:cancelBlock
                                                                           origin:view];
+    NSDictionary *attributeDict = @{NSForegroundColorAttributeName : GREEN_COLOR};
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:title attributes:attributeDict];
+    picker.attributedTitle=attributedString;
+
     [picker showActionSheetPicker];
     return picker;
 }
@@ -86,6 +90,7 @@
                   cancelBlock:(ActionDateCancelBlock)cancelBlock
                        origin:(UIView*)origin
 {
+    
     self = [self initWithTitle:title datePickerMode:datePickerMode selectedDate:selectedDate target:nil action:nil origin:origin];
     if (self) {
         self.onActionSheetDone = doneBlock;

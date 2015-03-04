@@ -50,39 +50,11 @@
     return self;
 }
 
--(void)setFont
-{
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    self.btnCategery.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnPaymentMode.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnClass.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnProfileName.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnRecurring.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.buttonUnhideCategery.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    [self.lblCurrency setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblDay setFont:[UIFont fontWithName:Embrima size:28.0f]];
-    [self.lblMonthYear setFont:[UIFont fontWithName:Embrima size:18.0f]];
-    [self.lblPmorAm setFont:[UIFont fontWithName:Embrima size:18.0f]];
-    [self.lblSubcategery setFont:[UIFont fontWithName:Embrima size:12.0f]];
-    [self.lblTime setFont:[UIFont fontWithName:Embrima size:28.0f]];
-    [self.lblTitleDate setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblAlertNotification setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblDayBefore setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblTitleTime setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblHourBefore setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblTitleTime setFont:[UIFont fontWithName:Embrima size:16.0f]];
-}
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    [self setFont];
     self.scrollView.contentSize=CGSizeMake(320, 790);
-    [self.txtAmount setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.txtDiscription setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.txtHeading setFont:[UIFont fontWithName:Embrima size:16.0f]];
+    
     DoneCancelNumberPadToolbar *toolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:_txtAmount];
     toolbar.delegate = self;
     _txtAmount.inputAccessoryView = toolbar;
@@ -100,27 +72,8 @@
         [self addNewReminder];
     }else
         [self addUpdateReminder];
+
 }
-
-
-
-
--(void)addAccountName:(NSArray *)userInfoarrray
-{
-    UserInfo *userInfo =[userInfoarrray objectAtIndex:0];
-    [self.btnProfileName setTitle:userInfo.user_name forState:UIControlStateNormal];
-    if (userInfo.user_img != nil)
-    {
-        self.imageProfile.layer.cornerRadius = self.imageProfile.frame.size.width / 2;
-        self.imageProfile.clipsToBounds = YES;
-        self.imageProfile.image=[UIImage imageWithData:userInfo.user_img];
-    }else
-        self.imageProfile.image=[UIImage imageNamed:@"custom_profile.png"];
-}
-
-
-
-
 -(void)viewWillAppear:(BOOL)animated
 {
     if ([infoCategery count] != 0)
@@ -220,11 +173,11 @@
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
     if ([UserInfoarrray count]!=0)
     {
-        [self addAccountName:UserInfoarrray];
+       // [self addAccountName:UserInfoarrray];
     }else
     {
         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
-        [self addAccountName:UserInfoarrray];
+       // [self addAccountName:UserInfoarrray];
     }
     
     NSDate *currentDate = [NSDate date];
@@ -267,7 +220,7 @@
     
     if ([UserInfoarrray count]!=0)
     {
-        [self addAccountName:UserInfoarrray];
+       // [self addAccountName:UserInfoarrray];
     }
     
     [self.btnRecurring setTitle:transaction.reminder_recurring_type forState:UIControlStateNormal];
@@ -380,17 +333,17 @@
 - (IBAction)daybeforebtnClick:(id)sender
 {
     reminderSchedulling = 1;
-    [_imgDayBefore setImage:[UIImage imageNamed:@"radial_button_active.png"]];
-    [_imgReminder setImage:[UIImage imageNamed:@"radial_button.png"]];
-    [_imgHoutBefore setImage:[UIImage imageNamed:@"radial_button.png"]];
+    [_imgDayBefore setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
+    [_imgReminder setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
+    [_imgHoutBefore setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
 }
 
 - (IBAction)reminderbtnClick:(id)sender
 {
     reminderSchedulling = 0;
-    [_imgReminder setImage:[UIImage imageNamed:@"radial_button_active.png"]];
-    [_imgDayBefore setImage:[UIImage imageNamed:@"radial_button.png"]];
-    [_imgHoutBefore setImage:[UIImage imageNamed:@"radial_button.png"]];
+    [_imgReminder setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
+    [_imgDayBefore setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
+    [_imgHoutBefore setImage:[UIImage imageNamed:@"radial_button_active@3x.png"]];
     
 }
 
@@ -492,39 +445,6 @@
 
 
 
-- (IBAction)btnUserNameClick:(id)sender
-{
-    [self.txtAmount resignFirstResponder];
-    [self.txtDiscription resignFirstResponder];
-    [self.txtHeading resignFirstResponder];
-    NSMutableArray *userInfoList=[[NSMutableArray alloc] init];
-    NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
-    if ([UserInfoarrray count]>1)
-    {
-        for (UserInfo *info in UserInfoarrray)
-        {
-            [userInfoList addObject:info.user_name];
-        }
-    }
-    [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"CreateReminderViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-    poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
-}
-
 
 - (IBAction)stateChanged:(UISwitch*)sender
 {
@@ -542,14 +462,15 @@
 -(void) receivedNotification:(NSNotification*) notification
 {
       NSDictionary * info =notification.userInfo;
-    if ([[info objectForKey:@"tag"] intValue]==2)
-    {
-        [self.btnClass setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-    
-    }    if ([[info objectForKey:@"tag"] intValue]==3)
-    {
-        [self.btnRecurring setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-    }
+////    if ([[info objectForKey:@"tag"] intValue]==2)
+////    {
+////        [self.btnClass setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
+////    
+////    }
+//    if ([[info objectForKey:@"tag"] intValue]==3)
+//    {
+//        [self.btnRecurring setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
+//    }
     if ([[info objectForKey:@"tag"] intValue]==1)
     {
         if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
@@ -791,34 +712,22 @@
 - (IBAction)classbtnClick:(id)sender
 {
    
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = 120.0f;
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    NSMutableArray *arrray=[[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"income", nil),NSLocalizedString(@"expense", nil),NSLocalizedString(@"none", nil),nil];
-    [poplistview setListArray:arrray];
-     [poplistview setNotificationName:@"CreateReminderViewController"];
-    [poplistview setTag:2];
-    poplistview.listView.scrollEnabled = FALSE;
-    [poplistview setTitle:@"Transaction"];
-    [poplistview show];
+[UIActionSheet showInView:self.view withTitle:@"Transaction" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[[NSArray alloc]initWithObjects:NSLocalizedString(@"income", nil),NSLocalizedString(@"expense", nil),NSLocalizedString(@"none", nil),nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+    {
+        [self.btnClass setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
 
+    }];
 }
 
 
 - (IBAction)recurringbtnClick:(id)sender
 {
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = 200.0f;
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    NSMutableArray *arrray=[[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"yearly", nil),NSLocalizedString(@"monthly", nil),NSLocalizedString(@"weekly", nil),NSLocalizedString(@"daily", nil),NSLocalizedString(@"none", nil),nil];
-    [poplistview setListArray:arrray];
-    [poplistview setTag:3];
-    [poplistview setNotificationName:@"CreateReminderViewController"];
-    poplistview.listView.scrollEnabled = FALSE;
-    [poplistview setTitle:@"Choose Duration"];
-    [poplistview show];
+       NSArray *arrray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"yearly", nil),NSLocalizedString(@"monthly", nil),NSLocalizedString(@"weekly", nil),NSLocalizedString(@"daily", nil),NSLocalizedString(@"none", nil),nil];
+    [UIActionSheet showInView:self.view withTitle:@"Choose Duration" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:arrray tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         [self.btnRecurring setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+
+     }];
     
 }
 

@@ -233,7 +233,7 @@
         {
             [[HomeHelper sharedCoreDataController] upgradeBackendDataOnServer];
         }
-        [self.view removeFromSuperview];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -285,7 +285,7 @@
     }
     if (![string isEqualToString:NSLocalizedString(@"areyousuretodelete", nil)])
     {
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:[NSString stringWithFormat:@"%@ "] delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:[NSString stringWithFormat:@"%@ ",string] delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
         [alert addButtonWithTitle:@"Cancel"];
         [alert show];
     }
@@ -295,7 +295,7 @@
 
 - (IBAction)btnCancleClick:(id)sender
 {
-    [self.view removeFromSuperview];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
 }
 

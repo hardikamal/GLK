@@ -128,7 +128,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     UILabel *slogan=(UILabel*)[cell viewWithTag:2];
-    slogan.font=[UIFont fontWithName:Embrima size:16];
     slogan.textColor = [UIColor whiteColor];
     UIImageView * imageView =(UIImageView*)[cell viewWithTag:1];
     if (([indexPath row ]==0 && [self budjetViewController]))
@@ -162,10 +161,7 @@
         cell.tintColor=[UIColor whiteColor];
     }
     [imageView setFrame:CGRectMake(10, 6, 38, 30)];
-    CGFloat borderWidth = .3f;
-    cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
-    cell.layer.borderColor = [UIColor whiteColor].CGColor;
-    cell.layer.borderWidth = borderWidth;
+    
     return cell;
 }
 

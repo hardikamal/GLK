@@ -33,42 +33,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    self.btnCategery.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnChangeLog.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnContactDem.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnCurrency.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnDeleteDem.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnExport.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnImport.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnPassword.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnPaymentMode.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnViewReport.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:17.0f]];
-    [self.lblDatabase setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblDispaly setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblExtra setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblSecurity setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblProfile setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-  
-    CGFloat borderWidth = .3f;
-    self.scrollView.frame = CGRectInset(self.scrollView.frame, -borderWidth, -borderWidth);
-    self.scrollView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.scrollView.layer.borderWidth = borderWidth;
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNotification:) name:@"ImportViewController" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"CustomizeExportViewController" object:nil];
+    [self uISetUp];
 }
 
+- (IBAction)changeLogClickEvent:(UIButton *)sender {
+    [[AppCommonFunctions sharedInstance] pushVCOfClass:[HelpViewController class] fromNC:self.navigationController animated:YES popFirstToVCOfClass:nil modifyVC:^(id info) {
+        
+    }];
+}
 
-
--(void)viewWillAppear:(BOOL)animated
+-(void)uISetUp
 {
     NSString *mainToken=[[[Utility userDefaultsForKey:CURRENT_TOKEN_ID] componentsSeparatedByString:@"_"] objectAtIndex:0];
     NSString *currency= [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
-   [self.btnChangeCurrency setTitle:[NSString stringWithFormat:@"%@ (%@)",NSLocalizedString(@"selectCurrency", nil), [[currency componentsSeparatedByString:@"-"] objectAtIndex:1]] forState:UIControlStateNormal];
-  
+    [self.btnChangeCurrency setTitle:[NSString stringWithFormat:@"%@ (%@)",NSLocalizedString(@"selectCurrency", nil), [[currency componentsSeparatedByString:@"-"] objectAtIndex:1]] forState:UIControlStateNormal];
+    
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:LOCK_SCREEN_PASSWORD] length]!=0)
     {
         [self.btnPassword setImage:[UIImage   imageNamed:@"check_box_actives.png"] forState:UIControlStateNormal];
@@ -78,9 +60,14 @@
         [self.profileView setUserInteractionEnabled:NO];
         [self.profileView setHidden:YES];
         [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, self.profileView.frame.origin.y, self.securityView.frame.size.width, self.securityView.frame.size.height)];
-          self.scrollView.contentSize = CGSizeMake(310, 700);
+        [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, CGRectGetMinX(self.profileView.frame),self.securityView.frame.size.width, self.securityView.frame.size.height)];
+        self.scrollView.contentSize = CGSizeMake(310, 700);
     }else
-          self.scrollView.contentSize = CGSizeMake(310, 815);
+        self.scrollView.contentSize = CGSizeMake(310, 815);
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:UPDATION_ON_SERVER_TIME])
     {
@@ -100,7 +87,7 @@
 
 -(void)receivedSelectViewListNotification:(NSNotification*) notification
 {
-    [self.exportViewController.view removeFromSuperview];
+    //[self.exportViewController.view removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,14 +97,43 @@
 
 - (IBAction)btnExportClick:(id)sender
 {
-    self.exportViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil] instantiateViewControllerWithIdentifier:@"ExportViewController"];
-    [self.exportViewController show];
+   
+    [[AppCommonFunctions sharedInstance] pushVCOfClass:[ExportViewController class] fromNC:self.navigationController animated:YES popFirstToVCOfClass:nil modifyVC:^(id info) {
+        
+    }];
+    
 }
 
 - (IBAction)btnImportClick:(id)sender
 {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:nil      message:nil     delegate:self     cancelButtonTitle: @"Cancel"  otherButtonTitles:@"Download via Google Drive", @"Import via Existing File", @"Import via Mail", nil];
-    [message show];
+    [UIActionSheet showInView:self.view withTitle:@"Import" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:@"Download via Google Drive", @"Import via Existing File", @"Import via Mail", nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         switch (buttonIndex) {
+             case 0:
+             {
+                     GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
+                     [self.navigationController pushViewController:driverController animated:YES];
+                 
+             }
+                 break;
+                 case 1:
+                 {
+                     self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
+                     [self.importPopUpViewController setMainTitle:NSLocalizedString(@"importdata", nil
+                                                                                    )];
+                     [self.view addSubview:self.importPopUpViewController.view];
+                     
+                 }
+                 case 2:
+             {
+                 UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Alert"      message:@"Open Mail and long press the selected .csv file to import and you should see Goollak app listed as one of the 'Open in' apps"     delegate:self     cancelButtonTitle: @"OK"  otherButtonTitles:nil, nil];
+                 [message show];
+             }
+                 break;
+             default:
+                 break;
+         }
+    }];
 }
 
 - (IBAction)btnChangeCurrency:(UIButton*)sender
@@ -129,37 +145,8 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Download via Google Drive"])
-    {
-        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
-        [self.navigationController pushViewController:driverController animated:YES];
-    }
-    else if([title isEqualToString:@"Import via Existing File"])
-    {
-        self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
-        [self.importPopUpViewController setMainTitle:NSLocalizedString(@"importdata", nil
-                                                                      )];
-        [self.view addSubview:self.importPopUpViewController.view];
-        
-    } if([title isEqualToString:@"View via Google Drive"])
-    {
-        GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
-        [driverController setMainTitle:NSLocalizedString(@"viewReports", nil )];
-        [self.navigationController pushViewController:driverController animated:YES];
-    }
-    else if([title isEqualToString:@"View via Existing File"])
-    {
-         self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
-          [self.importPopUpViewController setMainTitle:NSLocalizedString(@"viewReports", nil )];
-        [self.view addSubview:self.importPopUpViewController.view];
-        
-    }
-    else if([title isEqualToString: @"Import via Mail"])
-    {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Alert"      message:@"Open Mail and long press the selected .csv file to import and you should see Goollak app listed as one of the 'Open in' apps"     delegate:self     cancelButtonTitle: @"OK"  otherButtonTitles:nil, nil];
-        [message show];
-    }
+   // NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
 }
 
 
@@ -178,8 +165,7 @@
     }
     else
     {
-        ReSetPasswordViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"ReSetPasswordViewController"];
-        [self.navigationController pushViewController:catageryController animated:YES];
+        [[AppCommonFunctions sharedInstance] presentVCOfClass:[ReSetPasswordViewController class] fromVC:self animated:YES modifyVC:nil];
     }
 }
 
@@ -194,8 +180,8 @@
 
 - (IBAction)btnDeleteClick:(id)sender
 {
-    self.objCustomPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"DeleteDemDataViewController"];
-    [self.view addSubview: self.objCustomPopUpViewController.view];
+    [[AppCommonFunctions sharedInstance] presentVCOfClass:[DeleteDemDataViewController class] fromVC:self animated:YES modifyVC:nil];
+    //[self.view addSubview: self.objCustomPopUpViewController.view];
 }
 
 
@@ -238,7 +224,30 @@
 
 - (IBAction)btnViewReportClick:(id)sender
 {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:nil      message:nil     delegate:self     cancelButtonTitle: @"Cancel"  otherButtonTitles:@"View via Google Drive", @"View via Existing File", nil];
-    [message show];
+    
+    [UIActionSheet showInView:self.view withTitle:@"View Report" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:@"View via Google Drive", @"View via Existing File", nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+    {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
+                GoogleDriveViewController *driverController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"GoogleDriveViewController"];
+                [driverController setMainTitle:NSLocalizedString(@"viewReports", nil )];
+                [self.navigationController pushViewController:driverController animated:YES];
+            }
+                break;
+            case 1:
+            {
+                self.importPopUpViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:Nil]instantiateViewControllerWithIdentifier:@"ImportViewController"];
+                [self.importPopUpViewController setMainTitle:NSLocalizedString(@"viewReports", nil )];
+                [self.view addSubview:self.importPopUpViewController.view];
+            }
+                break;
+
+            default:
+                break;
+        }
+        
+    }];
 }
 @end

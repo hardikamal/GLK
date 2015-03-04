@@ -217,6 +217,20 @@
             [self.sideMenuViewController hideMenuViewController];
             
         }
+        else if ([NSLocalizedString(@"Goollak Directory", nil) isEqualToString:string])
+        {
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"DemDicViewController"]]
+                                                         animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            
+        }
+        else if ([NSLocalizedString(@"Help", nil) isEqualToString:string])
+        {
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"HelpViewController"]]
+                                                         animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            
+        }
     }
     else
     {
