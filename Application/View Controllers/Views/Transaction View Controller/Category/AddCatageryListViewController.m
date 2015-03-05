@@ -43,8 +43,6 @@
     
     [super viewDidLoad];
      self.catageryList=[[NSMutableArray alloc] init];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     [self addDefaultCategoryList];
     [self setTitle:NSLocalizedString(@"addCategory", nil)];
     
@@ -326,6 +324,10 @@
         NSString *categery=[newArray objectAtIndex:0];
         NSString *trimmed=[categery stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         UIImage *image=[UIImage imageNamed:[[NSString stringWithFormat:@"%@_icon.png",trimmed] stringByReplacingOccurrencesOfString:@"/" withString:@" "]];
+        if (!image)
+        {
+            image=[UIImage imageNamed:@"All_icon.png"];
+        }
         [dic setObject:categery forKey:@"name"];
         [dic setObject:image forKey:@"image"];
         [self.catageryList addObject:dic];

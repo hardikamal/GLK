@@ -23,8 +23,6 @@
 @property (strong, nonatomic) IBOutlet UIView *customImageView;
 @property (strong, nonatomic) IBOutlet UIView *firstView;
 @property (strong, nonatomic) IBOutlet UIButton *btnCategery;
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollViewDays;
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollViewHour;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCatagery;
 @property (strong, nonatomic) IBOutlet UIImageView *imgpaymentmode;
 @property (strong, nonatomic) IBOutlet UILabel *lblSubcategery;

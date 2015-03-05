@@ -115,14 +115,14 @@
     [info setCategory:trimmed];
     UIImage *image=[UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",trimmed]];
                     //[ stringByReplacingOccurrencesOfString:@"/" withString:@" "]];
-    NSData *data=UIImageJPEGRepresentation(image, 1.0);
+    NSData *data=UIImagePNGRepresentation(image);
     if ([data length]==0)
     {
         if ([categery isEqualToString:NSLocalizedString(@"BooksStationary", nil)])
         {
-         data=UIImageJPEGRepresentation([UIImage imageNamed:@"Books Stationary_icon.png"], 1.0);
+         data=UIImagePNGRepresentation([UIImage imageNamed:@"Books Stationary_icon.png"]);
         }else
-           data=UIImageJPEGRepresentation([UIImage imageNamed:@"Miscellaneous_icon.png"], 1.0);
+           data=UIImagePNGRepresentation([UIImage imageNamed:@"Miscellaneous_icon.png"]);
     }
     [info setCategory_icon:data];
     [info setClass_type:number];

@@ -20,12 +20,14 @@
 #import "UIAlertView+Block.h"
 #import "UserInfo.h"
 #import "Paymentmode.h"
+#import "AKPickerView.h"
 
 #import "AddAccountViewController.h"
 #import "CategeyListViewController.h"
 #import "PaymentModeViewController.h"
 
-@interface CreateReminderViewController ()
+@interface CreateReminderViewController ()<AKPickerViewDataSource, AKPickerViewDelegate>
+
 {
     BOOL chosePicker;
     int reminderSchedulling;
@@ -35,10 +37,15 @@
     NSDictionary * infoPayment;
     UIImageView *imageVw;
 }
+@property (weak, nonatomic) IBOutlet AKPickerView *pickerViewHours;
+@property (weak, nonatomic) IBOutlet AKPickerView *pickerViewDays;
+@property (nonatomic, strong) NSMutableArray *titlesDaysArray;
+@property (nonatomic, strong) NSMutableArray *titlesHoursArray;
+
 @end
 
 @implementation CreateReminderViewController
-@synthesize transaction;
+@synthesize transaction,pickerViewDays,pickerViewHours;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,13 +60,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setUpDayHourPicker];
     self.scrollView.contentSize=CGSizeMake(320, 790);
     
     DoneCancelNumberPadToolbar *toolbar = [[DoneCancelNumberPadToolbar alloc] initWithTextField:_txtAmount];
     toolbar.delegate = self;
     _txtAmount.inputAccessoryView = toolbar;
-    [_scrollViewDays setTag:1];
-    [_scrollViewHour setTag:2];
+   
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"CreateReminderViewController" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedCatgeryNotification:)  name:@"CategeryList" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedPaymentModeNotification:) name:@"PaymentMode" object:nil];
@@ -200,9 +207,7 @@
     NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
     NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
     [self.lblCurrency setText:[[currency componentsSeparatedByString:@"-"] objectAtIndex:1]];
-    [self addButtonsOnScrollViewHorizontal:31 :_scrollViewDays];
-    [self addButtonsOnScrollViewHorizontal:24 :_scrollViewHour];
-}
+    }
 
 
 
@@ -322,9 +327,7 @@
         [_imgDayBefore setImage:[UIImage imageNamed:@"radial_button.png"]];
         [_imgReminder setImage:[UIImage imageNamed:@"radial_button.png"]];
     }
-    [self addButtonsOnScrollViewHorizontal:31 :_scrollViewDays];
-    [self addButtonsOnScrollViewHorizontal:24 :_scrollViewHour];
-    
+   
 }
 
 
@@ -363,12 +366,13 @@
     if ([self CheckTransactionValidity])
     {
         NSMutableDictionary *dictionary=[[NSMutableDictionary alloc]init];
-        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnProfileName.titleLabel.text];
+        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getAllUserDetails];
         if ([UserInfoarrray count]!=0)
         {
             UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
             [dictionary setObject:userInfo.user_token_id forKey:@"user_token_id"];
         }
+        
         [dictionary setObject:_txtAmount.text forKey:@"amount"];
         [dictionary setObject:_txtDiscription.text forKey:@"description"];
          NSArray *arrry =[_lblMonthYear.text componentsSeparatedByString:@" "];
@@ -462,15 +466,6 @@
 -(void) receivedNotification:(NSNotification*) notification
 {
       NSDictionary * info =notification.userInfo;
-////    if ([[info objectForKey:@"tag"] intValue]==2)
-////    {
-////        [self.btnClass setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-////    
-////    }
-//    if ([[info objectForKey:@"tag"] intValue]==3)
-//    {
-//        [self.btnRecurring setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-//    }
     if ([[info objectForKey:@"tag"] intValue]==1)
     {
         if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
@@ -518,78 +513,32 @@
 
 - (IBAction)timePickerbtnClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDiscription resignFirstResponder];
-    [self.txtHeading resignFirstResponder];
-    self.dobPicker.datePickerMode = UIDatePickerModeTime;
-    NSArray *arrry =[_lblMonthYear.text componentsSeparatedByString:@" "];
-    NSString *combined = [NSString stringWithFormat:@"%@ %@",[NSString stringWithFormat:@"%@/%@/%@",_lblDay.text,[arrry objectAtIndex:0],[arrry objectAtIndex:1]],[NSString stringWithFormat:@"%@:%@ %@",_lblTime.text,@"00",[_lblPmorAm.text lowercaseString]]];
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init] ;
-    [fmt setDateFormat:@"dd/MM/yyyy hh:mm:ss a"];
-    NSDate *originalDate=[fmt dateFromString:combined];
-    [self.dobPicker setDate:originalDate animated:YES];
-    float height=self.dobView.frame.size.height;
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:-height];
-    chosePicker=YES;
+    RESIGN_KEYBOARD
+    [ActionSheetDatePicker showPickerWithTitle : @"Select time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
+     {
+         NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
+         [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+         [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
+         [formatter setDateFormat:@"hh:mma"];
+         self.lblTime.text=[[formatter stringFromDate:selectedDate]substringToIndex:5];
+         self.lblPmorAm.text=[NSDate stringFromDate:selectedDate withFormat:@"a"];
+         
+     } cancelBlock:^(ActionSheetDatePicker *picker) {
+         
+     } origin:[self view]];
 }
+-(IBAction)datePickerbtnClick:(id)sender{
+    RESIGN_KEYBOARD
+    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
+        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
 
-
-
-
-- (IBAction)datePickerbtnClick:(id)sender
-{
-    [self.txtAmount resignFirstResponder];
-    [self.txtDiscription resignFirstResponder];
-    [self.txtHeading resignFirstResponder];
-    NSString *combined = [NSString stringWithFormat:@"%@-%@-%@",self.lblDay.text ,[[self.lblMonthYear.text componentsSeparatedByString:@" "] objectAtIndex:0],[[self.lblMonthYear.text componentsSeparatedByString:@" "] objectAtIndex:1]];
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init] ;
-      [fmt setDateFormat:@"dd-MM-yyyy"];
-    NSDate *originalDate=[fmt dateFromString:combined];
-    [self.dobPicker setDate:originalDate animated:YES];
-    self.dobPicker.datePickerMode = UIDatePickerModeDate;
-    float height=self.dobView.frame.size.height;
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:-height];
+        self.lblDay.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
+        self.lblMonthYear.text=[NSString stringWithFormat:@"%ld %@, %ld",(long)[compsday day],[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
+    } cancelBlock:^(ActionSheetDatePicker *picker) {
+    } origin:[self view]];
 }
-
-
-- (IBAction)cancelDobPickerClick:(id)sender
-{
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-}
-
-
-
-
-- (IBAction)doneDobPickerClick:(id)sender
-{
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-	NSDate *myDate = self.dobPicker.date;
-	if (chosePicker)
-    {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"hh:mm a"];
-        chosePicker=NO;
-        [self.lblTime setText:[[[formatter stringFromDate:myDate] componentsSeparatedByString:@" "]  objectAtIndex:0]];
-        [self.lblPmorAm setText:[[[[formatter stringFromDate:myDate] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
-    }else
-    {
-        NSDate *currentDate = myDate;
-        NSCalendar* calendar = [NSCalendar currentCalendar];
-        NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-        [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
-        NSString *combined;
-        if ([components month]<10)
-        {
-            combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year] ];
-        }else
-            combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year] ];
-        [self.lblMonthYear setText:combined];
-    }
-}
-
-
-
-
 
 -(void)animateView :(UIView*)aView  xCoordinate:(CGFloat)dx  yCoordinate :(CGFloat) dy
 {
@@ -607,98 +556,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)addButtonsOnScrollViewHorizontal:(int)postion :(UIScrollView*)scrollView
-{
-    [scrollView setShowsVerticalScrollIndicator:NO];
-    float x = 30;
-    for (int i = 1; i <=postion; i++)
-    {
-        UIButton *button= [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTag:i];
-        [button setTitle:[NSString stringWithFormat:@"%i",i] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor colorWithRed:26.0f/255.0f green:188.0f/255.0f blue:156.0f/255.0f alpha:100.0f] forState:UIControlStateSelected];
-        button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f];
-        CGSize maxSize = CGSizeMake(button.frame.size.width, FLT_MAX);
-        CGRect labRect = [button.titleLabel.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:button.titleLabel.font} context:nil];
-        [button setFrame:CGRectMake(x, 0, labRect.size.width+10, 30)];
-        if (scrollView.tag  == 1)
-        {
-             [button addTarget:self action:@selector(scrollViewDaysbtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            if (i==currentSelectionDays)
-            {
-                [_scrollViewDays setContentOffset:CGPointMake (button.frame.origin.x+button.frame.size.width/2-70, 0) animated:NO];
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
-                [button setSelected:YES];
-                currentSelectionDays =i;
-            }
-        }else
-        {
-             [button addTarget:self action:@selector(scrollViewHourbtnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            if (i==currentSelectionHours)
-            {
-                [_scrollViewHour setContentOffset:CGPointMake (button.frame.origin.x+button.frame.size.width/2-70, 0) animated:NO];
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
-                [button setSelected:YES];
-                currentSelectionHours =i;
-            }
-        }
-        [scrollView addSubview:button];
-      
-        x +=labRect.size.width+20;
-    }
-    scrollView .contentSize = CGSizeMake(x, 0);
-}
-
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
-}
-
--(void)scrollViewDaysbtnClicked:(UIButton*)sender
-{
-    for (UIButton *button in _scrollViewDays.subviews)
-    {
-        if ([button isKindOfClass:[UIButton class]])
-        {
-            if (button.tag == sender.tag)
-            {
-                [_scrollViewDays setContentOffset:CGPointMake (button.frame.origin.x+button.frame.size.width/2-70, 0) animated:NO];
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
-                [button setSelected:YES];
-                currentSelectionDays =(int)sender.tag;
-            }else
-            {
-                [button setSelected:NO];
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f];
-            }
-        }
-    }
-}
-
-
-
--(void)scrollViewHourbtnClicked:(UIButton*)sender
-{
-    for (UIButton *button in _scrollViewHour.subviews)
-    {
-        if ([button isKindOfClass:[UIButton class]])
-        {
-            if (button.tag ==sender.tag)
-            {
-                [_scrollViewHour setContentOffset:CGPointMake (button.frame.origin.x+button.frame.size.width/2-70, 0) animated:NO];
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:24.0f];
-                [button setSelected:YES];
-                currentSelectionHours =(int)sender.tag;
-            }else
-            {
-                button.titleLabel.font =[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0f];
-                [button setSelected:NO];
-            }
-        }
-    }
 }
 
 
@@ -714,7 +576,10 @@
    
 [UIActionSheet showInView:self.view withTitle:@"Transaction" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[[NSArray alloc]initWithObjects:NSLocalizedString(@"income", nil),NSLocalizedString(@"expense", nil),NSLocalizedString(@"none", nil),nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
     {
+        if (![[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+
         [self.btnClass setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+        }
 
     }];
 }
@@ -725,7 +590,10 @@
        NSArray *arrray=[[NSArray alloc] initWithObjects:NSLocalizedString(@"yearly", nil),NSLocalizedString(@"monthly", nil),NSLocalizedString(@"weekly", nil),NSLocalizedString(@"daily", nil),NSLocalizedString(@"none", nil),nil];
     [UIActionSheet showInView:self.view withTitle:@"Choose Duration" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:arrray tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
      {
-         [self.btnRecurring setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+         if (![[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+             [self.btnRecurring setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+
+         }
 
      }];
     
@@ -855,21 +723,7 @@
     ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
     [vc setImage:imageVw.image];
     [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"addReminder", nil)]];
-    [self  presentViewController:vc animated:NO completion:nil];
-}
-
-
--(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickDone:(UITextField *)textField
-{
-    
-    NSLog(@"%@", textField.text);
-}
-
-
--(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickCancel:(UITextField *)textField
-{
-    [textField setText:@""];
-    NSLog(@"Canceled: %@", [textField description]);
+    [self.navigationController  presentViewController:vc animated:YES completion:nil];
 }
 
 
@@ -899,7 +753,138 @@
 
 
 
+- (void)setUpDayHourPicker
+{
+    self.titlesDaysArray=[[NSMutableArray alloc] init];
+    self.pickerViewDays.delegate = self;
+    self.pickerViewDays.dataSource = self;
+    self.pickerViewDays.tag=1;
+    self.pickerViewDays.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.pickerViewDays.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
+    self.pickerViewDays.highlightedFont = [UIFont fontWithName:@"HelveticaNeue" size:20];
+    self.pickerViewDays.interitemSpacing = 20.0;
+    self.pickerViewDays.fisheyeFactor = 0.001;
+    self.pickerViewDays.pickerViewStyle = AKPickerViewStyle3D;
+    self.pickerViewDays.maskDisabled = false;
+    for (int i=1; i<=31; i++)
+    {
+        [self.titlesDaysArray addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    
+    [self.pickerViewDays reloadData];
+    //-----------------
+    self.titlesHoursArray=[[NSMutableArray alloc] init];
+    self.pickerViewHours.delegate = self;
+    self.pickerViewHours.dataSource = self;
+    self.pickerViewHours.tag=2;
+    self.pickerViewHours.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.pickerViewHours.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
+    self.pickerViewHours.highlightedFont = [UIFont fontWithName:@"HelveticaNeue" size:20];
+    self.pickerViewHours.interitemSpacing = 20.0;
+    self.pickerViewHours.fisheyeFactor = 0.001;
+    self.pickerViewHours.pickerViewStyle = AKPickerViewStyle3D;
+    self.pickerViewHours.maskDisabled = false;
+    for (int i=1; i<=24; i++)
+    {
+        [self.titlesHoursArray addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    
+    [self.pickerViewHours reloadData];
+}
 
+#pragma mark - AKPickerViewDataSource
+
+- (NSUInteger)numberOfItemsInPickerView:(AKPickerView *)pickerView
+{
+    if (pickerView.tag==1)
+    {
+       return [self.titlesDaysArray count];
+    }
+    return [self.titlesHoursArray count];
+}
+
+/*
+ * AKPickerView now support images!
+ *
+ * Please comment '-pickerView:titleForItem:' entirely
+ * and uncomment '-pickerView:imageForItem:' to see how it works.
+ *
+ */
+
+- (NSString *)pickerView:(AKPickerView *)pickerView titleForItem:(NSInteger)item
+{
+    if (pickerView.tag!=1)
+    {
+        return  self.titlesHoursArray[item];
+    }
+    return self.titlesDaysArray[item];
+}
+
+/*
+ - (UIImage *)pickerView:(AKPickerView *)pickerView imageForItem:(NSInteger)item
+ {
+	return [UIImage imageNamed:self.titles[item]];
+ }
+ */
+
+#pragma mark - AKPickerViewDelegate
+
+- (void)pickerView:(AKPickerView *)pickerView didSelectItem:(NSInteger)item
+{
+    if (pickerView.tag!=1)
+    {
+currentSelectionHours=[self.titlesHoursArray[item] intValue];
+        NSLog(@"%@", self.titlesHoursArray[item]);
+
+    }else
+    {
+    currentSelectionDays=[self.titlesDaysArray[item] intValue];
+        NSLog(@"%@", self.titlesDaysArray[item]);
+
+    }
+}
+
+
+/*
+ * Label Customization
+ *
+ * You can customize labels by their any properties (except font,)
+ * and margin around text.
+ * These methods are optional, and ignored when using images.
+ *
+ */
+
+
+ - (void)pickerView:(AKPickerView *)pickerView configureLabel:(UILabel *const)label forItem:(NSInteger)item
+ {
+	label.textColor = [UIColor lightGrayColor];
+	label.highlightedTextColor = GREEN_COLOR;
+//	label.backgroundColor = [UIColor colorWithHue:(float)item/(float)self.titlesDaysArray.count
+// saturation:1.0
+// brightness:1.0
+// alpha:1.0];
+ }
+
+
+/*
+ - (CGSize)pickerView:(AKPickerView *)pickerView marginForItem:(NSInteger)item
+ {
+	return CGSizeMake(40, 20);
+ }
+ */
+
+-(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickDone:(UITextField *)textField
+{
+    
+    NSLog(@"%@", textField.text);
+}
+
+
+-(void)doneCancelNumberPadToolbarDelegate:(DoneCancelNumberPadToolbar *)controller didClickCancel:(UITextField *)textField
+{
+    [textField setText:@""];
+    NSLog(@"Canceled: %@", [textField description]);
+}
 
 
 @end

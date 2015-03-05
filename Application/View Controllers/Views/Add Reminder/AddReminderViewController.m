@@ -20,6 +20,7 @@
 #import "Reminder.h"
 #import "ReminderDetailsViewController.h"
 #import "HomeHelper.h"
+#import "CreateReminderViewController.h"
 //#import "MBProgressHUD.h"
 
 @interface AddReminderViewController ()
@@ -40,9 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"AddReminderViewController" object:nil];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
@@ -88,7 +87,7 @@
             {
                 [self.addReminderView setHidden:NO];
                 [self.noReminderView setHidden:YES];
-                [self.addReminderView setFrame:CGRectMake(0, 0, self.customeView.frame.size.width, self.customeView.frame.size.height)];
+                [self.addReminderView setFrame:CGRectMake(0, 10, self.customeView.frame.size.width, self.customeView.frame.size.height)];
                 [self.customeView addSubview:self.addReminderView];
             }
             [self.tableView reloadData];
@@ -274,7 +273,13 @@
     [poplistview show];
 }
 
-
+-(void)pushCreateReminder
+{
+    [[AppCommonFunctions sharedInstance] pushVCOfClass:[CreateReminderViewController class] fromNC:self.navigationController animated:YES popFirstToVCOfClass:nil modifyVC:^(CreateReminderViewController* info)
+    {
+        [info setTransaction:nil];
+    }];
+}
 -(void)updateAccout
 {
     self.reminderItems=[[NSMutableArray alloc] init];
@@ -283,7 +288,6 @@
     [self.noReminderView setFrame:CGRectMake(0, 0, self.customeView.frame.size.width, self.customeView.frame.size.height)];
     [self.customeView addSubview:self.noReminderView];
     [self.btnUserName setTitle:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID] forState:UIControlStateNormal];
-   // [MBProgressHUD showHUDAddedTo:self.noReminderView animated:YES];
     NSArray *userInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
     if ([userInfoarrray count]!=0)
     {
@@ -293,7 +297,6 @@
         NSArray *userInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
         [self addAccountName:userInfoarrray];
     }
-    
 }
 
 
@@ -308,13 +311,7 @@
     {
         [self.btnUserName setTitle:userInfo.user_name forState:UIControlStateNormal];
     }
-    if ([userInfo.user_img length]!=0)
-    {
-        self.imageProfile.layer.cornerRadius = self.imageProfile.frame.size.width / 2;
-        self.imageProfile.clipsToBounds = YES;
-        self.imageProfile.image=[UIImage imageWithData:userInfo.user_img];
-    }else
-        self.imageProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+    
 }
 
 

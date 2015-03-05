@@ -11,9 +11,6 @@
 #import "NavigationLeftButton.h"
 
 @interface AddReminderViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *lblTitle;
-@property (strong, nonatomic) IBOutlet UIImageView *imageProfile;
-
 @property (strong, nonatomic) NSArray  *reminderItems;
 @property (strong, nonatomic) IBOutlet UIView *customeView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
