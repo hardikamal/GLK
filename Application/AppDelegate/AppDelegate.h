@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RetrieveViewController.h"
 
 BOOL optionViewFlag;
 
@@ -17,6 +18,8 @@ BOOL optionViewFlag;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (strong, nonatomic) RetrieveViewController *retriveController;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 + (AppDelegate*) getAppDelegate;

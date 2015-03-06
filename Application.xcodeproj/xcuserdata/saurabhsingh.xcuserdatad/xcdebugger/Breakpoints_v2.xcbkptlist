@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/View Controllers/Views/FirstViewController/FirstViewController.m"
-            timestampString = "447207198.650643"
+            timestampString = "447372209.168481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-addDefaultUserAsGuest"
             landmarkType = "5">
          </BreakpointContent>

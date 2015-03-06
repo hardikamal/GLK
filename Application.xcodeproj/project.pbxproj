@@ -694,6 +694,16 @@
 		AB25ED681AA32F6F002D1CAD /* yearly.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25ECD91AA32F6F002D1CAD /* yearly.png */; };
 		AB25EE0D1AA34238002D1CAD /* CreatePaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */; };
 		AB25EE0E1AA34238002D1CAD /* PaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */; };
+		AB563DB81AAA56440078B582 /* serviceClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DB71AAA56440078B582 /* serviceClass.m */; };
+		AB563DC71AAA56F60078B582 /* THPinInputCirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DBB1AAA56F60078B582 /* THPinInputCirclesView.m */; };
+		AB563DC81AAA56F60078B582 /* THPinInputCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DBD1AAA56F60078B582 /* THPinInputCircleView.m */; };
+		AB563DC91AAA56F60078B582 /* THPinNumButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DBF1AAA56F60078B582 /* THPinNumButton.m */; };
+		AB563DCA1AAA56F60078B582 /* THPinNumPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DC11AAA56F60078B582 /* THPinNumPadView.m */; };
+		AB563DCB1AAA56F60078B582 /* THPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DC31AAA56F60078B582 /* THPinView.m */; };
+		AB563DCC1AAA56F60078B582 /* THPinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DC51AAA56F60078B582 /* THPinViewController.m */; };
+		AB563DD21AAA57EB0078B582 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */; };
+		AB563DD31AAA57EB0078B582 /* RetrieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */; };
+		AB563DD61AAA5B0E0078B582 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD51AAA5B0E0078B582 /* UIImage+ImageEffects.m */; };
 		AB59C4B51AA522A100F6A845 /* categories_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A41AA522A100F6A845 /* categories_icon.png */; };
 		AB59C4B61AA522A100F6A845 /* customreport_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A51AA522A100F6A845 /* customreport_icon.png */; };
 		AB59C4B71AA522A100F6A845 /* Month_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A61AA522A100F6A845 /* Month_icon.png */; };
@@ -2029,6 +2039,27 @@
 		AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePaymentModeViewController.m; sourceTree = "<group>"; };
 		AB25EE0B1AA34238002D1CAD /* PaymentModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModeViewController.h; sourceTree = "<group>"; };
 		AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentModeViewController.m; sourceTree = "<group>"; };
+		AB563DB61AAA56430078B582 /* serviceClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serviceClass.h; sourceTree = "<group>"; };
+		AB563DB71AAA56440078B582 /* serviceClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = serviceClass.m; sourceTree = "<group>"; };
+		AB563DBA1AAA56F60078B582 /* THPinInputCirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinInputCirclesView.h; sourceTree = "<group>"; };
+		AB563DBB1AAA56F60078B582 /* THPinInputCirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinInputCirclesView.m; sourceTree = "<group>"; };
+		AB563DBC1AAA56F60078B582 /* THPinInputCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinInputCircleView.h; sourceTree = "<group>"; };
+		AB563DBD1AAA56F60078B582 /* THPinInputCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinInputCircleView.m; sourceTree = "<group>"; };
+		AB563DBE1AAA56F60078B582 /* THPinNumButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinNumButton.h; sourceTree = "<group>"; };
+		AB563DBF1AAA56F60078B582 /* THPinNumButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinNumButton.m; sourceTree = "<group>"; };
+		AB563DC01AAA56F60078B582 /* THPinNumPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinNumPadView.h; sourceTree = "<group>"; };
+		AB563DC11AAA56F60078B582 /* THPinNumPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinNumPadView.m; sourceTree = "<group>"; };
+		AB563DC21AAA56F60078B582 /* THPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinView.h; sourceTree = "<group>"; };
+		AB563DC31AAA56F60078B582 /* THPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinView.m; sourceTree = "<group>"; };
+		AB563DC41AAA56F60078B582 /* THPinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinViewController.h; sourceTree = "<group>"; };
+		AB563DC51AAA56F60078B582 /* THPinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THPinViewController.m; sourceTree = "<group>"; };
+		AB563DC61AAA56F60078B582 /* THPinViewControllerMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THPinViewControllerMacros.h; sourceTree = "<group>"; };
+		AB563DCE1AAA57EB0078B582 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		AB563DD01AAA57EB0078B582 /* RetrieveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveViewController.h; sourceTree = "<group>"; };
+		AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveViewController.m; sourceTree = "<group>"; };
+		AB563DD41AAA5B0E0078B582 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		AB563DD51AAA5B0E0078B582 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		AB59C4A41AA522A100F6A845 /* categories_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categories_icon.png; sourceTree = "<group>"; };
 		AB59C4A51AA522A100F6A845 /* customreport_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customreport_icon.png; sourceTree = "<group>"; };
 		AB59C4A61AA522A100F6A845 /* Month_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Month_icon.png; sourceTree = "<group>"; };
@@ -2798,6 +2829,7 @@
 		197C04221A1F77E9003A6A69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB563DCD1AAA57EB0078B582 /* RetriveController */,
 				AB59C51D1AA5F4BF00F6A845 /* DemDirectory */,
 				ABDC0C0D1AA4944E00CD1820 /* Transfer view */,
 				ABDC0BD91AA476BE00CD1820 /* GoogleDrive Controller */,
@@ -2973,6 +3005,8 @@
 		197CFFA71A1F7485003A6A69 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				AB563DB61AAA56430078B582 /* serviceClass.h */,
+				AB563DB71AAA56440078B582 /* serviceClass.m */,
 				AB9311BD1AA943F900AAD275 /* delete_icon.png */,
 				AB9311BB1AA943E000AAD275 /* details_icon.png */,
 				AB8043D81AA91CE100275B53 /* KDCustom */,
@@ -3089,6 +3123,9 @@
 		AB25E6261AA1047E002D1CAD /* Useful Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB563DD41AAA5B0E0078B582 /* UIImage+ImageEffects.h */,
+				AB563DD51AAA5B0E0078B582 /* UIImage+ImageEffects.m */,
+				AB563DB91AAA56F60078B582 /* THPin */,
 				AB8043B41AA74F8B00275B53 /* AKPickerView */,
 				AB59C52C1AA5F5CF00F6A845 /* DBManager.h */,
 				AB59C52D1AA5F5CF00F6A845 /* DBManager.m */,
@@ -4859,6 +4896,37 @@
 			path = PaymentMode;
 			sourceTree = "<group>";
 		};
+		AB563DB91AAA56F60078B582 /* THPin */ = {
+			isa = PBXGroup;
+			children = (
+				AB563DBA1AAA56F60078B582 /* THPinInputCirclesView.h */,
+				AB563DBB1AAA56F60078B582 /* THPinInputCirclesView.m */,
+				AB563DBC1AAA56F60078B582 /* THPinInputCircleView.h */,
+				AB563DBD1AAA56F60078B582 /* THPinInputCircleView.m */,
+				AB563DBE1AAA56F60078B582 /* THPinNumButton.h */,
+				AB563DBF1AAA56F60078B582 /* THPinNumButton.m */,
+				AB563DC01AAA56F60078B582 /* THPinNumPadView.h */,
+				AB563DC11AAA56F60078B582 /* THPinNumPadView.m */,
+				AB563DC21AAA56F60078B582 /* THPinView.h */,
+				AB563DC31AAA56F60078B582 /* THPinView.m */,
+				AB563DC41AAA56F60078B582 /* THPinViewController.h */,
+				AB563DC51AAA56F60078B582 /* THPinViewController.m */,
+				AB563DC61AAA56F60078B582 /* THPinViewControllerMacros.h */,
+			);
+			path = THPin;
+			sourceTree = "<group>";
+		};
+		AB563DCD1AAA57EB0078B582 /* RetriveController */ = {
+			isa = PBXGroup;
+			children = (
+				AB563DCE1AAA57EB0078B582 /* ForgetPasswordViewController.h */,
+				AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */,
+				AB563DD01AAA57EB0078B582 /* RetrieveViewController.h */,
+				AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */,
+			);
+			path = RetriveController;
+			sourceTree = "<group>";
+		};
 		AB59C4A31AA522A100F6A845 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
@@ -6458,6 +6526,7 @@
 				ABDC0BBC1AA4749400CD1820 /* GTMReadMonitorInputStream.m in Sources */,
 				AB25EAC11AA1047F002D1CAD /* APPhoneWithLabel.m in Sources */,
 				AB25E9561AA1047F002D1CAD /* CENotifier.m in Sources */,
+				AB563DD21AAA57EB0078B582 /* ForgetPasswordViewController.m in Sources */,
 				AB25E9C51AA1047F002D1CAD /* KSCString.m in Sources */,
 				ABDC0BD11AA4749400CD1820 /* GTLServiceDrive.m in Sources */,
 				AB25EB0F1AA1049E002D1CAD /* Transactions.m in Sources */,
@@ -6487,6 +6556,7 @@
 				ABDC0BAB1AA4749400CD1820 /* GTLObject.m in Sources */,
 				ABDC0BD51AA4763900CD1820 /* CHCSVParser.m in Sources */,
 				ABDC0B3D1AA473F700CD1820 /* BoderView.m in Sources */,
+				AB563DC91AAA56F60078B582 /* THPinNumButton.m in Sources */,
 				ABDC0AC31AA4703D00CD1820 /* ReminderDetailsViewController.m in Sources */,
 				AB25E9F11AA1047F002D1CAD /* RATreeView+UIScrollView.m in Sources */,
 				AB25E9CA1AA1047F002D1CAD /* FCFileManager.m in Sources */,
@@ -6543,6 +6613,7 @@
 				ABDC0B301AA471CF00CD1820 /* ImageViewController.m in Sources */,
 				AB25EB1A1AA1049E002D1CAD /* CacheManager.m in Sources */,
 				AB25E9E01AA1047F002D1CAD /* LoggingHandler.m in Sources */,
+				AB563DCC1AAA56F60078B582 /* THPinViewController.m in Sources */,
 				ABDC0BD81AA4765C00CD1820 /* CustomizeExportViewController.m in Sources */,
 				AB25E9E91AA1047F002D1CAD /* RATreeNode.m in Sources */,
 				AB25E9DB1AA1047F002D1CAD /* KVNProgress.m in Sources */,
@@ -6556,6 +6627,7 @@
 				AB25EA671AA1047F002D1CAD /* UIImage+WebP.m in Sources */,
 				AB25E92F1AA1047F002D1CAD /* AFNetworkReachabilityManager.m in Sources */,
 				AB25E9C01AA1047F002D1CAD /* KSCrashReportSinkConsole.m in Sources */,
+				AB563DD61AAA5B0E0078B582 /* UIImage+ImageEffects.m in Sources */,
 				AB25EA5C1AA1047F002D1CAD /* NSData+ImageContentType.m in Sources */,
 				AB25E95F1AA1047F002D1CAD /* THBubbleColor.m in Sources */,
 				AB25E9AD1AA1047F002D1CAD /* KSMach_x86_64.c in Sources */,
@@ -6662,15 +6734,18 @@
 				AB25EA611AA1047F002D1CAD /* SDWebImageDownloaderOperation.m in Sources */,
 				AB25EE0D1AA34238002D1CAD /* CreatePaymentModeViewController.m in Sources */,
 				AB25E9531AA1047F002D1CAD /* BKHTMLLinkButton.m in Sources */,
+				AB563DB81AAA56440078B582 /* serviceClass.m in Sources */,
 				AB25E9A81AA1047F002D1CAD /* KSLogger.m in Sources */,
 				ABDC0BC31AA4749400CD1820 /* GTLDriveChange.m in Sources */,
 				AB25EB881AA273DC002D1CAD /* FPPopoverController.m in Sources */,
+				AB563DCB1AAA56F60078B582 /* THPinView.m in Sources */,
 				AB25EAA91AA1047F002D1CAD /* BHExpandingTextView.m in Sources */,
 				AB25E9841AA1047F002D1CAD /* ActionSheetDistancePicker.m in Sources */,
 				ABDC0BA51AA4749400CD1820 /* GTLBatchQuery.m in Sources */,
 				AB25E9B71AA1047F002D1CAD /* KSCrashReportFilter.m in Sources */,
 				AB25E9371AA1047F002D1CAD /* AKSVideoAndImagePicker.m in Sources */,
 				ABDC0B0B1AA4713500CD1820 /* EmailViewController.m in Sources */,
+				AB563DC71AAA56F60078B582 /* THPinInputCirclesView.m in Sources */,
 				AB25EAB31AA1047F002D1CAD /* URBMediaFocusViewController.m in Sources */,
 				AB25E9811AA1047F002D1CAD /* AbstractActionSheetPicker.m in Sources */,
 				AB25E9E11AA1047F002D1CAD /* NMPaginator.m in Sources */,
@@ -6724,6 +6799,7 @@
 				AB25E9C91AA1047F002D1CAD /* NSMutableData+AppendUTF8.m in Sources */,
 				AB25EB6C1AA25FD2002D1CAD /* CategeyListViewController.m in Sources */,
 				ABDC0BCF1AA4749400CD1820 /* GTLDriveRevisionList.m in Sources */,
+				AB563DD31AAA57EB0078B582 /* RetrieveViewController.m in Sources */,
 				AB25E98D1AA1047F002D1CAD /* KSCrashInstallation.m in Sources */,
 				AB25EABF1AA1047F002D1CAD /* APAddressBook.m in Sources */,
 				AB25E9E61AA1047F002D1CAD /* VBPieChart.m in Sources */,
@@ -6764,6 +6840,7 @@
 				ABDC0BC41AA4749400CD1820 /* GTLDriveChangeList.m in Sources */,
 				AB25EC0B1AA27412002D1CAD /* AddCatageryListViewController.m in Sources */,
 				AB59C5281AA5F4BF00F6A845 /* DemDicViewController.m in Sources */,
+				AB563DCA1AAA56F60078B582 /* THPinNumPadView.m in Sources */,
 				AB25EE0E1AA34238002D1CAD /* PaymentModeViewController.m in Sources */,
 				AB25E9BB1AA1047F002D1CAD /* KSCrashReportFilterGZip.m in Sources */,
 				AB25EC8E1AA27488002D1CAD /* BudgetNewDetailsViewController.m in Sources */,
@@ -6781,6 +6858,7 @@
 				AB25E9D81AA1047F002D1CAD /* JDStatusBarStyle.m in Sources */,
 				ABDC0BC21AA4749400CD1820 /* GTLDriveAppList.m in Sources */,
 				AB25E9301AA1047F002D1CAD /* AFSecurityPolicy.m in Sources */,
+				AB563DC81AAA56F60078B582 /* THPinInputCircleView.m in Sources */,
 				AB25E9DF1AA1047F002D1CAD /* LBLocation.m in Sources */,
 				AB25E93F1AA1047F002D1CAD /* ALAlertBannerManager.m in Sources */,
 				AB25EA8A1AA1047F002D1CAD /* THDateDay.m in Sources */,
