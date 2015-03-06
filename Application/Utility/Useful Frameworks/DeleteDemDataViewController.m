@@ -36,12 +36,7 @@
 {
     [super viewDidLoad];
     [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    self.btnBudgets.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnExpense.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnIncom.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnReminder.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnTransfer.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
-    self.btnWarranties.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
+    
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapRecognizer.numberOfTapsRequired = 1;
     self.tapView.userInteractionEnabled=YES;

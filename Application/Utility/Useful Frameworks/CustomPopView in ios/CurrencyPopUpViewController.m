@@ -140,7 +140,7 @@
             NSString * noticationName =@"CurrencyPopUpViewController";
             NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
             [[NSNotificationCenter defaultCenter] postNotificationName:noticationName object:nil userInfo:bookListing];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
      
 }
 
