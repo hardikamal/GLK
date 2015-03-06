@@ -116,8 +116,8 @@
     [_chart setShowLabels:YES];
    // NSLog(@"%@", [NSNumber numberWithInteger:[[self.expenseLabel.text substringFromIndex:2] integerValue]]);
     self.chartValues = @[
-                         @{ @"name":@"first", @"value":[NSNumber numberWithDouble:totalamountExpense], @"color":[UIColor redColor] },
-                         @{ @"name":@"second", @"value":[NSNumber numberWithDouble:totalamountBalance], @"color":GREEN_COLOR }
+                         @{ @"name":@"first", @"value":[NSNumber numberWithDouble:2], @"color":[UIColor redColor] },
+                         @{ @"name":@"second", @"value":[NSNumber numberWithDouble:2], @"color":GREEN_COLOR }
                          ];
     
     //[_chart setChartValues:_chartValues animation:YES];
