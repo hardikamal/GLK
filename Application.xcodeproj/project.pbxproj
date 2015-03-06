@@ -854,7 +854,6 @@
 		ABDC0B2A1AA471A700CD1820 /* CustomPopUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B231AA471A700CD1820 /* CustomPopUpViewController.m */; };
 		ABDC0B2B1AA471A700CD1820 /* LoginCallbacksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B251AA471A700CD1820 /* LoginCallbacksViewController.m */; };
 		ABDC0B2C1AA471A700CD1820 /* SelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B271AA471A700CD1820 /* SelectedViewController.m */; };
-		ABDC0B301AA471CF00CD1820 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B2F1AA471CF00CD1820 /* ImageViewController.m */; };
 		ABDC0B331AA4721D00CD1820 /* UIUnderlinedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B321AA4721D00CD1820 /* UIUnderlinedButton.m */; };
 		ABDC0B361AA472CE00CD1820 /* SAAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B351AA472CE00CD1820 /* SAAPIClient.m */; };
 		ABDC0B381AA4733A00CD1820 /* TransactionDetailsViewController .m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0B371AA4733A00CD1820 /* TransactionDetailsViewController .m */; };
@@ -2255,8 +2254,6 @@
 		ABDC0B251AA471A700CD1820 /* LoginCallbacksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCallbacksViewController.m; sourceTree = "<group>"; };
 		ABDC0B261AA471A700CD1820 /* SelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedViewController.h; sourceTree = "<group>"; };
 		ABDC0B271AA471A700CD1820 /* SelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedViewController.m; sourceTree = "<group>"; };
-		ABDC0B2E1AA471CF00CD1820 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		ABDC0B2F1AA471CF00CD1820 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		ABDC0B311AA4721D00CD1820 /* UIUnderlinedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUnderlinedButton.h; sourceTree = "<group>"; };
 		ABDC0B321AA4721D00CD1820 /* UIUnderlinedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUnderlinedButton.m; sourceTree = "<group>"; };
 		ABDC0B341AA472CE00CD1820 /* SAAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAPIClient.h; sourceTree = "<group>"; };
@@ -3150,7 +3147,6 @@
 				ABDC0B351AA472CE00CD1820 /* SAAPIClient.m */,
 				ABDC0B311AA4721D00CD1820 /* UIUnderlinedButton.h */,
 				ABDC0B321AA4721D00CD1820 /* UIUnderlinedButton.m */,
-				ABDC0B2D1AA471CF00CD1820 /* ImageViewController */,
 				ABDC0B1D1AA471A700CD1820 /* CustomPopView in ios */,
 				AB25EB7D1AA273DC002D1CAD /* PopUpView */,
 				AB25EB7B1AA2696D002D1CAD /* Localizable.strings */,
@@ -5336,15 +5332,6 @@
 			path = "CustomPopView in ios";
 			sourceTree = "<group>";
 		};
-		ABDC0B2D1AA471CF00CD1820 /* ImageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ABDC0B2E1AA471CF00CD1820 /* ImageViewController.h */,
-				ABDC0B2F1AA471CF00CD1820 /* ImageViewController.m */,
-			);
-			path = ImageViewController;
-			sourceTree = "<group>";
-		};
 		ABDC0B3A1AA473F700CD1820 /* Boder view */ = {
 			isa = PBXGroup;
 			children = (
@@ -6643,7 +6630,6 @@
 				ABDC0B0A1AA4713500CD1820 /* ReSetPasswordViewController.m in Sources */,
 				ABDC0BAA1AA4749400CD1820 /* GTLJSONParser.m in Sources */,
 				ABDC0BAC1AA4749400CD1820 /* GTLQuery.m in Sources */,
-				ABDC0B301AA471CF00CD1820 /* ImageViewController.m in Sources */,
 				AB25EB1A1AA1049E002D1CAD /* CacheManager.m in Sources */,
 				AB25E9E01AA1047F002D1CAD /* LoggingHandler.m in Sources */,
 				AB563DCC1AAA56F60078B582 /* THPinViewController.m in Sources */,

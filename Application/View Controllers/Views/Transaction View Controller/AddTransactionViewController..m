@@ -26,7 +26,6 @@
 #import "NumberPadDoneBtn.h"
 #import "HomeViewController.h"
 //#import "HistoryViewController.h"
-//#import "ImageViewController.h"
 #import "CategeyListViewController.h"
 #import "PaymentModeViewController.h"
 //#import "MBProgressHUD.h"
@@ -670,11 +669,7 @@ if ([infoPayment count] != 0)
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-//    ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
-//    [vc setImage:imageVw.image];
-//    [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"addTransaction", nil)]];
-//    [self  presentViewController:vc animated:NO completion:nil];
+    [[AppCommonFunctions sharedInstance]showImage:imageVw.image fromView:[self view]];
 }
 
 

@@ -18,7 +18,6 @@
 #import "Paymentmode.h"
 #import "AddAccountViewController.h"
 #import "NumberPadDoneBtn.h"
-#import "ImageViewController.h"
 #import "CategeyListViewController.h"
 #import "PaymentModeViewController.h"
 #import "AutocompletionTableView.h"
@@ -680,11 +679,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
-    [vc setImage:imageVw.image];
-    [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"addWarranty", nil)]];
-    [self  presentViewController:vc animated:NO completion:nil];
+    [[AppCommonFunctions sharedInstance]showImage:imageVw.image fromView:[self view]];
 }
 
 

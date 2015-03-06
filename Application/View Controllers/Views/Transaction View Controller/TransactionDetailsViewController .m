@@ -18,7 +18,6 @@
 #import "WarrantyViewController.h"
 #import "AddWarrantyViewController.h"
 #import "HomeViewController.h"
-#import "ImageViewController.h"
 #import "TransferHandler.h"
 #import "Transfer.h"
 
@@ -218,16 +217,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
-    [vc setImage:[UIImage imageWithData:transaction.pic]];
-    if ([self WarrantyViewController])
-    {
-          [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"warrantydetails", nil)]];
-    }else
-          [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"transactiondetails", nil)]];
-  
-    [self  presentViewController:vc animated:NO completion:nil];
+    [[AppCommonFunctions sharedInstance]showImage:[UIImage imageWithData:transaction.pic] fromView:[self view]];
 }
 
 - (BOOL)backViewController
