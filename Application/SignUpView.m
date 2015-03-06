@@ -62,19 +62,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-   // self.title=@"Tap to upload pic ";
     self.scrllView.contentSize=CGSizeMake(320, 514);
     isPrivacyPolicySelected=YES;
     UIButton *btnSubmit=(UIButton *)[self.view viewWithTag:5];
     btnSubmit.enabled=YES;
     isCompare=YES;
     [self.navigationController setNavigationBarHidden:YES];
-    [self.lblProfile setFont:[UIFont fontWithName:Ebrima_Bold size:16]];
-    [self.txtconfirmPassword setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.txtEmailId setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.txtName setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.txtPassword setFont:[UIFont fontWithName:Embrima size:16.0f]];
 }
 
 
@@ -260,7 +253,7 @@
     if (isPrivacyPolicySelected)
     {
         UIButton *btnPrivacy=(UIButton *)[self.view viewWithTag:4];
-        [btnPrivacy setImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
+        [btnPrivacy setImage:[UIImage imageNamed:@"rememberme_box.png"] forState:UIControlStateNormal];
         
         isPrivacyPolicySelected=NO;
         
@@ -271,7 +264,7 @@
     else
     {
         UIButton *btnPrivacy=(UIButton *)[self.view viewWithTag:4];
-        [btnPrivacy setImage:[UIImage imageNamed:@"checkbox_active.png"] forState:UIControlStateNormal];
+        [btnPrivacy setImage:[UIImage imageNamed:@"remember_box_check.png"] forState:UIControlStateNormal];
         
         isPrivacyPolicySelected=YES;
         
@@ -380,15 +373,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    if([title isEqualToString:@"Take Photo"])
-    {
-         [self CameraFile];
-        
-    }else if ([title isEqualToString:@"Photo From Gallery"])
-    {
-         [self CameraRollFile];
-    }else if (alertView.tag==10)
+     if (alertView.tag==10)
     {
          NSString * noticationName =@"LeftMenuViewController";
         [[NSNotificationCenter defaultCenter] postNotificationName:noticationName object:nil userInfo:nil];
@@ -435,16 +420,23 @@
 
 - (IBAction)profilebtnClick:(id)sender
 {
-    [self.txtEmailId resignFirstResponder];
-    [self.txtPassword resignFirstResponder];
-    [self.txtName resignFirstResponder];
-    [self.txtconfirmPassword resignFirstResponder];
+   RESIGN_KEYBOARD
     CGPoint scrollPoint = CGPointMake(0.0, 0.0);
     [self.scrllView setContentOffset:scrollPoint animated:YES];
     self.scrllView.scrollEnabled=YES;
     self.scrllView.contentSize=CGSizeMake(320, 514);
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:nil      message:nil     delegate:self     cancelButtonTitle: @"Cancel"  otherButtonTitles:@"Take Photo",@"Photo From Gallery",nil];
-    [message show];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:@"Take Photo",@"Photo From Gallery", nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+        NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
+        if([title isEqualToString:@"Take Photo"])
+        {
+            [self CameraFile];
+            
+        }else if ([title isEqualToString:@"Photo From Gallery"])
+        {
+            [self CameraRollFile];
+        }
+    }];
+    
 }
 
 @end

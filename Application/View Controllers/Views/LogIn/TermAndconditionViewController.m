@@ -27,21 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
+    
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     tapRecognizer.numberOfTapsRequired = 1;
     self.tapView.userInteractionEnabled=YES;
     [self.tapView addGestureRecognizer:tapRecognizer];
-    [self.textView setTextColor:[UIColor lightGrayColor]];
-    [self.textView setFont:[UIFont fontWithName:Embrima size:16.0f]];
     [self.textView setText:NSLocalizedString(@"privayPolicytext", nil)];
     CGFloat xWidth = self.topView.frame.size.width;
     CGFloat yHeight = self.topView.frame.size.height;
     CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
     [self.topView setFrame:CGRectMake(5, yOffset, xWidth, yHeight)];
-    self.topView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.topView.layer.borderWidth = 1.0f;
+   
     self.topView.clipsToBounds = TRUE;
     [self.topView didMoveToSuperview];
 }
