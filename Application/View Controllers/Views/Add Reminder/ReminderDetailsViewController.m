@@ -18,7 +18,7 @@
 #import "UserInfo.h"
 #import "CreateReminderViewController.h"
 #import "AddReminderViewController.h"
-#import "ImageViewController.h"
+
 @interface ReminderDetailsViewController ()
 
 @end
@@ -154,11 +154,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
-    [vc setImage:[UIImage imageWithData:transaction.pic]];
-    [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"reminderdetails", nil)] ];
-    [self  presentViewController:vc animated:NO completion:nil];
+    [[AppCommonFunctions sharedInstance]showImage:[UIImage imageWithData:transaction.pic] fromView:[self view]];
 }
 
 

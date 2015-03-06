@@ -5570,43 +5570,6 @@
             </objects>
             <point key="canvasLocation" x="-1349" y="2282"/>
         </scene>
-        <!--View Image-->
-        <scene sceneID="28s-N8-3CJ">
-            <objects>
-                <viewController storyboardIdentifier="ImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6n2-YT-VHu" customClass="ImageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6On-q5-h9p"/>
-                        <viewControllerLayoutGuide type="bottom" id="ELc-k6-nyu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UUx-q5-jLU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TCQ-Du-QRc">
-                                <rect key="frame" x="28" y="163" width="265" height="241"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="241" id="Njq-yv-hsG"/>
-                                    <constraint firstAttribute="width" constant="265" id="wAI-ki-SLy"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="TCQ-Du-QRc" secondAttribute="centerX" id="hDw-60-Ngk"/>
-                            <constraint firstAttribute="centerY" secondItem="TCQ-Du-QRc" secondAttribute="centerY" id="hns-EB-peI"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="View Image" id="oot-VX-R8m"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="imageView" destination="TCQ-Du-QRc" id="EKp-Tl-EUi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jQO-n6-XQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1415" y="-288"/>
-        </scene>
         <!--Add Budget-->
         <scene sceneID="t82-HP-B6m">
             <objects>

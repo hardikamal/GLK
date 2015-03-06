@@ -11,7 +11,6 @@
 #import "CategeyListViewController.h"
 #import "PaymentModeViewController.h"
 #import "UIAlertView+Block.h"
-#import "ImageViewController.h"
 #import "ReminderHandler.h"
 #import "CategoryListHandler.h"
 #import "PaymentmodeHandler.h"
@@ -719,11 +718,7 @@
 
 -(void)OneTouchHandeler
 {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    ImageViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"ImageViewController"];
-    [vc setImage:imageVw.image];
-    [vc setString:[[NSString alloc] initWithString:NSLocalizedString(@"addReminder", nil)]];
-    [self.navigationController  presentViewController:vc animated:YES completion:nil];
+    [[AppCommonFunctions sharedInstance]showImage:imageVw.image fromView:[self view]];
 }
 
 
