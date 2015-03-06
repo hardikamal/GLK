@@ -475,13 +475,13 @@ if ([infoPayment count] != 0)
         NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
         NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
         [dictionary setObject:currency forKey:@"currency"];
-        
-        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserName.titleLabel.text];
+        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
         if ([UserInfoarrray count]!=0)
         {
             UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
             [dictionary setObject:userInfo.user_token_id forKey:@"user_token_id"];
         }
+        
         
         [dictionary setObject:_txtAmount.text forKey:@"amount"];
         [dictionary setObject:_txtDescription.text forKey:@"discription"];

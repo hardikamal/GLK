@@ -50,7 +50,7 @@ static AppCommonFunctions *singletonInstance = nil;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
-- (void)setUpCrashReporter {
+- (void)setUpCrashReporter {return;
     [self installCrashHandler];
 }
 

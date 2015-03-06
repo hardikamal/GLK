@@ -13,7 +13,7 @@
 @property(nonatomic) CGFloat  alpha;
 @property(nonatomic) CGAffineTransform transform;
 
-@property (strong, nonatomic) IBOutlet UIView *tapView;
+//@property (strong, nonatomic) IBOutlet UIView *tapView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet UIView *popUpView;

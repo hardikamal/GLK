@@ -413,6 +413,10 @@
 #define CALLNAME_EDIT_CURRENCY   @"editCurrency"
 #define CALLNAME_GETUPDATE   @"getPromotionurl"
 #define CALLNAME_DEM_DIRECTORY   @"getMcccode"
+#pragma mark - Define Color
 
+#define BLUE_COLOR [UIColor colorWithRed:71/255.0 green:119/255.0 blue:171/255.0 alpha:1.0]
+#define YELLOW_COLOR [UIColor colorWithRed:254/255.0 green:155/255.0 blue:14/255.0 alpha:1.0]
+#define RED_COLOR [UIColor colorWithRed:255/255.0 green:55/255.0 blue:49/255.0 alpha:1.0]
 
 

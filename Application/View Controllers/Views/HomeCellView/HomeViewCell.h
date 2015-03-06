@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
+@interface HomeViewCell : SWTableViewCell<SWTableViewCellDelegate>
 
-@interface HomeViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imgCatagery;
 @property (strong, nonatomic) IBOutlet UILabel *lblCatagory;
-
 @property (strong, nonatomic) IBOutlet UILabel *lblAmount;
 @property (strong, nonatomic) IBOutlet UILabel *lblCurrrentUser;
 @property (strong, nonatomic) IBOutlet UILabel *lblDob;
 @property (strong, nonatomic) IBOutlet UILabel *lblDiscription;
 @property (strong, nonatomic) IBOutlet UILabel *lblExtra;
+
 
 
 @end

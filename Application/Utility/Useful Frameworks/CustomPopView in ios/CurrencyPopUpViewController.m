@@ -18,19 +18,16 @@
 @end
 
 @implementation CurrencyPopUpViewController
+- (IBAction)doneClick:(UIBarButtonItem *)sender
+{
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
+    
     // Initialize the recipes array
     recipes =[[NSMutableArray alloc] init];
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    tapRecognizer.numberOfTapsRequired = 1;
-    self.tapView.userInteractionEnabled=YES;
-    [self.tapView addGestureRecognizer:tapRecognizer];
-    
     NSArray* sortedArray = [[NSLocalizedString(@"countries", nil) componentsSeparatedByString:@","] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     NSArray* signArray =[NSLocalizedString(@"items", nil) componentsSeparatedByString:@","];;
@@ -53,10 +50,7 @@
     }
 }
 
-- (IBAction)handleSingleTap:(UITapGestureRecognizer *)sender
-{
-    [self animatedOut];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -98,9 +92,7 @@
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
     NSArray *array=[recipe.prepTime componentsSeparatedByString:@"-"];
     cell.lblCurrency.text=[array objectAtIndex:1];
-    cell.lblCurrency.font=[UIFont fontWithName:Embrima size:14.0f];
-    cell.nameLabel.font=[UIFont fontWithName:Embrima size:14.0f];
-    cell.prepTimeLabel.font=[UIFont fontWithName:Embrima size:14.0f];
+    
     cell.prepTimeLabel.text =[array objectAtIndex:0];
     return cell;
 }
@@ -137,54 +129,21 @@
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView
 {
-    [tableView setFrame:CGRectMake(self.tableView .frame.origin.x+16, tableView .frame.origin.y, self.tableView .frame.size.width, self.tableView .frame.size.height)];
+    //[tableView setFrame:CGRectMake(self.tableView .frame.origin.x+16, tableView .frame.origin.y, self.tableView .frame.size.width, self.tableView .frame.size.height)];
 }
 
 
-- (void)animatedIn
-{
-    self.transform = CGAffineTransformMakeScale(1.3, 1.3);
-    self.alpha = 0;
-    [UIView animateWithDuration:.35 animations:^{
-        self.alpha = 1;
-        self.transform = CGAffineTransformMakeScale(1, 1);
-    }];
-    
-}
 - (void)animatedOut
 {
-    [UIView animateWithDuration:.35 animations:^{
-        self.transform = CGAffineTransformMakeScale(1.3, 1.3);
-        self.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        if (finished)
-        {
-            [self.view removeFromSuperview];
+   
             [[NSUserDefaults standardUserDefaults] setBool:NO forKey:CURRENT_CURRENCY_TIMESTAMP];
             NSString * noticationName =@"CurrencyPopUpViewController";
             NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
             [[NSNotificationCenter defaultCenter] postNotificationName:noticationName object:nil userInfo:bookListing];
-        }
-    }];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+     
 }
 
 
-- (void)touchForDismissSelf:(id)sender
-{
-    [self animatedOut];
-    
-}
 
-- (void)show
-{
-    UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
-    [keywindow addSubview:self.view];
-    self.view.center = CGPointMake(keywindow.bounds.size.width/2.0f, keywindow.bounds.size.height/2.0f);
-    [self animatedIn];
-}
-
-- (void)dismiss
-{
-    [self animatedOut];
-}
 @end

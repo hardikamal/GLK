@@ -787,6 +787,13 @@
 		AB8043C31AA7AF1100275B53 /* downward_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8043C21AA7AF1100275B53 /* downward_button@3x.png */; };
 		AB8043C71AA7D4C200275B53 /* All_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8043C61AA7D4C200275B53 /* All_icon.png */; };
 		AB8043D21AA7F83800275B53 /* CreateBudgetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8043D11AA7F83800275B53 /* CreateBudgetsViewController.m */; };
+		AB8043D51AA8FE6C00275B53 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8043D41AA8FE6C00275B53 /* MarqueeLabel.m */; };
+		AB8043D71AA914B700275B53 /* with_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB8043D61AA914B700275B53 /* with_icon@3x.png */; };
+		AB8043DD1AA91CE100275B53 /* KDGoalBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8043DA1AA91CE100275B53 /* KDGoalBar.m */; };
+		AB8043DE1AA91CE100275B53 /* KDGoalBarPercentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8043DC1AA91CE100275B53 /* KDGoalBarPercentLayer.m */; };
+		AB9311BA1AA943B900AAD275 /* edit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9311B91AA943B900AAD275 /* edit_icon.png */; };
+		AB9311BC1AA943E000AAD275 /* details_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9311BB1AA943E000AAD275 /* details_icon.png */; };
+		AB9311BE1AA943F900AAD275 /* delete_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB9311BD1AA943F900AAD275 /* delete_icon.png */; };
 		ABA8EF131AA09D240006A123 /* server_error.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF101AA09D240006A123 /* server_error.png */; };
 		ABA8EF141AA09D240006A123 /* server_sync.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF111AA09D240006A123 /* server_sync.png */; };
 		ABA8EF191AA09D2E0006A123 /* server_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF161AA09D2E0006A123 /* server_error@2x.png */; };
@@ -2123,6 +2130,16 @@
 		AB8043C61AA7D4C200275B53 /* All_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All_icon.png; sourceTree = "<group>"; };
 		AB8043D01AA7F83800275B53 /* CreateBudgetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBudgetsViewController.h; sourceTree = "<group>"; };
 		AB8043D11AA7F83800275B53 /* CreateBudgetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBudgetsViewController.m; sourceTree = "<group>"; };
+		AB8043D31AA8FE6C00275B53 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		AB8043D41AA8FE6C00275B53 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		AB8043D61AA914B700275B53 /* with_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "with_icon@3x.png"; sourceTree = "<group>"; };
+		AB8043D91AA91CE100275B53 /* KDGoalBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDGoalBar.h; sourceTree = "<group>"; };
+		AB8043DA1AA91CE100275B53 /* KDGoalBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDGoalBar.m; sourceTree = "<group>"; };
+		AB8043DB1AA91CE100275B53 /* KDGoalBarPercentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDGoalBarPercentLayer.h; sourceTree = "<group>"; };
+		AB8043DC1AA91CE100275B53 /* KDGoalBarPercentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDGoalBarPercentLayer.m; sourceTree = "<group>"; };
+		AB9311B91AA943B900AAD275 /* edit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_icon.png; sourceTree = "<group>"; };
+		AB9311BB1AA943E000AAD275 /* details_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_icon.png; sourceTree = "<group>"; };
+		AB9311BD1AA943F900AAD275 /* delete_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_icon.png; sourceTree = "<group>"; };
 		ABA8EF101AA09D240006A123 /* server_error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = server_error.png; sourceTree = "<group>"; };
 		ABA8EF111AA09D240006A123 /* server_sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = server_sync.png; sourceTree = "<group>"; };
 		ABA8EF161AA09D2E0006A123 /* server_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "server_error@2x.png"; sourceTree = "<group>"; };
@@ -2956,6 +2973,12 @@
 		197CFFA71A1F7485003A6A69 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				AB9311BD1AA943F900AAD275 /* delete_icon.png */,
+				AB9311BB1AA943E000AAD275 /* details_icon.png */,
+				AB8043D81AA91CE100275B53 /* KDCustom */,
+				AB8043D61AA914B700275B53 /* with_icon@3x.png */,
+				AB8043D31AA8FE6C00275B53 /* MarqueeLabel.h */,
+				AB8043D41AA8FE6C00275B53 /* MarqueeLabel.m */,
 				AB8043C61AA7D4C200275B53 /* All_icon.png */,
 				AB59C5191AA53A7500F6A845 /* check_box_actives.png */,
 				AB59C51A1AA53A7500F6A845 /* check_boxs.png */,
@@ -5009,6 +5032,18 @@
 			path = AKPickerView;
 			sourceTree = "<group>";
 		};
+		AB8043D81AA91CE100275B53 /* KDCustom */ = {
+			isa = PBXGroup;
+			children = (
+				AB9311B91AA943B900AAD275 /* edit_icon.png */,
+				AB8043D91AA91CE100275B53 /* KDGoalBar.h */,
+				AB8043DA1AA91CE100275B53 /* KDGoalBar.m */,
+				AB8043DB1AA91CE100275B53 /* KDGoalBarPercentLayer.h */,
+				AB8043DC1AA91CE100275B53 /* KDGoalBarPercentLayer.m */,
+			);
+			path = KDCustom;
+			sourceTree = "<group>";
+		};
 		ABA8EF211AA09E0A0006A123 /* Transaction View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -5854,6 +5889,7 @@
 				ABDC0C771AA515F500CD1820 /* Auto_icon.png in Resources */,
 				ABDC0CAC1AA515F500CD1820 /* Provident Fund_icon.png in Resources */,
 				AB25EA501AA1047F002D1CAD /* setting_active@3x.png in Resources */,
+				AB9311BA1AA943B900AAD275 /* edit_icon.png in Resources */,
 				AB25ED4C1AA32F6F002D1CAD /* grocery.png in Resources */,
 				AB25EA841AA1047F002D1CAD /* dialog_clear.png in Resources */,
 				AB59C51B1AA53A7500F6A845 /* check_box_actives.png in Resources */,
@@ -5861,6 +5897,7 @@
 				AB25EC4E1AA27412002D1CAD /* Lithuania.png in Resources */,
 				ABF994511A9FBB07005DC589 /* warranty.png in Resources */,
 				ABDC0CBB1AA515F500CD1820 /* Mediclaim_icon@3x.png in Resources */,
+				AB8043D71AA914B700275B53 /* with_icon@3x.png in Resources */,
 				AB25EA051AA1047F002D1CAD /* help_active.png in Resources */,
 				AB25EA3C1AA1047F002D1CAD /* category_active@3x.png in Resources */,
 				19A8B72D1A9E6A8500C29520 /* appicon-76.png in Resources */,
@@ -6140,6 +6177,7 @@
 				AB25EA2C1AA1047F002D1CAD /* profile_pic@2x.png in Resources */,
 				ABF9944B1A9FBB07005DC589 /* budget.png in Resources */,
 				ABDC0B121AA4713600CD1820 /* BudgetCell.xib in Resources */,
+				AB9311BE1AA943F900AAD275 /* delete_icon.png in Resources */,
 				AB25EA781AA1047F002D1CAD /* calendar_clear-disabled.png in Resources */,
 				19A8B7381A9E6A8500C29520 /* Default-568h@2x.png in Resources */,
 				AB25EC681AA27412002D1CAD /* Saint Helena.png in Resources */,
@@ -6316,6 +6354,7 @@
 				ABF9935C1A9F35A5005DC589 /* icon@3x.png in Resources */,
 				AB25EAA01AA1047F002D1CAD /* TSMessagesDefaultDesign.json in Resources */,
 				AB59C5481AA5F9BF00F6A845 /* shopping_icon.png in Resources */,
+				AB9311BC1AA943E000AAD275 /* details_icon.png in Resources */,
 				AB25EC5C1AA27412002D1CAD /* North Korea.png in Resources */,
 				AB25EC3C1AA27412002D1CAD /* Hungary.png in Resources */,
 				AB59C4EF1AA5259C00F6A845 /* account_icon.png in Resources */,
@@ -6465,6 +6504,7 @@
 				AB25E9AA1AA1047F002D1CAD /* KSMach_Arm.c in Sources */,
 				AB25E9CB1AA1047F002D1CAD /* IQNSArray+Sort.m in Sources */,
 				AB25E9B61AA1047F002D1CAD /* RFC3339DateTool.m in Sources */,
+				AB8043D51AA8FE6C00275B53 /* MarqueeLabel.m in Sources */,
 				ABDC0BB81AA4749400CD1820 /* GTMOAuth2Authentication.m in Sources */,
 				AB25E9881AA1047F002D1CAD /* SWActionSheet.m in Sources */,
 				ABDC0BB61AA4749400CD1820 /* GTMHTTPUploadFetcher.m in Sources */,
@@ -6527,6 +6567,7 @@
 				AB25E9B21AA1047F002D1CAD /* KSSysCtl.c in Sources */,
 				ABDC0BA61AA4749400CD1820 /* GTLBatchResult.m in Sources */,
 				AB59C5181AA52E2300F6A845 /* DeleteDemDataViewController.m in Sources */,
+				AB8043DD1AA91CE100275B53 /* KDGoalBar.m in Sources */,
 				AB25E9B41AA1047F002D1CAD /* NSDictionary+Merge.m in Sources */,
 				ABDC0BCD1AA4749400CD1820 /* GTLDrivePermissionList.m in Sources */,
 				AB59C5291AA5F4BF00F6A845 /* LocationDetailsViewController.m in Sources */,
@@ -6548,6 +6589,7 @@
 				AB25EABA1AA1047F002D1CAD /* UzysGroupPickerView.m in Sources */,
 				AB25EA731AA1047F002D1CAD /* SWUtilityButtonView.m in Sources */,
 				AB25EB891AA273DC002D1CAD /* FPPopoverView.m in Sources */,
+				AB8043DE1AA91CE100275B53 /* KDGoalBarPercentLayer.m in Sources */,
 				AB25EA681AA1047F002D1CAD /* UIImageView+HighlightedWebCache.m in Sources */,
 				AB25EA6D1AA1047F002D1CAD /* UIWindow+SIUtils.m in Sources */,
 				AB25E9611AA1047F002D1CAD /* THContactBubble.m in Sources */,
