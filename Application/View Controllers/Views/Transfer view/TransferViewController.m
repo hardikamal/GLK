@@ -56,7 +56,7 @@
             userToken=@"";
         }else
         {
-            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserName.titleLabel.text];
+            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:@"GUEST"];
             if ([UserInfoarrray count]!=0 )
             {
                 UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
@@ -66,7 +66,7 @@
                 userToken=@"";
             }
         }
-        
+
         self.transferItems=[[TransferHandler sharedCoreDataController] getUserDetailsfromTransfer:userToken];
         dispatch_async(dispatch_get_main_queue(), ^{
             //[MBProgressHUD hideHUDForView:self.emptyWarrantyView animated:YES];

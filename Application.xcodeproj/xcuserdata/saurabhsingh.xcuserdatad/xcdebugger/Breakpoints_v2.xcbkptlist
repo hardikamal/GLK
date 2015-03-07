@@ -265,29 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/Transfer view/TransferViewController.m"
-            timestampString = "447462133.108502"
+            filePath = "Application/Service Classes/Database Manager/TransferHandler/TransferHandler.m"
+            timestampString = "447463738.510183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/Transfer view/TransferViewController.m"
-            timestampString = "447462169.851192"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-profressView"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "-getUserDetailsfromTransfer:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
