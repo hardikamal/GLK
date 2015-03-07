@@ -180,16 +180,17 @@
 {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        NSString *userToken;
-         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:userAccountName];
-            if ([UserInfoarrray count]!=0 )
-            {
-                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
-                userToken=userInfo.user_token_id;
-            }else
-            {
-                userToken=@"";
-            }
+        NSString *userToken=@"0";
+//         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:userAccountName];
+//        
+//            if ([UserInfoarrray count]!=0 )
+//            {
+//                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
+//                userToken=userInfo.user_token_id;
+//            }else
+//            {
+//                userToken=@"";
+//            }
         
         
         self.warrantyItems=[[TransactionHandler sharedCoreDataController] getAllWarranrtyOnHomeScreen:[NSString stringWithFormat:@"%d",TYPE_WARRANTY] :userToken];
@@ -624,10 +625,7 @@
             [cell.lblUserName setText:userInfo.user_name];
         }
         
-        CGFloat borderWidth = .3f;
-        cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
-        cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        cell.layer.borderWidth = borderWidth;
+        
         UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
         imageButton.frame = CGRectMake(285, 0, 25, 25);
         [imageButton setTag:[indexPath row]];
