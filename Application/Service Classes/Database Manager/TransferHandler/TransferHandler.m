@@ -392,7 +392,7 @@
     NSPredicate *p4 =  [NSPredicate predicateWithFormat:@"toaccount IN %@", usetTokeArray];
     
     NSPredicate *newPredicate = [NSCompoundPredicate andPredicateWithSubpredicates: @[predicate,p1, p2,p3,p4]];
-    [fetchRequest setPredicate:newPredicate];
+   // [fetchRequest setPredicate:newPredicate];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     [fetchRequest setEntity:entity];
     [fetchRequest setReturnsDistinctResults:YES];

@@ -311,7 +311,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserInfo" inManagedObjectContext:_managedObjectContext];
     NSPredicate *predicate;
     predicate =[NSPredicate predicateWithFormat:@"user_name = %@ AND token_id = %@",searchText,[Utility userDefaultsForKey:MAIN_TOKEN_ID]];
-   // [fetchRequest setPredicate:predicate];
+   [fetchRequest setPredicate:predicate];
     [fetchRequest setEntity:entity];
     [fetchRequest setReturnsDistinctResults:YES];
     NSError* error;
