@@ -11,7 +11,7 @@
 #import "NavigationLeftButton.h"
 #import "Reminder.h"
 #import "DoneCancelNumberPadToolbar.h"
-@interface CreateReminderViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,DoneCancelNumberPadToolbarDelegate>
+@interface CreateReminderViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, DoneCancelNumberPadToolbarDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageProfile;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
@@ -46,6 +46,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblRemindrTime;
 @property (strong, nonatomic) IBOutlet UILabel *lblDayBefore;
 @property (strong, nonatomic) IBOutlet UILabel *lblAlertNotification;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
 
 @property (strong, nonatomic)  Reminder *transaction;
 
