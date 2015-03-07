@@ -11,7 +11,9 @@
 #import "DoneCancelNumberPadToolbar.h"
 #import "Transactions.h"
 #import "AutocompletionTableView.h"
-@interface AddWarrantyViewController : UIViewController<UIActionSheetDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,DoneCancelNumberPadToolbarDelegate,AutocompletionTableViewDelegate>
+
+@interface AddWarrantyViewController : UIViewController <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, DoneCancelNumberPadToolbarDelegate, AutocompletionTableViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet NavigationLeftButton *buttonUnhideCategery;
 @property (strong, nonatomic) IBOutlet UILabel *lblCarrency;
@@ -20,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnPaymentMode;
 @property (strong, nonatomic) IBOutlet UIImageView *imgProfile;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
 @property (strong, nonatomic) IBOutlet UIView *moreDetailsView;
 @property (strong, nonatomic) IBOutlet UIButton *btnAddmoreDetails;
 @property (strong, nonatomic) IBOutlet UIButton *btnExpense;
