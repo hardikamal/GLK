@@ -357,7 +357,7 @@
         [self.moreDetailsView setHidden:NO];
         self.scrollView.contentSize = CGSizeMake(320, 625);
     }
-    else { [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"errow_down.png"] forState:UIControlStateNormal];
+    else { [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
         [self.moreDetailsView setHidden:YES];
         self.scrollView.contentSize = CGSizeMake(320, 520); }
     
@@ -664,7 +664,7 @@
         [self.moreDetailsView setHidden:YES];
         self.scrollView.contentSize = CGSizeMake(320, 500);
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-        [sender setImage:[UIImage imageNamed:@"errow_down.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
     }
 }
 

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "MarqueeLabel.h"
 #import "NavigationLeftButton.h"
 #import "LoginCallbacksViewController.h"
 #import "CurrencyPopUpViewController.h"
@@ -26,7 +25,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTitleBalance;
 
 @property (strong, nonatomic) IBOutlet UIView *viewEmpty;
-@property (strong, nonatomic) IBOutlet MarqueeLabel *lblDiscription;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollview;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblIncome;

@@ -12,7 +12,7 @@
 #import "HomeViewController.h"
 #import "AddTransactionViewController.h"
 #import "TransactionHandler.h"
-#import "KDGoalBar.h"
+//#import "KDGoalBar.h"
 #import "HomeViewCell.h"
 #import "CategoryListHandler.h"
 #import "UserInfoHandler.h"
@@ -133,10 +133,6 @@
     fmt = [[NSNumberFormatter alloc] init];
     [fmt setPositiveFormat:@"0.##"];
     
-    self.tblviewTransaction.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tblviewBudget.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tblviewWarranty.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"HomeViewController" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"LoginCallbacksViewController" object:nil];
@@ -148,16 +144,10 @@
     fromLabel.titleLabel.font=[UIFont fontWithName:Embrima size:16];
     
     [fromLabel addTarget:self action:@selector(showHistryView) forControlEvents:UIControlEventTouchUpInside];
-    [fromLabel setTitleColor:[UIColor colorWithRed:13/255.0f green:198/255.0f blue:170/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [fromLabel setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     
     [self.scrollview addSubview:fromLabel];
-    [self.view addSubview: self.scrollview];
-    
-    self.lblDiscription.marqueeType = MLContinuous;
-    self.lblDiscription.scrollDuration = 10.0f;
-    self.lblDiscription.animationCurve = UIViewAnimationOptionCurveEaseInOut;
-    self.lblDiscription.fadeLength = 10.0f;
-    self.lblDiscription.continuousMarqueeExtraBuffer = 10.0f;
+    //[self.view addSubview: self.scrollview];
 }
 
 
@@ -165,14 +155,7 @@
 -(void)addDiscription
 {
     NSString *string=[[[Utility userDefaultsForKey:CURRENT_TOKEN_ID] componentsSeparatedByString:@"_"] objectAtIndex:0];
-    if (![string isEqualToString:@"0"] && string !=nil )
-    {
-        if ([[Utility userDefaultsForKey:START_END_TIME] length]!=0)
-        {
-            self.lblDiscription.text =[NSString stringWithFormat:@"Last synced Data at %@",[Utility userDefaultsForKey:START_END_TIME]];
-        }
-    }else
-        self.lblDiscription.text = NSLocalizedString(@"demdatasecure", nil);
+   
 }
 
 
@@ -213,7 +196,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
           //  [MBProgressHUD hideHUDForView:self.viewEmpty animated:YES];
             [self showAllTransactionDetailOnHomeScreen];
-            [self addDiscription];
             [self.tblviewTransaction reloadData];
             [self.tblviewBudget reloadData];
             [self.tblviewWarranty reloadData];
@@ -254,7 +236,6 @@
     self.budgetItems=[[NSMutableArray alloc] init];
     self.transcationItems=[[NSMutableArray alloc] init];
     [self showAllTransactionDetailOnHomeScreen];
-    [self addDiscription];
 }
 
 
@@ -280,13 +261,6 @@
         
     });
 }
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [self profressView];
-    //[MBProgressHUD hideHUDForView:self.viewEmpty animated:YES];
-}
-
 
 -(void)receivedSelectViewListNotification:(NSNotification*) notification
 {
@@ -360,8 +334,6 @@
         [self.viewEmpty removeFromSuperview];
        
         
-        KDGoalBar*firstGoalBar = [[KDGoalBar alloc]initWithFrame:CGRectMake(10, 3, 144, 144)];
-        [firstGoalBar setPercent:percentExpense animated:YES];
         
     }else
     {
@@ -373,16 +345,12 @@
             
             [self.scrollview addSubview:self.viewEmpty];
             [fromLabel setHidden:YES];
-            KDGoalBar*firstGoalBar = [[KDGoalBar alloc]initWithFrame:CGRectMake(80, 3, 144, 144)];
-            [firstGoalBar setPercent:-1 animated:YES];
-            [self.viewEmptyPiChart addSubview:firstGoalBar];
             
         }else
         {
             [self.viewEmptyPiChart removeFromSuperview];
             [self.viewEmpty removeFromSuperview];
-            KDGoalBar*firstGoalBar = [[KDGoalBar alloc]initWithFrame:CGRectMake(10, 3, 144, 144)];
-            [firstGoalBar setPercent:percentExpense animated:YES];
+           
         }
     }
     
@@ -540,7 +508,6 @@
     if ([tableView tag]==3)
     {
         return [self.transcationItems count];
-        
     }
     if ([tableView tag]==2)
     {

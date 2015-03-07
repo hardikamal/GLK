@@ -17,8 +17,8 @@
 #import "Paymentmode.h"
 #import "UIPopoverListView.h"
 #import "CategeyListViewController.h"
-//#import "PaymentModeViewController.h"
-//#import "CreateBudgetsViewController.h"
+#import "PaymentModeViewController.h"
+#import "CreateBudgetsViewController.h"
 #import "Transactions.h"
 #import "HomeViewCell.h"
 #import "TransactionHandler.h"
@@ -45,7 +45,7 @@
     [super viewDidLoad];
     [[UILabel appearance] setFont:[UIFont fontWithName:Embrima size:16.0]];
     [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:17.0f]];
-   // self.tblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    // self.tblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     CGFloat borderWidth = .3f;
     self.scrollView.frame = CGRectInset(self.scrollView.frame, -borderWidth, -borderWidth);
     self.scrollView.layer.borderColor = [UIColor lightGrayColor].CGColor;
@@ -56,7 +56,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-     // [MBProgressHUD showHUDAddedTo:self.tblView animated:YES];
+   // [MBProgressHUD showHUDAddedTo:self.tblView animated:YES];
     if ([self.transcationItems count]==0)
     {
         [self.lblTransaction setText:NSLocalizedString(@"notransactionfound", nil)];
@@ -134,7 +134,7 @@
             {
                 [self.lblTransaction setText:NSLocalizedString(@"transactionTitle", nil)];
             }
-          //  [MBProgressHUD hideHUDForView:self.tblView animated:YES];
+            //[MBProgressHUD hideHUDForView:self.tblView animated:YES];
             [self.tblView reloadData];
         });
     });
@@ -245,10 +245,10 @@
 
 - (IBAction)btnEditClick:(id)sender
 {
- //   UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"	 bundle: nil];
-//    CreateBudgetsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CreateBudgetsViewController"];
-//    [vc setTransaction:tran];
-   // [self.navigationController pushViewController:vc animated:YES];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"	 bundle: nil];
+    CreateBudgetsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"CreateBudgetsViewController"];
+    [vc setTransaction:tran];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)btnDeleteClick:(id)sender

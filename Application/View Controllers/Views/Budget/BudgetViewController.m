@@ -43,8 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.emptyView andSubViews:YES];
-    self.btnUserName.titleLabel.font =[UIFont fontWithName:Embrima size:16.0f];
+   
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"BudgetViewController" object:nil];
      self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
@@ -116,7 +115,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200;
+    return 205;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -204,12 +203,8 @@
     {
         [cell.lblTitleLeft setText:NSLocalizedString(@"amountExceeded", nil)];
     }
-    
-     CGFloat borderWidth = .3f;
-    cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
-    cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    cell.layer.borderWidth = borderWidth;
-    return cell;
+    cell.backgroundColor=[UIColor clearColor];
+        return cell;
 }
 
 
@@ -269,36 +264,6 @@
 {
    // [[SlideNavigationController sharedInstance]toggleLeftMenu];
 }
-- (IBAction)btnUserNameClick:(id)sender
-{
-    NSMutableArray *userInfoList=[[NSMutableArray alloc] init];
-    NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
-    if ([UserInfoarrray count]>1)
-    {
-        [userInfoList addObject:NSLocalizedString(@"allAccount", nil)];
-        for (UserInfo *info in UserInfoarrray)
-        {
-            [userInfoList addObject:info.user_name];
-        }
-    }
-    [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"BudgetViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-    poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
-}
 
 -(void)receivedNotification:(NSNotification*) notification
 {
@@ -334,11 +299,11 @@
     NSArray *userInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
     if ([userInfoarrray count]!=0)
     {
-        [self addAccountName:userInfoarrray];
+       // [self addAccountName:userInfoarrray];
     }else
     {
         NSArray *userInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
-        [self addAccountName:userInfoarrray];
+        //[self addAccountName:userInfoarrray];
     }
 
 }
@@ -350,23 +315,6 @@
     [[self navigationItem] setBackBarButtonItem:newBackButton];
 }
 
--(void)addAccountName:(NSArray *)userInfoarrray
-{
-    UserInfo *userInfo =[userInfoarrray objectAtIndex:0];
-    if ([NSLocalizedString(@"allAccount", nil) isEqualToString:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]])
-    {
-        [self.btnUserName setTitle:NSLocalizedString(@"allAccount", nil) forState:UIControlStateNormal];
-    }else
-    {
-        [self.btnUserName setTitle:userInfo.user_name forState:UIControlStateNormal];
-    }
-    if ([userInfo.user_img length]!=0)
-    {
-        self.imageProfile.layer.cornerRadius = self.imageProfile.frame.size.width / 2;
-        self.imageProfile.clipsToBounds = YES;
-        self.imageProfile.image=[UIImage imageWithData:userInfo.user_img];
-    }else
-        self.imageProfile.image=[UIImage imageNamed:@"custom_profile.png"];
-}
+
 
 @end
