@@ -23,8 +23,7 @@
 #import "TransferDetailsViewController.h"
 #import "AddAccountViewController.h"
 #import "HomeHelper.h"
-//#import "MBProgressHUD.h"
-
+#import "AddTransferViewController.h"
 @interface TransferViewController ()
 @end
 
@@ -44,16 +43,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.emptyWarrantyView andSubViews:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"TransferViewController" object:nil];
-    self.tablview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
 }
 
 -(void)profressView
 {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-
+        
         NSString *userToken;
         if ([self.btnUserName.titleLabel.text isEqualToString:NSLocalizedString(@"allAccount", nil)])
         {
@@ -73,7 +69,7 @@
         
         self.transferItems=[[TransferHandler sharedCoreDataController] getUserDetailsfromTransfer:userToken];
         dispatch_async(dispatch_get_main_queue(), ^{
-           // [MBProgressHUD hideHUDForView:self.emptyWarrantyView animated:YES];
+            //[MBProgressHUD hideHUDForView:self.emptyWarrantyView animated:YES];
             if ([self.transferItems count]==0)
             {
                 [self.emptyWarrantyView setFrame:CGRectMake(0, 2, self.customeView.frame.size.width, self.customeView.frame.size.height)];
@@ -159,7 +155,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.transferItems count];
+    return [self.transferItems count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -171,18 +167,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TrasferCell *cell = (TrasferCell*)[tableView dequeueReusableCellWithIdentifier:@"Transfer"];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"TrasferCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    
+    cell.leftUtilityButtons = [self leftButtons];
+    cell.rightUtilityButtons = [self rightButtons];
+    cell.delegate = self;
     Transfer *transfer=(Transfer*)[self.transferItems objectAtIndex:[indexPath row]];
     NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_icon" andSearchText: transfer.category];
     
     if ([categeryArray count]!=0)
     {
-    cell.imgCategery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
+        cell.imgCategery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
     }
     
     [cell.lblCatgery setText:transfer.category];
@@ -213,23 +206,15 @@
     cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
     cell.layer.borderWidth = borderWidth;
     return cell;
-
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-	TransferDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransferDetailsViewController"];
-    [vc setTransaction:[self.transferItems objectAtIndex:[indexPath row]]];
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 
 
 - (IBAction)backbtnClick:(id)sender
 {
-  
-   // [[SlideNavigationController sharedInstance]toggleLeftMenu];
+    
+    // [[SlideNavigationController sharedInstance]toggleLeftMenu];
 }
 
 
@@ -289,5 +274,97 @@
         [self profressView];
     }
 }
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
+{
+    switch (index)
+    {
+        case 0:
+        {
+            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:NSLocalizedString(@"areyousuretodeletetransfer", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
+            [alert addButtonWithTitle:@"Cancel"];
+            [alert setTag:index];
+            [alert show];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        if ([[TransferHandler sharedCoreDataController] deleteTransefer:[self.transferItems objectAtIndex:alertView.tag]])
+        {
+            [Utility showAlertWithMassager:self.navigationController.view :NSLocalizedString(@"transferdeletedSuccessfully", nil)];
+            [self profressView];
+        }
+    }
+}
+
+
+
+
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+    NSIndexPath *cellIndexPath = [self.tablview indexPathForCell:cell];
+    switch (index)
+    {
+        case 0:
+        {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+            AddTransferViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"AddTransferViewController"];
+            [vc setTransaction:[self.transferItems objectAtIndex:cellIndexPath.row]];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 1:
+        {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle: nil];
+            TransferDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransferDetailsViewController"];
+            [vc setTransaction:[self.transferItems objectAtIndex:cellIndexPath.row]];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"cell selected at index path %ld:%ld", (long)indexPath.section, (long)indexPath.row);
+    NSLog(@"selected cell index path is %@", [self.tablview indexPathForSelectedRow]);
+    if (!tableView.isEditing)
+    {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
+
+
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:YELLOW_COLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:BLUE_COLOR   icon:[UIImage imageNamed:@"details_icon.png"]];
+    
+    return rightUtilityButtons;
+}
+
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    [leftUtilityButtons sw_addUtilityButtonWithColor:RED_COLOR  icon:[UIImage imageNamed:@"delete_icon.png"]];
+    return leftUtilityButtons;
+}
+
 
 @end

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NavigationLeftButton.h"
-
-@interface TransferViewController : UIViewController
+#import "SWTableViewCell.h"
+@interface TransferViewController : UIViewController<SWTableViewCellDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageTransfer;
 
 @property (strong, nonatomic) IBOutlet NavigationLeftButton *btnUserName;
