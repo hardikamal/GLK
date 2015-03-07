@@ -51,7 +51,7 @@ static AppCommonFunctions *singletonInstance = nil;
 }
 
 - (void)setUpCrashReporter {return;
-    [self installCrashHandler];
+   // [self installCrashHandler];
 }
 
 - (void)installCrashHandler {

@@ -15,7 +15,7 @@
 #define APP_DELEGATE ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
  #define NSCalederUnit  NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay
-#define kSAAPIBaseURLString @"http://10.1.1.18/DemMobile/" //local server path
+#define kSAAPIBaseURLString @"http://68.169.60.185/demservice/" //local server path
 
 #define  transactionPicURL  @"http://10.1.1.22/DemMobile/PicUrl/transaction_pics/"
 #define  reminderPicURL  @"http://10.1.1.22/DemMobile/PicUrl/reminder_pics/"
@@ -26,7 +26,7 @@
 //#define  reminderPicURL  @"http://68.169.58.198/DemMobile/PicUrl/reminder_pics/"
 //#define  categoryPicURL  @"http://68.169.58.198/DemMobile/PicUrl/category_pics/"
 
-
+#define BASE_URL @"http://www.google.com"
 #define DATEFORMATTER @"yyyy-MM-dd HH:mm:ss"
 #define TIMEFORMATTER @"yyyy-MM-dd HH:mm:ss"
 

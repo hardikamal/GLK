@@ -160,9 +160,8 @@
         }
 
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-//        progressHUD=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        progressHUD.labelText=@"Please wait...";
-        UIImage *secondImage = [UIImage imageNamed:@"camera_profile_button.png"];
+
+        UIImage *secondImage = [UIImage imageNamed:@"account.png"];
         NSData *imgData1 = UIImagePNGRepresentation(self.imgPhoto.imageView.image);
         NSData *imgData2 = UIImagePNGRepresentation(secondImage);
         isCompare =  [imgData1 isEqual:imgData2];
@@ -199,48 +198,46 @@
 
 -(void)registerWithServer:(NSDictionary*)dic
 {
-//    SAAPIClient *manager = [SAAPIClient sharedClient];
-//    [[manager responseSerializer]setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-//    [manager postPath:@"" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject)
-//     {
-//         [MBProgressHUD hideHUDForView:self.view animated:YES];
-//         progressHUD=nil;
-//         NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
-//         
-//         if([[responseObject objectForKey:@"status"] boolValue])
-//         {
-//             [MBProgressHUD hideHUDForView:self.view animated:YES];
-//             progressHUD=nil;
-//             if(!isCompare)
-//             {
-//                 [[NSUserDefaults standardUserDefaults] setObject:UIImageJPEGRepresentation(self.imgPhoto.imageView.image, 1.0f)forKey:@"key_for_your_image"];
-//             }
-//             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:UPDATION_ON_SERVER_TIME];
-//             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
-//             [[HomeHelper sharedCoreDataController] SignUpwithServer:responseObject];
-//           
-//             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Success" message:[responseObject objectForKey:@"message"] delegate:self cancelButtonTitle:@"OK"  otherButtonTitles:nil, nil];
-//             [loginAlrt setTag:10];
-//             [loginAlrt show];
-//             
-//         }
-//         else if(![[responseObject objectForKey:@"status"] boolValue])
-//         {
-//             [MBProgressHUD hideHUDForView:self.view animated:YES];
-//             progressHUD=nil;
-//             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[responseObject objectForKey:@"message"] delegate:nil cancelButtonTitle:@"OK"  otherButtonTitles:nil, nil];
-//             [loginAlrt show];
-//         }
-//
-//         
-//     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
-//     {
-//         [MBProgressHUD hideHUDForView:self.view animated:YES];
-//         progressHUD=nil;
-//         UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
-//         [loginAlrt show];
-//         NSLog(@"Success: %@ ***** %@", operation.responseString, @"jhello");
-//     }];
+    SAAPIClient *manager = [SAAPIClient sharedClient];
+    [[manager responseSerializer]setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+
+    [manager postPath:@"" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         
+         NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
+         
+         if([[responseObject objectForKey:@"status"] boolValue])
+         {
+             
+             if(!isCompare)
+             {
+                 [[NSUserDefaults standardUserDefaults] setObject:UIImageJPEGRepresentation(self.imgPhoto.imageView.image, 1.0f)forKey:@"key_for_your_image"];
+             }
+             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:UPDATION_ON_SERVER_TIME];
+             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
+             [[HomeHelper sharedCoreDataController] SignUpwithServer:responseObject];
+           
+             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Success" message:[responseObject objectForKey:@"message"] delegate:self cancelButtonTitle:@"OK"  otherButtonTitles:nil, nil];
+             [loginAlrt setTag:10];
+             [loginAlrt show];
+             
+         }
+         else if(![[responseObject objectForKey:@"status"] boolValue])
+         {
+             
+             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[responseObject objectForKey:@"message"] delegate:nil cancelButtonTitle:@"OK"  otherButtonTitles:nil, nil];
+             [loginAlrt show];
+         }
+
+         
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         
+         UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
+         [loginAlrt show];
+         NSLog(@"Success: %@ ***** %@", operation.responseString, @"jhello");
+     }];
 }
 
 
