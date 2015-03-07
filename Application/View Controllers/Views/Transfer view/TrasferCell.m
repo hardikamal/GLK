@@ -22,11 +22,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    [self.lblCatgery setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblTransactionDetails setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblDiscription setFont:[UIFont fontWithName:Embrima size:12.0f]];
-    [self.lblAmount setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblDate setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     
     // Configure the view for the selected state
 }

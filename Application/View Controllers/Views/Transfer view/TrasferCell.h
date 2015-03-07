@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface TrasferCell : UITableViewCell
+@interface TrasferCell : SWTableViewCell<SWTableViewCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *lblCatgery;
 @property (strong, nonatomic) IBOutlet UIImageView *imgCategery;
