@@ -2828,7 +2828,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-3871" y="1889"/>
+            <point key="canvasLocation" x="-4011" y="1916"/>
         </scene>
         <!--Transfer-->
         <scene sceneID="wpI-Nu-za4">
@@ -3815,7 +3815,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-3432" y="1916"/>
+            <point key="canvasLocation" x="-3470" y="1916"/>
         </scene>
         <!--History Details View Controller-->
         <scene sceneID="L4R-Wj-dVL">
@@ -8216,12 +8216,6 @@
                                             <outlet property="delegate" destination="AKf-a5-d19" id="plI-BB-Nju"/>
                                         </connections>
                                     </tableView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWF-no-8UC" customClass="MarqueeLabel">
-                                        <rect key="frame" x="5" y="10" width="310" height="21"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                        <color key="textColor" red="0.050980392159999999" green="0.77647058820000003" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -8250,7 +8244,6 @@
                     <connections>
                         <outlet property="lblBalance" destination="Hai-0S-FzO" id="ROf-Rm-Cc5"/>
                         <outlet property="lblBudget" destination="cfy-1d-wxs" id="KQ8-KK-LTY"/>
-                        <outlet property="lblDiscription" destination="JWF-no-8UC" id="Xq2-DZ-KNo"/>
                         <outlet property="lblExpense" destination="oNG-2j-kMy" id="gqp-1u-1eq"/>
                         <outlet property="lblIncome" destination="FWv-fK-LfS" id="s5m-vs-PqM"/>
                         <outlet property="lblNoAddTransaction" destination="who-6U-4tY" id="B3C-uV-u3j"/>
