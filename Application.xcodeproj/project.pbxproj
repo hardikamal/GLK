@@ -704,6 +704,9 @@
 		AB563DD21AAA57EB0078B582 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */; };
 		AB563DD31AAA57EB0078B582 /* RetrieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */; };
 		AB563DD61AAA5B0E0078B582 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD51AAA5B0E0078B582 /* UIImage+ImageEffects.m */; };
+		AB563DD91AAA68E40078B582 /* SignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD71AAA68E40078B582 /* SignUpView.m */; };
+		AB563DE01AAA697B0078B582 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DDD1AAA697B0078B582 /* LogInViewController.m */; };
+		AB563DE11AAA697B0078B582 /* TermAndconditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DDF1AAA697B0078B582 /* TermAndconditionViewController.m */; };
 		AB59C4B51AA522A100F6A845 /* categories_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A41AA522A100F6A845 /* categories_icon.png */; };
 		AB59C4B61AA522A100F6A845 /* customreport_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A51AA522A100F6A845 /* customreport_icon.png */; };
 		AB59C4B71AA522A100F6A845 /* Month_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB59C4A61AA522A100F6A845 /* Month_icon.png */; };
@@ -2059,6 +2062,12 @@
 		AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrieveViewController.m; sourceTree = "<group>"; };
 		AB563DD41AAA5B0E0078B582 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		AB563DD51AAA5B0E0078B582 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		AB563DD71AAA68E40078B582 /* SignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpView.m; path = ../../SignUpView.m; sourceTree = "<group>"; };
+		AB563DD81AAA68E40078B582 /* SignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpView.h; path = ../../SignUpView.h; sourceTree = "<group>"; };
+		AB563DDC1AAA697B0078B582 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		AB563DDD1AAA697B0078B582 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		AB563DDE1AAA697B0078B582 /* TermAndconditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermAndconditionViewController.h; sourceTree = "<group>"; };
+		AB563DDF1AAA697B0078B582 /* TermAndconditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermAndconditionViewController.m; sourceTree = "<group>"; };
 		AB59C4A41AA522A100F6A845 /* categories_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categories_icon.png; sourceTree = "<group>"; };
 		AB59C4A51AA522A100F6A845 /* customreport_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customreport_icon.png; sourceTree = "<group>"; };
 		AB59C4A61AA522A100F6A845 /* Month_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Month_icon.png; sourceTree = "<group>"; };
@@ -2826,6 +2835,8 @@
 		197C04221A1F77E9003A6A69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB563DDB1AAA697B0078B582 /* LogIn */,
+				AB563DDA1AAA69110078B582 /* Sign Up */,
 				AB563DCD1AAA57EB0078B582 /* RetriveController */,
 				AB59C51D1AA5F4BF00F6A845 /* DemDirectory */,
 				ABDC0C0D1AA4944E00CD1820 /* Transfer view */,
@@ -4923,6 +4934,26 @@
 			path = RetriveController;
 			sourceTree = "<group>";
 		};
+		AB563DDA1AAA69110078B582 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				AB563DD71AAA68E40078B582 /* SignUpView.m */,
+				AB563DD81AAA68E40078B582 /* SignUpView.h */,
+			);
+			name = "Sign Up";
+			sourceTree = "<group>";
+		};
+		AB563DDB1AAA697B0078B582 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				AB563DDC1AAA697B0078B582 /* LogInViewController.h */,
+				AB563DDD1AAA697B0078B582 /* LogInViewController.m */,
+				AB563DDE1AAA697B0078B582 /* TermAndconditionViewController.h */,
+				AB563DDF1AAA697B0078B582 /* TermAndconditionViewController.m */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
 		AB59C4A31AA522A100F6A845 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
@@ -6500,6 +6531,7 @@
 				AB25EB0E1AA1049E002D1CAD /* Reminder.m in Sources */,
 				AB25EA691AA1047F002D1CAD /* UIImageView+WebCache.m in Sources */,
 				AB25E9D71AA1047F002D1CAD /* JDStatusBarNotification.m in Sources */,
+				AB563DE01AAA697B0078B582 /* LogInViewController.m in Sources */,
 				AB25E9311AA1047F002D1CAD /* AFURLConnectionOperation.m in Sources */,
 				197C06111A1F77E9003A6A69 /* UIImage+Rotating.m in Sources */,
 				AB25E94A1AA1047F002D1CAD /* DoneCancelNumberPadToolbar.m in Sources */,
@@ -6552,6 +6584,7 @@
 				AB25E99D1AA1047F002D1CAD /* KSCrashSentry_MachException.c in Sources */,
 				ABDC0B401AA4744000CD1820 /* Recipe.m in Sources */,
 				AB25E98C1AA1047F002D1CAD /* SLCountryPickerViewController.m in Sources */,
+				AB563DE11AAA697B0078B582 /* TermAndconditionViewController.m in Sources */,
 				AB25EC911AA274CE002D1CAD /* BudgetViewController.m in Sources */,
 				ABDC0BBA1AA4749400CD1820 /* GTMOAuth2ViewControllerTouch.m in Sources */,
 				AB25EB1B1AA1049E002D1CAD /* LocationRepresentingCell.m in Sources */,
@@ -6805,6 +6838,7 @@
 				ABDC0BB41AA4749400CD1820 /* GTMHTTPFetcherService.m in Sources */,
 				ABDC0BC91AA4749400CD1820 /* GTLDriveFileList.m in Sources */,
 				AB25EAA71AA1047F002D1CAD /* UIView+Extensions.m in Sources */,
+				AB563DD91AAA68E40078B582 /* SignUpView.m in Sources */,
 				AB25EAB11AA1047F002D1CAD /* UIView+Badge.m in Sources */,
 				AB25EABD1AA1047F002D1CAD /* XDPopupListView.m in Sources */,
 				AB25E9831AA1047F002D1CAD /* ActionSheetDatePicker.m in Sources */,
