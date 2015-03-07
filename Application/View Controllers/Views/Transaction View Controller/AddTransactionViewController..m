@@ -117,57 +117,99 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
+    if ([self.moreDetailsView isHidden])
+    {
+        self.scrollView.contentSize=CGSizeMake(320, 320);
+    }else
+    {
+        self.scrollView.contentSize=CGSizeMake(320, 630);
+    }
+    
     if ([infoCategery count] != 0)
     {
-        // [self.lblSabCatagery setHidden:YES];
+        [self.lblSabCatagery setHidden:YES];
         NSArray *arrray=[[infoCategery objectForKey:@"name"] componentsSeparatedByString:@","];
         if ([arrray count]==2)
         {
-            [self.lblSubCategory setHidden:NO];
+            [self.lblSabCatagery setHidden:NO];
             [self.btnCategery setHidden:NO];
-            //[self.buttonUnhideCategery setHidden:YES];
-            [self.lblSubCategory setText:[arrray objectAtIndex:1]];
+            [self.buttonUnhideCategery setHidden:YES];
+            [self.lblSabCatagery setText:[arrray objectAtIndex:1]];
             [self.btnCategery setTitle:[arrray objectAtIndex:0] forState:UIControlStateNormal];
         }else
         {
             [self.btnCategery setHidden:YES];
-            [self.lblSubCategory setText:[arrray objectAtIndex:0]];
+            [self.buttonUnhideCategery setTitle:[arrray objectAtIndex:0] forState:UIControlStateNormal];
+            [self.buttonUnhideCategery setHidden:NO];
+            [self.lblSabCatagery setText:@""];
         }
-        [(UIImageView*)[self.view viewWithTag:10] setImage:[infoCategery objectForKey:@"image"]];
-        //[self.imgCategery setImage:[infoCategery objectForKey:@"image"]];
-    }
-
-if ([infoPayment count] != 0)
-{
-    [self.btnPaymentMode setTitle:[infoPayment objectForKey:@"name"] forState:UIControlStateNormal];
-    [self.imgPaymentmode setImage:[infoPayment objectForKey:@"image"]];
-}else
-{
-    if (transaction.managedObjectContext != nil)
-    {
-        NSString *paymentMode=transaction.paymentMode;
-        NSArray *paymentModeArray=[[PaymentmodeHandler sharedCoreDataController] getsearchPaymentWithAttributeName:paymentMode];
-        if ([paymentModeArray count]!=0)
-        {
-            NSDictionary * paymentInfo =[paymentModeArray objectAtIndex:0];
-            [self.btnPaymentMode setTitle:[paymentInfo objectForKey:@"paymentMode"] forState:UIControlStateNormal];
-            [self.imgPaymentmode setImage:[UIImage imageWithData:[paymentInfo objectForKey:@"paymentmode_icon"]]];
-        }
+        [self.imgCategery setImage:[infoCategery objectForKey:@"image"]];
     }else
     {
-        NSArray *paymentModeArray=[[NSMutableArray alloc]initWithArray:[[PaymentmodeHandler sharedCoreDataController]getPaymentModeList]];
-        if ([paymentModeArray count]==0)
+        if (transaction.managedObjectContext != nil)
         {
-            [self.btnPaymentMode setTitle:NSLocalizedString(@"noPaymentMode", nil) forState:UIControlStateNormal];
-            [self.imgPaymentmode setImage:[UIImage imageNamed:@"paymentmode.png"]];
+            NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_icon" andSearchText:transaction.category];
+            self.imgCategery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
+            if (![transaction.sub_category isEqualToString:@""])
+            {
+                [self.lblSabCatagery setHidden:NO];
+                [self.btnCategery setHidden:NO];
+                [self.buttonUnhideCategery setHidden:YES];
+                [self.lblSabCatagery setText:transaction.sub_category];
+                [self.btnCategery setTitle:transaction.category forState:UIControlStateNormal];
+            }else
+            {
+                [self.buttonUnhideCategery setTitle:transaction.category forState:UIControlStateNormal];
+                [self.btnCategery setHidden:YES];
+                [self.buttonUnhideCategery setHidden:NO];
+                [self.lblSabCatagery setText:@""];
+            }
         }else
         {
-            Paymentmode *mode=[paymentModeArray objectAtIndex:0];
-            [self.btnPaymentMode setTitle:mode.paymentMode forState:UIControlStateNormal];
-            [self.imgPaymentmode setImage:[UIImage imageWithData:mode.paymentmode_icon]];
+            NSArray *categeryIcon=[[CategoryListHandler sharedCoreDataController] getCategeryList:[NSString stringWithFormat:@"%d",TYPE_EXPENSE]];
+            if ([categeryIcon count]==0)
+            {
+                [self.buttonUnhideCategery setTitle:NSLocalizedString(@"noCategory", nil) forState:UIControlStateNormal];
+                [self.imgCategery setImage:[UIImage imageNamed:@"Miscellaneous_icon.png"]];
+            }else
+            {
+                CategoryList *list=(CategoryList*)[categeryIcon objectAtIndex:0];
+                [self.buttonUnhideCategery setTitle:list.category forState:UIControlStateNormal];
+                [self.imgCategery setImage:[UIImage imageWithData:list.category_icon]];
+            }
         }
     }
-}
+    if ([infoPayment count] != 0)
+    {
+        [self.btnPaymentMode setTitle:[infoPayment objectForKey:@"name"] forState:UIControlStateNormal];
+        [self.imgPaymentmode setImage:[infoPayment objectForKey:@"image"]];
+    }else
+    {
+        if (transaction.managedObjectContext != nil)
+        {
+            NSString *paymentMode=transaction.paymentMode;
+            NSArray *paymentModeArray=[[PaymentmodeHandler sharedCoreDataController] getsearchPaymentWithAttributeName:paymentMode];
+            if ([paymentModeArray count]!=0)
+            {
+                NSDictionary * paymentInfo =[paymentModeArray objectAtIndex:0];
+                [self.btnPaymentMode setTitle:[paymentInfo objectForKey:@"paymentMode"] forState:UIControlStateNormal];
+                [self.imgPaymentmode setImage:[UIImage imageWithData:[paymentInfo objectForKey:@"paymentmode_icon"]]];
+            }
+        }else
+        {
+            NSArray *paymentModeArray=[[NSMutableArray alloc]initWithArray:[[PaymentmodeHandler sharedCoreDataController]getPaymentModeList]];
+            if ([paymentModeArray count]==0)
+            {
+                [self.btnPaymentMode setTitle:NSLocalizedString(@"noPaymentMode", nil) forState:UIControlStateNormal];
+                [self.imgPaymentmode setImage:[UIImage imageNamed:@"paymentmode.png"]];
+            }else
+            {
+                Paymentmode *mode=[paymentModeArray objectAtIndex:0];
+                [self.btnPaymentMode setTitle:mode.paymentMode forState:UIControlStateNormal];
+                [self.imgPaymentmode setImage:[UIImage imageWithData:mode.paymentmode_icon]];
+            }
+        }
+    }
 }
 
 
@@ -175,6 +217,8 @@ if ([infoPayment count] != 0)
 -(void)addNewTransaction
 {
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
+    [self.segmentBtn setSelectedSegmentIndex:1];
+
     if ([UserInfoarrray count]!=0)
     {
     }else
@@ -245,15 +289,21 @@ if ([infoPayment count] != 0)
     
     [self.lblTime setText:[[[formatter stringFromDate:currentDate] componentsSeparatedByString:@" "]  objectAtIndex:0]];
     [self.lblPmorAm setText:[[[[formatter stringFromDate:currentDate] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
-    
+    if ([transaction.transaction_type isEqualToNumber:[NSNumber numberWithInt:TYPE_EXPENSE]])
+    {
+        [self.segmentBtn setSelectedSegmentIndex:1];
+    }else
+    {
+        [self.segmentBtn setSelectedSegmentIndex:0];
+    }
     if (transaction.pic != nil || ![transaction.warranty.stringValue isEqualToString:@"0"] || [transaction.with_person length]!=0 || [transaction.discription length]!=0 ||[transaction.with_person length]!=0 )
     {
-        [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"errow_up.png"] forState:UIControlStateNormal];
+        [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
         [self.moreDetailsView setHidden:NO];
          self.scrollView.contentSize=CGSizeMake(320, 625);
      
     }else
-    {  [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"errow_down.png"] forState:UIControlStateNormal];
+    {  [self.btnAddmoreDetails setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
         [self.moreDetailsView setHidden:YES];
         self.scrollView.contentSize=CGSizeMake(320, 520);
     }
@@ -474,13 +524,13 @@ if ([infoPayment count] != 0)
         NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
         NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
         [dictionary setObject:currency forKey:@"currency"];
-        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
+        
+        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserName.titleLabel.text];
         if ([UserInfoarrray count]!=0)
         {
             UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
             [dictionary setObject:userInfo.user_token_id forKey:@"user_token_id"];
         }
-        
         
         [dictionary setObject:_txtAmount.text forKey:@"amount"];
         [dictionary setObject:_txtDescription.text forKey:@"discription"];
@@ -492,9 +542,9 @@ if ([infoPayment count] != 0)
         
         if ([_lblSabCatagery.text length]==0)
         {
-              [dictionary setObject:_buttonUnhideCategery.titleLabel.text forKey:@"category"];
+            [dictionary setObject:_buttonUnhideCategery.titleLabel.text forKey:@"category"];
         }else
-             [dictionary setObject:_btnCategery.titleLabel.text forKey:@"category"];
+            [dictionary setObject:_btnCategery.titleLabel.text forKey:@"category"];
         
         [dictionary setObject:_lblSabCatagery.text forKey:@"sub_category"];
         [dictionary setObject:_txtEnterLocation.text forKey:@"location"];
@@ -518,12 +568,14 @@ if ([infoPayment count] != 0)
             [dictionary setObject:string forKey:@"Waranty"];
             [dictionary setObject:[NSNumber numberWithInt:TYPE_WARRANTY] forKey:@"transaction_inserted_from"];
         }
-        if ([self.btnIncome isSelected])
+        
+        if ([self.segmentBtn selectedSegmentIndex]==1)
         {
             [dictionary setObject:[NSNumber numberWithInt:TYPE_INCOME] forKey:@"transaction_type"];
         }else
             [dictionary setObject:[NSNumber numberWithInt:TYPE_EXPENSE] forKey:@"transaction_type"];
-      
+        
+        
         if (transaction.managedObjectContext == nil)
         {
             [[TransactionHandler sharedCoreDataController] insertDataIntoTransactionTable:dictionary];
@@ -532,7 +584,7 @@ if ([infoPayment count] != 0)
         }else
         {
             [[TransactionHandler sharedCoreDataController] updateDataIntoTransactionTable:dictionary :transaction ];
-             [Utility showAlertWithMassager:self.navigationController.view :NSLocalizedString(@"transactionsUpdatedSuccessfully", nil)];
+            [Utility showAlertWithMassager:self.navigationController.view :NSLocalizedString(@"transactionsUpdatedSuccessfully", nil)];
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
@@ -699,9 +751,9 @@ if ([infoPayment count] != 0)
     NSDictionary * info =notification.userInfo;
     if ([[info objectForKey:@"tag"] intValue]==2)
     {
-        [self.btnWarranty setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-        if (![self.txtwarranty.text isEqualToString:@""])
-            [self textFieldDidChange:self.txtwarranty];
+//        [self.btnWarranty setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
+//        if (![self.txtwarranty.text isEqualToString:@""])
+//            [self textFieldDidChange:self.txtwarranty];
     }
     if ([[info objectForKey:@"tag"] intValue]==1)
     {
@@ -733,7 +785,7 @@ if ([infoPayment count] != 0)
 {
     if ([self.moreDetailsView isHidden])
     {
-        [sender setImage:[UIImage imageNamed:@"errow_up.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
         [self.moreDetailsView setHidden:NO];
         
         if (self.view.frame.size.height>500 )
@@ -748,7 +800,7 @@ if ([infoPayment count] != 0)
         [self.moreDetailsView setHidden:YES];
          self.scrollView.contentSize=CGSizeMake(320, 420);
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-        [sender setImage:[UIImage imageNamed:@"errow_down.png"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -912,24 +964,16 @@ if ([infoPayment count] != 0)
 
 - (IBAction)warrantybtnClick:(id)sender
 {
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = 120.0f;
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:2];
-    NSMutableArray *arrray=[[NSMutableArray alloc] initWithObjects:NSLocalizedString(@"years", nil),NSLocalizedString(@"months", nil),NSLocalizedString(@"days", nil),nil];
-    [poplistview setListArray:arrray];
-    [poplistview setNotificationName:@"AddAccountViewController"];
-    if (yHeight<300)
-    {
-    poplistview.listView.scrollEnabled = FALSE;
-    
-    }
-        [poplistview show];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:NSLocalizedString(@"years", nil),NSLocalizedString(@"months", nil),NSLocalizedString(@"days", nil), nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+        if (![[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:@"Cancel"])
+        {
+            [self.btnWarranty setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+            if (![self.txtwarranty.text isEqualToString:@""])
+                [self textFieldDidChange:self.txtwarranty];
+        }
+        
+        
+    }];
 }
 
 
@@ -1124,6 +1168,16 @@ if ([infoPayment count] != 0)
 
 
 
+- (IBAction)indexChanged:(id)sender
+{
+    for (int i=0; i<[self.segmentBtn.subviews count]; i++)
+    {
+        for (UIControl *subview in self.segmentBtn.subviews)
+        {
+            subview.backgroundColor = [subview isSelected] ? GREEN_COLOR : nil;
+        }
+    }
+}
 
 
 @end

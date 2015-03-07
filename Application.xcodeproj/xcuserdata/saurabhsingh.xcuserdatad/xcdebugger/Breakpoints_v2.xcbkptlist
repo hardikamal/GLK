@@ -154,59 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Application/View Controllers/Views/Warranty/AddWarrantyViewController.m"
-            timestampString = "447212238.80978"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "-addNewTransaction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/Warranty/AddWarrantyViewController.m"
             timestampString = "447212363.353705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "525"
             endingLineNumber = "525"
-            landmarkName = "-addingTransactionToDBbtnClick:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/Transaction View Controller/AddTransactionViewController..m"
-            timestampString = "447286936.253085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "-addNewTransaction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/Transaction View Controller/AddTransactionViewController..m"
-            timestampString = "447289483.146792"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "474"
-            endingLineNumber = "474"
             landmarkName = "-addingTransactionToDBbtnClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -281,13 +233,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/HomeView/HomeViewController.m"
-            timestampString = "447393961.803956"
+            filePath = "Application/View Controllers/Views/Transaction View Controller/AddTransactionViewController..m"
+            timestampString = "447454133.792794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "-profressView"
+            startingLineNumber = "521"
+            endingLineNumber = "521"
+            landmarkName = "-addingTransactionToDBbtnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -297,13 +249,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/HomeView/HomeViewController.m"
-            timestampString = "447393900.891573"
+            filePath = "Application/View Controllers/Views/Transaction View Controller/AddTransactionViewController..m"
+            timestampString = "447454262.836752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            startingLineNumber = "579"
+            endingLineNumber = "579"
+            landmarkName = "-addingTransactionToDBbtnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

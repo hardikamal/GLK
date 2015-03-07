@@ -81,7 +81,8 @@
 
 +(void)showAlertWithMassager:(UIView*)view :(NSString*)string
 {
-    UIWindow *tempKeyboardWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+    //UIWindow *tempKeyboardWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
+    [CommonFunctions showHUDSuccessInfoMessageWithText:string forDuration:MIN_DUR onView:view];
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:tempKeyboardWindow animated:YES];
 //    // Configure for text only and offset down
 //    hud.mode = MBProgressHUDModeText;

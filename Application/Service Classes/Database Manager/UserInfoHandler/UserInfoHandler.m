@@ -221,11 +221,12 @@
 -(NSArray*)getUserDetailsWithUserTokenid:(NSString *)searchText
 {
     NSLog(@"%@",searchText);
+   
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     //Setting Entity to be Queried
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserInfo" inManagedObjectContext:_managedObjectContext];
     NSPredicate *predicate =[NSPredicate predicateWithFormat:@"user_token_id = %@  AND token_id = %@",searchText,[Utility userDefaultsForKey:MAIN_TOKEN_ID]];
-    [fetchRequest setPredicate:predicate];
+   // [fetchRequest setPredicate:predicate];
     [fetchRequest setEntity:entity];
     [fetchRequest setReturnsDistinctResults:YES];
     NSError* error;

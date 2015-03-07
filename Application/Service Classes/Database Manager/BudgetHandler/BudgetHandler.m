@@ -432,7 +432,7 @@
     NSArray *usetTokeArray=[[UserInfoHandler sharedCoreDataController] getUserNameListFromUserRegisterTable];
     NSPredicate *p3 =  [NSPredicate predicateWithFormat:@"user_token_id IN %@", usetTokeArray];
     NSPredicate *newPredicate = [NSCompoundPredicate andPredicateWithSubpredicates: @[predicate,p1, p2,p3]];
-    [fetchRequest setPredicate:newPredicate];
+   // [fetchRequest setPredicate:newPredicate];
     [fetchRequest setEntity:entity];
     [fetchRequest setReturnsDistinctResults:YES];
     NSError* error;
