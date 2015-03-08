@@ -8,20 +8,16 @@
 
 
 #import "LeftMenuViewController.h"
-//#import "BudgetViewController.h"
-//#import "TransferViewController.h"
-//#import "LogInViewController.h"
 //#import "UserInfoHandler.h"
 //#import "GoogleDriveViewController.h"
-//#import "MBProgressHUD.h"
-//#import "MBProgressHUD.h"
-//#import "SAAPIClient.h"
+#import "SAAPIClient.h"
 #import "FirstViewController.h"
 
 
 @implementation LeftMenuViewController
 {
     NSMutableArray *listArray,*accountListArray;
+    UITableView *accountTableView;
 }
 
 
@@ -34,18 +30,60 @@
 }
 - (IBAction)pageClickEvent:(UIPageControl *)sender
 {
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+    if (sender.currentPage==1)
+    {
+        accountTableView.hidden=0;
+        self.tableView.hidden=1;
+        [UIView animateWithDuration:0.3f
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+         
+                         animations:^{
+                             //Sets what happens in animation
+                             accountTableView.frame=CGRectMake(accountTableView.frame.origin.x, self.tableView.origin.y, accountTableView.frame.size.width, accountTableView.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             // This block will execute when the animations finish
+                             
+                             NSLog(@"Ended");
+                             
+                             [self.view layoutIfNeeded];
+                         }
+         ];
+    }
+    else
+    {
+        
+        [UIView animateWithDuration:0.3f
+                              delay:0
+                            options:UIViewAnimationOptionCurveLinear
+         
+                         animations:^{
+                             //Sets what happens in animation
+                             accountTableView.frame=CGRectMake(accountTableView.frame.origin.x, -250, accountTableView.frame.size.width, accountTableView.frame.size.height);
+                         }
+                         completion:^(BOOL finished) {
+                             // This block will execute when the animations finish
+                             
+                             NSLog(@"Ended");
+                             accountTableView.hidden=1;
+                             self.tableView.hidden=0;
+                             [self.view layoutIfNeeded];
+                         }
+         ];
+    }
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
-    
-
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"LeftMenuViewController" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"LeftMenuViewController" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"ChangeProfileViewController" object:nil];
+    self.tableView.tag=0;
+    accountTableView=(UITableView*)[self.view viewWithTag:2];
+    accountTableView.hidden=1;
 }
 
 
@@ -95,7 +133,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.pageControl.currentPage!=1)
+    if (tableView.tag==0)
     {
         return [listArray count];
 
@@ -132,7 +170,7 @@
     NSCharacterSet *whitespace = [NSCharacterSet whitespaceCharacterSet];
 	cell.backgroundColor = [UIColor clearColor];
     UIImageView *imageView=(UIImageView *)[cell.contentView viewWithTag:1];
-    if (self.pageControl.currentPage!=1)
+    if (tableView.tag==0)
     {
        	titleLabel.text=[[[listArray objectAtIndex:[indexPath row]] objectForKey:@"name"] stringByTrimmingCharactersInSet:whitespace];
         imageView.image=[UIImage imageNamed:[[listArray objectAtIndex:[indexPath row]] objectForKey:@"imageNormal"]];
@@ -149,7 +187,7 @@
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.pageControl.currentPage!=1)
+    if(tableView.tag==0)
     {
         [(UIImageView*)[[[tableView cellForRowAtIndexPath:indexPath] contentView] viewWithTag:1] setImage:[UIImage imageNamed:[[listArray objectAtIndex:[indexPath row]] objectForKey:@"imageNormal"]]];
         [(UIImageView*)[[[tableView cellForRowAtIndexPath:indexPath] contentView] viewWithTag:3] setHidden:1];
@@ -168,7 +206,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.pageControl.currentPage!=1)
+    if (tableView.tag==0)
     {
         [(UIImageView*)[[[tableView cellForRowAtIndexPath:indexPath] contentView] viewWithTag:1] setImage:[UIImage imageNamed:[[listArray objectAtIndex:[indexPath row]] objectForKey:@"imageActive"]]];
         [(UIImageView*)[[[tableView cellForRowAtIndexPath:indexPath] contentView] viewWithTag:3] setHidden:0];
@@ -231,6 +269,22 @@
             [self.sideMenuViewController hideMenuViewController];
             
         }
+        else if ([NSLocalizedString(@"Rate Us", nil) isEqualToString:string])
+        {
+            
+        }else if ([NSLocalizedString(@"Like Us on Facebook", nil) isEqualToString:string])
+        {
+            if (![[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://www.facebook.com/pages/Daily-Expenses-Manager/471305579634266"]])
+                        {
+                            NSURL *url = [NSURL URLWithString:@"https://www.facebook.com/pages/Daily-Expenses-Manager/471305579634266"];
+                            [[UIApplication sharedApplication] openURL:url];
+                        }
+        }else if ([NSLocalizedString(@"Logout", nil) isEqualToString:string])
+        {
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            //  [self logOutUserFromServer];
+        }
     }
     else
     {
@@ -239,98 +293,8 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         NSString *string=[[ accountListArray objectAtIndex:indexPath.row] objectForKey:@"name"];
         
-        
-
     }
     
-//    else if ([NSLocalizedString(@"likeus", nil) isEqualToString:string])
-//    {
-//        if (![[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"https://www.facebook.com/pages/Daily-Expenses-Manager/471305579634266"]])
-//        {
-//            NSURL *url = [NSURL URLWithString:@"https://www.facebook.com/pages/Daily-Expenses-Manager/471305579634266"];
-//            [[UIApplication sharedApplication] openURL:url];
-//        }
-//    }else if ([NSLocalizedString(@"home", nil) isEqualToString:string])
-//    {
-//
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"viewTrnsaction", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"HistoryViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"reminder", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"AddReminderViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"budgetTransaction", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"BudgetViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"waranty", nil) isEqualToString:string])
-//    {
-//        
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"WarrantyViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"transferTransaction", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"TransferViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//
-//    }else if ([NSLocalizedString(@"settings", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"SettingViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//    }else if ([NSLocalizedString(@"accountSettings", nil) isEqualToString:string])
-//    {
-//        
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"AccountViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"subheading", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"DemDicViewController"]]
-//                                                     animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//        
-//        
-//    }else if ([NSLocalizedString(@"rateUs", nil) isEqualToString:string])
-//    {
-//        
-//    }else if ([NSLocalizedString(@"likeus", nil) isEqualToString:string])
-//    {
-//        
-//    }else if ([NSLocalizedString(@"help", nil) isEqualToString:string])
-//    {
-//        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[mainStoryboard instantiateViewControllerWithIdentifier: @"HelpViewController"]]
-//                                                    animated:YES];
-//        [self.sideMenuViewController hideMenuViewController];
-//    }else if ([NSLocalizedString(@"logout", nil) isEqualToString:string])
-//    {
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//              //  [self logOutUserFromServer];
-//    }
 }
 
 -(void)logOutUserFromServer
