@@ -440,15 +440,18 @@
 {
     RESIGN_KEYBOARD
     
-    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
+    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
+    {
         NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
         NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
         NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
-        // self.lblDay.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
+        
         self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
+        
         self.lblDay.text=[NSString stringWithFormat:@"%@,%ld", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],(long)[compsday day]];
         
-    } cancelBlock:^(ActionSheetDatePicker *picker) {
+    } cancelBlock:^(ActionSheetDatePicker *picker)
+    {
     } origin:[self view]];
     
 }
@@ -460,6 +463,7 @@
 	[UIView setAnimationDelegate:self];
 	[aView  setTransform:CGAffineTransformMakeTranslation(dx, dy)];
 	[UIView commitAnimations];
+    
 }
 
 
@@ -740,9 +744,5 @@
         [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain   target:nil  action:nil];
         [[self navigationItem] setBackBarButtonItem:newBackButton];
 }
-
-
-
-
 
 @end

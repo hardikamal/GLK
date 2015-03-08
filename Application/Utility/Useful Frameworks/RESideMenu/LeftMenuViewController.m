@@ -33,15 +33,16 @@
 //    [self.tableView reloadData];
     if (sender.currentPage==1)
     {
-        accountTableView.hidden=0;
-        self.tableView.hidden=1;
+        //accountTableView.hidden=0;
+        //self.tableView.hidden=1;
         [UIView animateWithDuration:0.3f
                               delay:0
                             options:UIViewAnimationOptionCurveLinear
          
                          animations:^{
                              //Sets what happens in animation
-                             accountTableView.frame=CGRectMake(accountTableView.frame.origin.x, self.tableView.origin.y, accountTableView.frame.size.width, accountTableView.frame.size.height);
+                             self.tableView.frame=CGRectMake(-354, self.tableView.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height);
+                             accountTableView.frame=CGRectMake(accountTableView.frame.origin.x,0, accountTableView.frame.size.width, accountTableView.frame.size.height);
                          }
                          completion:^(BOOL finished) {
                              // This block will execute when the animations finish
@@ -62,19 +63,20 @@
                          animations:^{
                              //Sets what happens in animation
                              accountTableView.frame=CGRectMake(accountTableView.frame.origin.x, -250, accountTableView.frame.size.width, accountTableView.frame.size.height);
+                             self.tableView.frame=CGRectMake(0, self.tableView.origin.y, self.tableView.frame.size.width, self.tableView.frame.size.height);
                          }
-                         completion:^(BOOL finished) {
+                         completion:^(BOOL finished)
+                        {
                              // This block will execute when the animations finish
-                             
                              NSLog(@"Ended");
-                             accountTableView.hidden=1;
-                             self.tableView.hidden=0;
+                            // accountTableView.hidden=1;
+                            // self.tableView.hidden=0;
                              [self.view layoutIfNeeded];
                          }
          ];
     }
-    
 }
+
 
 - (void)viewDidLoad
 {
@@ -83,7 +85,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"ChangeProfileViewController" object:nil];
     self.tableView.tag=0;
     accountTableView=(UITableView*)[self.view viewWithTag:2];
-    accountTableView.hidden=1;
+    //accountTableView.hidden=1;
 }
 
 

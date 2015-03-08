@@ -43,11 +43,11 @@
     for (NSString *string in paymentMediumArray)
     {
         Paymentmode   *info = [NSEntityDescription insertNewObjectForEntityForName:@"Paymentmode" inManagedObjectContext:_managedObjectContext];
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ icon.png",string]];
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_icon.png",string]];
         NSData *data=UIImageJPEGRepresentation(image, 1.0);
         if ([data length]==0)
         {
-            data=UIImageJPEGRepresentation([UIImage imageNamed:@"paymentmode.png"], 1.0);
+            data=UIImageJPEGRepresentation([UIImage imageNamed:@"paymentmode_icon.png"], 1.0);
         }
         [info setPaymentmode_icon:data];
         [info setPaymentMode:TRIM(string)];

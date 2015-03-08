@@ -27,9 +27,9 @@
     [self.lblCatagory setFont:[UIFont fontWithName:Embrima size:14.0f]];
     [self.lblCurrrentUser setFont:[UIFont fontWithName:Embrima size:12.0f]];
     [self.lblExtra setFont:[UIFont fontWithName:Embrima size:12.0f]];
-    [self.lblDiscription setFont:[UIFont fontWithName:Embrima size:12.0f]];
+    [self.lblDiscription setFont:[UIFont fontWithName:Embrima size:10.0f]];
     [self.lblAmount setFont:[UIFont fontWithName:Ebrima_Bold size:14.0f]];
-    [self.lblDob setFont:[UIFont fontWithName:Ebrima_Bold size:14.0f]];
+   // [self.lblDob setFont:[UIFont fontWithName:Ebrima_Bold size:14.0f]];
 
 }
 

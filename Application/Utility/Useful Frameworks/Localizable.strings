@@ -636,8 +636,10 @@
 "Security"="SECURITY";
 "Profile"="PROFILE";
 "tranfer_related_transactions"="This transaction occurred due to a Transfer. Please edit the respective Transfer to edit it. ";
+
 <!-- //////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////DEFAULT CATEGORIES /////////////////////// -->
+
 "Salary"="Salary";
 "Wages"="Wages";
 "Annuityorpension"="Annuity or pension";

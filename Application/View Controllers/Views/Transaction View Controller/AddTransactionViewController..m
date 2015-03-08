@@ -106,11 +106,20 @@
 - (void)viewDidLoad
 {
       [super viewDidLoad];
-    [self timeDateConfigCurrent];
+      [self timeDateConfigCurrent];
       [self.btnExpense setSelected:YES];
       [self getAllContacts];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedCategeryListNotification:) name:@"CategeryList" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedPaymentModeNotification:) name:@"PaymentMode" object:nil];
+    
+    if (transaction.managedObjectContext == nil)
+    {
+        [self addNewTransaction];
+    }else
+    {
+        [self addUpdateTransacton];
+    }
+    
 }
 
 
@@ -886,13 +895,15 @@
     RESIGN_KEYBOARD
     [ActionSheetDatePicker showPickerWithTitle : @"Select time" datePickerMode:UIDatePickerModeTime selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
     {
-        NSDateFormatter * formatter=[[NSDateFormatter alloc] init];
-        [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        [formatter setDateFormat:@"dd/MM/yyyy hh:mma"];
-        [formatter setDateFormat:@"hh:mma"];
-        self.timeLabel.text=[[formatter stringFromDate:selectedDate]substringToIndex:5];
-        self.primeTimeLabel.text=[NSDate stringFromDate:selectedDate withFormat:@"a"];
-        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"hh:mm a"];
+        isSelected=NO;
+        [self.lblTime setText:[[[formatter stringFromDate:selectedDate] componentsSeparatedByString:@" "]  objectAtIndex:0]];
+        [self.lblPmorAm setText:[[[[formatter stringFromDate:selectedDate] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
+        if ([_txtwarranty.text length]!=0)
+        {
+            [self UpdateExpireDate];
+        }
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
     } origin:[self view]];
@@ -903,11 +914,26 @@
 
 -(IBAction)datePickerbtnClick:(id)sender{
     RESIGN_KEYBOARD
-    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin) {
-        self.dayLabel.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
-        self.monthDateLabel.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
+    [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
+    {
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* components = [calendar components:NSCalederUnit fromDate:selectedDate];
+        [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
+        NSString *combined;
+        if ([components month]<10)
+        {
+            combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
+        }else
+            combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
+        [self.lblMonthYear setText:combined];
+
+        if ([_txtwarranty.text length]!=0)
+        {
+            [self UpdateExpireDate];
+        }
     } cancelBlock:^(ActionSheetDatePicker *picker) {
     } origin:[self view]];
+
 }
 
 - (IBAction)cancelDobPickerClick:(id)sender
