@@ -106,11 +106,20 @@
 - (void)viewDidLoad
 {
       [super viewDidLoad];
-    [self timeDateConfigCurrent];
+      [self timeDateConfigCurrent];
       [self.btnExpense setSelected:YES];
       [self getAllContacts];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedCategeryListNotification:) name:@"CategeryList" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedPaymentModeNotification:) name:@"PaymentMode" object:nil];
+    
+    if (transaction.managedObjectContext == nil)
+    {
+        [self addNewTransaction];
+    }else
+    {
+        [self addUpdateTransacton];
+    }
+    
 }
 
 
@@ -908,6 +917,9 @@
         self.monthDateLabel.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
     } cancelBlock:^(ActionSheetDatePicker *picker) {
     } origin:[self view]];
+    
+    
+   
 }
 
 - (IBAction)cancelDobPickerClick:(id)sender

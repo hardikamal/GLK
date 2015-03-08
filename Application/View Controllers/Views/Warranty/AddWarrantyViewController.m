@@ -288,12 +288,15 @@
     self.lblPmorAm.text = [NSDate stringFromDate:[NSDate date] withFormat:@"a"];
 }
 
-- (void)addNewTransaction {
+- (void)addNewTransaction
+{
     NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
-    if ([UserInfoarrray count] != 0) {
+    if ([UserInfoarrray count] != 0)
+    {
         [self addAccountName:UserInfoarrray];
     }
-    else {
+    else
+    {
         NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
         [self addAccountName:UserInfoarrray];
     }
@@ -320,7 +323,8 @@
     [self.lblCarrency setText:[[currency componentsSeparatedByString:@"-"] objectAtIndex:1]];
 }
 
-- (void)addUpdateTransacton {
+- (void)addUpdateTransacton
+{
     NSString *mainToken = [Utility userDefaultsForKey:MAIN_TOKEN_ID];
     NSString *currency = [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@", CURRENT_CURRENCY, mainToken]];
     [self.lblCarrency setText:[NSString stringWithFormat:@"%@", [[currency componentsSeparatedByString:@"-"] objectAtIndex:1]]];

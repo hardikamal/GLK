@@ -27,7 +27,7 @@
     [self.lblAlarmChek setFont:[UIFont fontWithName:Embrima size:12.0f]];
     [self.lblDiscription setFont:[UIFont fontWithName:Embrima size:10.0f]];
     [self.lblAmount setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
-    [self.lblNextReminderDate setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
+    [self.lblNextReminderDate setFont:[UIFont fontWithName:Embrima size:14.0f]];
     [self.lblNextTransationDate setFont:[UIFont fontWithName:Ebrima_Bold size:16.0f]];
     
     [self.lblTitleNext setFont:[UIFont fontWithName:Embrima size:12.0f]];
