@@ -2886,7 +2886,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-3871" y="1889"/>
+            <point key="canvasLocation" x="-4011" y="1916"/>
         </scene>
         <!--Transfer-->
         <scene sceneID="wpI-Nu-za4">
@@ -3873,7 +3873,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-3432" y="1916"/>
+            <point key="canvasLocation" x="-3470" y="1916"/>
         </scene>
         <!--History Details View Controller-->
         <scene sceneID="L4R-Wj-dVL">
