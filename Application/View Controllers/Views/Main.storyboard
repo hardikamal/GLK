@@ -27,8 +27,6 @@
             <string>Ebrima</string>
             <string>Ebrima</string>
             <string>Ebrima</string>
-            <string>Ebrima</string>
-            <string>Ebrima</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -8329,6 +8327,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-Iv-4eH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last 10 Transactions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0s4-eG-ZBW">
+                                <rect key="frame" x="52" y="218" width="216" height="17"/>
+                                <fontDescription key="fontDescription" name="Ebrima" family="Ebrima" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DCx-jE-Gcs">
+                                <rect key="frame" x="4" y="245" width="310" height="229"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="AKf-a5-d19" id="vee-60-ziI"/>
+                                    <outlet property="delegate" destination="AKf-a5-d19" id="g8r-0R-Ccg"/>
+                                </connections>
+                            </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ji-1J-LKk">
                                 <rect key="frame" x="3" y="155" width="250" height="50"/>
                                 <subviews>
@@ -8404,54 +8416,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vo5-wt-GVq">
-                                <rect key="frame" x="0.0" y="215" width="320" height="267"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Warranty to expire for:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXo-IE-1Ah">
-                                        <rect key="frame" x="9" y="7" width="216" height="21"/>
-                                        <fontDescription key="fontDescription" name="Ebrima" family="Ebrima" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Budgets Exceeded" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfy-1d-wxs">
-                                        <rect key="frame" x="8" y="64" width="216" height="17"/>
-                                        <fontDescription key="fontDescription" name="Ebrima" family="Ebrima" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last 10 Transactions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk2-uJ-tOc">
-                                        <rect key="frame" x="52" y="9" width="216" height="17"/>
-                                        <fontDescription key="fontDescription" name="Ebrima" family="Ebrima" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zaG-GN-Zjh">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="AKf-a5-d19" id="QtA-o4-ekd"/>
-                                            <outlet property="delegate" destination="AKf-a5-d19" id="l2G-dZ-lgd"/>
-                                        </connections>
-                                    </tableView>
-                                    <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NdX-br-u2O">
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="AKf-a5-d19" id="omy-Fy-pAQ"/>
-                                            <outlet property="delegate" destination="AKf-a5-d19" id="plI-BB-Nju"/>
-                                        </connections>
-                                    </tableView>
-                                    <tableView clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3Bd-C7-d4o">
-                                        <rect key="frame" x="5" y="31" width="310" height="229"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="AKf-a5-d19" id="RuR-wU-jb8"/>
-                                            <outlet property="delegate" destination="AKf-a5-d19" id="oBE-wn-1zc"/>
-                                        </connections>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -8476,7 +8440,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="lblBalance" destination="Hai-0S-FzO" id="ROf-Rm-Cc5"/>
-                        <outlet property="lblBudget" destination="cfy-1d-wxs" id="KQ8-KK-LTY"/>
                         <outlet property="lblExpense" destination="oNG-2j-kMy" id="gqp-1u-1eq"/>
                         <outlet property="lblIncome" destination="FWv-fK-LfS" id="s5m-vs-PqM"/>
                         <outlet property="lblNoAddTransaction" destination="who-6U-4tY" id="B3C-uV-u3j"/>
@@ -8485,12 +8448,7 @@
                         <outlet property="lblTitleBalance" destination="P0K-tf-bvl" id="Hcn-ac-pQi"/>
                         <outlet property="lblTitleExpense" destination="09A-Da-WqR" id="4Pz-rB-YWz"/>
                         <outlet property="lblTitleIncom" destination="Io3-I0-gGP" id="p5n-s1-rQf"/>
-                        <outlet property="lblTransaction" destination="Fk2-uJ-tOc" id="8uE-V4-jem"/>
-                        <outlet property="lblWarranty" destination="jXo-IE-1Ah" id="1Jv-qk-I4x"/>
-                        <outlet property="scrollview" destination="vo5-wt-GVq" id="26n-Pp-eV2"/>
-                        <outlet property="tblviewBudget" destination="NdX-br-u2O" id="ilm-1T-c7g"/>
-                        <outlet property="tblviewTransaction" destination="3Bd-C7-d4o" id="Aj6-my-oni"/>
-                        <outlet property="tblviewWarranty" destination="zaG-GN-Zjh" id="fEB-6B-Mdh"/>
+                        <outlet property="tblviewTransaction" destination="DCx-jE-Gcs" id="A9u-jf-Pff"/>
                         <outlet property="viewEmpty" destination="pBw-qi-mpV" id="U25-Ar-Xzm"/>
                         <outlet property="viewEmptyPiChart" destination="GWJ-Du-a9B" id="Lph-R4-DOl"/>
                         <outlet property="viewHorizontalBalance" destination="3ji-1J-LKk" id="vyb-0E-IuN"/>
@@ -8509,7 +8467,7 @@
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="6F86D834-FE7D-4F8F-8E18-FB95E5049E5E" translatesAutoresizingMaskIntoConstraints="NO" id="huq-O3-jn9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8A4A9792-C410-4292-9FB5-3E9199408BD3" translatesAutoresizingMaskIntoConstraints="NO" id="huq-O3-jn9">
                             <rect key="frame" x="123" y="95" width="28" height="28"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add transaction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="who-6U-4tY">
@@ -8569,7 +8527,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-1903" y="-972"/>
+            <point key="canvasLocation" x="-1782" y="-1053"/>
         </scene>
         <!--History-->
         <scene sceneID="CpZ-li-oWv">
@@ -8964,7 +8922,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6F86D834-FE7D-4F8F-8E18-FB95E5049E5E" width="73" height="74">
+        <image name="8A4A9792-C410-4292-9FB5-3E9199408BD3" width="73" height="74">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA

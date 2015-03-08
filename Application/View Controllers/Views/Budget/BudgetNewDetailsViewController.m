@@ -206,7 +206,7 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:([nDate doubleValue] / 1000)];
     NSDateFormatter *df = [[NSDateFormatter alloc] init] ;
     [df setDateFormat:@"dd LLLL yyyy"];
-    [cell.lblDob setText:[df stringFromDate:date]];
+   // [cell.lblDob setText:[df stringFromDate:date]];
     
     if (![transaction.transaction_type intValue]==TYPE_INCOME)
         [cell.lblAmount setTextColor:[UIColor colorWithRed:232/255.0f green:76/255.0f blue:61/255.0f alpha:100.0f]];

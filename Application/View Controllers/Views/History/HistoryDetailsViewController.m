@@ -244,7 +244,7 @@
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:([nDate doubleValue] / 1000)];
     NSDateFormatter *df = [[NSDateFormatter alloc] init] ;
     [df setDateFormat:@"dd LLLL yyyy"];
-    [cell.lblDob setText:[df stringFromDate:date]];
+    //[cell.lblDob setText:[df stringFromDate:date]];
     
     
     if ([transaction.discription length]!=0)

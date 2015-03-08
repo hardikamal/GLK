@@ -621,8 +621,8 @@
     NSPredicate *p3 =  [NSPredicate predicateWithFormat:@"user_token_id IN %@", usetTokeArray];
     NSPredicate *newPredicate = [NSCompoundPredicate andPredicateWithSubpredicates: @[predicate,p1, p2,p3]];
     
-   // [fetchRequest setPredicate:newPredicate];
-   // fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    //[fetchRequest setPredicate:newPredicate];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     [fetchRequest setEntity:entity];
     [fetchRequest setFetchLimit:10];
     [fetchRequest setReturnsDistinctResults:YES];

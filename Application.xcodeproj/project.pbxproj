@@ -772,6 +772,8 @@
 		AB25ED681AA32F6F002D1CAD /* yearly.png in Resources */ = {isa = PBXBuildFile; fileRef = AB25ECD91AA32F6F002D1CAD /* yearly.png */; };
 		AB25EE0D1AA34238002D1CAD /* CreatePaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */; };
 		AB25EE0E1AA34238002D1CAD /* PaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */; };
+		AB4337F21AACAB28001A5C91 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4337F11AACAB28001A5C91 /* TransactionCell.xib */; };
+		AB4337F51AACABD4001A5C91 /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4337F41AACABD4001A5C91 /* TransactionCell.m */; };
 		AB563DD21AAA57EB0078B582 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */; };
 		AB563DD31AAA57EB0078B582 /* RetrieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */; };
 		AB563DE01AAA697B0078B582 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DDD1AAA697B0078B582 /* LogInViewController.m */; };
@@ -2188,6 +2190,9 @@
 		AB25EE0A1AA34238002D1CAD /* CreatePaymentModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePaymentModeViewController.m; sourceTree = "<group>"; };
 		AB25EE0B1AA34238002D1CAD /* PaymentModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModeViewController.h; sourceTree = "<group>"; };
 		AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentModeViewController.m; sourceTree = "<group>"; };
+		AB4337F11AACAB28001A5C91 /* TransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		AB4337F31AACABD4001A5C91 /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
+		AB4337F41AACABD4001A5C91 /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
 		AB563DCE1AAA57EB0078B582 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB563DD01AAA57EB0078B582 /* RetrieveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveViewController.h; sourceTree = "<group>"; };
@@ -2555,6 +2560,7 @@
 		197C04221A1F77E9003A6A69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ABDC0ACB1AA4713500CD1820 /* ChangePassword */,
 				19BC0C871AAB7C600077DCAF /* SignUpView */,
 				AB563DDB1AAA697B0078B582 /* LogIn */,
 				AB563DCD1AAA57EB0078B582 /* RetriveController */,
@@ -2564,7 +2570,6 @@
 				ABDC0ADA1AA4713500CD1820 /* Export */,
 				ABDC0B3A1AA473F700CD1820 /* Boder view */,
 				ABDC0AC41AA4713500CD1820 /* Account */,
-				ABDC0ACB1AA4713500CD1820 /* ChangePassword */,
 				ABDC0AE11AA4713500CD1820 /* ExportandImoprt */,
 				ABDC0AE41AA4713500CD1820 /* ForgetPassword */,
 				ABDC0AE51AA4713500CD1820 /* History */,
@@ -5490,6 +5495,9 @@
 				ABDC0AF11AA4713500CD1820 /* WarrantyCell.h */,
 				ABDC0AF21AA4713500CD1820 /* WarrantyCell.m */,
 				ABDC0AF31AA4713500CD1820 /* WarrantyCell.xib */,
+				AB4337F11AACAB28001A5C91 /* TransactionCell.xib */,
+				AB4337F31AACABD4001A5C91 /* TransactionCell.h */,
+				AB4337F41AACABD4001A5C91 /* TransactionCell.m */,
 			);
 			path = HomeCellView;
 			sourceTree = "<group>";
@@ -6292,6 +6300,7 @@
 				ABDC0C031AA4909B00CD1820 /* reminder-&-Recurring@3x.png in Resources */,
 				AB25EC5E1AA27412002D1CAD /* Oman.png in Resources */,
 				AB59C54F1AA5F9BF00F6A845 /* Travel_icon@2x.png in Resources */,
+				AB4337F21AACAB28001A5C91 /* TransactionCell.xib in Resources */,
 				AB59C54D1AA5F9BF00F6A845 /* recharge_icon@2x.png in Resources */,
 				19BC0BC31AAB793F0077DCAF /* signin_normal@2x.png in Resources */,
 				19BC0B9C1AAB793F0077DCAF /* profile_pic.png in Resources */,
@@ -6588,6 +6597,7 @@
 				19BC0B4F1AAB793F0077DCAF /* GTLDriveRevisionList.m in Sources */,
 				19BC0B261AAB793F0077DCAF /* GTLBatchResult.m in Sources */,
 				19BC0C421AAB793F0077DCAF /* UzysGroupViewCell.m in Sources */,
+				AB4337F51AACABD4001A5C91 /* TransactionCell.m in Sources */,
 				19BC0BF41AAB793F0077DCAF /* UIButton+WebCache.m in Sources */,
 				19BC0C1E1AAB793F0077DCAF /* THPinInputCirclesView.m in Sources */,
 				19BC0AA91AAB793F0077DCAF /* AKPickerView.m in Sources */,
