@@ -82,7 +82,7 @@
 +(void)showAlertWithMassager:(UIView*)view :(NSString*)string
 {
     //UIWindow *tempKeyboardWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:1];
-    [CommonFunctions showHUDSuccessInfoMessageWithText:string forDuration:MIN_DUR onView:view];
+//    [CommonFunctions showHUDInfoMessageWithText:string forDuration:MIN_DUR onView:view];
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:tempKeyboardWindow animated:YES];
 //    // Configure for text only and offset down
 //    hud.mode = MBProgressHUDModeText;
@@ -91,6 +91,7 @@
 //    hud.yOffset = 150.f;
 //   // hud.removeFromSuperViewOnHide = YES;
 //    [hud hide:YES afterDelay:2];
+    [CommonFunctions showToastMessageWithMessage:string];
 }
 
 +(NSString *)generateGUID

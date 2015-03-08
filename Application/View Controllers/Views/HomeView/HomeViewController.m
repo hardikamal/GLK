@@ -12,7 +12,6 @@
 #import "HomeViewController.h"
 #import "AddTransactionViewController.h"
 #import "TransactionHandler.h"
-//#import "KDGoalBar.h"
 #import "HomeViewCell.h"
 #import "CategoryListHandler.h"
 #import "UserInfoHandler.h"

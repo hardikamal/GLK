@@ -10,11 +10,11 @@
 
 @implementation NavigationLeftButton
 {
-     NSMutableDictionary *backgroundStates;
+    NSMutableDictionary *backgroundStates;
+    UIColor *lastBgColor;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -22,7 +22,7 @@
     return self;
 }
 
-- (void) setBackgroundColor:(UIColor *) _backgroundColor forState:(UIControlState) _state {
+- (void)setBackgroundColor:(UIColor *)_backgroundColor forState:(UIControlState)_state {
     if (backgroundStates == nil)
         backgroundStates = [[NSMutableDictionary alloc] init];
     
@@ -32,20 +32,20 @@
         [self setBackgroundColor:_backgroundColor];
 }
 
-- (UIColor*) backgroundColorForState:(UIControlState) _state {
+- (UIColor *)backgroundColorForState:(UIControlState)_state {
     return [backgroundStates objectForKey:[NSNumber numberWithInt:_state]];
 }
 
 #pragma mark -
 #pragma mark Touches
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    
+    if (lastBgColor == nil) {
+        lastBgColor = self.backgroundColor;
+    }
     UIColor *selectedColor = [UIColor colorWithWhite:0.0f alpha:0.4f];
-    if (selectedColor)
-    {
+    if (selectedColor) {
         CATransition *animation = [CATransition animation];
         [animation setType:kCATransitionFade];
         [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
@@ -54,23 +54,22 @@
     }
 }
 
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionFade];
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.layer addAnimation:animation forKey:@"EaseOut"];
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = lastBgColor;
 }
 
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     CATransition *animation = [CATransition animation];
     [animation setType:kCATransitionFade];
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.layer addAnimation:animation forKey:@"EaseOut"];
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = lastBgColor;
 }
+
 @end

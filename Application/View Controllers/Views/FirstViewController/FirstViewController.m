@@ -27,14 +27,14 @@
 
 
 static NSString *const kKeychainItemName = @"PdfReaderRes";
-static NSString *const kClientId =@"1009544359695-vfq6m7hltvudgj5ek5l5grcvt62hatoo.apps.googleusercontent.com";
-static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";
+static NSString *const kClientId = @"1009544359695-vfq6m7hltvudgj5ek5l5grcvt62hatoo.apps.googleusercontent.com";
+static NSString *const kClientSecret = @"UTj3KeexhlkJD58AwwdLX0kQ";
 static const NSUInteger THNumberOfPinEntries = 4;
 @interface FirstViewController () {
     NSArray *imageArray;
     int nextPage;
 }
-@property (strong,nonatomic) NSString *isAuth;
+@property (strong, nonatomic) NSString *isAuth;
 @property (nonatomic, strong) NSArray *arrPeopleInfo;
 @property (nonatomic) int recordIDToEdit;
 @property (nonatomic, strong) UIImageView *secretContentView;
@@ -54,17 +54,20 @@ static const NSUInteger THNumberOfPinEntries = 4;
     self.locked = YES;
     [self addPageViewController];
     [self addDefaultUserAsGuest];
+    [_btnLogIn setBackgroundColor:[UIColor colorWithRed:0.173 green:0.580 blue:0.518 alpha:1.000] forState:UIControlStateNormal];
+    [_btnLogIn setBackgroundColor:[UIColor colorWithRed:0.147 green:0.500 blue:0.447 alpha:1.000] forState:UIControlStateHighlighted];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (self.locked)
-    {
+    if (self.locked) {
         [self chekForPasswordProtection];
-    }else
+    }
+    else
         [self pushToHomeViewController];
     HIDE_STATUS_BAR
 }
+
 - (void)addPageViewController {
     nextPage = 0;
     imageArray = [[NSArray alloc] initWithObjects:@"dem_title.png", @"multipleaccount.png", @"setreminder.png", @"transaction.png", @"transfer.png", @"viewhistory.png", @"warranty.png", nil];
@@ -90,11 +93,9 @@ static const NSUInteger THNumberOfPinEntries = 4;
     }
 }
 
--(void)chekForPasswordProtection
-{
-    if ([[Utility userDefaultsForKey:LOCK_SCREEN_PASSWORD] length]!=0)
-    {
-        self.correctPin =[Utility userDefaultsForKey:LOCK_SCREEN_PASSWORD];
+- (void)chekForPasswordProtection {
+    if ([[Utility userDefaultsForKey:LOCK_SCREEN_PASSWORD] length] != 0) {
+        self.correctPin = [Utility userDefaultsForKey:LOCK_SCREEN_PASSWORD];
         self.secretContentView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"confidential"]];
         self.secretContentView.translatesAutoresizingMaskIntoConstraints = NO;
         self.secretContentView.contentMode = UIViewContentModeScaleAspectFit;
@@ -105,7 +106,7 @@ static const NSUInteger THNumberOfPinEntries = 4;
         self.loginLogoutButton.tintColor = [UIColor whiteColor];
         [self.view addSubview:self.loginLogoutButton];
         
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.loginLogoutButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX  multiplier:1.0f constant:0.0f]];
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.loginLogoutButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f]];
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.loginLogoutButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop
                                                              multiplier:1.0f constant:60.0f]];
         NSDictionary *views = @{ @"secretContentView" : self.secretContentView };
@@ -113,17 +114,16 @@ static const NSUInteger THNumberOfPinEntries = 4;
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(120)-[secretContentView]-(20)-|"  options:0 metrics:nil views:views]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [self login];
-    }else
-    {
+    }
+    else {
         [self pushToHomeViewController];
     }
 }
-- (void)presentSignInViewController:(UIViewController *)viewController
-{
+
+- (void)presentSignInViewController:(UIViewController *)viewController {
     // This is an example of how you can implement it if your app is navigation-based.
     [[self navigationController] pushViewController:viewController animated:YES];
 }
-
 
 - (void)addDefaultUserAsGuest {
     NSArray *arrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
@@ -151,7 +151,6 @@ static const NSUInteger THNumberOfPinEntries = 4;
         [[PaymentmodeHandler sharedCoreDataController] addDefaultPaymentMode:NSLocalizedString(@"medium_of_transaction", ni)];
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -193,264 +192,163 @@ static const NSUInteger THNumberOfPinEntries = 4;
 
 - (void)flowView:(PagedFlowView *)flowView didTapPageAtIndex:(NSInteger)index {
 }
-- (IBAction)signInBtnClick:(id)sender
-{
-    
-    
-    [self.txtEmail resignFirstResponder];
-    [self.txtPassword resignFirstResponder];
-    
-    if([[_txtEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqual:@""] && [[_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqual:@""])
-    {
-        UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:@"Please Enter Login Details" delegate:nil
-                                                 cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [loginAlrt show];
-        return;
-    }
-    else if(![Utility isValidEmail:[_txtEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] Strict:YES])
-    {
-        UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:@"Please Enter Email ID"
-                                                          delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [loginAlrt show];
-        return;
-    }else if (![Utility isInternetAvailable])
-    {
-        [Utility showInternetNotAvailabelAlert];
-        return;
-    }else
-    {
+
+- (IBAction)signInBtnClick:(id)sender {
+    RESIGN_KEYBOARD
+    RETURN_IF_NO_INTERNET_AVAILABLE_WITH_USER_WARNING
+    if ([self canContinueForLogin]) {
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
         [dic setObject:[_txtEmail.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:EMAIL_ADDRESS];
         [dic setObject:[_txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:PASSWORD];
         [dic setObject:[Utility uniqueIDForDevice] forKey:DEVICE_ID];
-        if ([self.btnLogIn.titleLabel.text isEqualToString:NSLocalizedString(@"forcefulllogin", nil)])
-        {
+        if ([self.btnLogIn.titleLabel.text isEqualToString:NSLocalizedString(@"forcefulllogin", nil)]) {
             [dic setObject:FORCE_LOGIN forKey:@"cn"];
-        }else
-        {
+        }
+        else {
             [dic setObject:LOGIN forKey:@"cn"];
         }
-//        progressHUD=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        progressHUD.labelText=@"Please wait...";
         [self signIN:dic];
     }
 }
 
+- (BOOL)canContinueForLogin {
+    BOOL canContinue = YES;
+    if (canContinue) {
+        canContinue = [CommonFunctions validateEmailWithString:_txtEmail.text WithIdentifier:@"Email"];
+    }
+    if (canContinue) {
+        canContinue = [CommonFunctions validatePasswordWithString:_txtPassword.text WithIdentifier:@"Password"];
+    }
+    return canContinue;
+}
 
-- (IBAction)btnSingInwithGoogle:(id)sender
-{
-    if (![Utility isInternetAvailable])
-    {
+- (IBAction)btnSingInwithGoogle:(id)sender {
+    if (![Utility isInternetAvailable]) {
         [Utility showInternetNotAvailabelAlert];
         return;
-    }else
-    {
-//        progressHUD=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//        progressHUD.labelText=@"Please wait...";
-        self.isAuth=[[NSUserDefaults standardUserDefaults] objectForKey:@"Google+Auths"];
-        if(self.isAuth.length>0)
-        {
-            GTMOAuth2Authentication *auth =[GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName   clientID:kClientId   clientSecret:kClientSecret];
-            if ([auth canAuthorize])
-            {
+    }
+    else {
+        //        progressHUD=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //        progressHUD.labelText=@"Please wait...";
+        self.isAuth = [[NSUserDefaults standardUserDefaults] objectForKey:@"Google+Auths"];
+        if (self.isAuth.length > 0) {
+            GTMOAuth2Authentication *auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName clientID:kClientId clientSecret:kClientSecret];
+            if ([auth canAuthorize]) {
                 [self isAuthorizedWithAuthentication:auth];
             }
-        }else
-        {
+        }
+        else {
             SEL finishedSelector = @selector(viewController:finishedWithAuth:error:);
             GTMOAuth2ViewControllerTouch *authViewController =
-            [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"https://www.googleapis.com/auth/plus.login" clientID:kClientId clientSecret:kClientSecret keychainItemName:kKeychainItemName  delegate:self  finishedSelector:finishedSelector];
+            [[GTMOAuth2ViewControllerTouch alloc] initWithScope:@"https://www.googleapis.com/auth/plus.login" clientID:kClientId clientSecret:kClientSecret keychainItemName:kKeychainItemName delegate:self finishedSelector:finishedSelector];
             [self presentViewController:authViewController animated:YES completion:nil];
-            
         }
     }
 }
--(void)signIN:(NSDictionary*)dic
-{
-//    SAAPIClient *manager = [SAAPIClient sharedClient];
-//    [[manager responseSerializer]setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
-//    [manager postPath:@"" parameters:dic success:^(AFHTTPRequestOperation *operation, id responseObject)
-//     {
-//         [MBProgressHUD hideHUDForView:self.view animated:YES];
-//         progressHUD=nil;
-//         if([[responseObject objectForKey:@"status"] boolValue])
-//         {
-//             if ([[responseObject objectForKey:@"cn"] isEqualToString:GMAIL_LOGIN])
-//             {
-//                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
-//                 if ([[responseObject objectForKey:@"login_type"] boolValue])
-//                 {
-//                     [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
-//                     [[HomeHelper sharedCoreDataController] clearAllDataInDataDase];
-//                 }else
-//                 {
-//                     [[HomeHelper sharedCoreDataController] SignUpwithServer:responseObject];
-//                 }
-//             }else if ([[responseObject objectForKey:@"cn"] isEqualToString:LOGIN])
-//             {
-//                 [[NSUserDefaults standardUserDefaults] setBool:NO forKey:CURRENT_CURRENCY_TIMESTAMP];
-//                 [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
-//                 
-//             }else if ( [[responseObject objectForKey:@"cn"] isEqualToString:FORCE_LOGIN])
-//             {
-//                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
-//                 [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
-//                 [[HomeHelper sharedCoreDataController] clearAllDataInDataDase];
-//             }
-//             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Success" message:[responseObject objectForKey:@"message"] delegate:self cancelButtonTitle:@"OK"  otherButtonTitles:nil, nil];
-//             [loginAlrt setTag:10];
-//             [loginAlrt show];
-//         }
-//         else if(![[responseObject objectForKey:@"status"] boolValue])
-//         {
-//             if ([[responseObject objectForKey:@"cn"] isEqualToString:LOGIN])
-//             {
-//                 if ([[responseObject objectForKey:@"force_login"] boolValue])
-//                 {
-//                     [self.btnLogIn setTitle:NSLocalizedString(@"forcefulllogin", nil) forState:UIControlStateNormal];
-//                     [self.lblLogIn setHidden:YES];
-//                 }
-//             }
-//             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[responseObject objectForKey:@"message"] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
-//             [loginAlrt show];
-//         }
-//         NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
-//         
-//     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
-//     {
-////         [MBProgressHUD hideHUDForView:self.view animated:YES];
-////         progressHUD=nil;
-//         UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
-//         [loginAlrt show];
-//         NSLog(@"Success: %@ ***** %@", operation.responseString, @"jhello");
-//     }];
+
+- (void)signIN:(NSDictionary *)dic {
+    SAAPIClient *manager = [SAAPIClient sharedClient];
+    [[manager responseSerializer]setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+    [manager postPath:@"" parameters:dic success: ^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         if ([[responseObject objectForKey:@"status"] boolValue]) {
+             if ([[responseObject objectForKey:@"cn"] isEqualToString:GMAIL_LOGIN]) {
+                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
+                 if ([[responseObject objectForKey:@"login_type"] boolValue]) {
+                     [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
+                     [[HomeHelper sharedCoreDataController] clearAllDataInDataDase];
+                 }
+                 else {
+                     [[HomeHelper sharedCoreDataController] SignUpwithServer:responseObject];
+                 }
+             }
+             else if ([[responseObject objectForKey:@"cn"] isEqualToString:LOGIN]) {
+                 [[NSUserDefaults standardUserDefaults] setBool:NO forKey:CURRENT_CURRENCY_TIMESTAMP];
+                 [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
+             }
+             else if ([[responseObject objectForKey:@"cn"] isEqualToString:FORCE_LOGIN]) {
+                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CURRENT_CURRENCY_TIMESTAMP];
+                 [[HomeHelper sharedCoreDataController] loginResponceWithServer:responseObject];
+                 [[HomeHelper sharedCoreDataController] clearAllDataInDataDase];
+             }
+         }
+         else if (![[responseObject objectForKey:@"status"] boolValue]) {
+             if ([[responseObject objectForKey:@"cn"] isEqualToString:LOGIN]) {
+                 if ([[responseObject objectForKey:@"force_login"] boolValue]) {
+                     [self.btnLogIn setTitle:@"Forceful Login" forState:UIControlStateNormal];
+                     [[self.btnLogIn titleLabel]setTextAlignment:NSTextAlignmentCenter];
+                 }
+             }
+             UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[responseObject objectForKey:@"message"] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
+             [loginAlrt show];
+         }
+         NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject);
+     }         failure: ^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         UIAlertView *loginAlrt = [[UIAlertView alloc]initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"ok"  otherButtonTitles:nil, nil];
+         [loginAlrt show];
+         NSLog(@"Success: %@ ***** %@", operation.responseString, @"jhello");
+     }];
 }
 
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-//    if (textField == self.txtEmail)
-//    {
-//        if (self.view.frame.size.height >400 )
-//        {
-//            [UIView animateWithDuration:0.3 animations:^{
-//                [self.scrllView setContentOffset:CGPointMake(0,30) animated:YES];
-//            }];
-//        }
-//    }
-//    else
-//    {
-//        if (self.view.frame.size.height >400 )
-//        {
-//            [UIView animateWithDuration:0.3 animations:^{
-//                [self.scrllView setContentOffset:CGPointMake(0,80) animated:YES];
-//            }];
-//        }
-//    }
+- (IBAction)signUpBtnClick:(id)sender {
+    [self performSegueWithIdentifier:@"signupView" sender:self];
 }
 
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-//    if (textField == self.txtEmail)
-//    {
-//        [self.txtPassword becomeFirstResponder];
-//    }
-//    else
-//    {
-//        if (self.view.frame.size.height >400 )
-//        {
-//            [UIView animateWithDuration:0.3 animations:^{
-//                [self.scrllView setContentOffset:CGPointMake(0,0) animated:YES];
-//            }];
-//        }
-//        [self.txtPassword resignFirstResponder];
-//    }
-    
-    return YES;
+- (IBAction)guestBtnClick:(id)sender {
+    [self performSegueWithIdentifier:@"GuestToMenu" sender:self];
 }
 
-
-- (IBAction)signUpBtnClick:(id)sender
-{
-    [self performSegueWithIdentifier: @"signupView" sender: self];
-    
-}
-
-- (IBAction)guestBtnClick:(id)sender
-{
-    [self performSegueWithIdentifier: @"GuestToMenu" sender: self];
-}
-
-
-
--(void)showAlertView
-{
-//    [MBProgressHUD hideHUDForView:self.cusumeView animated:YES];
-//    progressHUD=nil;
-    UIAlertView *informationalert =[[UIAlertView alloc]initWithTitle:@"Sorry" message:@"Please Try Again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    informationalert.tag=21;
+- (void)showAlertView {
+    //    [MBProgressHUD hideHUDForView:self.cusumeView animated:YES];
+    //    progressHUD=nil;
+    UIAlertView *informationalert = [[UIAlertView alloc]initWithTitle:@"Sorry" message:@"Please Try Again" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    informationalert.tag = 21;
     [informationalert show];
-    
 }
 
-
-
-- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController  finishedWithAuth:(GTMOAuth2Authentication *)auth
-                 error:(NSError *)error
-{
+- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController finishedWithAuth:(GTMOAuth2Authentication *)auth
+                 error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
-    if (error == nil)
-    {
+    if (error == nil) {
         [self isAuthorizedWithAuthentication:auth];
-    } else
-    {
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//        progressHUD=nil;
-        
+    }
+    else {
+        //        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        //        progressHUD=nil;
     }
 }
 
-
-
-
-
-- (void)isAuthorizedWithAuthentication:(GTMOAuth2Authentication *)auth
-{
+- (void)isAuthorizedWithAuthentication:(GTMOAuth2Authentication *)auth {
     NSURL *url = [NSURL URLWithString:@"https://www.googleapis.com/plus/v1/people/me"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [auth authorizeRequest:request completionHandler:^(NSError *error)
+    [auth authorizeRequest:request completionHandler: ^(NSError *error)
      {
          NSString *output = nil;
-         if (error)
-         {
+         if (error) {
              output = [error description];
              [self showAlertView];
-             
-         } else
-         {
+         }
+         else {
              NSURLResponse *response = nil;
-             NSData *data = [NSURLConnection sendSynchronousRequest:request  returningResponse:&response  error:&error];
-             if (data)
-             {
-                 output = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding] ;
-                 NSError* error;
-                 NSDictionary* json = [NSJSONSerialization  JSONObjectWithData:data  options:kNilOptions  error:&error];
-                 if ([json count] != 0)
-                 {
-                     NSLog(@"displayName:%@",[json objectForKey:@"displayName"]);
-                     NSLog(@"emails:%@",[[[json objectForKey:@"emails"] objectAtIndex:0]objectForKey:@"value"]);
+             NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+             if (data) {
+                 output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                 NSError *error;
+                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                 if ([json count] != 0) {
+                     NSLog(@"displayName:%@", [json objectForKey:@"displayName"]);
+                     NSLog(@"emails:%@", [[[json objectForKey:@"emails"] objectAtIndex:0]objectForKey:@"value"]);
                      NSTimeZone *localTime = [NSTimeZone systemTimeZone];
-                     NSString *mainToken= [Utility userDefaultsForKey:MAIN_TOKEN_ID];
-                     NSString *currencyName=[Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
-                     _isAuth=@"101";
+                     NSString *mainToken = [Utility userDefaultsForKey:MAIN_TOKEN_ID];
+                     NSString *currencyName = [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@", CURRENT_CURRENCY, mainToken]];
+                     _isAuth = @"101";
                      NSURL *url = [NSURL URLWithString:[[json objectForKey:@"image"] objectForKey:@"url"]];
                      NSData *data = [NSData dataWithContentsOfURL:url];
                      [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"key_for_your_image"];
                      [[NSUserDefaults standardUserDefaults]setObject:_isAuth forKey:@"Google+Auths"];
                      [[NSUserDefaults standardUserDefaults]synchronize];
-                     NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+                     NSString *language = [[NSLocale preferredLanguages] objectAtIndex:0];
                      NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
                      [dic setObject:[json objectForKey:@"displayName"] forKey:NAME];
                      [dic setObject:[[[json objectForKey:@"emails"] objectAtIndex:0]objectForKey:@"value"] forKey:EMAIL_ADDRESS];
@@ -461,7 +359,7 @@ static const NSUInteger THNumberOfPinEntries = 4;
                      [dic setObject:[Utility machineName] forKey:DEVICE_NAME];
                      [dic setObject:[Utility uniqueIDForDevice] forKey:DEVICE_ID];
                      [dic setObject:[localTime name] forKey:TIMEZONE];
-                     NSLog(@"age:%@",[[json objectForKey:@"ageRange"] objectForKey:@"min"]);
+                     NSLog(@"age:%@", [[json objectForKey:@"ageRange"] objectForKey:@"min"]);
                      [dic setObject:[json objectForKey:@"url"] forKeyedSubscript:@"google_plus_profile"];
                      [dic setObject:[[json objectForKey:@"ageRange"] objectForKey:@"min"] forKeyedSubscript:@"min_age"];
                      [dic setObject:[[json objectForKey:@"ageRange"] objectForKey:@"min"] forKeyedSubscript:@"max_age"];
@@ -471,9 +369,8 @@ static const NSUInteger THNumberOfPinEntries = 4;
                      [dic setObject:@"1.1" forKey:@"app_version"];
                      [self signIN:dic];
                  }
-             } else
-             {
-                 
+             }
+             else {
                  output = [error description];
                  [self showAlertView];
              }
@@ -481,55 +378,40 @@ static const NSUInteger THNumberOfPinEntries = 4;
      }];
 }
 
-
-
-
-
-
-- (void)applicationDidEnterBackground:(NSNotification *)notification
-{
-    
-    if (! self.locked)
-    {
+- (void)applicationDidEnterBackground:(NSNotification *)notification {
+    if (!self.locked) {
         [self showPinViewAnimated:NO];
     }
 }
 
-
-
 #pragma mark - Properties
 
-- (void)setLocked:(BOOL)locked
-{
+- (void)setLocked:(BOOL)locked {
     _locked = locked;
     
-    if (self.locked)
-    {
+    if (self.locked) {
         self.remainingPinEntries = THNumberOfPinEntries;
         [self.loginLogoutButton removeTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
         [self.loginLogoutButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         self.secretContentView.hidden = YES;
-    } else
-    {
+    }
+    else {
         [self.loginLogoutButton removeTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [self.loginLogoutButton addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
         self.secretContentView.hidden = NO;
     }
 }
 
-
-
 #pragma mark - UI
 
-- (void)showPinViewAnimated:(BOOL)animated
-{
+- (void)showPinViewAnimated:(BOOL)animated {
     THPinViewController *pinViewController = [[THPinViewController alloc] initWithDelegate:self];
     // pinViewController.promptTitle = @"Enter PIN";
-    UIColor *darkBlueColor = [UIColor colorWithRed:13/255.0f green:198/255.0f blue:170/255.0f alpha:1.0f];
+    UIColor *darkBlueColor = [UIColor colorWithRed:13 / 255.0f green:198 / 255.0f blue:170 / 255.0f alpha:1.0f];
     pinViewController.promptColor = darkBlueColor;
     pinViewController.view.tintColor = darkBlueColor;
     // for a solid background color, use this:
-    pinViewController.backgroundColor = [UIColor colorWithRed:13/255.0f green:198/255.0f blue:170/255.0f alpha:1.0f];;
+    pinViewController.backgroundColor = [UIColor colorWithRed:13 / 255.0f green:198 / 255.0f blue:170 / 255.0f alpha:1.0f];
     // for a translucent background, use this:
     self.view.tag = THPinViewControllerContentViewTag;
     self.modalPresentationStyle = UIModalPresentationCurrentContext;
@@ -541,129 +423,102 @@ static const NSUInteger THNumberOfPinEntries = 4;
 
 #pragma mark - User Interaction
 
-- (void)login
-{
+- (void)login {
     [self showPinViewAnimated:YES];
-    
 }
 
-- (void)logout:(id)sender
-{
+- (void)logout:(id)sender {
     self.locked = YES;
     // [self.loginLogoutButton setTitle:@"Enter PIN" forState:UIControlStateNormal];
 }
 
 #pragma mark - THPinViewControllerDelegate
 
-- (NSUInteger)pinLengthForPinViewController:(THPinViewController *)pinViewController
-{
+- (NSUInteger)pinLengthForPinViewController:(THPinViewController *)pinViewController {
     return 6;
 }
 
-- (BOOL)pinViewController:(THPinViewController *)pinViewController isPinValid:(NSString *)pin
-{
-    if ([pin isEqualToString:self.correctPin])
-    {
+- (BOOL)pinViewController:(THPinViewController *)pinViewController isPinValid:(NSString *)pin {
+    if ([pin isEqualToString:self.correctPin]) {
         return YES;
-    } else
-    {
+    }
+    else {
         self.remainingPinEntries--;
         return NO;
     }
 }
 
-- (BOOL)userCanRetryInPinViewController:(THPinViewController *)pinViewController
-{
+- (BOOL)userCanRetryInPinViewController:(THPinViewController *)pinViewController {
     return YES;
 }
 
-- (void)incorrectPinEnteredInPinViewController:(THPinViewController *)pinViewController
-{
-    if (self.remainingPinEntries > THNumberOfPinEntries / 3)
-    {
+- (void)incorrectPinEnteredInPinViewController:(THPinViewController *)pinViewController {
+    if (self.remainingPinEntries > THNumberOfPinEntries / 3) {
         return;
     }
 }
 
-- (void)pinViewControllerWillDismissAfterPinEntryWasSuccessful:(THPinViewController *)pinViewController
-{
-    if (self.locked)
-    {
+- (void)pinViewControllerWillDismissAfterPinEntryWasSuccessful:(THPinViewController *)pinViewController {
+    if (self.locked) {
         [self pushToHomeViewController];
     }
     self.locked = NO;
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-
-
--(void)pushToHomeViewController
-{
-    NSString *string=[[[Utility userDefaultsForKey:CURRENT_TOKEN_ID] componentsSeparatedByString:@"_"] objectAtIndex:0];
-    if (![string isEqualToString:@"0"] && string !=nil)
-    {
-        HomeViewController  *vc = [self.storyboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+- (void)pushToHomeViewController {
+    NSString *string = [[[Utility userDefaultsForKey:CURRENT_TOKEN_ID] componentsSeparatedByString:@"_"] objectAtIndex:0];
+    if (![string isEqualToString:@"0"] && string != nil) {
+        HomeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         [self.navigationController pushViewController:vc animated:NO];
     }
 }
 
-- (void)pinViewControllerWillDismissAfterPinEntryWasUnsuccessful:(THPinViewController *)pinViewController
-{
+- (void)pinViewControllerWillDismissAfterPinEntryWasUnsuccessful:(THPinViewController *)pinViewController {
     self.locked = YES;
     [self.loginLogoutButton setTitle:@"Access Denied / Enter PIN" forState:UIControlStateNormal];
 }
 
-
-
-- (void)pinViewControllerWillDismissAfterPinEntryWasCancelled:(THPinViewController *)pinViewController
-{
-    if (! self.locked)
-    {
+- (void)pinViewControllerWillDismissAfterPinEntryWasCancelled:(THPinViewController *)pinViewController {
+    if (!self.locked) {
         [self logout:self];
     }
-    NSString *string=[[NSUserDefaults standardUserDefaults] objectForKey:START_END_TIME];
+    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:START_END_TIME];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:[dateFormatter  dateFromString:string]];
-    if (interval>300 || [APP_DELEGATE retriveController]==nil)
-    {
-        ForgetPasswordViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:[dateFormatter dateFromString:string]];
+    if (interval > 300 || [APP_DELEGATE retriveController] == nil) {
+        ForgetPasswordViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
         [catageryController setLocked:YES];
         [self.navigationController pushViewController:catageryController animated:YES];
-        
-    }else
-    {
+    }
+    else {
         [self.navigationController pushViewController:[APP_DELEGATE retriveController] animated:YES];
     }
 }
-- (IBAction)btnForgetPasswordClick:(id)sender
-{
-    NSString *string=[[NSUserDefaults standardUserDefaults] objectForKey:START_END_TIME];
+
+- (IBAction)btnForgetPasswordClick:(id)sender {
+    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:START_END_TIME];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:[dateFormatter  dateFromString:string]];
-    if (interval>300 ||[APP_DELEGATE retriveController]==nil)
-    {
-        ForgetPasswordViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:[dateFormatter dateFromString:string]];
+    if (interval > 300 || [APP_DELEGATE retriveController] == nil) {
+        ForgetPasswordViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"ForgetPasswordViewController"];
         [self.navigationController pushViewController:catageryController animated:YES];
-    }else
-    {
+    }
+    else {
         [self.navigationController pushViewController:[APP_DELEGATE retriveController] animated:YES];
     }
 }
 
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView.tag==10)
-    {
-        HomeViewController  *vc = [self.storyboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 10) {
+        HomeViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         // [[SlideNavigationController sharedInstance] popToRootAndSwitchToViewController:vc withSlideOutAnimation:YES andCompletion:nil];
     }
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [self addDefaultUserAsGuest];
 }
 

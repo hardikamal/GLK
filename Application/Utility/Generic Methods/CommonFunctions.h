@@ -5,8 +5,6 @@
 
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-#import <MapKit/MapKit.h>
-#import "UIView+Badge.h"
 
 /**
  
@@ -38,6 +36,7 @@
 + (BOOL)getStatusForNetworkConnectionAndShowUnavailabilityMessage:(BOOL)showMessage;
 + (void)showHUDSErrorInfoMessageWithText:(NSString *)text forDuration:(float)duration onView:(UIView *)view;
 + (void)showHUDSuccessInfoMessageWithText:(NSString *)text forDuration:(float)duration onView:(UIView *)view;
++ (void)showHUDInfoMessageWithText:(NSString *)text forDuration:(float)duration onView:(UIView *)view;
 + (void)showActivityIndicatorWithText:(NSString *)text;
 + (void)removeActivityIndicator;
 + (void)showNotificationInViewController:(UIViewController *)viewController
@@ -65,7 +64,7 @@
 + (void)addLeftNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value;
 + (void)addTwoLeftNavigationBarButton:(UIViewController *)caller withImageName1:(NSString *)imageName1 withTitleName2:(NSString *)titleName2 WithNegativeSpacerValue:(int)value;
 + (void)addTwoRightNavigationBarButton:(UIViewController *)caller withImageName1:(NSString *)imageName1 withTitleName2:(NSString *)titleName2 WithNegativeSpacerValue:(int)value;
-+(void)addRightNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value;
-+ (void)addLeftNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value object:(UIViewController*)vc;
++ (void)addRightNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value;
++ (void)addLeftNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value object:(UIViewController *)vc;
 
 @end

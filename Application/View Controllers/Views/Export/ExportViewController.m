@@ -165,6 +165,7 @@ static NSString *const kClientSecret =@"UTj3KeexhlkJD58AwwdLX0kQ";//@"CAOBkGq9lF
         cell.accessoryView = button;
     }
     cell.backgroundColor=[UIColor clearColor];
+    cell.contentView.backgroundColor=[UIColor clearColor];
     return cell;
 }
 

@@ -15,11 +15,17 @@
 #import "HomeHelper.h"
 #import "EmailViewController.h"
 #import "HelpViewController.h"
+
+
 @interface SettingViewController ()
+
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
 
 @end
 
 @implementation SettingViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +43,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedSelectViewListNotification:) name:@"CustomizeExportViewController" object:nil];
     [self uISetUp];
+    
+    _scrollViewSubview.translatesAutoresizingMaskIntoConstraints = YES;
+    _scrollViewSubview.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width, 820);
+    self.scrollView.contentSize = _scrollViewSubview.frame.size;
+    self.scrollView.contentOffset = CGPointZero;
+
 }
 
 - (IBAction)changeLogClickEvent:(UIButton *)sender {
@@ -61,9 +73,9 @@
         [self.profileView setHidden:YES];
         [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, self.profileView.frame.origin.y, self.securityView.frame.size.width, self.securityView.frame.size.height)];
         [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, CGRectGetMinX(self.profileView.frame),self.securityView.frame.size.width, self.securityView.frame.size.height)];
-        self.scrollView.contentSize = CGSizeMake(310, 700);
+        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 700);
     }else
-        self.scrollView.contentSize = CGSizeMake(310, 815);
+        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 815);
 }
 -(void)viewWillAppear:(BOOL)animated
 {

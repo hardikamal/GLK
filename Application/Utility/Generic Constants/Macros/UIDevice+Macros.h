@@ -21,7 +21,7 @@
 
 //1>
 #define MESSAGE_TITLE___FOR_NETWORK_NOT_REACHABILITY   @"Oops!"
-#define MESSAGE_TEXT___FOR_NETWORK_NOT_REACHABILITY    @"No internet connection detected."
+#define MESSAGE_TEXT___FOR_NETWORK_NOT_REACHABILITY    @"Please check your internet settings and try again."
 
 //2>
 #define MESSAGE_TITLE___FOR_SERVER_NOT_REACHABILITY   @"Oops!"

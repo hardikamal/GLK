@@ -6,11 +6,8 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "ALAlertBanner.h"
-#import "LBLocation.h"
 #import "URBMediaFocusViewController.h"
-#import "RDVTabBarController.h"
 #import <AddressBook/AddressBook.h>
-#import "THContact.h"
 
 /**
  
@@ -26,9 +23,6 @@ typedef void (^operationACFFinishedBlock)(id info);
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) operationACFFinishedBlock finished;
 @property (nonatomic, strong) NSMutableDictionary *information;
-@property (nonatomic, strong) LBLocation *location;
-@property (nonatomic, strong) CLLocation *myLocation;
-@property (nonatomic, strong) CLPlacemark *placemark;
 @property (nonatomic, strong) URBMediaFocusViewController *mediaFocusController;
 
 + (AppCommonFunctions *)sharedInstance;
@@ -46,15 +40,10 @@ typedef void (^operationACFFinishedBlock)(id info);
 - (NSURL *)getUrlWithComponentPath:(NSString *)path;
 - (NSString *)getUrlStringWithComponentPath:(NSString *)path;
 - (void)setCommonlyUsedSeperatorOnTableView:(UITableView *)tableView;
-- (void)updateLocationRelatedDetails;
-+ (NSString *)uniqueVendor;
 - (void)playVideoFromUrl:(NSURL *)url fromViewController:(UIViewController *)viewController;
 - (void)playVideoFromFilePath:(NSString *)filePath fromViewController:(UIViewController *)viewController;
 - (void)setOpenVideoOnTapEventFrom:(UIView *)view forVideoUrl:(NSString *)url_ fromViewController:(UIViewController *)viewController;
 - (void)showImage:(UIImage *)image fromView:(UIView *)fromView;
 - (void)setAttributedPlaceHolder:(NSString *)ph OnTextFeild:(UITextField *)tf withFont:(UIFont *)f withTextColor:(UIColor *)c;
-- (void)prepareViewWhenUserIsLoggedInFrom:(UINavigationController *)navigationController;
-- (NSMutableArray *)getContactsFromAddressBook;
-- (void)refreshContact:(THContact *)contact from:(ABAddressBookRef)addressBookRef;
 
 @end

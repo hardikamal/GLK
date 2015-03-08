@@ -26,11 +26,9 @@
 #import "CommonFunctions.h"
 #import "ApplicationSpecificConstants.h"
 #import "Reachability.h"
-#import "Toast+UIView.h"
 #import "CacheManager.h"
 #import <CoreData/CoreData.h>
 #import "IQKeyboardManager.h"
-#import "SIAlertView.h"
 #import "BKHTMLLinkButton.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "XDPopupListView.h"
@@ -53,16 +51,11 @@
  Frequently used custom classes
  */
 #import "AppDelegate.h"
-//#import "FeedItemServices.h"
 #import "AKSVideoAndImagePicker.h"
 #import <objc/runtime.h>
 #import "AppCommonFunctions.h"
 #import "CoreDataModals.h"
-#import "RDVTabBarController.h"
-#import "RDVTabBar.h"
-#import "RDVTabBarItem.h"
 #import "UIActionSheet+Blocks.h"
-#import "ZLPeoplePickerViewController.h"
 #import "AutoCoding.h"
 #import "UIActionSheet+Blocks.h"
 #import "FCFileManager.h"

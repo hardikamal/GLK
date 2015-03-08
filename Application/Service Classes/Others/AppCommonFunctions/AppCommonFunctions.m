@@ -8,7 +8,6 @@
 #import "CENotifier.h"
 #import "KSCrashInstallationEmail.h"
 #import "KSCrash.h"
-#import "PDKeychainBindings.h"
 
 const char urlKey;
 const char viewControllerKey;
@@ -18,9 +17,6 @@ const char viewControllerKey;
 @synthesize appDelegate;
 @synthesize finished;
 @synthesize information;
-@synthesize location;
-@synthesize myLocation;
-@synthesize placemark;
 @synthesize mediaFocusController;
 
 static AppCommonFunctions *singletonInstance = nil;
@@ -46,7 +42,6 @@ static AppCommonFunctions *singletonInstance = nil;
 }
 
 - (void)firstTimeInitialisations {
-    [self getContactsFromAddressBook];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
@@ -264,36 +259,6 @@ static AppCommonFunctions *singletonInstance = nil;
     [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
-- (void)updateLocationRelatedDetails {
-    float latitude = [[NSUserDefaults standardUserDefaults]floatForKey:@"latitude"];
-    float longitude = [[NSUserDefaults standardUserDefaults]floatForKey:@"longitude"];
-    myLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
-    __weak AppCommonFunctions *weakSelf = self;
-    self.location = [[LBLocation alloc] initWithLocationUpdateBlock: ^(CLLocation *location) {
-        weakSelf.myLocation = location;
-        [weakSelf.location reverseGeocodeCurrentLocationWithCompletionBlock: ^(CLPlacemark *placemark) {
-            weakSelf.placemark = placemark;
-            [[NSUserDefaults standardUserDefaults]saveFloat:placemark.location.coordinate.latitude forKey:@"latitude"];
-            [[NSUserDefaults standardUserDefaults]saveFloat:placemark.location.coordinate.longitude forKey:@"longitude"];
-            float latitude = [[NSUserDefaults standardUserDefaults]floatForKey:@"latitude"];
-            float longitude = [[NSUserDefaults standardUserDefaults]floatForKey:@"longitude"];
-            weakSelf.myLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
-        }];
-    }];
-}
-
-#define kKeyVendor @"ApplicationDeviceIdentifier"
-
-+ (NSString *)uniqueVendor {
-    PDKeychainBindings *keychain = [PDKeychainBindings sharedKeychainBindings];
-    NSString *uniqueIdentifier = [keychain objectForKey:kKeyVendor];
-    if (!uniqueIdentifier || !uniqueIdentifier.length) {
-        NSUUID *udid = [[UIDevice currentDevice] identifierForVendor];
-        uniqueIdentifier = [udid UUIDString];
-        [keychain setObject:uniqueIdentifier forKey:kKeyVendor];
-    }
-    return uniqueIdentifier;
-}
 
 - (void)showImage:(UIImage *)image fromView:(UIView *)fromView {
     mediaFocusController = [[URBMediaFocusViewController alloc] init];
@@ -358,90 +323,6 @@ static AppCommonFunctions *singletonInstance = nil;
     [attributedText addAttribute:NSForegroundColorAttributeName value:c range:NSMakeRange(0, attributedText.length)];
     [attributedText addAttribute:NSFontAttributeName value:f range:NSMakeRange(0, attributedText.length)];
     [tf setAttributedPlaceholder:attributedText];
-}
-
-- (NSMutableArray *)getContactsFromAddressBook {
-    {
-        CFErrorRef error = nil;
-        ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            if (error) {
-                NSLog(@"error %@", error);
-            }
-            else if (granted) {
-                // Do what you want with the Address Book
-            }
-            else {
-                NSLog(@"permission denied");
-            }
-            CFRelease(addressBook);
-        });
-    }
-    CFErrorRef error = NULL;
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
-    if (addressBook) {
-        NSArray *allContacts = (__bridge_transfer NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBook);
-        NSMutableArray *mutableContacts = [NSMutableArray arrayWithCapacity:allContacts.count];
-        NSUInteger i = 0;
-        for (i = 0; i < [allContacts count]; i++) {
-            THContact *contact = [[THContact alloc] init];
-            ABRecordRef contactPerson = (__bridge ABRecordRef)allContacts[i];
-            contact.recordId = ABRecordGetRecordID(contactPerson);
-            NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty);
-            NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(contactPerson, kABPersonLastNameProperty);
-            contact.firstName = firstName;
-            contact.lastName = lastName;
-            ABMultiValueRef phonesRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty);
-            contact.phone = [self getMobilePhoneProperty:phonesRef];
-            if (phonesRef) {
-                CFRelease(phonesRef);
-            }
-            if ((contact.firstName.length > 0) && (contact.phone.length > 0)) {
-                [mutableContacts addObject:contact];
-            }
-        }
-        if (addressBook) {
-            CFRelease(addressBook);
-        }
-        return [[NSMutableArray alloc]initWithArray:mutableContacts];
-    }
-    return [[NSMutableArray alloc]init];
-}
-
-- (NSString *)getMobilePhoneProperty:(ABMultiValueRef)phonesRef {
-    for (int i = 0; i < ABMultiValueGetCount(phonesRef); i++) {
-        CFStringRef currentPhoneLabel = ABMultiValueCopyLabelAtIndex(phonesRef, i);
-        CFStringRef currentPhoneValue = ABMultiValueCopyValueAtIndex(phonesRef, i);
-        if (currentPhoneLabel) {
-            if (CFStringCompare(currentPhoneLabel, kABPersonPhoneMobileLabel, 0) == kCFCompareEqualTo) {
-                return (__bridge NSString *)currentPhoneValue;
-            }
-            if (CFStringCompare(currentPhoneLabel, kABHomeLabel, 0) == kCFCompareEqualTo) {
-                return (__bridge NSString *)currentPhoneValue;
-            }
-        }
-        if (currentPhoneLabel) {
-            CFRelease(currentPhoneLabel);
-        }
-        if (currentPhoneValue) {
-            CFRelease(currentPhoneValue);
-        }
-    }
-    return nil;
-}
-
-- (void)refreshContact:(THContact *)contact from:(ABAddressBookRef)addressBookRef {
-    ABRecordRef contactPerson = ABAddressBookGetPersonWithRecordID(addressBookRef, (ABRecordID)contact.recordId);
-    contact.recordId = ABRecordGetRecordID(contactPerson);
-    NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(contactPerson, kABPersonFirstNameProperty);
-    NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(contactPerson, kABPersonLastNameProperty);
-    contact.firstName = firstName;
-    contact.lastName = lastName;
-    ABMultiValueRef phonesRef = ABRecordCopyValue(contactPerson, kABPersonPhoneProperty);
-    contact.phone = [self getMobilePhoneProperty:phonesRef];
-    if (phonesRef) {
-        CFRelease(phonesRef);
-    }
 }
 
 @end

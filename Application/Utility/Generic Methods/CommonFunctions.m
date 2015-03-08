@@ -9,6 +9,7 @@
 #import "TSMessage.h"
 #import "JDStatusBarNotification.h"
 #import "KVNProgress.h"
+#import "AFMInfoBanner.h"
 
 @implementation CommonFunctions
 
@@ -95,77 +96,6 @@
     
     [view addSubview:titleLbl];
     
-    [navigationItem setTitleView:view];
-}
-
-+ (void)setNavigationTitle:(NSString *)title WithBadge:(int)badgeValue ForNavigationItem:(UINavigationItem *)navigationItem {
-    float width = 320.0f;
-    
-    if (navigationItem.leftBarButtonItem.customView && navigationItem.rightBarButtonItem.customView) {
-        width = 320 - (navigationItem.leftBarButtonItem.customView.frame.size.width + navigationItem.rightBarButtonItem.customView.frame.size.width + 20);
-    }
-    else if (navigationItem.leftBarButtonItem.customView && !navigationItem.rightBarButtonItem.customView) {
-        width = 320 - (navigationItem.leftBarButtonItem.customView.frame.size.width * 2);
-    }
-    else if (!navigationItem.leftBarButtonItem.customView && !navigationItem.rightBarButtonItem.customView) {
-        width = 320 - (2 * navigationItem.rightBarButtonItem.customView.frame.size.width);
-    }
-    
-    // find the text width; so that btn width can be calculate
-    CGSize textSize = [title   sizeWithFont:[UIFont fontWithName:FONT_REGULAR size:17.0]
-                          constrainedToSize:CGSizeMake(320.0f, 20.0f)
-                              lineBreakMode:NSLineBreakByWordWrapping];
-    
-    if (badgeValue <= 9) {
-        textSize = CGSizeMake(textSize.width + 20, textSize.height);
-    }
-    else if (badgeValue > 9) {
-        textSize = CGSizeMake(textSize.width + 30, textSize.height);
-    }
-    else if (badgeValue > 99) {
-        textSize = CGSizeMake(textSize.width + 40, textSize.height);
-    }
-    else if (badgeValue > 999) {
-        textSize = CGSizeMake(textSize.width + 45, textSize.height);
-    }
-    
-    if (textSize.width < width)
-        width = textSize.width;
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, width, 44.0f)];
-    
-    UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 6.0f, width, 32.0f)];
-    
-    [titleLbl setFont:[UIFont fontWithName:FONT_REGULAR size:17.0]];
-    [titleLbl setBackgroundColor:[UIColor clearColor]];
-    [titleLbl setTextAlignment:NSTextAlignmentRight];
-    [titleLbl setTextColor:[UIColor blackColor]];
-    [titleLbl setShadowColor:[UIColor clearColor]];
-    [titleLbl setShadowOffset:CGSizeMake(0.0f, 1.0f)];
-    
-    [titleLbl setText:title];
-    
-    [view addSubview:titleLbl];
-    if (badgeValue > 0) {
-        titleLbl.badge.outlineWidth = 1.0;
-        titleLbl.badge.badgeValue = badgeValue;
-        titleLbl.badge.displayWhenZero = NO;
-        if (badgeValue <= 9) {
-            titleLbl.badge.frame = CGRectMake(0, 0, 20, 20);
-        }
-        else if (badgeValue > 9) {
-            titleLbl.badge.frame = CGRectMake(0, 0, 30, 30);
-        }
-        else if (badgeValue > 99) {
-            titleLbl.badge.frame = CGRectMake(0, 0, 40, 40);
-        }
-        else if (badgeValue > 999) {
-            titleLbl.badge.frame = CGRectMake(0, 0, 45, 40);
-        }
-        titleLbl.badge.textColor = [UIColor whiteColor];
-        titleLbl.badge.outlineColor = [UIColor whiteColor];
-        titleLbl.badge.badgeColor = [UIColor redColor];
-    }
     [navigationItem setTitleView:view];
 }
 
@@ -456,12 +386,14 @@
                                                  duration:MIN_DUR
                                                  position:@"bottom"
                                                     title:Nil];
-#else
+#elif 0
     [self setupKVNProgress];
     [KVNProgress showErrorWithParameters:@{ KVNProgressViewParameterStatus: message }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MIN_DUR * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [CommonFunctions removeActivityIndicator];
     });
+#else
+    [AFMInfoBanner showWithText:message style:AFMInfoBannerStyleError andHideAfter:MIN_DUR];
 #endif
 }
 
@@ -476,6 +408,14 @@
 + (void)showHUDSuccessInfoMessageWithText:(NSString *)text forDuration:(float)duration onView:(UIView *)view {
     [self setupKVNProgress];
     [KVNProgress showSuccessWithParameters:@{ KVNProgressViewParameterStatus: text }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [CommonFunctions removeActivityIndicator];
+    });
+}
+
++ (void)showHUDInfoMessageWithText:(NSString *)text forDuration:(float)duration onView:(UIView *)view {
+    [self setupKVNProgress];
+    [KVNProgress showWithStatus:text];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [CommonFunctions removeActivityIndicator];
     });
@@ -730,17 +670,6 @@
         return TRUE;
 }
 
-+ (void)openLocationInMapWithLatitude:(double)lat WithLongitide:(double)lon WithName:(NSString *)placeName {
-    Class mapItemClass = [MKMapItem class];
-    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, lon);
-        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
-        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-        [mapItem setName:placeName];
-        [mapItem openInMapsWithLaunchOptions:nil];
-    }
-}
-
 + (NSString *)getDeviceSpecificImageNameForName:(NSString *)name {
     NSString *fileName1 = name;
     NSString *fileName2;
@@ -793,50 +722,7 @@
     [[UIApplication sharedApplication]setStatusBarHidden:!show withAnimation:UIStatusBarAnimationNone];
 }
 
-+ (NSMutableArray *)decodePolyLine:(NSString *)encodedStr {
-    NSMutableString *encoded = [[NSMutableString alloc] initWithCapacity:[encodedStr length]];
-    [encoded appendString:encodedStr];
-    [encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
-                                options:NSLiteralSearch
-                                  range:NSMakeRange(0, [encoded length])];
-    NSInteger len = [encoded length];
-    NSInteger index = 0;
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSInteger lat = 0;
-    NSInteger lng = 0;
-    while (index < len) {
-        NSInteger b;
-        NSInteger shift = 0;
-        NSInteger result = 0;
-        do {
-            b = [encoded characterAtIndex:index++] - 63;
-            result |= (b & 0x1f) << shift;
-            shift += 5;
-        }
-        while (b >= 0x20);
-        NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
-        lat += dlat;
-        shift = 0;
-        result = 0;
-        do {
-            b = [encoded characterAtIndex:index++] - 63;
-            result |= (b & 0x1f) << shift;
-            shift += 5;
-        }
-        while (b >= 0x20);
-        NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
-        lng += dlng;
-        NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
-        NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
-        
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
-        [array addObject:location];
-    }
-    
-    return array;
-}
-
-+ (void)addLeftNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value object:(UIViewController*)vc {
++ (void)addLeftNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value object:(UIViewController *)vc {
     UIButton *leftBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [leftBarButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
@@ -966,12 +852,11 @@
                                                  nil];
 }
 
-+(void)addRightNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value {
-  
++ (void)addRightNavigationBarEditButton:(UIViewController *)caller withImageName:(NSString *)imageName WithTitle:(NSString *)title WithNegativeSpacerValue:(int)value {
     //////////////////////////////////////////////////////////////////////
     UIButton *rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [rightBarButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-        [rightBarButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateHighlighted];
+    [rightBarButton setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [rightBarButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateHighlighted];
     [rightBarButton setTitle:title forState:UIControlStateNormal];
     [rightBarButton setTitle:title forState:UIControlStateHighlighted];
     
@@ -992,8 +877,6 @@
                                        target:nil action:nil];
     negativeSpacer.width = value;
     caller.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, [[UIBarButtonItem alloc] initWithCustomView:rightBarButton], nil];
-
 }
-
 
 @end

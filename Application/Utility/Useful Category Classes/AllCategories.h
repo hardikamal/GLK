@@ -24,5 +24,6 @@
 #import "UIImage+Rotating.h"
 #import "UIView+ConstraintsHelper.h"
 #import "NSDataAdditions.h"
+#import "UIButton+BackgroundColor.h"
 
 #endif
