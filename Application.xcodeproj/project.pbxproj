@@ -10,6 +10,9 @@
 		194023A91AAC90C400EB3F1F /* AFMInfoBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 194023A51AAC90C400EB3F1F /* AFMInfoBanner.m */; };
 		194023AA1AAC90C400EB3F1F /* CVKHierarchySearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 194023A71AAC90C400EB3F1F /* CVKHierarchySearcher.m */; };
 		194023AE1AACA64200EB3F1F /* UIButton+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 194023AD1AACA64200EB3F1F /* UIButton+BackgroundColor.m */; };
+		1966D94C1AAD284A00FD8E74 /* MTAnimatedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966D94B1AAD284A00FD8E74 /* MTAnimatedLabel.m */; };
+		1966D9501AAD28CA00FD8E74 /* SplashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966D94F1AAD28CA00FD8E74 /* SplashVC.m */; };
+		1966D9521AAD29FF00FD8E74 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1966D9511AAD29FF00FD8E74 /* icon.png */; };
 		197C047D1A1F77E9003A6A69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 197CFFD31A1F77E8003A6A69 /* AppDelegate.m */; };
 		197C078B1A1FB48E003A6A69 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C078A1A1FB48E003A6A69 /* CoreText.framework */; };
 		197C078E1A1FE183003A6A69 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C078D1A1FE183003A6A69 /* libc++.dylib */; };
@@ -951,6 +954,11 @@
 		194023A81AAC90C400EB3F1F /* ViewControllerHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerHierarchy.h; sourceTree = "<group>"; };
 		194023AC1AACA64200EB3F1F /* UIButton+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BackgroundColor.h"; sourceTree = "<group>"; };
 		194023AD1AACA64200EB3F1F /* UIButton+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BackgroundColor.m"; sourceTree = "<group>"; };
+		1966D94A1AAD284A00FD8E74 /* MTAnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTAnimatedLabel.h; sourceTree = "<group>"; };
+		1966D94B1AAD284A00FD8E74 /* MTAnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTAnimatedLabel.m; sourceTree = "<group>"; };
+		1966D94E1AAD28CA00FD8E74 /* SplashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashVC.h; sourceTree = "<group>"; };
+		1966D94F1AAD28CA00FD8E74 /* SplashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashVC.m; sourceTree = "<group>"; };
+		1966D9511AAD29FF00FD8E74 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		197C07391A1FB21E003A6A69 /* Application-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Application-Prefix.pch"; path = "../Application-Prefix.pch"; sourceTree = "<group>"; };
 		197C078A1A1FB48E003A6A69 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		197C078D1A1FE183003A6A69 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -2327,6 +2335,24 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		1966D9491AAD284A00FD8E74 /* MTAnimatedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1966D94A1AAD284A00FD8E74 /* MTAnimatedLabel.h */,
+				1966D94B1AAD284A00FD8E74 /* MTAnimatedLabel.m */,
+			);
+			path = MTAnimatedLabel;
+			sourceTree = "<group>";
+		};
+		1966D94D1AAD28CA00FD8E74 /* SplashVC */ = {
+			isa = PBXGroup;
+			children = (
+				1966D94E1AAD28CA00FD8E74 /* SplashVC.h */,
+				1966D94F1AAD28CA00FD8E74 /* SplashVC.m */,
+			);
+			path = SplashVC;
+			sourceTree = "<group>";
+		};
 		1979E7271A2001D8000E2067 /* DatabaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2347,6 +2373,7 @@
 		197C04221A1F77E9003A6A69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1966D94D1AAD28CA00FD8E74 /* SplashVC */,
 				ABDC0ACB1AA4713500CD1820 /* ChangePassword */,
 				19BC0C871AAB7C600077DCAF /* SignUpView */,
 				AB563DDB1AAA697B0078B582 /* LogIn */,
@@ -2859,6 +2886,7 @@
 		19BC07321AAB793D0077DCAF /* Useful Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1966D9491AAD284A00FD8E74 /* MTAnimatedLabel */,
 				194023A31AAC90C400EB3F1F /* AFMInfoBanner */,
 				19BC0C611AAB79860077DCAF /* MarqueeLabel */,
 				19BC07331AAB793D0077DCAF /* AFNetworking */,
@@ -4080,6 +4108,7 @@
 			isa = PBXGroup;
 			children = (
 				19BC0C711AAB7C000077DCAF /* All_icon.png */,
+				1966D9511AAD29FF00FD8E74 /* icon.png */,
 				19BC0C721AAB7C000077DCAF /* cancel_button_budget.png */,
 				19BC0C731AAB7C000077DCAF /* cancel_button_budget@2x.png */,
 				19BC0C741AAB7C000077DCAF /* check_box_actives.png */,
@@ -5655,6 +5684,7 @@
 				AB59C5131AA5259C00F6A845 /* paymentmode_icon@3x.png in Resources */,
 				ABDC0C7A1AA515F500CD1820 /* Clothing_icon.png in Resources */,
 				AB25EC491AA27412002D1CAD /* Kyrgyzstan.png in Resources */,
+				1966D9521AAD29FF00FD8E74 /* icon.png in Resources */,
 				AB25EB411AA1EB2E002D1CAD /* addmore_button.png in Resources */,
 				AB59C4F41AA5259C00F6A845 /* export_data.png in Resources */,
 				ABDC0CAA1AA515F500CD1820 /* Interest-recieved_icon.png in Resources */,
@@ -5972,7 +6002,6 @@
 				19BC0B4E1AAB793F0077DCAF /* GTLDriveRevision.m in Sources */,
 				19BC0B4F1AAB793F0077DCAF /* GTLDriveRevisionList.m in Sources */,
 				19BC0B261AAB793F0077DCAF /* GTLBatchResult.m in Sources */,
-				19BC0C421AAB793F0077DCAF /* UzysGroupViewCell.m in Sources */,
 				AB4337F51AACABD4001A5C91 /* TransactionCell.m in Sources */,
 				19BC0BF41AAB793F0077DCAF /* UIButton+WebCache.m in Sources */,
 				19BC0C1E1AAB793F0077DCAF /* THPinInputCirclesView.m in Sources */,
@@ -5989,6 +6018,7 @@
 				AB25EB191AA1049E002D1CAD /* AppCommonFunctions.m in Sources */,
 				AB25EC951AA27515002D1CAD /* SettingViewController.m in Sources */,
 				19BC0AAB1AAB793F0077DCAF /* AKSMethods.m in Sources */,
+				1966D9501AAD28CA00FD8E74 /* SplashVC.m in Sources */,
 				19BC0C031AAB793F0077DCAF /* SWUtilityButtonView.m in Sources */,
 				194023AA1AAC90C400EB3F1F /* CVKHierarchySearcher.m in Sources */,
 				19BC0B031AAB793F0077DCAF /* KSSignalInfo.c in Sources */,
@@ -6232,6 +6262,7 @@
 				19BC0B521AAB793F0077DCAF /* IQNSArray+Sort.m in Sources */,
 				19BC0ADB1AAB793F0077DCAF /* SWActionSheet.m in Sources */,
 				19BC0AC61AAB793F0077DCAF /* BROptionsButton.m in Sources */,
+				1966D94C1AAD284A00FD8E74 /* MTAnimatedLabel.m in Sources */,
 				AB25EB6C1AA25FD2002D1CAD /* CategeyListViewController.m in Sources */,
 				19BC0B461AAB793F0077DCAF /* GTLDriveChildReference.m in Sources */,
 				19BC0B501AAB793F0077DCAF /* GTLQueryDrive.m in Sources */,
