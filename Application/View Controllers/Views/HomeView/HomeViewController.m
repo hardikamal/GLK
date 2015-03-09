@@ -1094,7 +1094,7 @@
         {
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             AddTransactionViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"AddTransactionViewController"];
-            [vc setTransaction:[self.transcationItems objectAtIndex:cellIndexPath.row]];
+            [vc setTransaction:[finalArray objectAtIndex:cellIndexPath.row]];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
@@ -1102,7 +1102,7 @@
         {
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
             TransactionDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransactionDetailsViewController"];
-            [vc setTransaction:[self.transcationItems objectAtIndex:cellIndexPath.row]];
+            [vc setTransaction:[finalArray objectAtIndex:cellIndexPath.row]];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

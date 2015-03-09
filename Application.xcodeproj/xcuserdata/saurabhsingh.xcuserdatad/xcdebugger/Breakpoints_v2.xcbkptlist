@@ -265,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/View Controllers/Views/HomeView/HomeViewController.m"
-            timestampString = "447538937.480333"
+            filePath = "Application/Utility/Generic Methods/Utility.m"
+            timestampString = "447539387.427682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "-updateTrasationTabeview:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "+getGMT_MillisFromYYYY_MM_DD_HH_SS_Date:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -281,13 +281,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Application/Utility/Generic Methods/Utility.m"
-            timestampString = "447539387.427682"
+            filePath = "Application/Utility/Useful Frameworks/RESideMenu/DEMORootViewController.m"
+            timestampString = "447558595.486608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "+getGMT_MillisFromYYYY_MM_DD_HH_SS_Date:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-sideMenu:willHideMenuViewController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Application/Utility/Useful Frameworks/RESideMenu/LeftMenuViewController.m"
+            timestampString = "447559968.777522"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-updateTable"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
