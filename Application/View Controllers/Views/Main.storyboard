@@ -53,12 +53,110 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="Fqb-zb-3W0" kind="relationship" relationship="rootViewController" id="DeH-Gf-o9C"/>
+                        <segue destination="580-cC-xSe" kind="relationship" relationship="rootViewController" id="5U5-5w-4Vv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqM-dM-tCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5072" y="-916"/>
+        </scene>
+        <!--SplashVC-->
+        <scene sceneID="PR2-FT-CsN">
+            <objects>
+                <viewController storyboardIdentifier="SplashVC" id="580-cC-xSe" customClass="SplashVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4S-DF-drm"/>
+                        <viewControllerLayoutGuide type="bottom" id="NLh-O4-5X6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jle-uE-9e4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uyd-sW-Whx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qtT-nR-QAn">
+                                <rect key="frame" x="0.0" y="80" width="320" height="320"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-m9-76B">
+                                        <rect key="frame" x="110" y="100" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="rpa-hn-gE8"/>
+                                            <constraint firstAttribute="width" constant="100" id="wcF-mh-0rK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-Wo-fYT">
+                                        <rect key="frame" x="110" y="1024" width="320" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="eiZ-mC-qoA"/>
+                                            <constraint firstAttribute="width" constant="320" id="nAy-fE-Qg3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="GULLAK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQx-Uj-GCv">
+                                        <rect key="frame" x="-1024" y="154" width="320" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="hmK-ml-YgF"/>
+                                            <constraint firstAttribute="height" constant="46" id="qzi-iG-MBQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Daily Expense Manager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvZ-OP-K54">
+                                        <rect key="frame" x="1024" y="189" width="320" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="LhG-Ng-9d3"/>
+                                            <constraint firstAttribute="width" constant="320" id="qej-on-oLd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sny-wP-fb8" customClass="MTAnimatedLabel">
+                                        <rect key="frame" x="0.0" y="231" width="320" height="39"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="L3m-jF-a6N"/>
+                                            <constraint firstAttribute="width" constant="320" id="Xzw-ZG-J7e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="7Sj-WH-RhF"/>
+                                    <constraint firstAttribute="width" constant="320" id="Adt-n7-azx"/>
+                                    <constraint firstAttribute="centerX" secondItem="Sny-wP-fb8" secondAttribute="centerX" id="TaO-O6-CQa"/>
+                                    <constraint firstItem="Sny-wP-fb8" firstAttribute="top" secondItem="eAl-m9-76B" secondAttribute="bottom" constant="31" id="ug2-86-gxP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="qtT-nR-QAn" secondAttribute="centerX" id="A1d-Ck-ghi"/>
+                            <constraint firstAttribute="trailing" secondItem="uyd-sW-Whx" secondAttribute="trailing" id="VOA-6m-1Fo"/>
+                            <constraint firstItem="uyd-sW-Whx" firstAttribute="leading" secondItem="jle-uE-9e4" secondAttribute="leading" id="aIf-Gu-ObB"/>
+                            <constraint firstAttribute="bottom" secondItem="uyd-sW-Whx" secondAttribute="bottom" id="e3C-DQ-EZg"/>
+                            <constraint firstAttribute="centerY" secondItem="qtT-nR-QAn" secondAttribute="centerY" id="mjQ-O3-fCv"/>
+                            <constraint firstItem="uyd-sW-Whx" firstAttribute="top" secondItem="z4S-DF-drm" secondAttribute="bottom" id="qcm-P8-0E6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="EUY-RY-3tX"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="bottomLabel" destination="Sny-wP-fb8" id="bS5-Nt-sj1"/>
+                        <outlet property="imgView" destination="eAl-m9-76B" id="e6g-nu-xWD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kiD-mz-hJO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="28"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="vCs-EC-pCl">
@@ -9872,6 +9970,7 @@ YxtjIAAAAAAAAAIBAAAAAAAAAD8AAAAAAAAAAAAAAAAAAGMiA
         <image name="guestlogin_button.png" width="200" height="54"/>
         <image name="header-1.png" width="640" height="960"/>
         <image name="help_icon.png" width="640" height="960"/>
+        <image name="icon.png" width="295" height="292"/>
         <image name="import_icon.png" width="50" height="50"/>
         <image name="location.png" width="30" height="30"/>
         <image name="location_icon.png" width="640" height="960"/>
