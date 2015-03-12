@@ -37,7 +37,7 @@
             self.imgViewProfile.clipsToBounds = YES;
             self.imgViewProfile.image=[UIImage imageWithData:userInfo.user_img];
         }else
-            self.imgViewProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+            self.imgViewProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
     }
     // Do any additional setup after loading the view.
 }

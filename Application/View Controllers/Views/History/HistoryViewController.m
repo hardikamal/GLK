@@ -126,7 +126,7 @@
         self.imageProfile.clipsToBounds = YES;
         self.imageProfile.image=[UIImage imageWithData:userInfo.user_img];
     }else
-        self.imageProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+        self.imageProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
 }
 
 

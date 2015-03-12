@@ -11,7 +11,7 @@
 @interface AccountViewController : UIViewController
 
 - (IBAction)btnPopUpClick:(id)sender;
-- (IBAction)btnBackClick:(id)sender;
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *btnPopUp;
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;

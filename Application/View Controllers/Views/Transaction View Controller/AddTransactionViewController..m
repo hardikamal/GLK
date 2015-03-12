@@ -17,7 +17,7 @@
 #import "UserInfo.h"
 #import "PaymentmodeHandler.h"
 #import "Paymentmode.h"
-//#import "AddAccountViewController.h"
+#import "AddAccountViewController.h"
 
 #import "AutocompletionTableView.h"
 #import <AddressBookUI/AddressBookUI.h>
@@ -41,12 +41,13 @@
 
 @property (nonatomic, readwrite) BOOL addDone;
 @property (nonatomic, readwrite) BOOL isSelected;
+
 @property (nonatomic, strong) AutocompletionTableView *autoCompleter;
 @end
 
 @implementation AddTransactionViewController
 @synthesize transaction;
-@synthesize addDone,isSelected;
+@synthesize addDone,isSelected,isIncomeSelected;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -81,7 +82,8 @@
 - (IBAction)cashAction:(id)sender {
 //    PaymentModeViewController *dest = (PaymentModeViewController *)[segue destinationViewController];
 //    [dest setPaymentMode:transaction.paymentMode];
-    [[AppCommonFunctions sharedInstance]pushVCOfClass:[PaymentModeViewController class] fromNC:[self navigationController] animated:YES setRootViewController:NO modifyVC:^(id info) {
+    [[AppCommonFunctions sharedInstance]pushVCOfClass:[PaymentModeViewController class] fromNC:[self navigationController] animated:YES setRootViewController:NO modifyVC:^(PaymentModeViewController* info) {
+        [info setPaymentMode:transaction.paymentMode];
     }];
     
 }
@@ -101,17 +103,31 @@
     [formatter setDateFormat:@"hh:mma"];
     self.timeLabel.text=[[formatter stringFromDate:[NSDate date]]substringToIndex:5];
     self.primeTimeLabel.text=[NSDate stringFromDate:[NSDate date] withFormat:@"a"];
-    
 }
+
+
 - (void)viewDidLoad
 {
       [super viewDidLoad];
       [self timeDateConfigCurrent];
-      [self.btnExpense setSelected:YES];
+    
+      //[self.btnExpense setSelected:YES];
+    if (isIncomeSelected)
+    {
+        self.segmentBtn.selectedSegmentIndex=0;
+    }
+    else
+    {
+        self.segmentBtn.selectedSegmentIndex=1;
+
+    }
       [self getAllContacts];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedCategeryListNotification:) name:@"CategeryList" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedPaymentModeNotification:) name:@"PaymentMode" object:nil];
-    
+   
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"AddAccountViewController" object:nil];
+
     if (transaction.managedObjectContext == nil)
     {
         [self addNewTransaction];
@@ -175,7 +191,15 @@
             }
         }else
         {
-            NSArray *categeryIcon=[[CategoryListHandler sharedCoreDataController] getCategeryList:[NSString stringWithFormat:@"%d",TYPE_EXPENSE]];
+            NSArray *categeryIcon;
+            if (isIncomeSelected)
+            {
+                categeryIcon=[[CategoryListHandler sharedCoreDataController] getCategeryList:[NSString stringWithFormat:@"%d",TYPE_INCOME]];
+            }
+            else
+            {
+                categeryIcon=[[CategoryListHandler sharedCoreDataController] getCategeryList:[NSString stringWithFormat:@"%d",TYPE_EXPENSE]];
+            }
             if ([categeryIcon count]==0)
             {
                 [self.buttonUnhideCategery setTitle:NSLocalizedString(@"noCategory", nil) forState:UIControlStateNormal];
@@ -223,18 +247,32 @@
 
 
 
+-(void)addAccountName:(NSArray *)userInfoarrray
+{
+    UserInfo *userInfo =[userInfoarrray objectAtIndex:0];
+    [self.btnUserName setTitle:userInfo.user_name forState:UIControlStateNormal];
+    if (userInfo.user_img != nil)
+    {
+        _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
+        _imgProfile.clipsToBounds = YES;
+        _imgProfile.image=[UIImage imageWithData:userInfo.user_img];
+    }else
+        _imgProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
+}
+
+
 -(void)addNewTransaction
 {
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
-    [self.segmentBtn setSelectedSegmentIndex:1];
-
     if ([UserInfoarrray count]!=0)
     {
+        [self addAccountName:UserInfoarrray];
     }else
     {
         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
-   
+        [self addAccountName:UserInfoarrray];
     }
+    
     NSDate *currentDate = [NSDate date];
     NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* components = [calendar components:NSCalederUnit fromDate:currentDate];
@@ -319,16 +357,12 @@
     
     if ([transaction.transaction_type isEqualToNumber:[NSNumber numberWithInt:TYPE_EXPENSE]])
     {
-            [self.btnExpense setSelected:YES];
-            [self.btnIncome setSelected:NO];
-            [self.btnExpense setBackgroundColor:[UIColor colorWithRed:13/255.0 green:198/255.0 blue:170/255.0 alpha:1.0f]];
-            [self.btnIncome setBackgroundColor:[UIColor colorWithRed:186/255.0 green:239/255.0 blue:228/255.0 alpha:1.0f]];
+        self.isIncomeSelected=0;
+        
     }else
     {
-        [self.btnIncome setSelected:YES];
-        [self.btnExpense setBackgroundColor:[UIColor colorWithRed:186/255.0f green:239/255.0f blue:228/255.0f alpha:1.0f]];
-        [self.btnIncome setBackgroundColor:[UIColor colorWithRed:13/255.0f green:198/255.0f blue:170/255.0f alpha:1.0f]];
-        [self.btnExpense setSelected:NO];
+        self.isIncomeSelected=1;
+
     }
     if (transaction.pic != nil)
     {
@@ -578,11 +612,11 @@
             [dictionary setObject:[NSNumber numberWithInt:TYPE_WARRANTY] forKey:@"transaction_inserted_from"];
         }
         
-        if ([self.segmentBtn selectedSegmentIndex]==1)
+        if (!isIncomeSelected)
         {
-            [dictionary setObject:[NSNumber numberWithInt:TYPE_INCOME] forKey:@"transaction_type"];
-        }else
             [dictionary setObject:[NSNumber numberWithInt:TYPE_EXPENSE] forKey:@"transaction_type"];
+        }else
+            [dictionary setObject:[NSNumber numberWithInt:TYPE_INCOME] forKey:@"transaction_type"];
         
         
         if (transaction.managedObjectContext == nil)
@@ -760,26 +794,14 @@
     NSDictionary * info =notification.userInfo;
     if ([[info objectForKey:@"tag"] intValue]==2)
     {
-//        [self.btnWarranty setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-//        if (![self.txtwarranty.text isEqualToString:@""])
-//            [self textFieldDidChange:self.txtwarranty];
+        [self.btnWarranty setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
+        if (![self.txtwarranty.text isEqualToString:@""])
+            [self textFieldDidChange:self.txtwarranty];
     }
     if ([[info objectForKey:@"tag"] intValue]==1)
     {
         
-        if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
-        {
-//            AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-//            [self.navigationController pushViewController:catageryController animated:YES];
-            
-        }else
-        {  [self.btnUserName setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[info objectForKey:@"object"]];
-            if ([UserInfoarrray count]!=0)
-            {
-                [Utility saveToUserDefaults:[info objectForKey:@"object"]  withKey:CURRENT_USER__TOKEN_ID];
-            }
-        }
+        
     }
 }
 
@@ -916,6 +938,7 @@
     RESIGN_KEYBOARD
     [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
     {
+        
         NSCalendar* calendar = [NSCalendar currentCalendar];
         NSDateComponents* components = [calendar components:NSCalederUnit fromDate:selectedDate];
         [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
@@ -977,14 +1000,6 @@
 }
 
 
-- (IBAction)incomebtnClick:(id)sender
-{
-    [sender setSelected:YES];
-    [self.btnExpense setBackgroundColor:[UIColor colorWithRed:186/255.0f green:239/255.0f blue:228/255.0f alpha:1.0f]];
-    [sender setBackgroundColor:[UIColor colorWithRed:13/255.0f green:198/255.0f blue:170/255.0f alpha:1.0f]];
-    [self.btnExpense setSelected:NO];
-    [self.view reloadInputViews];
-}
 
 
 
@@ -1003,14 +1018,7 @@
 }
 
 
-- (IBAction)expensebtnClick:(id)sender
-{
-    [sender setSelected:YES];
-    [self.btnIncome setSelected:NO];
-    [sender setBackgroundColor:[UIColor colorWithRed:13/255.0 green:198/255.0 blue:170/255.0 alpha:1.0f]];
-    [self.btnIncome setBackgroundColor:[UIColor colorWithRed:186/255.0 green:239/255.0 blue:228/255.0 alpha:1.0f]];
-    [self.view reloadInputViews];
-}
+
 
 
 
@@ -1139,12 +1147,8 @@
 
 - (IBAction)btnUserNameClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
-    [self.txtEnterLocation resignFirstResponder];
-    [self.txtTagaPerson resignFirstResponder];
-    [self.txtwarranty resignFirstResponder];
-    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
+    RESIGN_KEYBOARD
+//    [self animateView:self.dobView xCoordinate:0 yCoordinate:0];
     NSMutableArray *userInfoList=[[NSMutableArray alloc] init];
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
     if ([UserInfoarrray count]>1)
@@ -1155,22 +1159,25 @@
         }
     }
     [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:userInfoList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
     {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"AddAccountViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-        poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+            return ;
+        }
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"addAccount", nil)])
+        {
+            AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+            [self.navigationController pushViewController:catageryController animated:YES];
+            
+        }else
+        {  [self.btnUserName setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[actionSheet buttonTitleAtIndex:buttonIndex]];
+            if ([UserInfoarrray count]!=0)
+            {
+                [Utility saveToUserDefaults:[actionSheet buttonTitleAtIndex:buttonIndex]  withKey:CURRENT_USER__TOKEN_ID];
+            }
+        }
+    }];
 }
 
 
@@ -1194,16 +1201,24 @@
 
 
 
-- (IBAction)indexChanged:(id)sender
+- (IBAction)indexChanged:(UISegmentedControl*)sender
 {
-    for (int i=0; i<[self.segmentBtn.subviews count]; i++)
+    if (sender.selectedSegmentIndex==1)
     {
-        for (UIControl *subview in self.segmentBtn.subviews)
-        {
-            subview.backgroundColor = [subview isSelected] ? GREEN_COLOR : nil;
-        }
+        [[[sender subviews] objectAtIndex:0] setBackgroundColor:GREEN_COLOR];
+        [[[sender subviews] objectAtIndex:1] setBackgroundColor:[UIColor clearColor]];
+        isIncomeSelected=0;
     }
-}
+    else
+    {
+        isIncomeSelected=1;
+        [[[sender subviews] objectAtIndex:1] setBackgroundColor:GREEN_COLOR];
+        [[[sender subviews] objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
+    }
+    
+   
+
+   }
 
 
 @end

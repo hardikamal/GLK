@@ -208,7 +208,7 @@
             self.imgeFromProfile.clipsToBounds = YES;
             self.imgeFromProfile.image=[UIImage imageWithData:userInfo.user_img];
         }else
-            self.imgeFromProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+            self.imgeFromProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
     }
     
     NSArray *toUserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserTokenid:transaction.toaccount];
@@ -222,7 +222,7 @@
             self.imageToProfile.clipsToBounds = YES;
             self.imageToProfile.image=[UIImage imageWithData:userInfo.user_img];
         }else
-            self.imageToProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+            self.imageToProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
     }
     
     NSString *nDate=[transaction.date stringValue];
@@ -251,61 +251,10 @@
 {
     NSDictionary * info =notification.userInfo;
     
-    if ([[info objectForKey:@"tag"] intValue]==2)
-    {
-        if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
-            
-        {
-                 AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-                [self.navigationController pushViewController:catageryController animated:YES];
-            
-        }else
-        {
-            [self.btnUserTo setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserTo.titleLabel.text];
-            NSString *userToken;
-            if ([UserInfoarrray count]!=0)
-            {
-                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
-                userToken=userInfo.user_token_id;
-                if (userInfo.user_img != nil)
-                {
-                    self.imageToProfile.layer.cornerRadius = self.imageToProfile.frame.size.width / 2;
-                    self.imageToProfile.clipsToBounds = YES;
-                    self.imageToProfile.image=[UIImage imageWithData:userInfo.user_img];
-                }else
-                    self.imageToProfile.image=[UIImage imageNamed:@"custom_profile.png"];
-            }
-        }
-    }
+   
     if ([[info objectForKey:@"tag"] intValue]==1)
     {
-        if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
-            
-        {
-            AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-            [self.navigationController pushViewController:catageryController animated:YES];
-        }else
-        {
-            [Utility saveToUserDefaults:[info objectForKey:@"object"]  withKey:CURRENT_USER__TOKEN_ID];
-            [self.btnUserFrom setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserFrom.titleLabel.text];
-            NSString *userToken;
-            if ([UserInfoarrray count]!=0)
-            {
-                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
-                userToken=userInfo.user_token_id;
-                if (userInfo.user_img != nil)
-                {
-                    self.imgeFromProfile.layer.cornerRadius = self.imgeFromProfile.frame.size.width / 2;
-                    self.imgeFromProfile.clipsToBounds = YES;
-                    self.imgeFromProfile.image=[UIImage imageWithData:userInfo.user_img];
-                }else
-                    self.imgeFromProfile.image=[UIImage imageNamed:@"custom_profile.png"];
             }
-
-        }
-    }
   
 }
 
@@ -334,7 +283,7 @@
         self.imgeFromProfile.image=[UIImage imageWithData:userInfo.user_img];
         
     }else
-        self.imgeFromProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+        self.imgeFromProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
 }
 
 
@@ -349,7 +298,7 @@
         self.imageToProfile.image=[UIImage imageWithData:userInfo.user_img];
         
     }else
-        self.imageToProfile.image=[UIImage imageNamed:@"custom_profile.png"];
+        self.imageToProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
 }
 
 
@@ -442,13 +391,18 @@
     
     [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode:UIDatePickerModeDate selectedDate:[NSDate date] doneBlock:^(ActionSheetDatePicker *picker, NSDate* selectedDate, id origin)
     {
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
-        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
         
-        self.lblMonthYear.text=[NSString stringWithFormat:@"%@, %ld",[[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month-1],(long)selectedDate.year];
-        
-        self.lblDay.text=[NSString stringWithFormat:@"%@,%ld", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday]-1],(long)[compsday day]];
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* components = [calendar components:NSCalederUnit fromDate:selectedDate];
+        [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
+        NSString *combined;
+        if ([components month]<10)
+        {
+            combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
+        }else
+            combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
+        [self.lblMonthYear setText:combined];
+       
         
     } cancelBlock:^(ActionSheetDatePicker *picker)
     {
@@ -514,9 +468,8 @@
 
 - (IBAction)btnDoneClick:(id)sender
 {
-    
-    [_txtAmount resignFirstResponder];
-    [_txtDescription resignFirstResponder];
+ RESIGN_KEYBOARD
+   
     if ([self CheckTransactionValidity])
     {
         NSMutableDictionary *dictionary=[[NSMutableDictionary alloc]init];
@@ -661,8 +614,7 @@
 
 - (IBAction)btnUserToClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
+    RESIGN_KEYBOARD
     NSMutableArray *userInfoList=[[NSMutableArray alloc] init];
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
     if ([UserInfoarrray count]>1)
@@ -673,29 +625,42 @@
             [userInfoList addObject:info.user_name];
         }
     }
-    [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:2];
-    [poplistview setNotificationName:@"AddTransferViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-    poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
+    //--------------------------
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:userInfoList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+             return ;
+         }
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"addAccount", nil)])
+             
+         {
+             AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+             [self.navigationController pushViewController:catageryController animated:YES];
+             
+         }else
+         {
+             [self.btnUserTo setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+             NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserTo.titleLabel.text];
+             NSString *userToken;
+             if ([UserInfoarrray count]!=0)
+             {
+                 UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
+                 userToken=userInfo.user_token_id;
+                 if (userInfo.user_img != nil)
+                 {
+                     self.imageToProfile.layer.cornerRadius = self.imageToProfile.frame.size.width / 2;
+                     self.imageToProfile.clipsToBounds = YES;
+                     self.imageToProfile.image=[UIImage imageWithData:userInfo.user_img];
+                 }else
+                     self.imageToProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
+             }
+         }
+     }];
 }
 
 - (IBAction)btnUserFromClick:(id)sender
 {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
+    RESIGN_KEYBOARD
     NSMutableArray *userInfoList=[[NSMutableArray alloc] init];
     NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
     if ([UserInfoarrray count]>1)
@@ -705,23 +670,38 @@
             [userInfoList addObject:info.user_name];
         }
     }
-    [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"AddTransferViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-          poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:userInfoList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+             return ;
+         }
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"addAccount", nil)])
+             
+         {
+             AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+             [self.navigationController pushViewController:catageryController animated:YES];
+         }else
+         {
+             [Utility saveToUserDefaults:[actionSheet buttonTitleAtIndex:buttonIndex]  withKey:CURRENT_USER__TOKEN_ID];
+             [self.btnUserFrom setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+             NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserFrom.titleLabel.text];
+             NSString *userToken;
+             if ([UserInfoarrray count]!=0)
+             {
+                 UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
+                 userToken=userInfo.user_token_id;
+                 if (userInfo.user_img != nil)
+                 {
+                     self.imgeFromProfile.layer.cornerRadius = self.imgeFromProfile.frame.size.width / 2;
+                     self.imgeFromProfile.clipsToBounds = YES;
+                     self.imgeFromProfile.image=[UIImage imageWithData:userInfo.user_img];
+                 }else
+                     self.imgeFromProfile.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
+             }
+             
+         }
+
+     }];
 }
 
 

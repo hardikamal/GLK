@@ -19,6 +19,7 @@
 @property (nonatomic) RATreeViewRowAnimation rowsExpandingAnimation;
 @property (nonatomic) RATreeViewRowAnimation rowsCollapsingAnimation;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentControl;
 @property (strong, nonatomic) NSString *selectedCategery;
 @property (strong, nonatomic) NSString *selectedSubCategery;
 - (IBAction)newCatagerybtnClick:(id)sender;

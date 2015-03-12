@@ -32,6 +32,7 @@
 @property (strong, nonatomic)  Reminder *transaction;
 @property (strong, nonatomic) IBOutlet UILabel *lblAmount;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
 
 - (IBAction)BackbtnClick:(id)sender;
 

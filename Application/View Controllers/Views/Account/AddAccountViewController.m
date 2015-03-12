@@ -33,14 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Utility setFontFamily:Embrima forView:self.view andSubViews:YES];
     locationStatus=NO;
     hideStatus=NO;
-    [self.lblTitle setFont:[UIFont fontWithName:Ebrima_Bold size:17.0f]];
-    [self.lblHidestaus setFont:[UIFont fontWithName:Embrima size:16.0f]];
-    [self.lblMyLocation setFont:[UIFont fontWithName:Embrima size:16.0f]];
- 
-    if (self.info.managedObjectContext != nil)
+        if (self.info.managedObjectContext != nil)
     {
         [self.btnProfileImage setImage:[UIImage imageWithData:[self.info user_img]]  forState:UIControlStateNormal];
         [self setTitle:NSLocalizedString(@"editAccount", nil)];
@@ -59,7 +54,7 @@
              self.btnProfileImage.layer.borderColor = [UIColor blackColor].CGColor;
          }else
          {
-              [self.btnProfileImage setImage:[UIImage imageNamed:@"camera_profile_button.png"] forState:UIControlStateNormal];
+              [self.btnProfileImage setImage:[UIImage imageNamed:@"camera.png"] forState:UIControlStateNormal];
          }
         
         if ([self.info.hide_status intValue])

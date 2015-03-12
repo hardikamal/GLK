@@ -129,7 +129,7 @@
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     if (image ==nil)
     {
-        newImage=[UIImage imageNamed:@"circle.PNG"];
+        newImage=[UIImage imageNamed:@"circle.png"];
     }
     UIGraphicsEndImageContext();
     

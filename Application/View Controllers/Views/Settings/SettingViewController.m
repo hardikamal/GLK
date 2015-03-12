@@ -45,7 +45,7 @@
     [self uISetUp];
     
     _scrollViewSubview.translatesAutoresizingMaskIntoConstraints = YES;
-    _scrollViewSubview.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width, 820);
+    _scrollViewSubview.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width-10, 820);
     self.scrollView.contentSize = _scrollViewSubview.frame.size;
     self.scrollView.contentOffset = CGPointZero;
 
@@ -73,9 +73,9 @@
         [self.profileView setHidden:YES];
         [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, self.profileView.frame.origin.y, self.securityView.frame.size.width, self.securityView.frame.size.height)];
         [self.securityView setFrame:CGRectMake(self.profileView.frame.origin.x, CGRectGetMinX(self.profileView.frame),self.securityView.frame.size.width, self.securityView.frame.size.height)];
-        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 700);
+        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width-10, 700);
     }else
-        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 815);
+        self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width-10, 815);
 }
 -(void)viewWillAppear:(BOOL)animated
 {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SWTableViewCell.h"
 @interface HomeViewCell : SWTableViewCell<SWTableViewCellDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *lblColor;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgCatagery;
 @property (strong, nonatomic) IBOutlet UILabel *lblCatagory;
@@ -17,8 +18,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblDiscription;
 @property (strong, nonatomic) IBOutlet UILabel *lblExtra;
 @property (weak, nonatomic) IBOutlet UIImageView *lblcloud;
-@property (weak, nonatomic) IBOutlet UILabel *lblColor;
-
-
 
 @end

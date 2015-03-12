@@ -130,7 +130,7 @@
             self.imageTransfer.clipsToBounds = YES;
             self.imageTransfer.image=[UIImage imageWithData:userInfo.user_img];
         }else
-            self.imageTransfer.image=[UIImage imageNamed:@"custom_profile.png"];
+            self.imageTransfer.image=[UIImage imageNamed:@"defaultprofile_pic.png"];
     }
 }
 

@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tblView;
 @property (strong, nonatomic) IBOutlet UILabel *lblTransaction;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
 
 
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;

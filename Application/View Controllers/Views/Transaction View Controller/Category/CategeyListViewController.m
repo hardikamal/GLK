@@ -63,6 +63,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedDemoListNotification:) name:@"DemoListner" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNotification:) name:@"TielPopoverList" object:nil];
 }
+- (IBAction)indexChanged:(id)sender
+{
+    
+        self.data = [[self getDefaultCategoryWithSubcategoryList] objectAtIndex:[sender selectedSegmentIndex]];
+    [self.treeView reloadData];
+   
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:UPDATION_ON_SERVER_TIME]) {
@@ -79,7 +86,7 @@
     self.rowsCollapsingAnimation = RATreeViewRowAnimationBottom;
     
     if (self.treeView == nil) {
-        self.treeView = [[RATreeView alloc] initWithFrame:self.view.bounds];
+        self.treeView = [[RATreeView alloc] initWithFrame:CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         self.treeView.delegate = self;
         self.treeView.dataSource = self;
         self.treeView.separatorStyle = RATreeViewCellSeparatorStyleSingleLine;
@@ -94,46 +101,93 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)popover:(UIButton *)sender {
-    //the controller we want to present as a popover
-    DemoTableController *controller = [[DemoTableController alloc] init];
-    [controller setPosition:sender.tag];
-    
-    NSMutableArray *listArray = [[NSMutableArray alloc] init];
-    NSMutableArray *categeryName = [[NSMutableArray alloc]initWithObjects:@"Edit", @"Delete", @"Merge", nil];
-    NSMutableArray *imageName = [[NSMutableArray alloc]initWithObjects:@"edit_icon.png", @"delete_icon.png", @"merge_icon", nil];
-    for (int i = 0; i < [imageName count]; i++) {
-        NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
-        [bookListing setObject:[categeryName objectAtIndex:i] forKey:@"name"];
-        [bookListing setObject:[imageName objectAtIndex:i] forKey:@"image"];
-        [listArray addObject:bookListing];
-    }
-    
-    popover = [[FPPopoverController alloc] initWithViewController:controller];
-    popover.arrowDirection = FPPopoverNoArrow;
-    popover.border = NO;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
+- (void)popover:(UIButton *)sender
+{
+    [sender setImage:[UIImage imageNamed:@"more_button_active.png"] forState:UIControlStateNormal];
+
+   NSMutableArray *listArray = [[NSMutableArray alloc]initWithObjects:@"Edit", @"Delete", @"Merge", nil];
+       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
     RATreeNode *treeNode = [self.treeView treeNodeForIndex:indexPath.row];
     if ([self.selectedCategery isEqualToString:[treeNode.item name]] || [self.selectedSubCategery isEqualToString:[treeNode.item name]]) {
         [listArray removeObjectAtIndex:1];
-        popover.contentSize = CGSizeMake(110, 86);
     }
-    else {
-        popover.contentSize = CGSizeMake(110, 126);
-    }
-    [controller setListArray:listArray];
-    
-    //    //popover.arrowDirection = FPPopoverArrowDirectionAny;
-    //    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    //    {
-    //        popover.contentSize = CGSizeMake(300, 500);
-    //    }
     
     
-    //sender is the UIButton view
-    [popover presentPopoverFromView:sender];
-    [self.view addSubview:popover.view];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:listArray tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:@"Cancel"]) {
+            [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
+        RATreeNode *treeNode = [self.treeView treeNodeForIndex:indexPath.row];
+        self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"category = %@" andSearchText:[treeNode.item name]];
+        if (buttonIndex == 0) {
+            BOOL chek;
+            if ([self.categeryLists count] == 0) {
+                chek = YES;
+                self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"sub_category = %@" andSearchText:[treeNode.item name]];
+            }
+            else
+                chek = NO;
+            
+            AddCatageryListViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddCatageryListViewController"];
+            [catageryController setChekCatgeryOrSubCategry:chek];
+            [catageryController setCatgery:[self.categeryLists objectAtIndex:0]];
+            [self.navigationController pushViewController:catageryController animated:YES];
+            
+        }
+        else if (buttonIndex == 2) {
+            if ([self.categeryLists count] != 0) {
+                NSMutableArray *arrray = [[CategoryListHandler sharedCoreDataController] getAllCategoryList];
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
+                RATreeNode *treeNode = [self.treeView treeNodeForIndex:indexPath.row];
+                
+                for (NSString*string in arrray)
+                {
+                    if ([string isEqualToString:[[treeNode item] name]]) {
+                        [arrray removeObject:string];
+                        break;
+                    }
+                }
+
+            [ActionSheetStringPicker showPickerWithTitle:@"Merge With" rows:arrray initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, NSString* selectedValue)
+                 {
+                     [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+                    //do whatever you want to do
+                } cancelBlock:^(ActionSheetStringPicker *picker)
+                 {
+                     [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+                } origin:self.view];
+
+                
+            }
+            else {
+               
+                NSMutableArray *fetchedRecords = [[CategoryListHandler sharedCoreDataController]  getDefaultList];
+                
+                [ActionSheetStringPicker showPickerWithTitle:@"Merge With" rows:fetchedRecords initialSelection:0 doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, NSString* selectedValue)
+                 {
+                     //do whatever you want to do
+                     [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+                 } cancelBlock:^(ActionSheetStringPicker *picker) {
+                     [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+                 } origin:self.view];            }
+        }
+        else if (buttonIndex == 1) {
+            if ([self.categeryLists count] == 0) {
+                self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"sub_category = %@" andSearchText:[treeNode.item name]];
+            }
+            [sender setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"deletingthiscategorywilldeleteitstransactions", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles:nil];
+            [alert addButtonWithTitle:@"Cancel"];
+            [alert show];
+        }
+    }];
 }
 
 #pragma mark TreeView Delegate methods
@@ -211,9 +265,10 @@
             cell.imageView.image = [Utility imageWithImage:[UIImage imageNamed:@"subcategory_line.png"] scaledToSize:CGSizeMake(20, 20)];
             [cell setSeparatorInset:UIEdgeInsetsMake(10, 45, 40, 50)];
         }
-        NavigationLeftButton *button = [NavigationLeftButton buttonWithType:UIButtonTypeInfoLight];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
         [button setFrame:CGRectMake(266, 0, 44, 50)];
-        [button setImage:[UIImage imageNamed:@"option_button.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
+
         [button addTarget:self action:@selector(popover:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:button];
         [button setTag:(int)[self.treeView indexPathForItem:item].row];
@@ -238,6 +293,7 @@
 }
 
 - (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item treeNodeInfo:(RATreeNodeInfo *)treeNodeInfo {
+    
     NSString *string;
     UIImage *image;
     if (([self.treeView indexPathForItem:item].row == 0 && [self budjetViewController])) {
@@ -245,6 +301,7 @@
         image = [UIImage imageNamed:@"All_icon.png"];
     }
     else {
+//        [(UIButton*)[[treeView cellForItem:item] viewWithTag:(int)[self.treeView indexPathForItem:item].row] setImage:[UIImage imageNamed:@"more_button_active.png"] forState:UIControlStateNormal];
         NSCharacterSet *whitespace = [NSCharacterSet whitespaceCharacterSet];
         if (![self isExpenseSelected]) {
             string = [string stringByTrimmingCharactersInSet:whitespace];
@@ -465,72 +522,11 @@
 }
 
 - (void)receivedDemoListNotification:(NSNotification *)notification {
-    [popover dismissPopoverAnimated:YES];
-    NSDictionary *info = notification.userInfo;
-    NSString *number = [info objectForKey:@"index"];
-    NSNumber *positon = [info objectForKey:@"position"];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[positon integerValue] inSection:0];
-    RATreeNode *treeNode = [self.treeView treeNodeForIndex:indexPath.row];
-    self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"category = %@" andSearchText:[treeNode.item name]];
-    if ([number intValue] == 0) {
-        BOOL chek;
-        if ([self.categeryLists count] == 0) {
-            chek = YES;
-            self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"sub_category = %@" andSearchText:[treeNode.item name]];
-        }
-        else
-            chek = NO;
-        
-        AddCatageryListViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddCatageryListViewController"];
-        [catageryController setChekCatgeryOrSubCategry:chek];
-        [catageryController setCatgery:[self.categeryLists objectAtIndex:0]];
-        [self.navigationController pushViewController:catageryController animated:YES];
-    }
-    else if ([number intValue] == 2) {
-        if ([self.categeryLists count] != 0) {
-            NSMutableArray *arrray = [[CategoryListHandler sharedCoreDataController] getAllCategoryList];
-            NSMutableArray *incomeList = [[NSMutableArray alloc] init];
-            for (NSString *string in arrray) {
-                NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-                [dic setObject:string forKey:@"name"];
-                [dic setObject:@"0" forKey:@"tag"];
-                [incomeList addObject:dic];
-            }
-            CGFloat xWidth = self.view.bounds.size.width - 100.0f;
-            CGFloat yHeight = 10 * 30.0f;
-            CGFloat yOffset = (self.view.bounds.size.height - yHeight) / 2.0f;
-            TitielPopoverListView *poplistview = [[TitielPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-            [poplistview setListArray:incomeList];
-            [poplistview setCategeryOrsubcategery:[treeNode.item name]];
-            poplistview.listView.scrollEnabled = YES;
-            [poplistview setTitle:@"Select Category"];
-            [poplistview show];
-        }
-        else {
-            CGFloat xWidth = self.view.bounds.size.width - 100.0f;
-            CGFloat yHeight = 10 * 30.0f;
-            CGFloat yOffset = (self.view.bounds.size.height - yHeight) / 2.0f;
-            TitielPopoverListView *poplistview = [[TitielPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-            NSMutableArray *fetchedRecords = [[CategoryListHandler sharedCoreDataController]  getDefaultList];
-            [poplistview setListArray:fetchedRecords];
-            [poplistview setCategeryOrsubcategery:[treeNode.item name]];
-            poplistview.listView.scrollEnabled = YES;
-            [poplistview setTitle:@"Select Category"];
-            [poplistview show];
-        }
-    }
-    else if ([number intValue] == 1) {
-        if ([self.categeryLists count] == 0) {
-            self.categeryLists = [[CategoryListHandler sharedCoreDataController] getCategeryAttributeName:@"sub_category = %@" andSearchText:[treeNode.item name]];
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert" message:NSLocalizedString(@"deletingthiscategorywilldeleteitstransactions", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles:nil];
-        [alert addButtonWithTitle:@"Cancel"];
-        [alert show];
-    }
-}
+  }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
+        
         for (CategoryList *list in self.categeryLists) {
             [[TransactionHandler sharedCoreDataController] deleteCategeroyList:list.category chekServerUpdation:NO];
             [[ReminderHandler sharedCoreDataController] deleteCategeroyList:list.category chekServerUpdation:NO];

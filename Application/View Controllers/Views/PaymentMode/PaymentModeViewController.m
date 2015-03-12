@@ -143,7 +143,7 @@
             imageView.image = [UIImage imageWithData:mode.paymentmode_icon];
         }else
         {
-            imageView.image = [UIImage imageNamed:@"paymentmode.png"];
+            imageView.image = [UIImage imageNamed:@"paymentmode_icon.png"];
         }
         
         if ([mode.hide_status intValue])
@@ -152,7 +152,7 @@
         }
         NavigationLeftButton *button = [NavigationLeftButton buttonWithType:UIButtonTypeInfoLight];
         [button setFrame:CGRectMake(266, 0, 44, 44)];
-        [button setImage:[UIImage imageNamed:@"option_button.png"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"more_button_inactive.png"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(popover:) forControlEvents:UIControlEventTouchUpInside];
         [cell addSubview:button];
         [button setTag:(int)[indexPath row]];
@@ -198,62 +198,39 @@
 
 -(void)popover:(UIButton*)sender
 {
-    DemoTableController *controller = [[DemoTableController alloc] init];
-    [controller setPosition:sender.tag];
-    NSMutableArray *listArray=[[NSMutableArray alloc] init];
-    NSMutableArray *categeryName;
-    NSMutableArray *imageName;
-    popover = [[FPPopoverController alloc] initWithViewController:controller];
-    popover.arrowDirection = FPPopoverNoArrow;
-    popover.border = NO;
-    categeryName=[[NSMutableArray alloc]initWithObjects:@"Edit",@"Delete",nil];
-    imageName=[[NSMutableArray alloc]initWithObjects:@"edit_icon.png",@"delete_icon.png",nil];
+    
+    //---------------------------
+    NSMutableArray *listArray=[[NSMutableArray alloc]initWithObjects:@"Edit",@"Delete",nil];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:listArray tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+    {
+        if (buttonIndex==0)
+        {
+            CreatePaymentModeViewController *createViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"CreatePaymentModeViewController"];
+            [createViewController setMode:[self.paymentModeList objectAtIndex:sender.tag]];
+            // [createViewController setString:]
+            [self.navigationController pushViewController:createViewController animated:YES];
+        }else if (buttonIndex==1)
+        {
+            
+            index=[NSNumber numberWithInteger:sender.tag];
+            UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:NSLocalizedString(@"deletePaymentMode", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
+            [alert addButtonWithTitle:@"Cancel"];
+            [alert show];
+            
+            
+        }
+
+    }];
+   
     
     
-    for (int i=0; i<[imageName count]; i++)
-    {
-        NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
-        [bookListing setObject:[categeryName objectAtIndex:i] forKey:@"name"];
-        [bookListing setObject:[imageName objectAtIndex:i] forKey:@"image"];
-        [listArray addObject:bookListing];
-    }
-    Paymentmode *mode=[self.paymentModeList objectAtIndex:sender.tag];
-    if (![self.paymentMode isEqualToString:mode.paymentMode])
-    {
-          popover.contentSize = CGSizeMake(110, 86);
-    }else
-    {
-           popover.contentSize = CGSizeMake(110, 43);
-    }
-    [controller setListArray:listArray];
-    [popover presentPopoverFromView:sender];
-    [self.view addSubview:popover.view];
+   
 }
 
 
 -(void) receivedNotification:(NSNotification*) notification
 {
-   [popover dismissPopoverAnimated:YES];
-    NSDictionary * info =notification.userInfo;
-    NSString *number=[info objectForKey:@"index"];
-    NSNumber *positon=[info objectForKey:@"position"];
-   
-    if ([number intValue]==0)
-    {
-        CreatePaymentModeViewController *createViewController=[self.storyboard instantiateViewControllerWithIdentifier:@"CreatePaymentModeViewController"];
-        [createViewController setMode:[self.paymentModeList objectAtIndex:[positon intValue]]];
-       // [createViewController setString:]
-        [self.navigationController pushViewController:createViewController animated:YES];
-    }else if ([number intValue]==1)
-    {
-        
-         index=positon;
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:NSLocalizedString(@"deletePaymentMode", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
-        [alert addButtonWithTitle:@"Cancel"];
-        [alert show];
-        
-     
-    }
+    
     
 }
 

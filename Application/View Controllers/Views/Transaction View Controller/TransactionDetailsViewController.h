@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Transactions.h"
 #import "NavigationLeftButton.h"
-@interface TransactionDetailsViewController : UIViewController<UIAlertViewDelegate>
+@interface TransactionDetailsViewController : UIViewController <UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet NavigationLeftButton *btnBack;
 @property (strong, nonatomic) IBOutlet UIImageView *imgView;
 @property (strong, nonatomic) IBOutlet UILabel *lblTielExtra;
@@ -41,5 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)BackbtnClick:(id)sender;
 @property (strong, nonatomic) IBOutlet NSString *newtitle;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
+
 
 @end

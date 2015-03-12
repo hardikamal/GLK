@@ -119,10 +119,13 @@
     [_chart setShowLabels:YES];
    
     self.chartValues = @[
-                         @{ @"name":@"first", @"value":[NSNumber numberWithDouble:2], @"color":[UIColor redColor] },
-                         @{ @"name":@"second", @"value":[NSNumber numberWithDouble:2], @"color":GREEN_COLOR }
+                         @{ @"name":@"first", @"value":[NSNumber numberWithDouble:totalamountExpense], @"color":[UIColor redColor] },
+                         @{ @"name":@"second", @"value":[NSNumber numberWithDouble:totalamountIncome], @"color":GREEN_COLOR }
                          ];
-    [_chart setChartValues:_chartValues animation:YES options:VBPieChartAnimationFanAll];
+    
+    if (totalamountIncome+totalamountExpense > 0) {
+        [_chart setChartValues:_chartValues animation:YES options:VBPieChartAnimationFanAll];
+    }
 }
 
 - (void)viewDidLoad
@@ -143,7 +146,6 @@
     fromLabel = [[UIUnderlinedButton alloc] init];
     [fromLabel setTitle:NSLocalizedString(@"To View All Transactions,Tap Here.", nil) forState:UIControlStateNormal];
     
-    fromLabel.titleLabel.font=[UIFont fontWithName:Embrima size:16];
     
     [fromLabel addTarget:self action:@selector(showHistryView) forControlEvents:UIControlEventTouchUpInside];
     [fromLabel setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
@@ -165,19 +167,16 @@
 {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        NSString *userToken=@"0";
-        
-//         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:userAccountName];
-//        
-//            if ([UserInfoarrray count]!=0 )
-//            {
-//                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
-//                userToken=userInfo.user_token_id;
-//            }else
-//            {
-//                userToken=@"";
-//            }
-        
+        NSString *userToken=@"";
+         NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[Utility userDefaultsForKey:CURRENT_USER__TOKEN_ID]];
+            if ([UserInfoarrray count]!=0 )
+            {
+                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
+                userToken=userInfo.user_token_id;
+            }else
+            {
+                userToken=@"";
+            }
         
         self.warrantyItems=[[TransactionHandler sharedCoreDataController] getAllWarranrtyOnHomeScreen:[NSString stringWithFormat:@"%d",TYPE_WARRANTY] :userToken];
         
@@ -202,21 +201,32 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
           //  [MBProgressHUD hideHUDForView:self.viewEmpty animated:YES];
-            //[self showAllTransactionDetailOnHomeScreen];
+            finalArray = [[NSMutableArray alloc]init];
+             [self updateBudjetTabeview:self.budgetItems];
             [self updateTrasationTabeview:self.transcationItems];
+           
+         
+            [self showAllTransactionDetailOnHomeScreen];
             [self.tblviewTransaction reloadData];
-            [self.tblviewBudget reloadData];
-            [self.tblviewWarranty reloadData];
             
         });
     });
 }
 
 
+-(void)updateBudjetTabeview:(NSMutableArray*)array
+{
+    for (Budget *transaction in array)
+    {
+        [finalArray addObject:transaction];
+    }
+}
+
+
+
 -(void)updateTrasationTabeview:(NSMutableArray*)array
 {
-     finalArray = [[NSMutableArray alloc]init];
-    for (Transactions *transaction in array)
+      for (Transactions *transaction in array)
     {
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:([[transaction.date stringValue] doubleValue] / 1000)];
         NSLog(@"days ago %d",date.daysAgo);
@@ -225,6 +235,9 @@
         if ([lastObj isKindOfClass:[Transactions class]])
         {
             dateToCompare = [NSDate dateWithTimeIntervalSince1970:([[lastObj.date stringValue] doubleValue] / 1000)];
+        }else if ([lastObj isKindOfClass:[Budget class]])
+        {
+            
         }else
         {
             dateToCompare = lastObj;
@@ -285,22 +298,18 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [[UINavigationBar appearance] setBarTintColor:GREEN_COLOR];
-    
-    [self updateAccout];
+    self.navigationController.navigationBarHidden=0;
+   // [self updateAccout];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CURRENT_CURRENCY_TIMESTAMP])
     {
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        self.viewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"CurrencyPopUpViewController"];
-        [self.navigationController presentViewController:self.viewController animated:YES completion:nil];
+
+        [[AppCommonFunctions sharedInstance] presentVCOfClass:[CurrencyPopUpViewController class] fromVC:self animated:YES modifyVC:nil];
     }else
     {
         [self loginCalBacksViewController];
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self drawChart];
-        
-    });
+
 }
 
 -(void)receivedSelectViewListNotification:(NSNotification*) notification
@@ -309,8 +318,8 @@
     {
         [[HomeHelper sharedCoreDataController] upgradeBackendDataOnServer];
     }
-    [self updateAccout];
-    [self profressView];
+    //[self updateAccout];
+     [self profressView];
 }
 
 
@@ -354,290 +363,53 @@
     [self profressView];
 }
 
-/*
+
 -(void)showAllTransactionDetailOnHomeScreen
 {
-    [self.scrollview setFrame:CGRectMake(0, self.scrollview.frame.origin.y, 320, self.scrollview.frame.size.height)];
     NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
     NSString *currency= [[[Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]] componentsSeparatedByString:@"-"] objectAtIndex:1];
-    
     NSString *amountIncome = [fmt stringFromNumber:[NSNumber numberWithDouble:totalamountIncome]];
     NSString *amountExpense = [fmt stringFromNumber:[NSNumber numberWithDouble:totalamountExpense]];
     NSString *amountBalance = [fmt stringFromNumber:[NSNumber numberWithDouble:totalamountBalance]];
-    
-    BOOL _W_B_T=([self.warrantyItems count]==0)&& ([self.budgetItems count]==0)&&([self.transcationItems count]==0);
-    BOOL _W_BT=([self.warrantyItems count]==0)&& ([self.budgetItems count]==0)&&([self.transcationItems count]!=0);
-    BOOL _WB_T=([self.warrantyItems count]==0)&& ([self.budgetItems count]!=0)&&([self.transcationItems count]==0);
-    BOOL  _WBT=([self.warrantyItems count]==0)&& ([self.budgetItems count]!=0)&&([self.transcationItems count]!=0);
-    BOOL W_B_T=([self.warrantyItems count]!=0)&& ([self.budgetItems count]!=0)&& ([self.transcationItems count]!=0);
-    BOOL W_BT=([self.warrantyItems count]!=0)&& ([self.budgetItems count]==0)&&([self.transcationItems count]!=0);
-    BOOL WB_T=([self.warrantyItems count]!=0)&& ([self.budgetItems count]!=0)&&([self.transcationItems count]==0);
-    BOOL WBT=([self.warrantyItems count]!=0) && ([self.budgetItems count]!=0)&&([self.transcationItems count]!=0);
-    CGFloat lblehight =0;
-    if (_W_B_T)
-    {
-        [self.lblTransaction setHidden:YES];
-        [self.lblWarranty setHidden:YES];
-        [self.lblBudget setHidden:YES];
-        
+    if ([finalArray count]==0) {
         [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:YES];
-        [self.tblviewWarranty setHidden:YES];
-    
-        [self.scrollview addSubview:self.viewEmpty];
-        [fromLabel setHidden:YES];
-        [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:YES];
-        [self.tblviewWarranty setHidden:YES];
-    }else if (_W_BT)
-    {
-//        lblehight=20;
-//        [self.lblTransaction setHidden:NO];
-//        [self.lblWarranty setHidden:YES];
-//        [self.lblBudget setHidden:YES];
-//        
-//        [self.tblviewTransaction setHidden:NO];
-//        [self.tblviewBudget setHidden:YES];
-//        [self.tblviewWarranty setHidden:YES];
-//        
-//        CGRect frame;
-//                frame = self.lblTransaction.frame;
-//                frame.origin.y=5;
-//                self.lblTransaction.frame = frame;
-//        
-//                frame = self.tblviewTransaction.frame;
-//                frame.size.height = ([self.transcationItems count])*85;
-//                frame.origin.y =CGRectGetMaxY(self.lblTransaction.frame)+10;
-//                self.tblviewTransaction.frame = frame;
-        
-        
-    }else if (_WB_T)
-    {
-        
-        [self.lblTransaction setHidden:YES];
-        [self.lblWarranty setHidden:NO];
-        [self.lblBudget setHidden:NO];
-        
-        [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:NO];
-        [self.tblviewWarranty setHidden:YES];
-    }else if (_WBT)
-    {
-        
-        [self.lblTransaction setHidden:YES];
-        [self.lblWarranty setHidden:NO];
-        [self.lblBudget setHidden:YES];
-        
-        [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:YES];
-        [self.tblviewWarranty setHidden:NO];
-        
-    }else if (W_B_T)
-    {
-        
-        [self.lblTransaction setHidden:YES];
-        [self.lblWarranty setHidden:YES];
-        [self.lblBudget setHidden:NO];
-        
-        [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:NO];
-        [self.tblviewWarranty setHidden:YES];
-        
-    }else if (W_BT)
-    {
-        
-        [self.lblTransaction setHidden:YES];
-        [self.lblWarranty setHidden:YES];
-        [self.lblBudget setHidden:NO];
-        
-        [self.tblviewTransaction setHidden:YES];
-        [self.tblviewBudget setHidden:NO];
-        [self.tblviewWarranty setHidden:YES];
+//        self.viewEmpty.frame=CGRectMake(0, self.tblviewTransaction.frame.origin.y, self.viewEmpty.frame.size.width, self.viewEmpty.frame.size.height);
+        self.viewEmpty.center = CGPointMake(self.view.center.x, self.view.center.y+100);
+        [self.view addSubview:self.viewEmpty];
+        self.lblNoTransaction.text=@"You have not started using Gullak, start by adding a transaction";
+        [self.lblNoTransaction colorSubstring:@"Gullak"];
     }
-    else if (WB_T)
-    {
-        
-        [self.lblTransaction setHidden:NO];
-        [self.lblWarranty setHidden:YES];
-        [self.lblBudget setHidden:YES];
-        
-        [self.tblviewTransaction setHidden:NO];
-        [self.tblviewBudget setHidden:YES];
-        [self.tblviewWarranty setHidden:YES];
-        
-    }else if (WBT)
-    {
-        
-        
-        [self.lblTransaction setHidden:NO];
-        [self.lblWarranty setHidden:NO];
-        [self.lblBudget setHidden:NO];
-        
-        [self.tblviewTransaction setHidden:NO];
-        [self.tblviewBudget setHidden:NO];
-        [self.tblviewWarranty setHidden:NO];
-    }
-    
-//
-//    CGRect frame;
-//    frame = self.lblWarranty.frame;
-//    frame.origin.y=0;
-//    self.lblWarranty.frame = frame;
-//    
-//    frame = self.tblviewWarranty.frame;
-//    frame.origin.y =self.lblWarranty.frame.origin.y+self.lblWarranty.frame.size.height+2;
-//    self.tblviewWarranty.frame = frame;
-//    
-//    CGFloat lblehight =0;
-//    if ([self.budgetItems count]==0 && [self.warrantyItems count]==0 && [self.transcationItems count]==0)
-//    {
-//        [self.lblTransaction setHidden:YES];
-//        [self.lblWarranty setHidden:YES];
-//        [self.lblBudget setHidden:YES];
-//        [self.scrollview addSubview:self.viewEmpty];
-//        [fromLabel setHidden:YES];
-//        [self.tblviewTransaction setHidden:YES];
-//        
-//    }else if ([self.budgetItems count]==0 && [self.warrantyItems count]==0)
-//    {
-//        [fromLabel setHidden:NO];
-//        [self.viewEmpty removeFromSuperview];
-//      //  lblehight=20;
-//       
-//        frame = self.lblTransaction.frame;
-//        frame.origin.y =0;
-//        self.lblTransaction.frame = frame;
-//        
-//        [self.lblTransaction setHidden:NO];
-//        [self.lblWarranty setHidden:YES];
-//        [self.lblBudget setHidden:YES];
-//        
-//        frame = self.tblviewTransaction.frame;
-//        frame.size.height = ([self.transcationItems count])*82;
-//        frame.origin.y =self.tblviewWarranty.frame.origin.y;
-//        self.tblviewTransaction.frame = frame;
-//        
-//        [self.tblviewTransaction setHidden:NO];
-//        [self.tblviewBudget setHidden:YES];
-//        [self.tblviewWarranty setHidden:YES];
-//        
-//        //[self.scrollview addSubview: self.lblTransaction];
-//       // [self .scrollview addSubview:self.tblviewTransaction];
-//        
-//    }else if ([self.budgetItems count]==0 && [self.warrantyItems count]!=0)
-//    {
-//        [self.lblTransaction setHidden:NO];
-//        [self.lblWarranty setHidden:NO];
-//        [self.lblBudget setHidden:YES];
-//        lblehight=40;
-//        
-//        frame = self.tblviewWarranty.frame;
-//        frame.size.height = ([self.warrantyItems count])*130;
-//        frame.origin.y =self.tblviewWarranty.frame.origin.y;
-//        self.tblviewWarranty.frame = frame;
-//        
-//        frame = self.lblTransaction.frame;
-//        frame.origin.y =self.tblviewWarranty.frame.origin.y+self.tblviewWarranty.frame.size.height;
-//        self.lblTransaction.frame = frame;
-//        
-//        frame = self.tblviewTransaction.frame;
-//        frame.size.height = ([self.transcationItems count])*82;
-//        frame.origin.y =self.lblTransaction.frame.origin.y+self.lblTransaction.frame.size.height+2;
-//        self.tblviewTransaction.frame = frame;
-//        
-//        [self.tblviewTransaction setHidden:NO];
-//        [self.tblviewBudget setHidden:YES];
-//        [self.tblviewWarranty setHidden:NO];
-//        
-//    }else if ([self.budgetItems count]!=0 && [self.warrantyItems count]==0)
-//    {
-//        lblehight=40;
-//        [self.lblTransaction setHidden:NO];
-//        [self.lblWarranty setHidden:YES];
-//        [self.lblBudget setHidden:NO];
-//        
-//        frame = self.lblBudget.frame;
-//        frame.origin.y =self.lblWarranty.frame.origin.y;
-//        self.lblBudget.frame = frame;
-//        
-//        frame = self.tblviewBudget.frame;
-//        frame.size.height = ([self.budgetItems count])*200;
-//        frame.origin.y =self.lblBudget.frame.origin.y+self.lblBudget.frame.size.height+2;
-//        self.tblviewBudget.frame = frame;
-//        
-//        
-//        frame = self.lblTransaction.frame;
-//        frame.origin.y =self.tblviewBudget.frame.origin.y+self.tblviewBudget.frame.size.height+2;
-//        self.lblTransaction.frame = frame;
-//        
-//        frame = self.tblviewTransaction.frame;
-//        frame.size.height = ([self.transcationItems count])*82;
-//        frame.origin.y =self.lblTransaction.frame.origin.y+self.lblTransaction.frame.size.height+2;
-//        self.tblviewTransaction.frame = frame;
-//        
-//        [self.tblviewTransaction setHidden:NO];
-//        [self.tblviewBudget setHidden:NO];
-//        [self.tblviewWarranty setHidden:YES];
-//        
-//    }else if ([self.budgetItems count]!=0 && [self.warrantyItems count]!=0)
-//    {
-//        lblehight=60;
-//        [self.lblTransaction setHidden:NO];
-//        [self.lblWarranty setHidden:NO];
-//        [self.lblBudget setHidden:NO];
-//        
-//        frame = self.tblviewWarranty.frame;
-//        frame.size.height = ([self.warrantyItems count])*130;
-//        frame.origin.y =self.tblviewWarranty.frame.origin.y;
-//        self.tblviewWarranty.frame = frame;
-//        
-//        frame = self.lblBudget.frame;
-//        frame.origin.y =self.tblviewWarranty.frame.origin.y+self.tblviewWarranty.frame.size.height+2;
-//        self.lblBudget.frame = frame;
-//        
-//        frame = self.tblviewBudget.frame;
-//        frame.size.height = ([self.budgetItems count])*200;
-//        frame.origin.y =self.lblBudget.frame.origin.y+self.lblBudget.frame.size.height+2;
-//        self.tblviewBudget.frame = frame;
-//        
-//        frame = self.lblTransaction.frame;
-//        frame.origin.y =self.tblviewBudget.frame.origin.y+self.tblviewBudget.frame.size.height+2;
-//        self.lblTransaction.frame = frame;
-//        
-//        frame = self.tblviewTransaction.frame;
-//        frame.size.height = ([self.transcationItems count])*82;
-//        frame.origin.y =self.lblTransaction.frame.origin.y+self.lblTransaction.frame.size.height+2;
-//        self.tblviewTransaction.frame = frame;
-//        [self.tblviewTransaction setHidden:NO];
-//        [self.tblviewBudget setHidden:NO];
-//        [self.tblviewWarranty setHidden:NO];
-//    }
-
-    CGFloat scrollhight =self.lblWarranty.frame.origin.y+50+lblehight+([_transcationItems count]*82)+(([self.warrantyItems count])*130)+([self.budgetItems count])*200;
-    
-    if (scrollhight<380)
-    {
-         self.scrollview.contentSize = CGSizeMake(320,380);
-    }else
-        self.scrollview.contentSize = CGSizeMake(300,(self.lblWarranty.frame.origin.y+50+lblehight+([_transcationItems count])*82)+(([self.warrantyItems count])*130)+([self.budgetItems count])*200);
-    
-    [self.scrollview setBackgroundColor:[UIColor redColor]];
-    
-    NSLog(@"tblviewWarranty:%f",self.tblviewTransaction.frame.size.height);
-    NSLog(@"tblviewBudget:%f",self.scrollview.frame.size.height);
-    NSLog(@"tblviewWarranty:%f",self.scrollview.frame.origin.x);
-    
     [fromLabel setFrame:CGRectMake(10, self.scrollview.contentSize.height-30, 290, 30)];
 //    [self.scrollview addSubview:fromLabel];
-    
+    [self drawChart];
     [self.lblIncome setText:[NSString stringWithFormat:@"%@ %@",currency,amountIncome]];
     [self.lblExpense setText:[NSString stringWithFormat:@"%@ %@",currency,amountExpense]];
     [self.lblBalance setText:[NSString stringWithFormat:@"%@ %@",currency,amountBalance]];
     
 }
 
-*/
-
+-(IBAction)addTransactionActionSheetShow:(UIButton*)sender
+{
+    [UIActionSheet showInView:self.viewEmpty withTitle:@"Add transaction" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@[@"Income",@"Expense"] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+    {
+        if ([[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:@"Income"])
+        {
+            [[AppCommonFunctions sharedInstance] pushVCOfClass:[AddTransactionViewController class] fromNC:self.navigationController animated:YES popFirstToVCOfClass:nil modifyVC:^(AddTransactionViewController* info)
+            {
+                info.isIncomeSelected=1;
+            }];
+        }
+        else if ([[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:@"Expense"])
+        {
+           
+                [[AppCommonFunctions sharedInstance] pushVCOfClass:[AddTransactionViewController class] fromNC:self.navigationController animated:YES popFirstToVCOfClass:nil modifyVC:^(AddTransactionViewController* info)
+                 {
+                     info.isIncomeSelected=0;
+                 }];
+            
+        }
+    }];
+}
 -(void)showHistryView
 {
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -670,6 +442,9 @@
         if ([transaction isKindOfClass:[NSDate class]])
         {
             return 30;
+        }else if ([transaction isKindOfClass:[Budget class]])
+        {
+            return 200;
         }else
         {
             return 70;
@@ -755,99 +530,7 @@
     
     if ([tableView tag]==2)
     {
-        NSString *simpleTableIdentifier = @"Budget";
-        BudgetCell *cell = (BudgetCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-        if (cell == nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BudgetCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-        Budget *transaction =(Budget*)[self.budgetItems objectAtIndex:[indexPath row]];
-        if ([transaction.category isEqualToString:NSLocalizedString(@"all", nil)])
-        {
-            [cell.lblCategery setText:NSLocalizedString(@"all", nil)];
-            [cell.imgCatagery setImage:[UIImage imageNamed:@"All_icon.png"]];
-        }else
-        {
-            NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_icon" andSearchText:transaction.category];
-            if ([categeryArray count]!=0)
-            {
-                cell.imgCatagery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
-            }else
-                cell.imageView. image=[UIImage imageNamed:@"All_icon.png"];
-            
-            [cell.lblCategery setText:transaction.category];
-        }
-        
-        if ([transaction.paymentMode isEqualToString:NSLocalizedString(@"all", nil)])
-        {
-            [cell.lblPaymentMode setText:NSLocalizedString(@"all", nil)];
-            [cell.imgPaymentMode setImage:[UIImage imageNamed:@"All_icon.png"]];
-        }else
-        {
-            NSArray *paymentModeArray=[[PaymentmodeHandler sharedCoreDataController] getsearchPaymentWithAttributeName:transaction.paymentMode];
-            if ([paymentModeArray count]!=0)
-            {
-                NSDictionary * paymentInfo =[paymentModeArray objectAtIndex:0];
-                [cell.lblPaymentMode setText:[paymentInfo objectForKey:@"paymentMode"]];
-                [cell.imgPaymentMode setImage:[UIImage imageWithData:[paymentInfo objectForKey:@"paymentmode_icon"]]];
-            }
-            
-        }
-        
-        if ([transaction.discription length]!=0)
-        {
-            [cell.lblDiscription setText:transaction.discription];
-        }else
-        {
-            [cell.lblDiscription setText:@"No Description"];
-        }
-        
-        NSDate *fromdate = [NSDate dateWithTimeIntervalSince1970:([[transaction.fromdate stringValue] doubleValue] / 1000)];
-        NSDate *todate = [NSDate dateWithTimeIntervalSince1970:([[transaction.todate stringValue] doubleValue] / 1000)];
-        NSDateFormatter *df = [[NSDateFormatter alloc] init] ;
-        [df setDateFormat:@"dd LLLL yyyy"];
-        [cell.lbltDate setText:[NSString stringWithFormat:@"%@ to %@",[df stringFromDate:fromdate],[df stringFromDate:todate]]];
-        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserTokenid:transaction.user_token_id];
-        double value=0;
-        if ([UserInfoarrray count]!=0)
-        {
-            UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
-            [cell.lblUserName setText:userInfo.user_name];
-            value=[[TransactionHandler sharedCoreDataController] getTotalExpenseForAllAccountswithCategryAndPaymentMode:transaction.category :transaction.paymentMode :userInfo.user_token_id :transaction.sub_category :transaction.fromdate :transaction.todate];
-        }
-        
-        NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
-        NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
-        cell.progrssView.progress=[self progressdiffrende:[transaction.amount doubleValue] :value];
-        [cell.lblLeft setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:([transaction.amount doubleValue]- value)]]]];
-        
-        [cell.lblBudget setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:[transaction.amount doubleValue]]]]];
-        
-        [cell.lblSpent setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:value]]]];
-        
-        if ([transaction.amount doubleValue]- value >= 0)
-        {
-            [cell.lblTitleLeft setText:NSLocalizedString(@"Left", nil)];
-        }
-        else
-        {
-            [cell.lblTitleLeft setText:NSLocalizedString(@"amountExceeded", nil)];
-        }
-        
-        CGFloat borderWidth = .3f;
-        cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
-        cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        cell.layer.borderWidth = borderWidth;
-        UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        imageButton.frame = CGRectMake(285, 0, 25, 25);
-        [imageButton setTag:[indexPath row]];
-        [imageButton setImage:[UIImage imageNamed:@"cancel_button_budget.png"] forState:UIControlStateNormal];
-        imageButton.adjustsImageWhenHighlighted = NO;
-        [imageButton addTarget:self action:@selector(budjetAction:) forControlEvents:UIControlEventTouchUpInside];
-        [cell addSubview:imageButton];
-        return cell;
+     
     }
     if ([tableView tag]==3)
     {
@@ -867,6 +550,103 @@
             }
             [cell.lblDob setText:[df stringFromDate:date]];
             return cell;
+        }else if ([transaction isKindOfClass:[Budget class]])
+        {
+            NSString *simpleTableIdentifier = @"Budget";
+            BudgetCell *cell = (BudgetCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+            if (cell == nil)
+            {
+                NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BudgetCell" owner:self options:nil];
+                cell = [nib objectAtIndex:0];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            Budget *transaction =(Budget*)[finalArray objectAtIndex:[indexPath row]];
+            if ([transaction.category isEqualToString:NSLocalizedString(@"all", nil)])
+            {
+                [cell.lblCategery setText:NSLocalizedString(@"all", nil)];
+                [cell.imgCatagery setImage:[UIImage imageNamed:@"All_icon.png"]];
+            }else
+            {
+                NSArray *categeryArray=[[CategoryListHandler sharedCoreDataController] getsearchCategeryWithAttributeName:@"category_icon" andSearchText:transaction.category];
+                if ([categeryArray count]!=0)
+                {
+                    cell.imgCatagery.image=[UIImage imageWithData:[[categeryArray objectAtIndex:0] objectForKey:@"category_icon"]];
+                }else
+                    cell.imageView. image=[UIImage imageNamed:@"All_icon.png"];
+                
+                [cell.lblCategery setText:transaction.category];
+            }
+            
+            if ([transaction.paymentMode isEqualToString:NSLocalizedString(@"all", nil)])
+            {
+                [cell.lblPaymentMode setText:NSLocalizedString(@"all", nil)];
+                [cell.imgPaymentMode setImage:[UIImage imageNamed:@"All_icon.png"]];
+            }else
+            {
+                NSArray *paymentModeArray=[[PaymentmodeHandler sharedCoreDataController] getsearchPaymentWithAttributeName:transaction.paymentMode];
+                if ([paymentModeArray count]!=0)
+                {
+                    NSDictionary * paymentInfo =[paymentModeArray objectAtIndex:0];
+                    [cell.lblPaymentMode setText:[paymentInfo objectForKey:@"paymentMode"]];
+                    [cell.imgPaymentMode setImage:[UIImage imageWithData:[paymentInfo objectForKey:@"paymentmode_icon"]]];
+                }
+                
+            }
+            
+            if ([transaction.discription length]!=0)
+            {
+                [cell.lblDiscription setText:transaction.discription];
+            }else
+            {
+                [cell.lblDiscription setText:@"No Description"];
+            }
+            
+            NSDate *fromdate = [NSDate dateWithTimeIntervalSince1970:([[transaction.fromdate stringValue] doubleValue] / 1000)];
+            NSDate *todate = [NSDate dateWithTimeIntervalSince1970:([[transaction.todate stringValue] doubleValue] / 1000)];
+            NSDateFormatter *df = [[NSDateFormatter alloc] init] ;
+            [df setDateFormat:@"dd LLLL yyyy"];
+            [cell.lbltDate setText:[NSString stringWithFormat:@"%@ to %@",[df stringFromDate:fromdate],[df stringFromDate:todate]]];
+            NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserTokenid:transaction.user_token_id];
+            double value=0;
+            if ([UserInfoarrray count]!=0)
+            {
+                UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
+                [cell.lblUserName setText:userInfo.user_name];
+                value=[[TransactionHandler sharedCoreDataController] getTotalExpenseForAllAccountswithCategryAndPaymentMode:transaction.category :transaction.paymentMode :userInfo.user_token_id :transaction.sub_category :transaction.fromdate :transaction.todate];
+            }
+            
+            NSString *mainToken=[Utility userDefaultsForKey:MAIN_TOKEN_ID];
+            NSString *currency= [Utility  userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@",CURRENT_CURRENCY,mainToken]];
+            cell.progrssView.progress=[self progressdiffrende:[transaction.amount doubleValue] :value];
+            [cell.lblLeft setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:([transaction.amount doubleValue]- value)]]]];
+            
+            [cell.lblBudget setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:[transaction.amount doubleValue]]]]];
+            
+            [cell.lblSpent setText:[NSString stringWithFormat:@"%@ %@",[[currency componentsSeparatedByString:@"-"] objectAtIndex:1],[fmt stringFromNumber:[NSNumber numberWithDouble:value]]]];
+            
+            if ([transaction.amount doubleValue]- value >= 0)
+            {
+                [cell.lblTitleLeft setText:NSLocalizedString(@"Left", nil)];
+            }
+            else
+            {
+                [cell.lblTitleLeft setText:NSLocalizedString(@"amountExceeded", nil)];
+            }
+            
+            CGFloat borderWidth = .3f;
+            cell.frame = CGRectInset(cell.frame, -borderWidth, -borderWidth);
+            cell.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            cell.layer.borderWidth = borderWidth;
+            UIButton *imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            imageButton.frame = CGRectMake(285, 0, 25, 25);
+            [imageButton setTag:[indexPath row]];
+            [imageButton setImage:[UIImage imageNamed:@"cancel_button_budget.png"] forState:UIControlStateNormal];
+            imageButton.adjustsImageWhenHighlighted = NO;
+            [imageButton addTarget:self action:@selector(budjetAction:) forControlEvents:UIControlEventTouchUpInside];
+            [cell addSubview:imageButton];
+            return cell;
+            
+            
         }else
         {
             HomeViewCell *cell = (HomeViewCell*)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -893,10 +673,18 @@
                 [cell.lblDiscription setText:@"No Description"];
             }
             
-            if (![transaction.transaction_type intValue]==TYPE_INCOME)
-                [cell.lblAmount setTextColor:[UIColor colorWithRed:232/255.0f green:76/255.0f blue:61/255.0f alpha:100.0f]];
-            else
-                [cell.lblAmount setTextColor:[UIColor colorWithRed:53/255.0 green:152/255.0 blue:219/255.0 alpha:100.0]];
+            if ([transaction.transaction_type intValue]==TYPE_INCOME)
+            {
+                [(UILabel*)[cell.contentView viewWithTag:99] setText:@"Income"];
+                [cell.lblColor setBackgroundColor:[UIColor colorWithRed:53/255.0 green:152/255.0 blue:219/255.0 alpha:100.0]];
+
+            }else
+            {
+                [(UILabel*)[cell.contentView viewWithTag:99] setText:@"Expense"];
+                [cell.lblColor setBackgroundColor:[UIColor colorWithRed:232/255.0f green:76/255.0f blue:61/255.0f alpha:100.0f]];
+
+            }
+            
             
             if ([transaction.transaction_inserted_from integerValue]==TYPE_REMINDER || [transaction.transaction_inserted_from integerValue]==TYPE_TRANSFER )
                 
@@ -959,8 +747,8 @@
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:YELLOW_COLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:BLUE_COLOR   icon:[UIImage imageNamed:@"details_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:YELLOW_COLOR icon:[UIImage imageNamed:@"edit_button.png"]];
+    //[rightUtilityButtons sw_addUtilityButtonWithColor:BLUE_COLOR   icon:[UIImage imageNamed:@"details_icon.png"]];
     
     return rightUtilityButtons;
 }
@@ -968,7 +756,7 @@
 - (NSArray *)leftButtons
 {
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:RED_COLOR  icon:[UIImage imageNamed:@"delete_icon.png"]];
+    [leftUtilityButtons sw_addUtilityButtonWithColor:RED_COLOR  icon:[UIImage imageNamed:@"data_delete_icon.png"]];
     return leftUtilityButtons;
 }
 
@@ -1100,10 +888,7 @@
         }
         case 1:
         {
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-            TransactionDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransactionDetailsViewController"];
-            [vc setTransaction:[finalArray objectAtIndex:cellIndexPath.row]];
-            [self.navigationController pushViewController:vc animated:YES];
+            
             break;
         }
         default:
@@ -1116,7 +901,10 @@
 {
     if ([tableView tag]==3)
     {
-        
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        TransactionDetailsViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier: @"TransactionDetailsViewController"];
+        [vc setTransaction:[finalArray objectAtIndex:indexPath.row]];
+        [self.navigationController pushViewController:vc animated:YES];
         NSLog(@"cell selected at index path %ld:%ld", (long)indexPath.section, (long)indexPath.row);
         NSLog(@"selected cell index path is %@", [self.tblviewTransaction indexPathForSelectedRow]);
         if (!tableView.isEditing)

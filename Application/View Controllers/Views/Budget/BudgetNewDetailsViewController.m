@@ -30,6 +30,7 @@
 @implementation BudgetNewDetailsViewController
 
 @synthesize tran;
+@synthesize scrollViewSubview;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,6 +52,10 @@
     self.scrollView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.scrollView.layer.borderWidth = borderWidth;
     
+    scrollViewSubview.translatesAutoresizingMaskIntoConstraints = YES;
+    scrollViewSubview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 5, 500);
+    self.scrollView.contentSize = scrollViewSubview.frame.size;
+    self.scrollView.contentOffset = CGPointZero;
 }
 
 
@@ -123,7 +128,7 @@
 {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         self.transcationItems=[[NSMutableArray alloc] initWithArray:[[TransactionHandler sharedCoreDataController] getAllUserwithCategaryandPaymentMode:tran.category andSearchText:tran.paymentMode :[NSString stringWithFormat:@"%i",TYPE_EXPENSE] :tran.user_token_id :tran.sub_category :tran.fromdate :tran.todate]];
-        self.scrollView.contentSize = CGSizeMake(310,340+([self.transcationItems count])*82);
+//        self.scrollView.contentSize = CGSizeMake(310,340+([self.transcationItems count])*82);
         // self.scrollView.frame=self.view.frame;
         
         CGRect frame = self.tblView.frame;

@@ -59,11 +59,9 @@
     [self.tableView reloadData];
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-       return 224;
+       return 275;
 }
 
 
@@ -138,44 +136,54 @@
 
 - (IBAction)btnPopUpClick:(UIButton*)sender
 {
-    DemoTableController *controller = [[DemoTableController alloc] init];
-    [controller setPosition:sender.tag];
-    NSMutableArray *listArray=[[NSMutableArray alloc] init];
-    NSMutableArray *categeryName;
-    NSMutableArray *imageName;
-    popover = [[FPPopoverController alloc] initWithViewController:controller];
-    popover.arrowDirection = FPPopoverNoArrow;
-    popover.border = NO;
-    
+     sender.selected = !sender.selected;
     if (sender.tag==0)
     {
-        categeryName=[[NSMutableArray alloc]initWithObjects:@"Edit",nil];
-        imageName=[[NSMutableArray alloc]initWithObjects:@"edit_icon.png",nil];
-        popover.contentSize = CGSizeMake(130, 46);
+        [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:NSLocalizedString(@"cancel_button_title", nil) destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:NSLocalizedString(@"edit", nil), nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+            if (![[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:NSLocalizedString(@"cancel_button_title", nil) ])
+            {
+                [self addAccountViewController:sender.tag];
+            }
+        }];
+ 
     }else
     {
-        categeryName=[[NSMutableArray alloc]initWithObjects:@"Edit",@"Delete",nil];
-        imageName=[[NSMutableArray alloc]initWithObjects:@"edit_icon.png",@"delete_icon.png",nil];
-        popover.contentSize = CGSizeMake(130, 86);
+        [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:NSLocalizedString(@"cancel_button_title", nil) destructiveButtonTitle:nil otherButtonTitles:[NSArray arrayWithObjects:NSLocalizedString(@"edit", nil),NSLocalizedString(@"delete_button_title", nil), nil] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+            if (![[actionSheet buttonTitleAtIndex:buttonIndex]isEqualToString:NSLocalizedString(@"cancel_button_title", nil) ])
+            {
+                if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"edit", nil)])
+                {
+                    [self addAccountViewController:sender.tag];
+                }else
+                {
+                    [self deleteSubAccount:sender.tag];
+                }
+            }
+        }];
+        
     }
-    for (int i=0; i<[imageName count]; i++)
-    {
-        NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
-        [bookListing setObject:[categeryName objectAtIndex:i] forKey:@"name"];
-        [bookListing setObject:[imageName objectAtIndex:i] forKey:@"image"];
-        [listArray addObject:bookListing];
-    }
-    [controller setListArray:listArray];
-    [popover presentPopoverFromView:sender];
-    [self.view addSubview:popover.view];
+    
 }
 
 
-
-- (IBAction)btnBackClick:(id)sender
+-(void)addAccountViewController:(int)tagValue
 {
-   //  [[SlideNavigationController sharedInstance]toggleLeftMenu];
+    AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+    [catageryController setInfo:[ self.transcationItems objectAtIndex:tagValue]];
+    [self.navigationController pushViewController:catageryController animated:YES];
 }
+
+-(void)deleteSubAccount:(int)tagValue
+{
+    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:NSLocalizedString(@"deletingaccountwilldeletedata", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setTag:tagValue];
+    [alert show];
+    
+}
+
+
+
 
 -(void) receivedDemoListNotification:(NSNotification*) notification
 {
@@ -185,15 +193,11 @@
      positon=[info objectForKey:@"position"];
     if ([number intValue]==0)
     {
-        AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-        [catageryController setInfo:[ self.transcationItems objectAtIndex:[positon intValue]]];
-        [self.navigationController pushViewController:catageryController animated:YES];
+       
     }else if ([number intValue]==1)
     {
         
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Alert" message:NSLocalizedString(@"deletingaccountwilldeletedata", nil) delegate:self cancelButtonTitle:@"Continue"  otherButtonTitles: nil];
-        [alert addButtonWithTitle:@"Cancel"];
-        [alert show];
+    
         
     }
 
@@ -202,7 +206,7 @@
 {
     if (buttonIndex == 0)
     {
-        [[UserInfoHandler sharedCoreDataController] deleteUserInfo:[self.transcationItems objectAtIndex:[positon intValue]] chekServerUpdation:NO];
+        [[UserInfoHandler sharedCoreDataController] deleteUserInfo:[self.transcationItems objectAtIndex:alertView.tag] chekServerUpdation:NO];
         self.transcationItems=[[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
         [self.tableView reloadData];
         [Utility showAlertWithMassager:self.navigationController.view :NSLocalizedString(@"accountdeletedSuccessfully", nil)];

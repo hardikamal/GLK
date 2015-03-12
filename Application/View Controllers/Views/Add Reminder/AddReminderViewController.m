@@ -255,23 +255,24 @@
         }
     }
     [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count]*40;
-    if (yHeight>300)
-    {
-        yHeight=300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight)/2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"AddReminderViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight<300)
-    {
-      poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
-}
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:userInfoList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+             return ;
+         }
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"addAccount", nil)])
+         {
+             AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+             [self.navigationController pushViewController:catageryController animated:YES];
+             
+         }else
+         {
+             [Utility saveToUserDefaults:[actionSheet buttonTitleAtIndex:buttonIndex]  withKey:CURRENT_USER__TOKEN_ID];
+             [self updateAccout];
+             [self profressView];
+         }
+
+     }];}
 
 -(void)pushCreateReminder
 {
@@ -320,18 +321,7 @@
 -(void)receivedNotification:(NSNotification*) notification
 {
     NSDictionary * info =notification.userInfo;
-    if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)])
-    {
-        AddAccountViewController *catageryController=[self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-        [self.navigationController pushViewController:catageryController animated:YES];
-        
-    }else
-    {
-        [Utility saveToUserDefaults:[info objectForKey:@"object"]  withKey:CURRENT_USER__TOKEN_ID];
-        [self updateAccout];
-        [self profressView];
     }
-}
 
 
 @end

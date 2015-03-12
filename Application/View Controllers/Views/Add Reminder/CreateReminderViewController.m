@@ -74,7 +74,7 @@
         [self addUpdateReminder];
     
     scrollViewSubview.translatesAutoresizingMaskIntoConstraints = YES;
-    scrollViewSubview.frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width, 790);
+    scrollViewSubview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 790);
     self.scrollView.contentSize = scrollViewSubview.frame.size;
     self.scrollView.contentOffset = CGPointZero;
 }
@@ -425,7 +425,7 @@
                     _imageProfile.image = [UIImage imageWithData:userInfo.user_img];
                 }
                 else
-                    _imageProfile.image = [UIImage imageNamed:@"custom_profile.png"];
+                    _imageProfile.image = [UIImage imageNamed:@"defaultprofile_pic.png"];
             }
             [Utility saveToUserDefaults:[info objectForKey:@"object"]  withKey:CURRENT_USER__TOKEN_ID]; }
     }

@@ -141,7 +141,7 @@
 
 "expenses_items"="Entertainment -Movies,Television.Medical -Surgery,Medicines.Food -Vegetables,Fruits.Travel -Bus fare,Train fare,  Flight fare,Taxi fare,Hotel Rent,Food Cost.Groceries.Books/Stationary -Pen,Paper.Gifts.Personal Care -Manicure,Pedicure,Hair Dressing.Clothing -Shirts,Pants,T-Shirts,Shoes,Sandals,Sweater,Jacket,Skirts.Electronics -Cellphone,Tv,Washing Machine.Bill Payments -Phone Bill,Electricity Bill,Water Bill.Auto.Miscellaneous.Educational Cost -School Fees,Tuition Fees,Admission Fees.Tax Payments -Income Tax,Sales Tax,Property Tax.Rent";
 
-"medium_of_transaction"="Cash,Cheque,Debit Card,Credit Card";
+"medium_of_transaction"="cash,Cheque,Debit Card,Credit Card";
 
 "app_manager"="cab,travel,recharge,shopping,food,entertainment";
 

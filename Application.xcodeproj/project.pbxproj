@@ -51,12 +51,7 @@
 		19A8B7371A9E6A8500C29520 /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B71B1A9E6A8500C29520 /* appicon@2x.png */; };
 		19A8B7381A9E6A8500C29520 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B71C1A9E6A8500C29520 /* Default-568h@2x.png */; };
 		19A8B7391A9E6A8500C29520 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B71D1A9E6A8500C29520 /* Default-667h@2x.png */; };
-		19A8B73A1A9E6A8500C29520 /* Default-Landscape-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B71E1A9E6A8500C29520 /* Default-Landscape-736h@3x.png */; };
-		19A8B73B1A9E6A8500C29520 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B71F1A9E6A8500C29520 /* Default-Landscape.png */; };
-		19A8B73C1A9E6A8500C29520 /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7201A9E6A8500C29520 /* Default-Landscape@2x.png */; };
 		19A8B73D1A9E6A8500C29520 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7211A9E6A8500C29520 /* Default-Portrait-736h@3x.png */; };
-		19A8B73E1A9E6A8500C29520 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7221A9E6A8500C29520 /* Default-Portrait.png */; };
-		19A8B73F1A9E6A8500C29520 /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7231A9E6A8500C29520 /* Default-Portrait@2x.png */; };
 		19A8B7401A9E6A8500C29520 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7241A9E6A8500C29520 /* Default.png */; };
 		19A8B7411A9E6A8500C29520 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7251A9E6A8500C29520 /* Default@2x.png */; };
 		19A8B7421A9E6A8500C29520 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 19A8B7261A9E6A8500C29520 /* iTunesArtwork */; };
@@ -290,7 +285,6 @@
 		19BC0B811AAB793F0077DCAF /* RATreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC092F1AAB793E0077DCAF /* RATreeView.m */; };
 		19BC0B851AAB793F0077DCAF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC09391AAB793E0077DCAF /* Reachability.m */; };
 		19BC0B861AAB793F0077DCAF /* DEMORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC093C1AAB793E0077DCAF /* DEMORootViewController.m */; };
-		19BC0B871AAB793F0077DCAF /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC093E1AAB793E0077DCAF /* LeftMenuViewController.m */; };
 		19BC0B881AAB793F0077DCAF /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC09401AAB793E0077DCAF /* RECommonFunctions.m */; };
 		19BC0B891AAB793F0077DCAF /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC09421AAB793E0077DCAF /* RESideMenu.m */; };
 		19BC0B8A1AAB793F0077DCAF /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC09451AAB793E0077DCAF /* arrow.png */; };
@@ -449,7 +443,6 @@
 		19BC0C7E1AAB7C000077DCAF /* cancel_button_budget@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C731AAB7C000077DCAF /* cancel_button_budget@2x.png */; };
 		19BC0C7F1AAB7C000077DCAF /* check_box_actives.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C741AAB7C000077DCAF /* check_box_actives.png */; };
 		19BC0C801AAB7C000077DCAF /* check_boxs.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C751AAB7C000077DCAF /* check_boxs.png */; };
-		19BC0C811AAB7C000077DCAF /* delete_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C761AAB7C000077DCAF /* delete_icon.png */; };
 		19BC0C821AAB7C000077DCAF /* details_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C771AAB7C000077DCAF /* details_icon.png */; };
 		19BC0C831AAB7C000077DCAF /* dropdown_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C781AAB7C000077DCAF /* dropdown_icon.png */; };
 		19BC0C841AAB7C000077DCAF /* errow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC0C791AAB7C000077DCAF /* errow_down.png */; };
@@ -686,6 +679,35 @@
 		AB25EE0E1AA34238002D1CAD /* PaymentModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */; };
 		AB4337F21AACAB28001A5C91 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4337F11AACAB28001A5C91 /* TransactionCell.xib */; };
 		AB4337F51AACABD4001A5C91 /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4337F41AACABD4001A5C91 /* TransactionCell.m */; };
+		AB4F7E9A1AADE01B00EAB08C /* create_profile_camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7E951AADE01B00EAB08C /* create_profile_camera_icon.png */; };
+		AB4F7E9B1AADE01B00EAB08C /* create_profile_camera_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7E971AADE01B00EAB08C /* create_profile_camera_icon@2x.png */; };
+		AB4F7E9C1AADE01B00EAB08C /* create_profile_camera_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7E991AADE01B00EAB08C /* create_profile_camera_icon@3x.png */; };
+		AB4F7EA71AAE07E200EAB08C /* more_button_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7E9F1AAE07E200EAB08C /* more_button_active.png */; };
+		AB4F7EA81AAE07E200EAB08C /* more_button_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EA01AAE07E200EAB08C /* more_button_inactive.png */; };
+		AB4F7EA91AAE07E200EAB08C /* more_button_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EA21AAE07E200EAB08C /* more_button_active@2x.png */; };
+		AB4F7EAA1AAE07E200EAB08C /* more_button_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EA31AAE07E200EAB08C /* more_button_inactive@2x.png */; };
+		AB4F7EAB1AAE07E200EAB08C /* more_button_active@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EA51AAE07E200EAB08C /* more_button_active@3x.png */; };
+		AB4F7EAC1AAE07E200EAB08C /* more_button_inactive@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EA61AAE07E200EAB08C /* more_button_inactive@3x.png */; };
+		AB4F7EAF1AAE086800EAB08C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F7EAE1AAE086800EAB08C /* AccountViewController.m */; };
+		AB4F7EB21AAE090200EAB08C /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F7EB11AAE090200EAB08C /* LeftMenuViewController.m */; };
+		AB4F7EBA1AAE0DED00EAB08C /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EB51AAE0DED00EAB08C /* menu_icon.png */; };
+		AB4F7EBB1AAE0DED00EAB08C /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EB71AAE0DED00EAB08C /* menu_icon@2x.png */; };
+		AB4F7EBC1AAE0DED00EAB08C /* menu_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EB91AAE0DED00EAB08C /* menu_icon@3x.png */; };
+		AB4F7EC01AAE60C500EAB08C /* edit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EBD1AAE60C500EAB08C /* edit_button.png */; };
+		AB4F7EC11AAE60C500EAB08C /* edit_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EBE1AAE60C500EAB08C /* edit_button@2x.png */; };
+		AB4F7EC21AAE60C500EAB08C /* edit_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EBF1AAE60C500EAB08C /* edit_button@3x.png */; };
+		AB4F7ED21AAE730500EAB08C /* cash.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EC41AAE730500EAB08C /* cash.png */; };
+		AB4F7ED31AAE730500EAB08C /* cheque.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EC51AAE730500EAB08C /* cheque.png */; };
+		AB4F7ED41AAE730500EAB08C /* credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EC61AAE730500EAB08C /* credit-card.png */; };
+		AB4F7ED51AAE730500EAB08C /* debit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EC71AAE730500EAB08C /* debit-card.png */; };
+		AB4F7ED61AAE730500EAB08C /* cash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7EC91AAE730500EAB08C /* cash@2x.png */; };
+		AB4F7ED71AAE730500EAB08C /* cheque@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ECA1AAE730500EAB08C /* cheque@2x.png */; };
+		AB4F7ED81AAE730500EAB08C /* credit-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ECB1AAE730500EAB08C /* credit-card@2x.png */; };
+		AB4F7ED91AAE730500EAB08C /* debit-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ECC1AAE730500EAB08C /* debit-card@2x.png */; };
+		AB4F7EDA1AAE730500EAB08C /* cash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ECE1AAE730500EAB08C /* cash@3x.png */; };
+		AB4F7EDB1AAE730500EAB08C /* cheque@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ECF1AAE730500EAB08C /* cheque@3x.png */; };
+		AB4F7EDC1AAE730500EAB08C /* credit-card@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ED01AAE730500EAB08C /* credit-card@3x.png */; };
+		AB4F7EDD1AAE730500EAB08C /* debit-card@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB4F7ED11AAE730500EAB08C /* debit-card@3x.png */; };
 		AB563DD21AAA57EB0078B582 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */; };
 		AB563DD31AAA57EB0078B582 /* RetrieveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DD11AAA57EB0078B582 /* RetrieveViewController.m */; };
 		AB563DE01AAA697B0078B582 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB563DDD1AAA697B0078B582 /* LogInViewController.m */; };
@@ -785,21 +807,14 @@
 		ABA8EF201AA09D360006A123 /* server_sync@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABA8EF1D1AA09D360006A123 /* server_sync@3x.png */; };
 		ABA8EF241AA09E0A0006A123 /* AddTransactionViewController..m in Sources */ = {isa = PBXBuildFile; fileRef = ABA8EF221AA09E0A0006A123 /* AddTransactionViewController..m */; };
 		ABDC0AA71AA3566F00CD1820 /* subcategory_line.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A581AA3566F00CD1820 /* subcategory_line.png */; };
-		ABDC0AAA1AA3566F00CD1820 /* cheque@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A5D1AA3566F00CD1820 /* cheque@2x.png */; };
-		ABDC0AAB1AA3566F00CD1820 /* credit card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A5E1AA3566F00CD1820 /* credit card@2x.png */; };
-		ABDC0AAC1AA3566F00CD1820 /* debit card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A5F1AA3566F00CD1820 /* debit card@2x.png */; };
 		ABDC0AAD1AA3566F00CD1820 /* overall_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A601AA3566F00CD1820 /* overall_icon@2x.png */; };
 		ABDC0AB01AA3566F00CD1820 /* All icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A631AA3566F00CD1820 /* All icon.png */; };
-		ABDC0AB11AA3566F00CD1820 /* Cheque icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A641AA3566F00CD1820 /* Cheque icon.png */; };
-		ABDC0AB21AA3566F00CD1820 /* Credit Card icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A651AA3566F00CD1820 /* Credit Card icon.png */; };
-		ABDC0AB31AA3566F00CD1820 /* Debit Card icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A661AA3566F00CD1820 /* Debit Card icon.png */; };
 		ABDC0AB41AA3566F00CD1820 /* Select-payment-mode.png in Resources */ = {isa = PBXBuildFile; fileRef = ABDC0A671AA3566F00CD1820 /* Select-payment-mode.png */; };
 		ABDC0AC01AA4703D00CD1820 /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0AB91AA4703D00CD1820 /* AddReminderViewController.m */; };
 		ABDC0AC11AA4703D00CD1820 /* CreateReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ABB1AA4703D00CD1820 /* CreateReminderViewController.m */; };
 		ABDC0AC21AA4703D00CD1820 /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ABD1AA4703D00CD1820 /* ReminderCell.m */; };
 		ABDC0AC31AA4703D00CD1820 /* ReminderDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ABF1AA4703D00CD1820 /* ReminderDetailsViewController.m */; };
 		ABDC0AFC1AA4713500CD1820 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0AC61AA4713500CD1820 /* AccountCell.m */; };
-		ABDC0AFD1AA4713500CD1820 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0AC81AA4713500CD1820 /* AccountViewController.m */; };
 		ABDC0AFE1AA4713500CD1820 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ACA1AA4713500CD1820 /* AddAccountViewController.m */; };
 		ABDC0B0A1AA4713500CD1820 /* ReSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0AD91AA4713500CD1820 /* ReSetPasswordViewController.m */; };
 		ABDC0B0B1AA4713500CD1820 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDC0ADC1AA4713500CD1820 /* EmailViewController.m */; };
@@ -1005,12 +1020,7 @@
 		19A8B71B1A9E6A8500C29520 /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
 		19A8B71C1A9E6A8500C29520 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		19A8B71D1A9E6A8500C29520 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
-		19A8B71E1A9E6A8500C29520 /* Default-Landscape-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape-736h@3x.png"; sourceTree = "<group>"; };
-		19A8B71F1A9E6A8500C29520 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
-		19A8B7201A9E6A8500C29520 /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		19A8B7211A9E6A8500C29520 /* Default-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-736h@3x.png"; sourceTree = "<group>"; };
-		19A8B7221A9E6A8500C29520 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
-		19A8B7231A9E6A8500C29520 /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x.png"; sourceTree = "<group>"; };
 		19A8B7241A9E6A8500C29520 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		19A8B7251A9E6A8500C29520 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		19A8B7261A9E6A8500C29520 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
@@ -1490,8 +1500,6 @@
 		19BC09391AAB793E0077DCAF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		19BC093B1AAB793E0077DCAF /* DEMORootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORootViewController.h; sourceTree = "<group>"; };
 		19BC093C1AAB793E0077DCAF /* DEMORootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORootViewController.m; sourceTree = "<group>"; };
-		19BC093D1AAB793E0077DCAF /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
-		19BC093E1AAB793E0077DCAF /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		19BC093F1AAB793E0077DCAF /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		19BC09401AAB793E0077DCAF /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
 		19BC09411AAB793E0077DCAF /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
@@ -1704,7 +1712,6 @@
 		19BC0C731AAB7C000077DCAF /* cancel_button_budget@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel_button_budget@2x.png"; sourceTree = "<group>"; };
 		19BC0C741AAB7C000077DCAF /* check_box_actives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_box_actives.png; sourceTree = "<group>"; };
 		19BC0C751AAB7C000077DCAF /* check_boxs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_boxs.png; sourceTree = "<group>"; };
-		19BC0C761AAB7C000077DCAF /* delete_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete_icon.png; sourceTree = "<group>"; };
 		19BC0C771AAB7C000077DCAF /* details_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = details_icon.png; sourceTree = "<group>"; };
 		19BC0C781AAB7C000077DCAF /* dropdown_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdown_icon.png; sourceTree = "<group>"; };
 		19BC0C791AAB7C000077DCAF /* errow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = errow_down.png; sourceTree = "<group>"; };
@@ -1972,6 +1979,37 @@
 		AB4337F11AACAB28001A5C91 /* TransactionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		AB4337F31AACABD4001A5C91 /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
 		AB4337F41AACABD4001A5C91 /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
+		AB4F7E951AADE01B00EAB08C /* create_profile_camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile_camera_icon.png; sourceTree = "<group>"; };
+		AB4F7E971AADE01B00EAB08C /* create_profile_camera_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create_profile_camera_icon@2x.png"; sourceTree = "<group>"; };
+		AB4F7E991AADE01B00EAB08C /* create_profile_camera_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create_profile_camera_icon@3x.png"; sourceTree = "<group>"; };
+		AB4F7E9F1AAE07E200EAB08C /* more_button_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_button_active.png; sourceTree = "<group>"; };
+		AB4F7EA01AAE07E200EAB08C /* more_button_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_button_inactive.png; sourceTree = "<group>"; };
+		AB4F7EA21AAE07E200EAB08C /* more_button_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_button_active@2x.png"; sourceTree = "<group>"; };
+		AB4F7EA31AAE07E200EAB08C /* more_button_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_button_inactive@2x.png"; sourceTree = "<group>"; };
+		AB4F7EA51AAE07E200EAB08C /* more_button_active@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_button_active@3x.png"; sourceTree = "<group>"; };
+		AB4F7EA61AAE07E200EAB08C /* more_button_inactive@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more_button_inactive@3x.png"; sourceTree = "<group>"; };
+		AB4F7EAD1AAE086800EAB08C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountViewController.h; path = 3x/AccountViewController.h; sourceTree = "<group>"; };
+		AB4F7EAE1AAE086800EAB08C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountViewController.m; path = 3x/AccountViewController.m; sourceTree = "<group>"; };
+		AB4F7EB01AAE090200EAB08C /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		AB4F7EB11AAE090200EAB08C /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		AB4F7EB51AAE0DED00EAB08C /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
+		AB4F7EB71AAE0DED00EAB08C /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
+		AB4F7EB91AAE0DED00EAB08C /* menu_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@3x.png"; sourceTree = "<group>"; };
+		AB4F7EBD1AAE60C500EAB08C /* edit_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_button.png; sourceTree = "<group>"; };
+		AB4F7EBE1AAE60C500EAB08C /* edit_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_button@2x.png"; sourceTree = "<group>"; };
+		AB4F7EBF1AAE60C500EAB08C /* edit_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit_button@3x.png"; sourceTree = "<group>"; };
+		AB4F7EC41AAE730500EAB08C /* cash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cash.png; sourceTree = "<group>"; };
+		AB4F7EC51AAE730500EAB08C /* cheque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cheque.png; sourceTree = "<group>"; };
+		AB4F7EC61AAE730500EAB08C /* credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit-card.png"; sourceTree = "<group>"; };
+		AB4F7EC71AAE730500EAB08C /* debit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debit-card.png"; sourceTree = "<group>"; };
+		AB4F7EC91AAE730500EAB08C /* cash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cash@2x.png"; sourceTree = "<group>"; };
+		AB4F7ECA1AAE730500EAB08C /* cheque@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheque@2x.png"; sourceTree = "<group>"; };
+		AB4F7ECB1AAE730500EAB08C /* credit-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit-card@2x.png"; sourceTree = "<group>"; };
+		AB4F7ECC1AAE730500EAB08C /* debit-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debit-card@2x.png"; sourceTree = "<group>"; };
+		AB4F7ECE1AAE730500EAB08C /* cash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cash@3x.png"; sourceTree = "<group>"; };
+		AB4F7ECF1AAE730500EAB08C /* cheque@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheque@3x.png"; sourceTree = "<group>"; };
+		AB4F7ED01AAE730500EAB08C /* credit-card@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit-card@3x.png"; sourceTree = "<group>"; };
+		AB4F7ED11AAE730500EAB08C /* debit-card@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debit-card@3x.png"; sourceTree = "<group>"; };
 		AB563DCE1AAA57EB0078B582 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		AB563DCF1AAA57EB0078B582 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		AB563DD01AAA57EB0078B582 /* RetrieveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrieveViewController.h; sourceTree = "<group>"; };
@@ -2081,14 +2119,8 @@
 		ABA8EF221AA09E0A0006A123 /* AddTransactionViewController..m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTransactionViewController..m; sourceTree = "<group>"; };
 		ABA8EF231AA09E0A0006A123 /* AddTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTransactionViewController.h; sourceTree = "<group>"; };
 		ABDC0A581AA3566F00CD1820 /* subcategory_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subcategory_line.png; sourceTree = "<group>"; };
-		ABDC0A5D1AA3566F00CD1820 /* cheque@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheque@2x.png"; sourceTree = "<group>"; };
-		ABDC0A5E1AA3566F00CD1820 /* credit card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit card@2x.png"; sourceTree = "<group>"; };
-		ABDC0A5F1AA3566F00CD1820 /* debit card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debit card@2x.png"; sourceTree = "<group>"; };
 		ABDC0A601AA3566F00CD1820 /* overall_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overall_icon@2x.png"; sourceTree = "<group>"; };
 		ABDC0A631AA3566F00CD1820 /* All icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "All icon.png"; sourceTree = "<group>"; };
-		ABDC0A641AA3566F00CD1820 /* Cheque icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cheque icon.png"; sourceTree = "<group>"; };
-		ABDC0A651AA3566F00CD1820 /* Credit Card icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credit Card icon.png"; sourceTree = "<group>"; };
-		ABDC0A661AA3566F00CD1820 /* Debit Card icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Debit Card icon.png"; sourceTree = "<group>"; };
 		ABDC0A671AA3566F00CD1820 /* Select-payment-mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select-payment-mode.png"; sourceTree = "<group>"; };
 		ABDC0AB81AA4703D00CD1820 /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
 		ABDC0AB91AA4703D00CD1820 /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
@@ -2100,8 +2132,6 @@
 		ABDC0ABF1AA4703D00CD1820 /* ReminderDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderDetailsViewController.m; sourceTree = "<group>"; };
 		ABDC0AC51AA4713500CD1820 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
 		ABDC0AC61AA4713500CD1820 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
-		ABDC0AC71AA4713500CD1820 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
-		ABDC0AC81AA4713500CD1820 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		ABDC0AC91AA4713500CD1820 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		ABDC0ACA1AA4713500CD1820 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
 		ABDC0AD81AA4713500CD1820 /* ReSetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReSetPasswordViewController.h; sourceTree = "<group>"; };
@@ -2373,6 +2403,10 @@
 		197C04221A1F77E9003A6A69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB4F7EB01AAE090200EAB08C /* LeftMenuViewController.h */,
+				AB4F7EB11AAE090200EAB08C /* LeftMenuViewController.m */,
+				AB4F7EB31AAE0DED00EAB08C /* Menu_icon */,
+				AB4F7E9D1AAE07E200EAB08C /* More_buttons */,
 				1966D94D1AAD28CA00FD8E74 /* SplashVC */,
 				ABDC0ACB1AA4713500CD1820 /* ChangePassword */,
 				19BC0C871AAB7C600077DCAF /* SignUpView */,
@@ -2636,12 +2670,7 @@
 				19A8B71B1A9E6A8500C29520 /* appicon@2x.png */,
 				19A8B71C1A9E6A8500C29520 /* Default-568h@2x.png */,
 				19A8B71D1A9E6A8500C29520 /* Default-667h@2x.png */,
-				19A8B71E1A9E6A8500C29520 /* Default-Landscape-736h@3x.png */,
-				19A8B71F1A9E6A8500C29520 /* Default-Landscape.png */,
-				19A8B7201A9E6A8500C29520 /* Default-Landscape@2x.png */,
 				19A8B7211A9E6A8500C29520 /* Default-Portrait-736h@3x.png */,
-				19A8B7221A9E6A8500C29520 /* Default-Portrait.png */,
-				19A8B7231A9E6A8500C29520 /* Default-Portrait@2x.png */,
 				19A8B7241A9E6A8500C29520 /* Default.png */,
 				19A8B7251A9E6A8500C29520 /* Default@2x.png */,
 				19A8B7261A9E6A8500C29520 /* iTunesArtwork */,
@@ -3696,8 +3725,6 @@
 			children = (
 				19BC093B1AAB793E0077DCAF /* DEMORootViewController.h */,
 				19BC093C1AAB793E0077DCAF /* DEMORootViewController.m */,
-				19BC093D1AAB793E0077DCAF /* LeftMenuViewController.h */,
-				19BC093E1AAB793E0077DCAF /* LeftMenuViewController.m */,
 				19BC093F1AAB793E0077DCAF /* RECommonFunctions.h */,
 				19BC09401AAB793E0077DCAF /* RECommonFunctions.m */,
 				19BC09411AAB793E0077DCAF /* RESideMenu.h */,
@@ -4113,7 +4140,6 @@
 				19BC0C731AAB7C000077DCAF /* cancel_button_budget@2x.png */,
 				19BC0C741AAB7C000077DCAF /* check_box_actives.png */,
 				19BC0C751AAB7C000077DCAF /* check_boxs.png */,
-				19BC0C761AAB7C000077DCAF /* delete_icon.png */,
 				19BC0C771AAB7C000077DCAF /* details_icon.png */,
 				19BC0C781AAB7C000077DCAF /* dropdown_icon.png */,
 				19BC0C791AAB7C000077DCAF /* errow_down.png */,
@@ -4600,6 +4626,9 @@
 		AB25EE081AA34238002D1CAD /* PaymentMode */ = {
 			isa = PBXGroup;
 			children = (
+				AB4F7EC31AAE730500EAB08C /* 1x */,
+				AB4F7EC81AAE730500EAB08C /* 2x */,
+				AB4F7ECD1AAE730500EAB08C /* 3x */,
 				ABDC0A161AA3566E00CD1820 /* categories icons */,
 				ABDC0A591AA3566F00CD1820 /* payemntmode */,
 				AB25EE091AA34238002D1CAD /* CreatePaymentModeViewController.h */,
@@ -4608,6 +4637,134 @@
 				AB25EE0C1AA34238002D1CAD /* PaymentModeViewController.m */,
 			);
 			path = PaymentMode;
+			sourceTree = "<group>";
+		};
+		AB4F7E941AADE01B00EAB08C /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7E951AADE01B00EAB08C /* create_profile_camera_icon.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		AB4F7E961AADE01B00EAB08C /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7E971AADE01B00EAB08C /* create_profile_camera_icon@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		AB4F7E981AADE01B00EAB08C /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7E991AADE01B00EAB08C /* create_profile_camera_icon@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		AB4F7E9D1AAE07E200EAB08C /* More_buttons */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7E9E1AAE07E200EAB08C /* 1x */,
+				AB4F7EA11AAE07E200EAB08C /* 2x */,
+				AB4F7EA41AAE07E200EAB08C /* 3x */,
+			);
+			path = More_buttons;
+			sourceTree = "<group>";
+		};
+		AB4F7E9E1AAE07E200EAB08C /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7E9F1AAE07E200EAB08C /* more_button_active.png */,
+				AB4F7EA01AAE07E200EAB08C /* more_button_inactive.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		AB4F7EA11AAE07E200EAB08C /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EA21AAE07E200EAB08C /* more_button_active@2x.png */,
+				AB4F7EA31AAE07E200EAB08C /* more_button_inactive@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		AB4F7EA41AAE07E200EAB08C /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EA51AAE07E200EAB08C /* more_button_active@3x.png */,
+				AB4F7EA61AAE07E200EAB08C /* more_button_inactive@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		AB4F7EB31AAE0DED00EAB08C /* Menu_icon */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EB41AAE0DED00EAB08C /* 1x */,
+				AB4F7EB61AAE0DED00EAB08C /* 2x */,
+				AB4F7EB81AAE0DED00EAB08C /* 3x */,
+			);
+			path = Menu_icon;
+			sourceTree = "<group>";
+		};
+		AB4F7EB41AAE0DED00EAB08C /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EB51AAE0DED00EAB08C /* menu_icon.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		AB4F7EB61AAE0DED00EAB08C /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EB71AAE0DED00EAB08C /* menu_icon@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		AB4F7EB81AAE0DED00EAB08C /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EB91AAE0DED00EAB08C /* menu_icon@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		AB4F7EC31AAE730500EAB08C /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EC41AAE730500EAB08C /* cash.png */,
+				AB4F7EC51AAE730500EAB08C /* cheque.png */,
+				AB4F7EC61AAE730500EAB08C /* credit-card.png */,
+				AB4F7EC71AAE730500EAB08C /* debit-card.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		AB4F7EC81AAE730500EAB08C /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7EC91AAE730500EAB08C /* cash@2x.png */,
+				AB4F7ECA1AAE730500EAB08C /* cheque@2x.png */,
+				AB4F7ECB1AAE730500EAB08C /* credit-card@2x.png */,
+				AB4F7ECC1AAE730500EAB08C /* debit-card@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		AB4F7ECD1AAE730500EAB08C /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				AB4F7ECE1AAE730500EAB08C /* cash@3x.png */,
+				AB4F7ECF1AAE730500EAB08C /* cheque@3x.png */,
+				AB4F7ED01AAE730500EAB08C /* credit-card@3x.png */,
+				AB4F7ED11AAE730500EAB08C /* debit-card@3x.png */,
+			);
+			path = 3x;
 			sourceTree = "<group>";
 		};
 		AB563DCD1AAA57EB0078B582 /* RetriveController */ = {
@@ -4824,9 +4981,6 @@
 			children = (
 				ABDC0A5A1AA3566F00CD1820 /* 640X1136 */,
 				ABDC0A631AA3566F00CD1820 /* All icon.png */,
-				ABDC0A641AA3566F00CD1820 /* Cheque icon.png */,
-				ABDC0A651AA3566F00CD1820 /* Credit Card icon.png */,
-				ABDC0A661AA3566F00CD1820 /* Debit Card icon.png */,
 				ABDC0A671AA3566F00CD1820 /* Select-payment-mode.png */,
 			);
 			path = payemntmode;
@@ -4835,9 +4989,6 @@
 		ABDC0A5A1AA3566F00CD1820 /* 640X1136 */ = {
 			isa = PBXGroup;
 			children = (
-				ABDC0A5D1AA3566F00CD1820 /* cheque@2x.png */,
-				ABDC0A5E1AA3566F00CD1820 /* credit card@2x.png */,
-				ABDC0A5F1AA3566F00CD1820 /* debit card@2x.png */,
 				ABDC0A601AA3566F00CD1820 /* overall_icon@2x.png */,
 			);
 			path = 640X1136;
@@ -4866,10 +5017,13 @@
 		ABDC0AC41AA4713500CD1820 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				AB4F7E941AADE01B00EAB08C /* 1x */,
+				AB4F7E961AADE01B00EAB08C /* 2x */,
+				AB4F7E981AADE01B00EAB08C /* 3x */,
 				ABDC0AC51AA4713500CD1820 /* AccountCell.h */,
+				AB4F7EAD1AAE086800EAB08C /* AccountViewController.h */,
 				ABDC0AC61AA4713500CD1820 /* AccountCell.m */,
-				ABDC0AC71AA4713500CD1820 /* AccountViewController.h */,
-				ABDC0AC81AA4713500CD1820 /* AccountViewController.m */,
+				AB4F7EAE1AAE086800EAB08C /* AccountViewController.m */,
 				ABDC0AC91AA4713500CD1820 /* AddAccountViewController.h */,
 				ABDC0ACA1AA4713500CD1820 /* AddAccountViewController.m */,
 			);
@@ -5278,6 +5432,9 @@
 		ABF9942F1A9FAB5B005DC589 /* 1x */ = {
 			isa = PBXGroup;
 			children = (
+				AB4F7EBD1AAE60C500EAB08C /* edit_button.png */,
+				AB4F7EBE1AAE60C500EAB08C /* edit_button@2x.png */,
+				AB4F7EBF1AAE60C500EAB08C /* edit_button@3x.png */,
 				ABF994301A9FAB5B005DC589 /* add.png */,
 				ABA8EF101AA09D240006A123 /* server_error.png */,
 				ABA8EF111AA09D240006A123 /* server_sync.png */,
@@ -5404,16 +5561,15 @@
 				19BC0BD91AAB793F0077DCAF /* logout_normal@3x.png in Resources */,
 				AB25EC551AA27412002D1CAD /* Mozambique.png in Resources */,
 				ABDC0C7B1AA515F500CD1820 /* Educational-Cost_icon.png in Resources */,
+				AB4F7ED61AAE730500EAB08C /* cash@2x.png in Resources */,
 				19BC0BC41AAB793F0077DCAF /* transfer_active@2x.png in Resources */,
 				AB25EC0D1AA27412002D1CAD /* Albania.png in Resources */,
-				ABDC0AB21AA3566F00CD1820 /* Credit Card icon.png in Resources */,
 				AB59C5441AA5F9BF00F6A845 /* cab_icon.png in Resources */,
 				AB25EB561AA1EB2E002D1CAD /* clothing_icon@3x.png in Resources */,
 				ABF994671AA06A56005DC589 /* bg@3x.jpg in Resources */,
 				19BC0BDE1AAB793F0077DCAF /* reminder_normal@3x.png in Resources */,
 				ABDC0CB31AA515F500CD1820 /* Mediclaim_icon@2x.png in Resources */,
 				AB25ED651AA32F6F002D1CAD /* view_report.png in Resources */,
-				19A8B73E1A9E6A8500C29520 /* Default-Portrait.png in Resources */,
 				AB25ED661AA32F6F002D1CAD /* warranty.png in Resources */,
 				ABDC0CA91AA515F500CD1820 /* House-property-icon.png in Resources */,
 				19BC0BE01AAB793F0077DCAF /* setting_normal@3x.png in Resources */,
@@ -5450,7 +5606,6 @@
 				19BC0B8F1AAB793F0077DCAF /* circle.png in Resources */,
 				19BC0C851AAB7C000077DCAF /* radial_button_active@3x.png in Resources */,
 				19BC0BAD1AAB793F0077DCAF /* category_normal@2x.png in Resources */,
-				19A8B73C1A9E6A8500C29520 /* Default-Landscape@2x.png in Resources */,
 				AB25EB441AA1EB2E002D1CAD /* clothing_icon.png in Resources */,
 				AB25EC831AA27412002D1CAD /* Venezuela.png in Resources */,
 				19A8B7411A9E6A8500C29520 /* Default@2x.png in Resources */,
@@ -5473,6 +5628,7 @@
 				AB59C52B1AA5F4BF00F6A845 /* Provident Fund_icon@2x.png in Resources */,
 				AB59C5511AA5F9BF00F6A845 /* Entertainment_icon@3x.png in Resources */,
 				ABDC0CB51AA515F500CD1820 /* Salary_icon@2x.png in Resources */,
+				AB4F7EDB1AAE730500EAB08C /* cheque@3x.png in Resources */,
 				19BC0BA01AAB793F0077DCAF /* reminder_normal.png in Resources */,
 				19BC0B8C1AAB793F0077DCAF /* budgets_normal.png in Resources */,
 				AB25EC4B1AA27412002D1CAD /* Latvia.png in Resources */,
@@ -5490,6 +5646,7 @@
 				AB25EC4E1AA27412002D1CAD /* Lithuania.png in Resources */,
 				19BC0BB71AAB793F0077DCAF /* likeus_active@2x.png in Resources */,
 				ABDC0CBB1AA515F500CD1820 /* Mediclaim_icon@3x.png in Resources */,
+				AB4F7EDD1AAE730500EAB08C /* debit-card@3x.png in Resources */,
 				19A8B72D1A9E6A8500C29520 /* appicon-76.png in Resources */,
 				AB25ED541AA32F6F002D1CAD /* mail.png in Resources */,
 				AB25ED5F1AA32F6F002D1CAD /* rupee.png in Resources */,
@@ -5533,11 +5690,13 @@
 				AB59C5021AA5259C00F6A845 /* export_icon@2x.png in Resources */,
 				19BC0B911AAB793F0077DCAF /* dashboard_active.png in Resources */,
 				19A8B7351A9E6A8500C29520 /* appicon-Small@3x.png in Resources */,
+				AB4F7E9C1AADE01B00EAB08C /* create_profile_camera_icon@3x.png in Resources */,
 				AB25EC3F1AA27412002D1CAD /* Indonesia.png in Resources */,
 				19A8B7421A9E6A8500C29520 /* iTunesArtwork in Resources */,
 				19BC0C801AAB7C000077DCAF /* check_boxs.png in Resources */,
 				ABDC0BF51AA4875100CD1820 /* add@2x.png in Resources */,
 				AB25ED601AA32F6F002D1CAD /* search.png in Resources */,
+				AB4F7EAA1AAE07E200EAB08C /* more_button_inactive@2x.png in Resources */,
 				AB25EC711AA27412002D1CAD /* Sri Lanka.png in Resources */,
 				ABA8EF191AA09D2E0006A123 /* server_error@2x.png in Resources */,
 				19BC0C5A1AAB793F0077DCAF /* OpenSans-Regular_2.ttf in Resources */,
@@ -5554,6 +5713,7 @@
 				ABF993461A9F35A5005DC589 /* slider_1.png in Resources */,
 				ABF993411A9F35A5005DC589 /* login_button.png in Resources */,
 				ABF993531A9F35A5005DC589 /* slider@2x.png in Resources */,
+				AB4F7ED91AAE730500EAB08C /* debit-card@2x.png in Resources */,
 				19BC0BCF1AAB793F0077DCAF /* dashboard_active@3x.png in Resources */,
 				19BC0BA21AAB793F0077DCAF /* setting_normal.png in Resources */,
 				AB59C4BD1AA522A100F6A845 /* week_icon@2x.png in Resources */,
@@ -5563,6 +5723,7 @@
 				AB25EC521AA27412002D1CAD /* Mauritius.png in Resources */,
 				AB59C4FD1AA5259C00F6A845 /* categories_icon@2x.png in Resources */,
 				19BC0BA11AAB793F0077DCAF /* setting_active.png in Resources */,
+				AB4F7EBA1AAE0DED00EAB08C /* menu_icon.png in Resources */,
 				19A8B7331A9E6A8500C29520 /* appicon-Small.png in Resources */,
 				AB25ED611AA32F6F002D1CAD /* setting.png in Resources */,
 				ABF994631AA06A44005DC589 /* bg@2x.jpg in Resources */,
@@ -5581,6 +5742,7 @@
 				19BC0C7D1AAB7C000077DCAF /* cancel_button_budget.png in Resources */,
 				ABF9944D1A9FBB07005DC589 /* setreminder.png in Resources */,
 				AB25EB5B1AA1EB2E002D1CAD /* time_icon@3x.png in Resources */,
+				AB4F7EC11AAE60C500EAB08C /* edit_button@2x.png in Resources */,
 				AB25EC4D1AA27412002D1CAD /* Liberia.png in Resources */,
 				19BC0BD11AAB793F0077DCAF /* default_profile_pic@3x.png in Resources */,
 				19BC0BAF1AAB793F0077DCAF /* circle_1@2x.png in Resources */,
@@ -5634,21 +5796,20 @@
 				ABDC0CAD1AA515F500CD1820 /* Salary_icon.png in Resources */,
 				AB25EC7F1AA27412002D1CAD /* United Kingdom.png in Resources */,
 				ABDC0AB01AA3566F00CD1820 /* All icon.png in Resources */,
+				AB4F7EDA1AAE730500EAB08C /* cash@3x.png in Resources */,
 				AB25EC151AA27412002D1CAD /* Barbados.png in Resources */,
 				19BC0BE11AAB793F0077DCAF /* signin_active@3x.png in Resources */,
-				ABDC0AAC1AA3566F00CD1820 /* debit card@2x.png in Resources */,
 				19BC0BBA1AAB793F0077DCAF /* logout_normal@2x.png in Resources */,
 				AB25EC861AA27412002D1CAD /* Zimbabwe.png in Resources */,
 				ABF993501A9F35A5005DC589 /* or_icon@2x.png in Resources */,
 				ABDC0C7C1AA515F500CD1820 /* Electronics_icon.png in Resources */,
 				19BC0B5D1AAB793F0077DCAF /* IQKeyboardManager.bundle in Resources */,
-				ABDC0AB31AA3566F00CD1820 /* Debit Card icon.png in Resources */,
 				AB59C4F81AA5259C00F6A845 /* password_icon.png in Resources */,
 				19BC0BBE1AAB793F0077DCAF /* reminder_active@2x.png in Resources */,
-				19A8B73B1A9E6A8500C29520 /* Default-Landscape.png in Resources */,
 				AB59C4BA1AA522A100F6A845 /* categories_icon@2x.png in Resources */,
 				AB25EC5D1AA27412002D1CAD /* Norway.png in Resources */,
 				AB25ED3E1AA32F6F002D1CAD /* changelog.png in Resources */,
+				AB4F7EA71AAE07E200EAB08C /* more_button_active.png in Resources */,
 				ABDC0C011AA4909B00CD1820 /* reminder&recurring.png in Resources */,
 				AB25EC261AA27412002D1CAD /* Cuba.png in Resources */,
 				AB25EC291AA27412002D1CAD /* Dominican Republic.png in Resources */,
@@ -5661,6 +5822,7 @@
 				ABF9933F1A9F35A5005DC589 /* g+signin_button.png in Resources */,
 				19BC0BB01AAB793F0077DCAF /* dashboard_active@2x.png in Resources */,
 				ABF9934F1A9F35A5005DC589 /* login_button@2x.png in Resources */,
+				AB4F7EDC1AAE730500EAB08C /* credit-card@3x.png in Resources */,
 				AB25EC781AA27412002D1CAD /* Thailand.png in Resources */,
 				AB25EC1F1AA27412002D1CAD /* Canada.png in Resources */,
 				AB59C4B81AA522A100F6A845 /* week_icon.png in Resources */,
@@ -5691,18 +5853,19 @@
 				19BC0B971AAB793F0077DCAF /* history_normal.png in Resources */,
 				AB25EB551AA1EB2E002D1CAD /* cash_icon@3x.png in Resources */,
 				AB25ED3D1AA32F6F002D1CAD /* cash.png in Resources */,
-				19A8B73F1A9E6A8500C29520 /* Default-Portrait@2x.png in Resources */,
 				AB8043C11AA7AF0400275B53 /* downward_button@2x.png in Resources */,
 				AB25EC641AA27412002D1CAD /* Poland.png in Resources */,
 				ABF994411A9FAB5B005DC589 /* add@3x.png in Resources */,
-				ABDC0AAB1AA3566F00CD1820 /* credit card@2x.png in Resources */,
 				19BC0BDA1AAB793F0077DCAF /* profile_pic@3x.png in Resources */,
 				19BC0BB61AAB793F0077DCAF /* history_normal@2x.png in Resources */,
+				AB4F7EC21AAE60C500EAB08C /* edit_button@3x.png in Resources */,
 				ABF9944E1A9FBB07005DC589 /* transaction.png in Resources */,
 				19BC0B8A1AAB793F0077DCAF /* arrow.png in Resources */,
 				19BC0BB81AAB793F0077DCAF /* likeus_normal@2x.png in Resources */,
+				AB4F7EAC1AAE07E200EAB08C /* more_button_inactive@3x.png in Resources */,
 				19A8B72A1A9E6A8500C29520 /* appicon-60@3x.png in Resources */,
 				ABDC0CB71AA515F500CD1820 /* Annuity or pension_icon@3x.png in Resources */,
+				AB4F7EBB1AAE0DED00EAB08C /* menu_icon@2x.png in Resources */,
 				ABF993541A9F35A5005DC589 /* slider_1@2x.png in Resources */,
 				ABDC0AAD1AA3566F00CD1820 /* overall_icon@2x.png in Resources */,
 				AB59C4FB1AA5259C00F6A845 /* viewreport_icon.png in Resources */,
@@ -5711,16 +5874,17 @@
 				AB25EC211AA27412002D1CAD /* Chile.png in Resources */,
 				AB25ED5B1AA32F6F002D1CAD /* pic.png in Resources */,
 				AB25EC6D1AA27412002D1CAD /* Solomon Islands.png in Resources */,
+				AB4F7ED81AAE730500EAB08C /* credit-card@2x.png in Resources */,
 				AB59C4F11AA5259C00F6A845 /* change_currency_icon.png in Resources */,
 				19BC0AB61AAB793F0077DCAF /* bannerNotify@2x.png in Resources */,
 				AB25ED671AA32F6F002D1CAD /* weekly.png in Resources */,
 				AB25EC611AA27412002D1CAD /* Paraguay.png in Resources */,
 				19BC0BDB1AAB793F0077DCAF /* rateus_active@3x.png in Resources */,
 				AB25EB451AA1EB2E002D1CAD /* date_icon.png in Resources */,
-				ABDC0AB11AA3566F00CD1820 /* Cheque icon.png in Resources */,
 				ABF993561A9F35A5005DC589 /* username_box@2x.png in Resources */,
 				AB25EC301AA27412002D1CAD /* Falkland Islands.png in Resources */,
 				ABDC0C031AA4909B00CD1820 /* reminder-&-Recurring@3x.png in Resources */,
+				AB4F7ED21AAE730500EAB08C /* cash.png in Resources */,
 				AB25EC5E1AA27412002D1CAD /* Oman.png in Resources */,
 				AB59C54F1AA5F9BF00F6A845 /* Travel_icon@2x.png in Resources */,
 				AB4337F21AACAB28001A5C91 /* TransactionCell.xib in Resources */,
@@ -5735,12 +5899,14 @@
 				ABDC0B121AA4713600CD1820 /* BudgetCell.xib in Resources */,
 				19A8B7381A9E6A8500C29520 /* Default-568h@2x.png in Resources */,
 				AB25EC681AA27412002D1CAD /* Saint Helena.png in Resources */,
+				AB4F7ED31AAE730500EAB08C /* cheque.png in Resources */,
 				AB25EB1C1AA1049E002D1CAD /* LocationRepresentingCell.xib in Resources */,
 				AB25ED461AA32F6F002D1CAD /* description.png in Resources */,
 				AB25ED5E1AA32F6F002D1CAD /* reminder.png in Resources */,
 				AB59C4B51AA522A100F6A845 /* categories_icon.png in Resources */,
 				AB25EB541AA1EB2E002D1CAD /* back_button@3x.png in Resources */,
 				19BC0C831AAB7C000077DCAF /* dropdown_icon.png in Resources */,
+				AB4F7EAB1AAE07E200EAB08C /* more_button_active@3x.png in Resources */,
 				19BC0C261AAB793F0077DCAF /* TSMessagesDefaultDesign.json in Resources */,
 				AB25EC311AA27412002D1CAD /* Fiji.png in Resources */,
 				19BC0BBF1AAB793F0077DCAF /* reminder_normal@2x.png in Resources */,
@@ -5787,6 +5953,7 @@
 				ABF993401A9F35A5005DC589 /* guestlogin_button.png in Resources */,
 				AB25EC701AA27412002D1CAD /* South Korea.png in Resources */,
 				AB25EB421AA1EB2E002D1CAD /* back_button.png in Resources */,
+				AB4F7E9B1AADE01B00EAB08C /* create_profile_camera_icon@2x.png in Resources */,
 				AB25EC251AA27412002D1CAD /* Croatia.png in Resources */,
 				AB25EC2E1AA27412002D1CAD /* Estonia.png in Resources */,
 				ABA8EF1A1AA09D2E0006A123 /* server_sync@2x.png in Resources */,
@@ -5805,6 +5972,7 @@
 				AB59C5141AA5259C00F6A845 /* sent_email_icon@3x.png in Resources */,
 				AB25EC801AA27412002D1CAD /* United States of America.png in Resources */,
 				AB25EC441AA27412002D1CAD /* Jamaica.png in Resources */,
+				AB4F7E9A1AADE01B00EAB08C /* create_profile_camera_icon.png in Resources */,
 				19BC0BE21AAB793F0077DCAF /* signin_normal@3x.png in Resources */,
 				AB25ED621AA32F6F002D1CAD /* sign_in.png in Resources */,
 				ABDC0CB41AA515F500CD1820 /* Provident Fund_icon@2x.png in Resources */,
@@ -5847,7 +6015,7 @@
 				AB25EC471AA27412002D1CAD /* Kazakhstan.png in Resources */,
 				19BC0BBC1AAB793F0077DCAF /* rateus_active@2x.png in Resources */,
 				AB25ED4D1AA32F6F002D1CAD /* help.png in Resources */,
-				ABDC0AAA1AA3566F00CD1820 /* cheque@2x.png in Resources */,
+				AB4F7ED71AAE730500EAB08C /* cheque@2x.png in Resources */,
 				AB25EC2F1AA27412002D1CAD /* European Union Member States.png in Resources */,
 				ABF9942C1A9F4DD1005DC589 /* remember_box_check@2x.png in Resources */,
 				AB25ED511AA32F6F002D1CAD /* import.png in Resources */,
@@ -5879,9 +6047,11 @@
 				AB25ED501AA32F6F002D1CAD /* house_property.png in Resources */,
 				AB25EC101AA27412002D1CAD /* Argentina.png in Resources */,
 				AB25EC851AA27412002D1CAD /* Yemen.png in Resources */,
+				AB4F7ED51AAE730500EAB08C /* debit-card.png in Resources */,
 				19BC0BAB1AAB793F0077DCAF /* budgets_normal@2x.png in Resources */,
 				ABDC0BF21AA4875100CD1820 /* add.png in Resources */,
 				AB59C4C31AA522A100F6A845 /* year@3x.png in Resources */,
+				AB4F7EBC1AAE0DED00EAB08C /* menu_icon@3x.png in Resources */,
 				AB25EC6F1AA27412002D1CAD /* South Africa.png in Resources */,
 				ABF993591A9F35A5005DC589 /* g+_icon@3x.png in Resources */,
 				ABDC0CBD1AA515F500CD1820 /* Salary_icon@3x.png in Resources */,
@@ -5906,7 +6076,6 @@
 				19BC0BA31AAB793F0077DCAF /* signin_active.png in Resources */,
 				19BC0B931AAB793F0077DCAF /* defaultprofile_pic.png in Resources */,
 				AB59C4EF1AA5259C00F6A845 /* account_icon.png in Resources */,
-				19A8B73A1A9E6A8500C29520 /* Default-Landscape-736h@3x.png in Resources */,
 				ABDC0AA71AA3566F00CD1820 /* subcategory_line.png in Resources */,
 				AB25EB431AA1EB2E002D1CAD /* cash_icon.png in Resources */,
 				AB25ED4B1AA32F6F002D1CAD /* gifts.png in Resources */,
@@ -5916,6 +6085,7 @@
 				AB25EC121AA27412002D1CAD /* Azerbaijan.png in Resources */,
 				ABDC0B161AA4713600CD1820 /* WarrantyCell.xib in Resources */,
 				ABDC0C831AA515F500CD1820 /* Personal Care_icon.png in Resources */,
+				AB4F7EA81AAE07E200EAB08C /* more_button_inactive.png in Resources */,
 				AB25EC731AA27412002D1CAD /* Suriname.png in Resources */,
 				AB25EC501AA27412002D1CAD /* Madagascar.png in Resources */,
 				AB59C50A1AA5259C00F6A845 /* categories_icon@3x.png in Resources */,
@@ -5924,9 +6094,9 @@
 				ABA8EF141AA09D240006A123 /* server_sync.png in Resources */,
 				AB25ED3F1AA32F6F002D1CAD /* clock.png in Resources */,
 				AB25EC721AA27412002D1CAD /* Sultanate of Brunei.png in Resources */,
-				19BC0C811AAB7C000077DCAF /* delete_icon.png in Resources */,
 				19BC0AAF1AAB793F0077DCAF /* holder.png in Resources */,
 				19BC0B8B1AAB793F0077DCAF /* budgets_active.png in Resources */,
+				AB4F7ED41AAE730500EAB08C /* credit-card.png in Resources */,
 				AB59C50C1AA5259C00F6A845 /* changelog_icon@3x.png in Resources */,
 				ABDC0C1D1AA4944E00CD1820 /* transfer_big@2x.png in Resources */,
 				AB25ED531AA32F6F002D1CAD /* location.png in Resources */,
@@ -5937,7 +6107,9 @@
 				19BC0BA91AAB793F0077DCAF /* arrow@2x.png in Resources */,
 				ABDC0CA81AA515F500CD1820 /* Capital-Gains_icon.png in Resources */,
 				AB59C5551AA5F9BF00F6A845 /* Travel_icon@3x.png in Resources */,
+				AB4F7EC01AAE60C500EAB08C /* edit_button.png in Resources */,
 				AB59C4BE1AA522A100F6A845 /* year@2x.png in Resources */,
+				AB4F7EA91AAE07E200EAB08C /* more_button_active@2x.png in Resources */,
 				AB59C54E1AA5F9BF00F6A845 /* shopping_icon@2x.png in Resources */,
 				19A8B72B1A9E6A8500C29520 /* appicon-72.png in Resources */,
 				ABDC0CBE1AA515F500CD1820 /* Wages_icon@3x.png in Resources */,
@@ -6030,6 +6202,7 @@
 				ABDC0B381AA4733A00CD1820 /* TransactionDetailsViewController .m in Sources */,
 				19BC0B351AAB793F0077DCAF /* GTMHTTPFetchHistory.m in Sources */,
 				19BC0B001AAB793F0077DCAF /* KSMach_x86_64.c in Sources */,
+				AB4F7EAF1AAE086800EAB08C /* AccountViewController.m in Sources */,
 				ABDC0C201AA4944E00CD1820 /* TransferDetailsViewController.m in Sources */,
 				19BC0AFD1AAB793F0077DCAF /* KSMach_Arm.c in Sources */,
 				19BC0BF91AAB793F0077DCAF /* UIImageView+WebCache.m in Sources */,
@@ -6053,7 +6226,6 @@
 				ABDC0AC31AA4703D00CD1820 /* ReminderDetailsViewController.m in Sources */,
 				19BC0AF21AAB793F0077DCAF /* KSCrashSentry_Signal.c in Sources */,
 				ABDC0AC01AA4703D00CD1820 /* AddReminderViewController.m in Sources */,
-				ABDC0AFD1AA4713500CD1820 /* AccountViewController.m in Sources */,
 				AB563DE11AAA697B0078B582 /* TermAndconditionViewController.m in Sources */,
 				19BC0B771AAB793F0077DCAF /* RADataObject.m in Sources */,
 				AB25EC911AA274CE002D1CAD /* BudgetViewController.m in Sources */,
@@ -6279,7 +6451,7 @@
 				ABDC0AC11AA4703D00CD1820 /* CreateReminderViewController.m in Sources */,
 				19BC0AF61AAB793F0077DCAF /* KSCrashCallCompletion.m in Sources */,
 				19BC0A931AAB793F0077DCAF /* NSUserDefaults+Convenience.m in Sources */,
-				19BC0B871AAB793F0077DCAF /* LeftMenuViewController.m in Sources */,
+				AB4F7EB21AAE090200EAB08C /* LeftMenuViewController.m in Sources */,
 				19BC0B3C1AAB793F0077DCAF /* GTMReadMonitorInputStream.m in Sources */,
 				AB59C52A1AA5F4BF00F6A845 /* LocationViewController.m in Sources */,
 				194023A91AAC90C400EB3F1F /* AFMInfoBanner.m in Sources */,

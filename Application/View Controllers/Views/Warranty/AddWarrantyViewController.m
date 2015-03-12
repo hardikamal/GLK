@@ -91,6 +91,13 @@
     scrollViewSubview.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 790);
     self.scrollView.contentSize = scrollViewSubview.frame.size;
     self.scrollView.contentOffset = CGPointZero;
+    [self.scrollView scrollsToTop];
+}
+
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.scrollView.contentSize = self.scrollView.contentSize;
+    self.scrollView.contentOffset = CGPointZero;
 }
 
 - (AutocompletionTableView *)autoCompleter {
@@ -227,7 +234,7 @@
         }
     }
     if ([self.moreDetailsView isHidden]) {
-        self.scrollView.contentSize = CGSizeMake(0, 500);
+        self.scrollView.contentSize = CGSizeMake(0, 600);
     }
     else {
         self.scrollView.contentSize = CGSizeMake(0, 670);
@@ -267,7 +274,7 @@
         _imgProfile.image = [UIImage imageWithData:userInfo.user_img];
     }
     else
-        _imgProfile.image = [UIImage imageNamed:@"custom_profile.png"];
+        _imgProfile.image = [UIImage imageNamed:@"defaultprofile_pic.png"];
 }
 
 - (void)timeDateConfigCurrent {
@@ -300,24 +307,20 @@
         NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
         [self addAccountName:UserInfoarrray];
     }
-    
-    //    NSDate *currentDate = [NSDate date];
-    //
-    //    NSCalendar* calendar = [NSCalendar currentCalendar];
-    //    NSDateComponents* components = [calendar components:NSCalederUnit fromDate:currentDate];
-    //    [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
-    //    NSString *combined;
-    //    if ([components month]<10)
-    //    {
-    //        combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
-    //    }else
-    //        combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
-    //
-    //    [self.lblMonthYear setText:combined];
-    //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    //    [formatter setDateFormat:@"hh:mm a"];
-    //    [self.lblTime setText:[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:0]];
-    //    [self.lblPmorAm setText:[[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSCalederUnit fromDate:[NSDate date]];
+    [self.self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
+    NSString *combined;
+    if ([components month]<10)
+    {
+        combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
+    }else
+        combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
+    [self.self.lblMonthYear setText:combined];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"hh:mm a"];
+        [self.lblTime setText:[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:0]];
+        [self.lblPmorAm setText:[[[[formatter stringFromDate:[NSDate date]] componentsSeparatedByString:@" "]  objectAtIndex:1] uppercaseString]];
     NSString *mainToken = [Utility userDefaultsForKey:MAIN_TOKEN_ID];
     NSString *currency = [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@", CURRENT_CURRENCY, mainToken]];
     [self.lblCarrency setText:[[currency componentsSeparatedByString:@"-"] objectAtIndex:1]];
@@ -476,11 +479,13 @@
         NSString *currency = [Utility userDefaultsForKey:[NSString stringWithFormat:@"%@ @@@@ %@", CURRENT_CURRENCY, mainToken]];
         [dictionary setObject:currency forKey:@"currency"];
         
-        NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getAllUserDetails];
-        if ([UserInfoarrray count] != 0) {
-            UserInfo *userInfo = [UserInfoarrray objectAtIndex:0];
+        NSArray *UserInfoarrray=[[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:self.btnUserName.titleLabel.text];
+        if ([UserInfoarrray count]!=0)
+        {
+            UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
             [dictionary setObject:userInfo.user_token_id forKey:@"user_token_id"];
         }
+        
         
         [dictionary setObject:_txtAmount.text forKey:@"amount"];
         
@@ -627,23 +632,7 @@
             [self textFieldDidChange:self.txtwarranty];
     }
     if ([[info objectForKey:@"tag"] intValue] == 1) {
-        if ([[info objectForKey:@"object"] isEqualToString:NSLocalizedString(@"addAccount", nil)]) {
-            AddAccountViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
-            [self.navigationController pushViewController:catageryController animated:YES];
-        }
-        else { [self.btnUserName setTitle:[info objectForKey:@"object"] forState:UIControlStateNormal];
-            NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[info objectForKey:@"object"]];
-            if ([UserInfoarrray count] != 0) {
-                UserInfo *userInfo = [UserInfoarrray objectAtIndex:0];
-                if (userInfo.user_img != nil) {
-                    _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
-                    _imgProfile.clipsToBounds = YES;
-                    _imgProfile.image = [UIImage imageWithData:userInfo.user_img];
-                }
-                else
-                    _imgProfile.image = [UIImage imageNamed:@"custom_profile.png"];
-            }
-            [Utility saveToUserDefaults:[info objectForKey:@"object"]  withKey:CURRENT_USER__TOKEN_ID]; }
+        
     }
 }
 
@@ -666,7 +655,7 @@
     }
     else {
         [self.moreDetailsView setHidden:YES];
-        self.scrollView.contentSize = CGSizeMake(320, 500);
+        self.scrollView.contentSize = CGSizeMake(0, 500);
         [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         [sender setImage:[UIImage imageNamed:@"downward_button.png"] forState:UIControlStateNormal];
     }
@@ -734,12 +723,17 @@
     RESIGN_KEYBOARD
     
     [ActionSheetDatePicker showPickerWithTitle : @"Select date" datePickerMode : UIDatePickerModeDate selectedDate :[NSDate date] doneBlock : ^(ActionSheetDatePicker *picker, NSDate *selectedDate, id origin) {
-        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-        NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:selectedDate];
-        NSDateComponents *compsday = [gregorian components:NSCalendarUnitDay fromDate:selectedDate];
-        // self.lblDay.text=[[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:selectedDate.weekday-1];
-        self.lblMonthYear.text = [NSString stringWithFormat:@"%@, %ld", [[[[NSDateFormatter alloc] init] monthSymbols] objectAtIndex:selectedDate.month - 1], (long)selectedDate.year];
-        self.lblDay.text = [NSString stringWithFormat:@"%@,%ld", [[[[NSDateFormatter alloc] init] weekdaySymbols] objectAtIndex:[comps weekday] - 1], (long)[compsday day]];
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        NSDateComponents* components = [calendar components:NSCalederUnit fromDate:selectedDate];
+        [self.lblDay setText:[NSString stringWithFormat:@"%li",(long)[components day]]];
+        NSString *combined;
+        if ([components month]<10)
+        {
+            combined = [NSString stringWithFormat:@"0%li %li",(long)[components month] ,(long)[components year]];
+        }else
+            combined = [NSString stringWithFormat:@"%li %li",(long)[components month] ,(long)[components year]];
+        [self.lblMonthYear setText:combined];
+        
     } cancelBlock : ^(ActionSheetDatePicker *picker) {
     } origin :[self view]];
 }
@@ -906,11 +900,7 @@
 }
 
 - (IBAction)btnUserNameClick:(id)sender {
-    [self.txtAmount resignFirstResponder];
-    [self.txtDescription resignFirstResponder];
-    [self.txtEnterLocation resignFirstResponder];
-    [self.txtTagaPerson resignFirstResponder];
-    [self.txtwarranty resignFirstResponder];
+    RESIGN_KEYBOARD
     
     NSMutableArray *userInfoList = [[NSMutableArray alloc] init];
     NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsToUserRegisterTable];
@@ -921,21 +911,29 @@
         }
     }
     
-    [userInfoList addObject:NSLocalizedString(@"addAccount", nil)];
-    CGFloat xWidth = self.view.bounds.size.width - 120.0f;
-    CGFloat yHeight = [userInfoList count] * 40;
-    if (yHeight > 300) {
-        yHeight = 300;
-    }
-    CGFloat yOffset = (self.view.bounds.size.height - yHeight) / 2.0f;
-    UIPopoverListView *poplistview = [[UIPopoverListView alloc] initWithFrame:CGRectMake(10, yOffset, xWidth, yHeight)];
-    [poplistview setTag:1];
-    [poplistview setNotificationName:@"AddWarrantyViewController"];
-    [poplistview setListArray:userInfoList];
-    if (yHeight < 300) {
-        poplistview.listView.scrollEnabled = FALSE;
-    }
-    [poplistview show];
+    [UIActionSheet showInView:self.view withTitle:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:userInfoList tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex)
+     {
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancel"]) {
+             return ;
+         }
+         if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:NSLocalizedString(@"addAccount", nil)]) {
+             AddAccountViewController *catageryController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddAccountViewController"];
+             [self.navigationController pushViewController:catageryController animated:YES];
+         }
+         else { [self.btnUserName setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+             NSArray *UserInfoarrray = [[UserInfoHandler sharedCoreDataController] getUserDetailsWithUserName:[actionSheet buttonTitleAtIndex:buttonIndex]];
+             if ([UserInfoarrray count] != 0) {
+                 UserInfo *userInfo = [UserInfoarrray objectAtIndex:0];
+                 if (userInfo.user_img != nil) {
+                     _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
+                     _imgProfile.clipsToBounds = YES;
+                     _imgProfile.image = [UIImage imageWithData:userInfo.user_img];
+                 }
+                 else
+                     _imgProfile.image = [UIImage imageNamed:@"defaultprofile_pic.png"];
+             }
+             [Utility saveToUserDefaults:[actionSheet buttonTitleAtIndex:buttonIndex]  withKey:CURRENT_USER__TOKEN_ID]; }
+     }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

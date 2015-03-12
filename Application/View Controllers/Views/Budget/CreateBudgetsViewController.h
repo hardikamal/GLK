@@ -12,7 +12,7 @@
 #import "DoneCancelNumberPadToolbar.h"
 
 
-@interface CreateBudgetsViewController : UIViewController<DoneCancelNumberPadToolbarDelegate>
+@interface CreateBudgetsViewController : UIViewController <DoneCancelNumberPadToolbarDelegate>
 
 @property (strong, nonatomic) IBOutlet NavigationLeftButton *buttonUnhideCategery;
 @property (strong, nonatomic) IBOutlet UIImageView *imageProfile;
@@ -39,6 +39,9 @@
 @property (strong, nonatomic) IBOutlet UIView *dobView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dobPicker;
 @property (strong, nonatomic) IBOutlet UILabel *lblSabCatagery;
+@property (strong, nonatomic) IBOutlet UIView *scrollViewSubview;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)datebtnFrombtnClick:(id)sender;
 - (IBAction)datebtnToClick:(id)sender;
 - (IBAction)cancelDobPickerClick:(id)sender;

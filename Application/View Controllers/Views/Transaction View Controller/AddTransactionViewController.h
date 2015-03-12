@@ -19,10 +19,9 @@
 //---I reused
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthDateLabel;
-@property (strong, nonatomic) IBOutlet UIButton *btnExpense;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *primeTimeLabel;
-@property (strong, nonatomic) IBOutlet UIButton *btnIncome;
 //------------------------
 
 @property (strong, nonatomic) IBOutlet UILabel *lblToday;
@@ -66,6 +65,7 @@
 
 @property (strong, nonatomic)  Transactions *transaction;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarBtn;
+@property (nonatomic, readwrite) BOOL isIncomeSelected;
 
 - (IBAction)btnUserNameClick:(id)sender;
 - (IBAction)backbtnClick:(id)sender;

@@ -177,6 +177,7 @@
     {
         UserInfo *userInfo =[UserInfoarrray objectAtIndex:0];
         [cell.lblUserName setText:userInfo.user_name];
+        NSLog(@"%@",userInfo.user_name);
         value=[[TransactionHandler sharedCoreDataController] getTotalExpenseForAllAccountswithCategryAndPaymentMode:transaction.category :transaction.paymentMode :userInfo.user_token_id :transaction.sub_category :transaction.fromdate :transaction.todate];
     }
     

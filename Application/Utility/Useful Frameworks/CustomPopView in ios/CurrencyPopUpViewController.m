@@ -20,7 +20,12 @@
 @implementation CurrencyPopUpViewController
 - (IBAction)doneClick:(UIBarButtonItem *)sender {
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.navigationController.navigationBarHidden=0;
+    self.title=@"Select Currency";
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,7 +35,7 @@
     
     NSArray *signArray = [NSLocalizedString(@"items", nil) componentsSeparatedByString:@","];
     
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     for (int i = 0; i < [signArray count]; i++) {
         NSUInteger index;
         Recipe *recipe1 = [Recipe new];
@@ -80,7 +85,7 @@
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
     NSArray *array = [recipe.prepTime componentsSeparatedByString:@"-"];
     cell.lblCurrency.text = [array objectAtIndex:1];
-    
+    cell.backgroundColor=[UIColor clearColor];
     cell.prepTimeLabel.text = [array objectAtIndex:0];
     return cell;
 }
@@ -107,11 +112,21 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    if (![searchString isEqualToString:@""])
+    {
+        [self.tableView setHidden:1];
+
+    }
+    else
+    {
+        self.tableView.hidden=0;
+    }
     return YES;
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView {
-    //[tableView setFrame:CGRectMake(self.tableView .frame.origin.x+16, tableView .frame.origin.y, self.tableView .frame.size.width, self.tableView .frame.size.height)];
+    [tableView setFrame:CGRectMake(0, tableView .frame.origin.y+44, self.tableView .frame.size.width, self.tableView .frame.size.height)];
+    tableView.backgroundColor=[UIColor clearColor];
 }
 
 - (void)animatedOut {
@@ -120,7 +135,7 @@
     NSMutableDictionary *bookListing = [[NSMutableDictionary alloc] init];
     [[NSNotificationCenter defaultCenter] postNotificationName:noticationName object:nil userInfo:bookListing];
     [self dismissViewControllerAnimated:YES completion:nil];
-    [[self navigationController] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

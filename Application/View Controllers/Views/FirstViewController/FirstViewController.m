@@ -66,6 +66,7 @@ static const NSUInteger THNumberOfPinEntries = 4;
     else
         [self pushToHomeViewController];
     HIDE_STATUS_BAR
+    HIDE_NAVIGATION_BAR
 }
 
 - (void)addPageViewController {
